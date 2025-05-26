@@ -1,16 +1,14 @@
-PLAZMA „B”
-JAK MAŁY STATECZEK
-
-ANDRZEJ CIELECKI
-
-Andrzej Cielecki — pracownik Ośrodka Badawczo-Rozwojowego „Monokryształ” w Warszawie.
-
-Jest wybitnym konstruktorem aparatury naukowo-badawczej.
-Wielokrotnie otrzymywał tematy nagrodowe: Sekretarza Naukowego PAN, Przewodniczącego Komitetu Nauki i Techniki, Ministra Przemysłu Maszynowego oraz Rady Naczelnej NOT.
-
+Autor: Andrzej Cielecki
 Date: 1970s
 Source: Literatura (newspaper)
+Title: 'JAK MAŁY STATECZEK' 
 
+# PLAZMA „B” 
+## JAK MAŁY STATECZEK
+
+> Andrzej Cielecki — pracownik Ośrodka Badawczo-Rozwojowego „Monokryształ” w Warszawie.
+> Jest wybitnym konstruktorem aparatury naukowo-badawczej.
+> Wielokrotnie otrzymywał tematy nagrodowe: Sekretarza Naukowego PAN, Przewodniczącego Komitetu Nauki i Techniki, Ministra Przemysłu Maszynowego oraz Rady Naczelnej NOT.
 
 
 Było to w Mrągowie przed dwudziestu kilku laty. Siedziałem nad jeziorem, wiatr ustał całkiem, wicie, loty szybowcowe odwołano. Wodę przeganiało minowe opakowanie od śniadania. Przyglądałem mu się beznamiętnie. Nagle papier gruntowy wykonał na wodzie kilka obrotów i bardzo specyficznym ruchem rozpoczął płynięcie w moim kierunku. Od tamtej chwili rozpocząłem obserwacje psychokinezy.
@@ -25,7 +23,7 @@ Intryguje mnie problem — ciągnął profesor — w jaki sposób na Kongresie P
 
 Moim zdaniem — sugerowałem — mózgi jako aparaty bioelektryczne działają podobnie, zaś języki są tylko różnymi urządzeniami peryferyjnymi dla tych mózgów. Przekaz telepatyczny idzie drogą boczną, z pominięciem urządzeń peryferyjnych. Polega on na emanacji przez mózg pewnego rodzaju emanacji, która staje się ośrodkiem propagacji specjalnych fal biologicznych, a te mogą przenosić informacje, odbijać się, wracać — tworząc ludzki, zwierzęcy radar podświadomości.
 
-#HIPOTEZA
+# HIPOTEZA
 
 Po wielu doświadczeniach przeprowadzonych nad zjawiskiem psychokinezy można z olbrzymim prawdopodobieństwem przyjąć, że organizmy żywe, a wśród nich i człowiek, wysyłają w przestrzeń pewną specyficzną postać energii, zdolną do oderwania się od źródła i mogącą przez pewien czas samodzielnie bytować w otaczającej nas przestrzeni fizycznej. Energia ta — nazwę ją Plazmą Biologiczną — ma niesłychanie ciekawe własności fizyczne, w większości jeszcze nieznane. Są one przedmiotem badań nowej dziedziny wiedzy — psychotroniki.
 
@@ -41,7 +39,7 @@ Kto obserwował ruch plazmy na zdjęciach filmowych korony słonecznej podczas z
 
 
 
-#KILKA SŁÓW O TEORII POZNANIA
+# KILKA SŁÓW O TEORII POZNANIA
 
 Czytelnicy z pewnością gotowi są przerwać mi wywód i spytać wprost: Co to jest plazma B, lub w ogóle czym ona jest? Otóż badania nad pracą naszego mózgu oraz nad formułowaniem przez ten mózg pojęć fizykalnych, „zrozumień”, określają takie pytania jako nielogiczne lub pozbawione sensu. Nielogiczne jest również pytanie: czym jest pole grawitacyjne, elektryczne czy magnetyczne. Możemy wyłącznie odpowiedzieć na to pytanie, że jest to pole sił działających na masę, ładunek lub przewód z prądem — nie poza tym. Pola te są pewną formą bytowania energii w przestrzeni fizycznej.
 
@@ -51,7 +49,7 @@ Następnie — w jaki sposób, w jakim czasie ta energia się rozprasza i czy mo
 
 
 
-#NIE ZGADZAM SIĘ
+# NIE ZGADZAM SIĘ
 
 Na Kongresie Psychotroniki w Pradze dr A. Dubrow (ZSRR) wystąpił z sugestią, iż psychokineza jest emisją fali grawitacyjnej, bowiem oddziałuje z masą. Znakomity polski badacz, prof. dr Manczarski, zjawiska telepatyczne chce tłumaczyć czystymi efektami elektromagnetycznymi. Uważam, że badacze ci popełniają klasyczny błąd. Starają się nowe zjawiska wyjaśniać przy pomocy znanych już zjawisk — grawitacyjnych czy elektromagnetycznych. Tymczasem wszystko wskazuje na to, że mamy do czynienia z czymś zupełnie osobliwym, występującym w formie ruchomego w czasie pola o bardzo złożonej strukturze wewnętrznej.
 
@@ -61,7 +59,7 @@ Chciałbym tu zwrócić uwagę, że żywy organizm — zwierzęcy czy roślinny 
 
 Wydaje się, że nie osiągniemy porządnych rezultatów, jeśli do problemu emanacji mózgu przystąpimy zaprogramowani czysto grawitacyjnym lub elektromagnetycznym sposobem myślenia, chociaż nie wykluczam, że może ono okazać się pomocne. Z pewnych moich doświadczeń oraz obliczeń statystycznych wynika, że energia plazmy może przechodzić w energię elektromagnetyczną, tak jak obserwujemy przejście energii plazmy. Doświadczenia te wymagają jednak dopracowania i potwierdzenia przez innego typu doświadczenia — w energię ruchu mechanicznego.
 
-#ROBIMY WIELKĄ ZABAWĘ
+# ROBIMY WIELKĄ ZABAWĘ
 
 Do zabawy potrzebny będzie stateczek, wypełniona wodą wanna, duża kuweta lub taca — plastikowa, metalowa, jakakolwiek. Każdy z czytelników może być badaczem psychokinezy, a nawet mieć znakomitą przewagę nad badaczami zawodowymi, gdyż ci — nie wyłączając autora — przesyceni literaturą, wnioskami sugestywnie związanymi z wiedzą dotychczas nabytą, tworzą cykle kompilacyjne, od których trudno oderwać swoje myśli.
 
@@ -70,9 +68,6 @@ A więc: do pokrywki od jogurtu, przymka lub masła roślinnego „Vita” przym
 Statek nie będzie płynął tam, dokąd chcemy, choć niektórym obserwatorom może się tak wydawać. Prawo rządzące tym ruchem wydaje się brzmieć następująco: kierunek szybkiego ruchu wyznacza pole wektorowe gradientów (zmian) gęstości energetycznej przestrzennej gęstości plazmy B. Znaczy to, że stateczek płynie akustycznie w kierunku, gdzie plazma emanowana z obserwatora zawiera w jednostce objętości najwięcej energii. Ponieważ przy źródle, którym jest obserwator, znajduje się zazwyczaj duże gęstości energii, stateczek ma dużą składową ruchu w kierunku obserwatora. Plazma jednak odrywa się od obserwatora, powstają zawirowania, stateczek doznaje ruchów obrotowych, może płynąć w stosunku do nas pod kątem, zupełnie lub nawet dziwnym.
 
 Pewną zdolność sterowania statkiem osiągnie ten, kto posiądzie umiejętność kierunkowej emanacji plazmy. Z doświadczeń autora wynika, że bezowocnym jest szukanie biegunowości w przyciąganiu lub odpychaniu stateczku przez obserwatora. Jeżeli opatrzymy stateczek dodatkami na wzór nabiegunników magnesu, będzie on wykonywał ruch obrotowy — raz w jednym, raz w drugim kierunku. Jest to tak zwana prymitywna postać turbinowego silniczka biologicznego zamieniającego energię plazmy na czystą postać energii mechanicznej, następnie cieplnej.
-
-
-
 
 Jeden z bardzo utalentowanych młodych fizyków, z którym dyskutowałem nad możliwością lepszego poznania przestrzeni fizycznej przez badanie własności plazmy B po demonstracji psychokinezy, zapytał mnie wprost: „Czy nie sądzi Pan, że wiek XXI to era silników biologicznych?”
 
@@ -95,11 +90,10 @@ Te "stateczki" wydają się nam dziś bardzo prymitywnymi detektorami istnienia 
 
 Pozostaje pytanie: czy stać nas na zafundowanie sobie instytutu lub przynajmniej większego zakładu do prowadzenia badań tego typu? Odpowiedź jest tylko jedna: nie stać nas na to, żeby ich nie prowadzić. Jeśli się opóźnimy, z pewnością bogaty przemysł maszynowy wykupi gotową koncepcję lub psychotroniczną licencję z południa. Czy nie lepiej mieć coś własnego?
 
-#CZEGO NALEŻY SIĘ SPODZIEWAĆ PO PSYCHOTRONICE
+# CZEGO NALEŻY SIĘ SPODZIEWAĆ PO PSYCHOTRONICE
 
 UNIWERSALNE ODDZIAŁYWANIA
 Dotychczas zjawiska psychokinezy były obserwowane — ale przez naukowców tłumione. Ostatnie lata przyniosły rehabilitację. Niektórzy jednak wciąż uśmiechają się z politowaniem, gdy ktoś twierdzi, że widział na własne oczy, jak coś samo się poruszyło.
-
 
 Tymczasem, gdy w pomieszczeniu znajduje się człowiek ze specjalnymi predyspozycjami do emanacji dużej lokalnej plazmy B, wszystko się rusza, gdyż plazma ma właściwości wytracania swojej energii na każdym przedmiocie posiadającym stopnie swobody ruchu. Żyrandole więc wahają się, drżą, opadają przedmioty. Plazma „owija się” jak gdyby wokół przedmiotu — będzie go „męczyć”, „okupować”, aż całkowicie wyczerpie swoją energię.
 
@@ -108,11 +102,7 @@ Można obrazowo powiedzieć, że plazma szuka swojej biologicznej śmierci — w
 Badaczy, którzy zechcą zająć się psychotroniką, czeka ogrom pracy naukowej. Muszą być wszechstronnie wykształceni, posiadający wręcz finezyjny talent do eksperymentu, gdyż wkraczamy w zupełnie nieznany świat zjawisk. Trzeba będzie zbadać oddziaływania plazmy B na obwody elektryczne, oddziaływania z fononami w kryształach — i wiele, wiele innych.
 
 [fragment zniszczony / niezrozumiały]
-Autorytatywne w...
-plazma i odprężona masa...?
-...?
-nasycenie... [brakujące wyrazy]
-A dopiero... [kontekst urwany]
+Autorytatywne w... plazma i odprężona masa...? ...? nasycenie... [brakujące wyrazy] A dopiero... [kontekst urwany]
 
 Poruszę tylko jedną bardzo ogólną, jak gdyby uboczną kwestię. Aby w pełni zdać sobie sprawę z przebiegu zjawisk fizykochemicznych i biologicznych w otaczającym nas świecie, mózg nasz jako aparat przetwarzania danych mało ma sformułowań o samym sobie, sobie i swoich własnych obwodach zależnych. Ciągle za mało znamy konstrukcję tego mózgu i jego sposobu działania.
 
@@ -125,5 +115,4 @@ Zagubiliśmy się nieco w działaniach nad osiągnięciem wartości materialnych
 Zadaniem psychotroniki jest pokazanie, że osiągnięcie tego innego świata ukaże się za nią — inny, z pewnością nie tak bardzo nowy świat naszych głębokich immanentnych przeżyć, wzruszeń, uniesień. Są one najwyższą naszą wartością, choć świat wielkiej techniki i technologii, której sam jestem przedstawicielem, nie zawsze chce tego zauważyć — jak ruch małego stateczku po lustrze wody.
 
 
-
-Ver. 1.1 
+Ver. 1.2
