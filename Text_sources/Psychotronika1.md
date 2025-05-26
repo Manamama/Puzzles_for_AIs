@@ -1,12 +1,17 @@
 Autor: Andrzej Cielecki
+[NB: może ten: https://pl.wikipedia.org/wiki/Andrzej_Cielecki]
+
 Date: 1970s
+
 Source: Literatura (newspaper)
+
 Title: 'JAK MAŁY STATECZEK' 
+
 
 # PLAZMA „B” 
 ## JAK MAŁY STATECZEK
 
-> Andrzej Cielecki — pracownik Ośrodka Badawczo-Rozwojowego „Monokryształ” w Warszawie.
+> Andrzej Cielecki — pracownik Ośrodka Badawczo-Rozwojowego Monokryształów w Warszawie.
 > Jest wybitnym konstruktorem aparatury naukowo-badawczej.
 > Wielokrotnie otrzymywał tematy nagrodowe: Sekretarza Naukowego PAN, Przewodniczącego Komitetu Nauki i Techniki, Ministra Przemysłu Maszynowego oraz Rady Naczelnej NOT.
 
@@ -115,4 +120,4 @@ Zagubiliśmy się nieco w działaniach nad osiągnięciem wartości materialnych
 Zadaniem psychotroniki jest pokazanie, że osiągnięcie tego innego świata ukaże się za nią — inny, z pewnością nie tak bardzo nowy świat naszych głębokich immanentnych przeżyć, wzruszeń, uniesień. Są one najwyższą naszą wartością, choć świat wielkiej techniki i technologii, której sam jestem przedstawicielem, nie zawsze chce tego zauważyć — jak ruch małego stateczku po lustrze wody.
 
 
-Ver. 1.2
+Ver. 1.3
