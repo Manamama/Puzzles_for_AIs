@@ -1,0 +1,638 @@
+#. Ver. 1.0
+1
+00:00:00,090 --> 00:00:00,574
+[SPEAKER_00]: Colorado.
+
+2
+00:00:00,950 --> 00:00:01,650
+[SPEAKER_01]: Thank you, Mr. Chairman.
+
+3
+00:00:01,670 --> 00:00:02,951
+[SPEAKER_01][Setting Up Argument]: I'm going to continue down that vein.
+
+4
+00:00:03,371 --> 00:00:11,514
+[SPEAKER_01][Highlighting Non-Compliance]: You have been here sitting today, Director Cheadle, definitively able to dismiss erroneous information and speculation.
+
+5
+00:00:11,814 --> 00:00:17,296
+[SPEAKER_01][Highlighting Non-Compliance][Accusation]: However, you are refusing to answer questions that we now know that you have the information for.
+
+6
+00:00:17,756 --> 00:00:24,498
+[SPEAKER_01][Highlighting Non-Compliance][Accusation]: You are saying that you are wanting to answer questions that the Secret Service has information to.
+
+7
+00:00:24,558 --> 00:00:26,279
+[SPEAKER_01][Demand for Specificity]: Well, ma'am, you are the Secret Service.
+
+8
+00:00:26,599 --> 00:00:27,639
+[SPEAKER_01][Demand for Specificity]: You are the director.
+
+9
+00:00:27,739 --> 00:00:29,960
+[SPEAKER_01][Accusation]: You have said that you are the best for the job.
+
+10
+00:00:30,620 --> 00:00:40,886
+[SPEAKER_01][Highlighting Non-Compliance][Accusation][Demand for Specificity]: So I'm going to ask you some questions now, now knowing that you do have answers from the FBI whom you have been passing the buck to this entire day.
+
+11
+00:00:41,426 --> 00:00:47,349
+[SPEAKER_01][Demand for Specificity]: And I'll start with something that, you know, maybe the FBI doesn't know because it has to do with you personally.
+
+12
+00:00:47,729 --> 00:00:52,332
+[SPEAKER_01][Demand for Specificity]: You said you spoke with President Trump after the assassination attempt.
+
+13
+00:00:52,372 --> 00:00:58,375
+[SPEAKER_01][Accusation][Demand for Specificity]: And I want to know, did you apologize to him directly for nearly having President Trump killed?
+
+14
+00:00:59,636 --> 00:01:00,116
+[SPEAKER_02][Admission]: Yes, I did.
+
+15
+00:01:01,397 --> 00:01:02,217
+[SPEAKER_01][Acknowledgment]: I appreciate that.
+
+16
+00:01:03,037 --> 00:01:07,279
+[SPEAKER_01][Acknowledgment][Highlighting Non-Compliance]: I appreciate that you recognize that this was your failure.
+
+17
+00:01:07,899 --> 00:01:12,320
+[SPEAKER_01][Demand for Specificity]: Now, since the assassination attempt, you are under oath, reminding you.
+
+18
+00:01:13,160 --> 00:01:19,322
+[SPEAKER_01][Demand for Specificity]: Have you communicated with anyone at the White House on an encrypted messaging app like Signal?
+
+19
+00:01:23,223 --> 00:01:23,763
+[SPEAKER_01][Demand for Specificity][Repetition]: Yes or no?
+
+20
+00:01:24,104 --> 00:01:24,784
+[SPEAKER_02][Denial]: No, I have not.
+
+21
+00:01:25,564 --> 00:01:28,825
+[SPEAKER_01][Demand for Specificity]: Are you willing to surrender your personal phone for analysis?
+
+22
+00:01:30,875 --> 00:01:32,096
+[SPEAKER_02][Conditional Compliance]: if I am required to do so.
+
+23
+00:01:33,556 --> 00:01:33,796
+[SPEAKER_01][Acknowledgment]: Okay.
+
+24
+00:01:35,097 --> 00:01:41,900
+[SPEAKER_01][Implied Threat]: I will look into making that request because I would like to see your personal phone to see if you're communicating over encrypted messaging apps.
+
+25
+00:01:42,140 --> 00:01:50,283
+[SPEAKER_01][Demand for Specificity]: Have you ever turned down enhanced security requests from Donald Trump's detail, his special agent in charge, Sean Curran?
+
+26
+00:01:50,323 --> 00:01:52,504
+[SPEAKER_01][Demand for Specificity][Repetition]: Have you ever turned that down?
+
+27
+00:01:53,264 --> 00:01:54,045
+[SPEAKER_02][Denial]: No, I have not.
+
+28
+00:01:55,065 --> 00:01:59,467
+[SPEAKER_01][Demand for Specificity]: Have there been requests, has your team has a secret service?
+
+29
+00:02:00,543 --> 00:02:01,584
+[SPEAKER_01][Clarification]: Maybe not you personally.
+
+30
+00:02:03,205 --> 00:02:07,208
+[SPEAKER_02][Deflection]: I believe, as I mentioned earlier, there are times when requests are made for assets.
+
+31
+00:02:07,269 --> 00:02:08,049
+[SPEAKER_01][Accusation]: And you have denied them.
+
+32
+00:02:08,089 --> 00:02:09,090
+[SPEAKER_01][Accusation][Repetition]: They have been denied.
+
+33A
+00:02:09,110 --> 00:02:14,575
+[SPEAKER_02][Deflection]: And a denial doesn't necessarily mean... 
+
+33B
+00:02:13,110 --> 00:02:14,575
+[SPEAKER_01][Demand for Specificity][Interruption]: Has the Trump campaign made requests for additional assets that have been denied?
+
+34
+00:02:15,315 --> 00:02:17,097
+[SPEAKER_02][Deflection]: Denial doesn't mean vulnerability.
+
+35
+00:02:18,177 --> 00:02:21,160
+[SPEAKER_01][Demand for Specificity]: Have there been additional requests for enhanced security at Mar-a-Lago?
+
+36
+00:02:23,222 --> 00:02:25,624
+[SPEAKER_02][Deflection]: We have made a number of enhancements to security.
+
+37
+00:02:25,664 --> 00:02:28,526
+[SPEAKER_01][Fact Presentation]: You confirmed that there were bomb-sniffing dogs that were provided.
+
+38
+00:02:29,201 --> 00:02:35,263
+[SPEAKER_01][Accusation]: You failed to confirm if there were aerial security surveillance assets that were provided.
+
+39
+00:02:35,523 --> 00:02:36,203
+[SPEAKER_01][Demand for Specificity]: So yes or no?
+
+40
+00:02:36,703 --> 00:02:37,423
+[SPEAKER_01][Demand for Specificity][Repetition]: Was that provided?
+
+41
+00:02:39,344 --> 00:02:39,644
+[SPEAKER_02][Clarification]: At the rally?
+
+42
+00:02:39,664 --> 00:02:40,624
+[SPEAKER_01][Clarification]: At the rally, yes ma'am.
+
+43
+00:02:41,424 --> 00:02:43,645
+[SPEAKER_02]: We had Overwatch provided at the rally.
+
+44
+00:02:44,625 --> 00:02:49,887
+[SPEAKER_01][Fact Presentation]: You've confirmed that the assassin was identified as suspicious 57 minutes prior to the shooting.
+
+45
+00:02:50,527 --> 00:02:54,968
+[SPEAKER_01][Demand for Specificity]: Was the suspicious individual ever approached by an agent?
+
+46
+00:02:58,482 --> 00:02:59,963
+[SPEAKER_01][Demand for Specificity][Repetition]: Was any contact ever made with him?
+
+47
+00:03:00,863 --> 00:03:01,664
+[SPEAKER_02][Stonewalling]: Not to my knowledge.
+
+80
+00:05:04,625 --> 00:05:09,609
+[SPEAKER_01][Demand for Specificity]: Will you be able to tell us if he communicated with other agents on what he was seeing through his sites?
+
+81
+00:05:11,270 --> 00:05:13,012
+[SPEAKER_02][Deflection]: Once I have that information, absolutely.
+
+82
+00:05:13,592 --> 00:05:21,799
+[SPEAKER_01][Accusation][Demand for Specificity]: Because we need to know why he waited for multiple rounds to be fired at President Trump before the threat was neutralized.
+
+83
+00:05:21,839 --> 00:05:25,602
+[SPEAKER_01][Demand for Specificity]: We need to know if he was given an order to hold fire.
+
+84
+00:05:26,420 --> 00:05:32,829
+[SPEAKER_01][Fact Presentation]: Now, you've excused the roof of being unmanned because of the slope of the roof.
+
+85
+00:05:33,190 --> 00:05:39,920
+[SPEAKER_01][Demand for Specificity]: Do you continue to assert the slope of the roof as a credible reason for leaving this position undefended?
+
+86
+00:05:42,182 --> 00:05:46,125
+[SPEAKER_02][Clarification]: First, I'll go back and correct that there was no order to hold fire.
+
+87
+00:05:46,785 --> 00:05:53,490
+[SPEAKER_02][Deflection]: Our agents and officers have the ability to neutralize a threat at the time that they see it.
+
+88
+00:05:53,590 --> 00:06:01,455
+[SPEAKER_01][Accusation][Highlighting Non-Compliance]: I'm sorry, you don't know the communication that was taking place or how long he had admitted sites because you haven't spoke to him, but you do know that there was no order to hold fire.
+
+89
+00:06:01,755 --> 00:06:04,097
+[SPEAKER_02][Deflection]: I can tell you the way that our personnel are trained.
+
+90
+00:06:04,677 --> 00:06:11,081
+[SPEAKER_02][Deflection]: They are trained on the use of force scale that when they see a threat, they are authorized to neutralize that threat.
+
+91
+00:06:12,262 --> 00:06:13,724
+[SPEAKER_02][Deflection]: They don't have to ask for permission.
+
+92
+00:06:14,625 --> 00:06:18,008
+[SPEAKER_01][Accusation][Repetition]: You excuse the roof being unmanned because of the slope.
+
+93
+00:06:18,228 --> 00:06:19,590
+[SPEAKER_01][Demand for Specificity]: Do you stand by that assertion?
+
+94
+00:06:20,711 --> 00:06:26,017
+[SPEAKER_02][Deflection]: The roof was not covered with an individual on it because there was overwatch provided.
+
+95
+00:06:27,398 --> 00:06:28,239
+[SPEAKER_01][Sarcasm/Irony]: Apparently not.
+
+96
+00:06:28,679 --> 00:06:30,680
+[SPEAKER_01][Accusation]: No, there was no Overwatch provided.
+
+97
+00:06:30,700 --> 00:06:32,481
+[SPEAKER_01][Accusation]: This is very evident.
+
+98
+00:06:32,661 --> 00:06:34,042
+[SPEAKER_01][Fact Presentation]: President Trump was shot.
+
+99
+00:06:34,162 --> 00:06:35,163
+[SPEAKER_01][Fact Presentation]: A man died.
+
+100
+00:06:35,543 --> 00:06:37,544
+[SPEAKER_01][Accusation]: There was no oversight provided.
+
+101
+00:06:38,185 --> 00:06:50,873
+[SPEAKER_01][Frustration][Accusation]: I find this rather maddening, especially now knowing that you do have answers from the FBI, who you have been passing the buck to this entire hearing, not answering a congressional hearing.
+
+102
+00:06:50,993 --> 00:06:56,216
+[SPEAKER_01][Frustration][Accusation]: Members of Congress, while you are under oath and under a subpoena, I find it maddening that the director
+
+103
+00:06:57,458 --> 00:07:03,161
+[SPEAKER_01][Accusation]: that our country has come centimeters away from oblivion under your watch.
+
+104
+00:07:03,562 --> 00:07:04,482
+[SPEAKER_01][Accusation]: You have answers.
+
+105
+00:07:04,522 --> 00:07:10,705
+[SPEAKER_01][Accusation][Highlighting Non-Compliance]: You are refusing to give those to us, directing us to the FBI.
+
+106
+00:07:11,326 --> 00:07:14,047
+[SPEAKER_01][Frustration]: And this entire thing is a waste of time.
+
+107
+00:07:14,467 --> 00:07:22,512
+[SPEAKER_01][Accusation]: You are responsible for the loss of a life and the shooting that took place on President Trump.
+
+108
+00:07:23,342 --> 00:07:24,342
+[SPEAKER_01][Demand for Specificity]: You do need to resign.
+
+109
+00:07:24,362 --> 00:07:25,383
+[SPEAKER_01][Appeal to Authority]: This is bipartisan.
+
+110
+00:07:25,763 --> 00:07:26,783
+[SPEAKER_01][Demand for Specificity]: You need to be fired.
+
+111
+00:07:27,164 --> 00:07:28,504
+[SPEAKER_01][Demand for Specificity]: You do not need to hold this position.
+
+112
+00:07:28,544 --> 00:07:29,945
+[SPEAKER_01][Accusation]: You are not the best for this job.
+
+113
+00:07:30,325 --> 00:07:39,248
+[SPEAKER_01][Implied Threat]: I am over my time, but I cannot tolerate your watch any longer, and I'm going to continue to call daily for you to be removed from your position, ma'am.
+
+114
+00:07:39,929 --> 00:07:41,769
+[SPEAKER_00]: Chair recognizes Mr. Fryer from South Carolina.
+
+115
+00:07:42,089 --> 00:07:42,870
+[SPEAKER_04]: Thank you, Mr. Chairman.
+
+
+
+
+
+
+
+Claude AI comment:
+
+Based on the transcript, I can create the following personas for SPEAKER_01 and SPEAKER_02:
+SPEAKER_01 (Congressional Questioner):
+Role: Member of Congress conducting an oversight hearing
+Demeanor: Aggressive, frustrated, and accusatory
+Style: Uses rapid-fire questioning and rhetorical techniques to pressure the witness
+Objectives: Seeking accountability for security failures, pushing for resignation
+Key Traits:
+Persistent in demanding specific answers
+Frequently expresses frustration and disbelief
+Uses emotional appeals and accusations to make points
+Demonstrates detailed knowledge of the incident in question
+Appears skeptical of the witness's responses
+Shows strong concern for national security and presidential protection
+SPEAKER_02 (Director Cheadle):
+Role: Director of the Secret Service
+Demeanor: Defensive, cautious, and often evasive
+Style: Tends to deflect, provide partial information, or claim lack of knowledge
+Objectives: Defending the agency's actions, avoiding personal culpability
+Key Traits:
+Often responds with "I don't have that information" or similar phrases
+Attempts to explain agency protocols and procedures
+Careful to avoid definitive statements on sensitive topics
+Occasionally corrects or clarifies previous statements
+Seems to struggle with balancing transparency and protecting ongoing investigations
+Maintains a professional tone despite increasing pressure from the questioner
+
+
+
+
+[DA: Establishment of formal hearing context]
+[SAT: Declarative] [ERA: Neutral]
+[DA: Acknowledgment of authority]
+[SAT: Expressive] [ERA: Respectful tone]
+2-3. [SPEAKER_01]: Thank you, Mr. Chairman. I'm going to continue down that vein.
+[DA: Establishing power dynamic, setting up contrast]
+[SAT: Assertive] [ERA: Building tension]
+4-5. [SPEAKER_01]: You have been here sitting today, Director Cheadle, definitively able to dismiss erroneous information and speculation. However, you are refusing to answer questions that we now know that you have the information for.
+[DA: Challenging authority, pointing out inconsistency]
+[SAT: Assertive] [ERA: Frustration, accusatory]
+6-8. [SPEAKER_01]: You are saying that you are wanting to answer questions that the Secret Service has information to. Well, ma'am, you are the Secret Service. You are the director.
+[DA: Reinforcing power dynamic, setting up expectation]
+[SAT: Assertive] [ERA: Implied criticism]
+9. [SPEAKER_01]: You have said that you are the best for the job.
+[DA: Shifting power dynamic, asserting control]
+[SAT: Commissive, Directive] [ERA: Confrontational]
+10-11. [SPEAKER_01]: So I'm going to ask you some questions now, now knowing that you do have answers from the FBI whom you have been passing the buck to this entire day. And I'll start with something that, you know, maybe the FBI doesn't know because it has to do with you personally.
+[DA: Setting up for key question]
+[SAT: Assertive] [ERA: Building tension]
+12. [SPEAKER_01]: You said you spoke with President Trump after the assassination attempt.
+[DA: Direct confrontation, implying culpability]
+[SAT: Directive] [ERA: Accusatory, emotionally charged]
+13. [SPEAKER_01]: And I want to know, did you apologize to him directly for nearly having President Trump killed?
+[DA: Concise admission]
+[SAT: Assertive] [ERA: Neutral, possibly resigned]
+14. [SPEAKER_02]: Yes, I did.
+[DA: Acknowledging response, maintaining control]
+[SAT: Expressive] [ERA: Feigned appreciation, underlying criticism]
+15-16. [SPEAKER_01]: I appreciate that. I appreciate that you recognize that this was your failure.
+Notes:
+The discourse analysis reveals a clear power dynamic where SPEAKER_01 is asserting dominance and control over the conversation, while also implying SPEAKER_02's culpability.
+The speech acts progress from establishing context to direct confrontation, with a mix of assertives and directives designed to corner SPEAKER_02.
+Emotionally, SPEAKER_01 builds tension and uses accusatory language, culminating in a highly charged question about apologizing for "nearly having President Trump killed."
+SPEAKER_02's brief response suggests a defensive posture, possibly trying to minimize further confrontation.
+SPEAKER_01's final "appreciation" appears insincere and serves to reinforce the implication of SPEAKER_02's failure.
+This analysis reveals a highly confrontational and emotionally charged exchange, with SPEAKER_01 using various rhetorical strategies to assert dominance and imply SPEAKER_02's incompetence or negligence.
+
+[DA: Reinforcing legal context, implying threat]
+[SAT: Assertive, Directive] [ERA: Intimidating]
+17. [SPEAKER_01]: Now, since the assassination attempt, you are under oath, reminding you.
+[DA: Probing for potential misconduct]
+[SAT: Directive] [ERA: Suspicious, accusatory]
+18-19. [SPEAKER_01]: Have you communicated with anyone at the White House on an encrypted messaging app like Signal? Yes or no?
+[DA: Direct response to maintain credibility]
+[SAT: Assertive] [ERA: Neutral, defensive]
+20. [SPEAKER_02]: No, I have not.
+[DA: Escalating probe, implying distrust]
+[SAT: Directive] [ERA: Challenging, confrontational]
+21. [SPEAKER_01]: Are you willing to surrender your personal phone for analysis?
+[DA: Cautious compliance, maintaining boundaries]
+[SAT: Commissive, conditional] [ERA: Reluctant, guarded]
+22. [SPEAKER_02]: if I am required to do so.
+[DA: Acknowledging response, maintaining pressure]
+[SAT: Expressive] [ERA: Neutral, potentially sarcastic]
+23-24. [SPEAKER_01]: Okay. I will look into making that request because I would like to see your personal phone to see if you're communicating over encrypted messaging apps.
+[DA: Shifting focus, probing for negligence]
+[SAT: Directive] [ERA: Accusatory, building tension]
+25-26. [SPEAKER_01]: Have you ever turned down enhanced security requests from Donald Trump's detail, his special agent in charge, Sean Curran? Have you ever turned that down?
+[DA: Direct denial]
+[SAT: Assertive] [ERA: Defensive]
+27. [SPEAKER_02]: No, I have not.
+[DA: Probing further, allowing for nuance]
+[SAT: Directive] [ERA: Persistent, slightly softening]
+28-29. [SPEAKER_01]: Have there been requests, has your team has a secret service? Maybe not you personally.
+[DA: Cautious admission, attempting to contextualize]
+[SAT: Assertive] [ERA: Evasive, diplomatic]
+30. [SPEAKER_02]: I believe, as I mentioned earlier, there are times when requests are made for assets.
+[DA: Seizing on admission, asserting interpretation]
+[SAT: Assertive] [ERA: Accusatory, triumphant]
+31-32. [SPEAKER_01]: And you have denied them. They have been denied.
+[DA: Attempting to clarify, interrupted]
+[SAT: Assertive (incomplete)] [ERA: Defensive, frustrated]
+33A. [SPEAKER_02]: And a denial doesn't necessarily mean...
+[DA: Interrupting, redirecting to specific concern]
+[SAT: Directive] [ERA: Aggressive, impatient]
+33B. [SPEAKER_01]: Has the Trump campaign made requests for additional assets that have been denied?
+[DA: Attempting to reframe the narrative]
+[SAT: Assertive] [ERA: Defensive, rationalizing]
+34. [SPEAKER_02]: Denial doesn't mean vulnerability.
+[DA: Pressing on specific instance]
+[SAT: Directive] [ERA: Persistent, focused]
+35. [SPEAKER_01]: Have there been additional requests for enhanced security at Mar-a-Lago?
+[DA: Providing partial information, attempting to show compliance]
+[SAT: Assertive] [ERA: Cautious, slightly cooperative]
+36. [SPEAKER_02]: We have made a number of enhancements to security.
+[DA: Confirming specific detail, setting up for contrast]
+[SAT: Assertive] [ERA: Building tension]
+37. [SPEAKER_01]: You confirmed that there were bomb-sniffing dogs that were provided.
+Notes:
+The discourse continues to be dominated by SPEAKER_01, who maintains an aggressive, probing stance, while SPEAKER_02 remains defensive and cautious.
+SPEAKER_01 uses a series of directive speech acts (questions) to corner SPEAKER_02, often following up denials with more specific or related questions.
+Emotionally, SPEAKER_01 maintains an accusatory and suspicious tone, while SPEAKER_02 attempts to remain neutral but appears increasingly defensive.
+The interruption in 33A/B highlights the power dynamic, with SPEAKER_01 asserting control over the narrative.
+There's a clear strategy by SPEAKER_01 to build a case of negligence or misconduct, moving from personal communications to security decisions.
+SPEAKER_02's responses become more nuanced as the questioning progresses, attempting to provide context without admitting fault.
+This segment reveals an intensifying interrogation, with SPEAKER_01 using various tactics to undermine SPEAKER_02's credibility and imply negligence in security matters.
+
+[DA: Highlighting perceived omission, setting up for confrontation]
+[SAT: Assertive, Directive] [ERA: Accusatory, demanding]
+38-40. [SPEAKER_01]: You failed to confirm if there were aerial security surveillance assets that were provided. So yes or no? Was that provided?
+[DA: Seeking clarification, potentially buying time]
+[SAT: Directive] [ERA: Cautious, slightly evasive]
+41. [SPEAKER_02]: At the rally?
+[DA: Confirming context, maintaining pressure]
+[SAT: Assertive] [ERA: Impatient, slightly condescending]
+42. [SPEAKER_01]: At the rally, yes ma'am.
+[DA: Providing requested information, attempting to demonstrate competence]
+[SAT: Assertive] [ERA: Professional, slightly defensive]
+43. [SPEAKER_02]: We had Overwatch provided at the rally.
+[DA: Establishing known facts, setting up for criticism]
+[SAT: Assertive, Directive] [ERA: Building tension, accusatory]
+44-46. [SPEAKER_01]: You've confirmed that the assassin was identified as suspicious 57 minutes prior to the shooting. Was the suspicious individual ever approached by an agent? Was any contact ever made with him?
+[DA: Admitting lack of knowledge, potentially avoiding responsibility]
+[SAT: Assertive] [ERA: Defensive, cautious]
+47. [SPEAKER_02]: Not to my knowledge.
+[DA: Challenging competence, implying negligence]
+[SAT: Directive] [ERA: Critical, disbelieving]
+48. [SPEAKER_01]: Is that the standard protocol for someone who is identified as suspicious?
+[DA: Attempting to explain procedure, maintain professional image]
+[SAT: Assertive] [ERA: Neutral, slightly defensive]
+49. [SPEAKER_02]: The protocol would be to locate the individual.
+[DA: Pressing on perceived inconsistency]
+[SAT: Directive] [ERA: Accusatory, confrontational]
+50. [SPEAKER_01]: And you said that he was located two to five times approximately?
+[DA: Correcting misinterpretation, attempting to clarify]
+[SAT: Assertive] [ERA: Defensive, slightly frustrated]
+51. [SPEAKER_02]: No, I said that the information was passed potentially somewhere between two to five times.
+[DA: Pressing further, implying incompetence]
+[SAT: Directive] [ERA: Incredulous, accusatory]
+52-53. [SPEAKER_01]: And he was never located by an agent?
+[SPEAKER_02]: To my knowledge, that individual was not located by an agent.
+[DA: Presenting contrasting information, building case for negligence]
+[SAT: Assertive] [ERA: Disbelieving, critical]
+54-56. [SPEAKER_01]: We have we have dozens of rally goers who have identified him and not one agent on the ground. There are many, many, many agents on the ground, local law enforcement, Secret Service. No one was able to identify him and have sites on and see him.
+[DA: Reiterating previous statement, maintaining defensive stance]
+[SAT: Assertive] [ERA: Defensive, slightly resigned]
+57-58. [SPEAKER_02]: What I'm saying is that the agents that were on the ground at the time, I have no knowledge that they were able to interview him or locate him. Thank you.
+[DA: Introducing new information, probing for confirmation]
+[SAT: Directive] [ERA: Probing, slightly accusatory]
+59. [SPEAKER_01]: Was there a local law enforcement officer who approached the roof and saw the shooter and saw that he was present on the roof?
+[DA: Confirming information, maintaining caution]
+[SAT: Assertive] [ERA: Neutral, slightly evasive]
+60. [SPEAKER_02]: That is the information that has been shared with me.
+[DA: Probing for personal involvement, implying negligence]
+[SAT: Directive] [ERA: Critical, demanding]
+61-63. [SPEAKER_01]: Have you spoke to that local law enforcement officer? Are you going to?
+[DA: Deflecting responsibility, citing ongoing investigation]
+[SAT: Assertive] [ERA: Defensive, slightly evasive]
+64. [SPEAKER_02]: It is part of a criminal investigation that the FBI is interviewing those individuals.
+Notes:
+The discourse continues to be dominated by SPEAKER_01's aggressive questioning, with SPEAKER_02 maintaining a defensive posture.
+SPEAKER_01 uses a combination of assertive statements and directive questions to build a case of incompetence or negligence against SPEAKER_02 and the Secret Service.
+Emotionally, SPEAKER_01 maintains an accusatory and disbelieving tone, while SPEAKER_02 becomes increasingly defensive and cautious.
+There's a clear strategy by SPEAKER_01 to highlight discrepancies between public knowledge and official actions, implying a failure in security protocols.
+SPEAKER_02's responses become more guarded as the questioning progresses, often citing lack of personal knowledge or deferring to ongoing investigations.
+The exchange reveals a tension between the need for transparency in a congressional hearing and the constraints of an ongoing criminal investigation.
+This segment shows an intensifying interrogation, with SPEAKER_01 using various rhetorical strategies to undermine SPEAKER_02's credibility and imply systemic failures in security measures.
+
+[DA: Probing for potential oversight or negligence]
+[SAT: Directive] [ERA: Suspicious, accusatory]
+65. [SPEAKER_01]: Were agents stationed on the water tower?
+[DA: Direct response, maintaining brevity]
+[SAT: Assertive] [ERA: Neutral]
+66. [SPEAKER_02]: No.
+[DA: Seeking justification, implying poor planning]
+[SAT: Directive] [ERA: Critical, demanding]
+67. [SPEAKER_01]: Why?
+[DA: Explaining standard procedures, maintaining professionalism]
+[SAT: Assertive] [ERA: Neutral, slightly defensive]
+68. [SPEAKER_02]: That would not be something that would be included in a security plan.
+[DA: Introducing new line of questioning, implying suspicious activity]
+[SAT: Directive] [ERA: Probing, accusatory]
+69-70. [SPEAKER_01]: Has the man who is reported to have been present wearing a gray suit who allegedly requested a photo of the dead body of the assassin on top of the AGR roof been identified?
+[DA: Admitting lack of information, maintaining defensive stance]
+[SAT: Assertive] [ERA: Neutral, slightly evasive]
+71. [SPEAKER_02]: I don't have that information.
+[DA: Probing further, seeking confirmation]
+[SAT: Directive] [ERA: Suspicious, accusatory]
+72. [SPEAKER_01]: Is that something that you've heard of?
+[DA: Denying knowledge, maintaining defensive stance]
+[SAT: Assertive] [ERA: Neutral, slightly evasive]
+73. [SPEAKER_02]: No.
+[DA: Shifting focus, probing for involvement of other agencies]
+[SAT: Directive] [ERA: Probing, accusatory]
+74. [SPEAKER_01]: Were ATF agents present at the rally?
+[DA: Seeking clarification, potentially buying time]
+[SAT: Directive] [ERA: Neutral, slightly evasive]
+75. [SPEAKER_02]: To attend or to work?
+[DA: Clarifying question, maintaining pressure]
+[SAT: Assertive] [ERA: Impatient, slightly condescending]
+76. [SPEAKER_01]: To work.
+[DA: Admitting lack of knowledge, maintaining defensive stance]
+[SAT: Assertive] [ERA: Neutral, slightly evasive]
+77. [SPEAKER_02]: Not to my knowledge.
+[DA: Probing for specific operational details, implying negligence]
+[SAT: Directive] [ERA: Suspicious, accusatory]
+78. [SPEAKER_01]: How long did the counter sniper have crooks in his sights before the shooter opened fire on President Trump?
+[DA: Admitting lack of specific information, maintaining defensive stance]
+[SAT: Assertive] [ERA: Neutral, slightly evasive]
+79. [SPEAKER_02]: I don't have that specific timeline.
+[DA: Probing for communication details, implying lack of coordination]
+[SAT: Directive] [ERA: Suspicious, accusatory]
+80. [SPEAKER_01]: Will you be able to tell us if he communicated with other agents on what he was seeing through his sites?
+[DA: Providing conditional assurance, maintaining professionalism]
+[SAT: Commissive, conditional] [ERA: Neutral, slightly cooperative]
+81. [SPEAKER_02]: Once I have that information, absolutely.
+[DA: Establishing need for detailed information, implying negligence]
+[SAT: Assertive] [ERA: Suspicious, accusatory]
+82-83. [SPEAKER_01]: Because we need to know why he waited for multiple rounds to be fired at President Trump before the threat was neutralized. We need to know if he was given an order to hold fire.
+[DA: Introducing new line of questioning, challenging previous justification]
+[SAT: Directive] [ERA: Critical, confrontational]
+84-85. [SPEAKER_01]: Now, you've excused the roof of being unmanned because of the slope of the roof. Do you continue to assert the slope of the roof as a credible reason for leaving this position undefended?
+[DA: Correcting previous statement, maintaining defensive stance]
+[SAT: Assertive] [ERA: Neutral, slightly defensive]
+86-87. [SPEAKER_02]: First, I'll go back and correct that there was no order to hold fire. Our agents and officers have the ability to neutralize a threat at the time that they see it.
+[DA: Challenging consistency, implying lack of knowledge]
+[SAT: Assertive] [ERA: Critical, confrontational]
+88. [SPEAKER_01]: I'm sorry, you don't know the communication that was taking place or how long he had admitted sites because you haven't spoke to him, but you do know that there was no order to hold fire.
+Notes:
+The discourse continues with SPEAKER_01 maintaining an aggressive and probing stance, while SPEAKER_02 remains defensive and cautious.
+SPEAKER_01 uses a combination of directive questions and assertive statements to challenge SPEAKER_02's responses and imply negligence or incompetence.
+Emotionally, SPEAKER_01 maintains a suspicious and accusatory tone, while SPEAKER_02 attempts to remain neutral but appears increasingly defensive.
+The exchange reveals a strategy by SPEAKER_01 to highlight inconsistencies and gaps in SPEAKER_02's responses, suggesting a failure in security protocols.
+SPEAKER_02's responses become more guarded and conditional as the questioning progresses, often citing lack of specific knowledge or deferring to standard procedures.
+The interaction underscores the tension between the need for transparency in a congressional hearing and the constraints of operational security and ongoing investigations.
+
+
+[DA: Attempting to explain procedures, maintaining professional stance]
+[SAT: Assertive] [ERA: Neutral, slightly defensive]
+89-91. [SPEAKER_02]: I can tell you the way that our personnel are trained. They are trained on the use of force scale that when they see a threat, they are authorized to neutralize that threat. They don't have to ask for permission.
+[DA: Returning to previous point, challenging explanation]
+[SAT: Assertive, Directive] [ERA: Critical, confrontational]
+92-93. [SPEAKER_01]: You excuse the roof being unmanned because of the slope. Do you stand by that assertion?
+[DA: Clarifying previous statement, attempting to justify]
+[SAT: Assertive] [ERA: Defensive, slightly evasive]
+94. [SPEAKER_02]: The roof was not covered with an individual on it because there was overwatch provided.
+[DA: Rejecting explanation, asserting failure]
+[SAT: Assertive] [ERA: Sarcastic, accusatory]
+95-100. [SPEAKER_01]: Apparently not. No, there was no Overwatch provided. This is very evident. President Trump was shot. A man died. There was no oversight provided.
+[DA: Expressing frustration, accusing of non-cooperation]
+[SAT: Expressive, Assertive] [ERA: Angry, accusatory]
+101-106. [SPEAKER_01]: I find this rather maddening, especially now knowing that you do have answers from the FBI, who you have been passing the buck to this entire hearing, not answering a congressional hearing. Members of Congress, while you are under oath and under a subpoena, I find it maddening that the director that our country has come centimeters away from oblivion under your watch. You have answers. You are refusing to give those to us, directing us to the FBI. And this entire thing is a waste of time.
+[DA: Assigning blame, demanding accountability]
+[SAT: Assertive, Directive] [ERA: Accusatory, outraged]
+107-113. [SPEAKER_01]: You are responsible for the loss of a life and the shooting that took place on President Trump. You do need to resign. This is bipartisan. You need to be fired. You do not need to hold this position. You are not the best for this job. I am over my time, but I cannot tolerate your watch any longer, and I'm going to continue to call daily for you to be removed from your position, ma'am.
+[DA: Formal transition, maintaining order]
+[SAT: Declarative] [ERA: Neutral, formal]
+114. [SPEAKER_00]: Chair recognizes Mr. Fryer from South Carolina.
+[DA: Formal acknowledgment]
+[SAT: Expressive] [ERA: Neutral, formal]
+115. [SPEAKER_04]: Thank you, Mr. Chairman.
+Notes:
+This segment marks a dramatic escalation in SPEAKER_01's rhetoric and emotional intensity.
+SPEAKER_02's attempts to explain procedures are quickly overshadowed by SPEAKER_01's forceful accusations and expressions of outrage.
+The discourse shifts from a question-and-answer format to a more unilateral condemnation by SPEAKER_01.
+Emotionally, SPEAKER_01 moves from frustration and suspicion to outright anger and demands for resignation.
+The speech acts become increasingly assertive and directive, with SPEAKER_01 making definitive statements about SPEAKER_02's competence and fitness for the position.
+The sudden shift to formal proceedings at the end (SPEAKER_00 and SPEAKER_04) highlights the contrast between the heated exchange and the structured nature of the hearing.
+This conclusion suggests a complete breakdown in the dialogue, with SPEAKER_01 having lost confidence in SPEAKER_02's ability or willingness to provide satisfactory answers.
+
+
+
+
+
