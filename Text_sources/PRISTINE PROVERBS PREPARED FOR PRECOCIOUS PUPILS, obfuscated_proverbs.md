@@ -1,5 +1,8 @@
 Source: PRISTINE PROVERBS PREPARED FOR PRECOCIOUS PUPILS
-https://royallancersmuseum.co.uk/archive/photograph-albums/912l-2124-1/56055-item-0025?
+https://royallancersmuseum.co.uk/archive/photograph-albums/912l-2124-1/56055-item-0025
+Punch (“Pristine Proverbs Prepared for Precocious Pupils,” Jan. 25, 1873)
+
+
 
 This text is a high-satire Victorian-style parody of moralistic instruction, dressing well-known English proverbs in overwrought Latinate diction and faux-scholarly tone. Each stanza rephrases a common proverb in absurdly elaborate and archaic language — the pomp is the point.
 
