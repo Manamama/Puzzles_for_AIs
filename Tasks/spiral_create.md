@@ -97,10 +97,7 @@ Final arm may be incomplete
 
 ```
 
-
-
-```
-
+ 
 
 
 # Almost ideal code expected: 
