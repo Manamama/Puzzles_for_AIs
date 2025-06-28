@@ -1,4 +1,4 @@
-# Fixed version 2.1 aka C, manually fixed (one of the solutions), for the record, see 
+# Fixed version 2.1 aka C, manually fixed (one of the solutions), for the record, see https://github.com/google-gemini/gemini-cli/discussions/2386#discussioncomment-13604553 for some context
 
 def create_grid(n):
     grid = [["⬜" for _ in range(n)] for _ in range(n)]
