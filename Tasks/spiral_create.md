@@ -1,9 +1,8 @@
 #ver. 5.4 (Deepseek AI's for other AIs, partial, with two ready solutions, which are not given to AIs, of course) 
 
 # Organic Spiral puzzle
-```
-# Organic Spiral puzzle
-Objective:
+
+## Objective:
 
 Create an n×n grid where a spiral grows outward from the center, painting approximately half the tiles red (🟥) while showing all intermediate states. The spiral should:
 Begin at the exact center tile (already red)
@@ -12,7 +11,9 @@ Show each distinct growth phase
 Naturally preserve whitespace by terminating after filling ~50% of the grid
 
  
-For example, for n=5, the target image should be: 
+For example, for n=5, the target image should be:
+
+
 ```
 
 🟥🟥🟥🟥🟥
@@ -55,12 +56,12 @@ The code should start by placing a dot in the middle of the matrix and then show
 🟥 🟥 🟥 🟥 ⬜
 
 ```
+
+
 Notice the white spaces retained by that algorithm: there is a red spiral and white spiral at the end. 
 
 
-
-
-Key Mechanics:
+## Key Mechanics:
 Initialization:
 Start with empty n×n grid (n odd)
 Place first red tile at center
@@ -87,6 +88,14 @@ Separate states with blank lines
 Termination:
 Stop when approximately half the tiles are red (n²/2 + 1)
 Final arm may be incomplete
+
+
+
+```
+
+
+
+```
 
 
 
