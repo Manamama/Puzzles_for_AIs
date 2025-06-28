@@ -94,8 +94,8 @@ Final arm may be incomplete
 
 
 ## Almost ideal code expected: 
-
-#ver. 2.2, somehow unusual for AIs:
+```
+#ver. 2.2, somehow unusual for many AIs:
 
 def red_spiral(n):
     grid = [['⬜'] * n for _ in range(n)]
@@ -135,5 +135,5 @@ def red_spiral(n):
         direction = (direction + 1) % 4
 
 red_spiral(5)
-
+```
 
