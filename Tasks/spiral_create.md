@@ -1,5 +1,5 @@
 ## Spiral puzzle
-#ver. 5.1 (Deepseek AI's for other AIs, partial, with solution) 
+#ver. 5.2 (Deepseek AI's for other AIs, partial, with ready solution, which is not given to AIs of course) 
 
 Organic Spiral Puzzle
 Objective:
@@ -95,8 +95,7 @@ Final arm may be incomplete
 
 ## Almost ideal code expected: 
 
-
-# ver. 2.2
+#ver. 2.2, somehow unusual for AIs:
 def red_spiral(n):
     grid = [['⬜'] * n for _ in range(n)]
     x = y = n // 2  # Start from the center
