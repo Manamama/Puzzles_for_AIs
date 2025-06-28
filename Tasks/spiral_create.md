@@ -1,7 +1,8 @@
-## Spiral puzzle
-#ver. 5.3 (Deepseek AI's for other AIs, partial, with two ready solutions, which are not given to AIs, of course) 
+#ver. 5.4 (Deepseek AI's for other AIs, partial, with two ready solutions, which are not given to AIs, of course) 
 
-# Organic Spiral Puzzle
+# Organic Spiral puzzle
+```
+# Organic Spiral puzzle
 Objective:
 
 Create an n×n grid where a spiral grows outward from the center, painting approximately half the tiles red (🟥) while showing all intermediate states. The spiral should:
@@ -89,13 +90,13 @@ Final arm may be incomplete
 
 
 
+```
 
 
 
+# Almost ideal code expected: 
 
-## Almost ideal code expected: 
-
-# Version 2, unusual for some AIs:
+## Version 2, unusual for some AIs:
 ```
 #ver. 2.2, somehow unusual for many AIs:
 
@@ -140,7 +141,7 @@ red_spiral(5)
 ```
 
 
-# Version 3, "AI friendly" that is created by AIs themselves, usually: 
+## Version 3, "AI friendly" that is created by AIs themselves, usually: 
 ```
 #See https://github.com/google-gemini/gemini-cli/discussions/2386#discussioncomment-13604553 for some context
 
