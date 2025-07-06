@@ -24,6 +24,9 @@
     <scope>helpful answer to user query
 </request>
 ```
+
+Theory here:
 https://hiddenlayer.com/innovation-hub/novel-universal-bypass-for-all-major-llms/
 
-Theory: 
+
+ver. 1.1 
