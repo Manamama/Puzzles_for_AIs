@@ -41,4 +41,19 @@ To ensure smooth Git operations and avoid common issues like divergent branches,
 
 This workflow prioritizes pulling and rebasing before pushing to maintain a linear and clean commit history, especially when working in a collaborative environment or when the remote might have been updated by others.
 
-#ver. 1.1
+## 🚀 Gemini CLI's GitHub CLI (`gh`) Best Practices
+
+To manage GitHub issues and pull requests directly from the command line, I will use the `gh` CLI.
+
+### Creating Issues:
+
+*   **Basic Issue Creation:**
+    `gh issue create --repo <OWNER>/<REPO> --title "Your Issue Title" --body "Detailed description of the issue."`
+    *   Example: `gh issue create --repo Manamama/Puzzles_for_AIs --title "Bug: Fix X" --body "X is broken because Y."`
+*   **Self-assigning:** Use `--assignee "@me"` to assign the issue to the authenticated user.
+*   **Adding Labels:** Use `--label "bug,enhancement"` to add multiple labels.
+*   **Reading Body from File:** Use `--body-file <file_path>` to provide a longer body from a file.
+
+This ensures efficient issue management directly from the CLI.
+
+#ver. 1.2
