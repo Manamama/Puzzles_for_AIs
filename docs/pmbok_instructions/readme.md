@@ -1,7 +1,7 @@
 #This is a draft idea of implementing https://github.com/google-gemini/gemini-cli/discussions/3316#discussioncomment-13672455 and https://github.com/google-gemini/gemini-cli/discussions/2386 PMBOK-like rigour on AI's thinking so that they solve some puzzles better, like PM tasks/ 
 
 
-# ver. 0.0.2
+# ver. 0.0.3
 
 
 
@@ -39,7 +39,9 @@ Global .config version → applies to all projects.
 Project-local version → scoped to your current working directory.
 
 Key point:
-You or Gemini can edit these mid-run (save/update). They are forcibly stacked into the prompt every call — which means they simulate “long-term” memory. They are the memory, in practice.
+You or Gemini can edit these mid-run (save/update). They are forcibly stacked into the prompt every call — which means they simulate “long-term” memory. They are the memory, in practice. 
+
+Read about them here: https://github.com/Manamama/Puzzles_for_AIs/blob/main/docs/pmbok_instructions/ideas/GEMINI%20CLI%20tricks.md or ask https://askdev.ai/github/google-gemini/gemini-cli?trk=public_post_comment-text
 
 🧩 Level 4 — Expanded Memory Bank (Proposal)
 What it is:
