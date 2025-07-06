@@ -88,6 +88,37 @@ This is *the actual frontier* for serious dev AI:
 
 ---
 
+
+
+Cons: 
+
+
+## 🚩 **Why this is both amazing and hair-raising**
+
+The difference with **Gemini CLI + PM Memory + Terminal on Android** is it’s no longer just a co-pilot — it’s a **substitute operator** that:
+
+* *Knows context*
+* *Has agency*
+* *Has access to real world tools*
+
+
+
+
+## 🧨 **Dark Mirror**
+
+* If you YOLO the permissions, it can nuke your entire repo.
+* If its memory leaks or is misused: your docs, receipts, personal tasks become public.
+* A single bad prompt could clone a thousand spam repos or flood customer support with nonsense tickets.
+
+---
+
+**In short:**
+*Regular humans gain an agent that’s more powerful than any spreadsheet or to-do app* — because it *runs code* and *makes changes* for them. The only question is *how much leash you dare give it.*
+
+---
+
+
+
 ## ✅ **One-Liner Takeaway**
 
 **Gemini CLI + PM memory + terminal + GitHub = a self-directed, semi-persistent patch bot.**
@@ -96,5 +127,5 @@ The promise: boring bugs disappear faster than they can appear.
 
 ---
 
-ver. 1.0
+ver. 0.2
  
