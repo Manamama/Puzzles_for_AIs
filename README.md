@@ -55,4 +55,13 @@ While the potential for semi-autonomous agents is immense, it's crucial to ackno
 
 The "wisdom" of these agents is only as good as the humans who curate their memory files. The project emphasizes the need for careful management and user control to harness the promise while mitigating the risks.
 
-#ver 1.1
+## 📂 Project Structure
+
+The project is organized into the following key directories:
+
+*   **`docs/`**: Contains all project documentation, including PMBOK-like instructions and memory files for AI cognition.
+*   **`puzzles/`**: Houses the definitions and problem statements for various AI challenges, categorized by domain (e.g., physics, programming).
+*   **`sources/`**: Stores raw, external source materials (text, transcripts, etc.) that puzzles might reference.
+*   **`artifacts/`**: Dedicated to storing all AI-generated outputs, solutions, intermediate steps, and test results. This directory is ignored by Git.
+
+#ver 1.2
