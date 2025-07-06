@@ -1,4 +1,3 @@
-
 ---
 
 ### 📌 **What `git` vs `gh` can do — side by side**
@@ -29,4 +28,19 @@
 
 Gemini CLI can operate both, e.g. `gh issue` 
 
-#ver. 1.0
+## 🤖 Gemini CLI's Git Workflow Best Practices
+
+To ensure smooth Git operations and avoid common issues like divergent branches, I will adhere to the following workflow:
+
+1.  **Check Status:** Always start with `git status` to understand the current state of the repository.
+2.  **Stage Changes:** Use `git add <file>` or `git add .` to stage changes for commit.
+3.  **Commit Changes:** Create meaningful commits with `git commit -m "Your descriptive commit message"`.
+4.  **Pull Before Push (Crucial):** Before pushing, always pull the latest changes from the remote to avoid conflicts and ensure your local branch is up-to-date.
+    *   `git pull origin main` (or your current branch name)
+    *   If a "divergent branches" error occurs, use `git pull --rebase origin main` to rebase your local commits on top of the remote's history. This keeps the commit history clean.
+5.  **Push Changes:** After successfully pulling and resolving any conflicts (if necessary), push your changes to the remote: `git push origin main` (or your current branch name).
+6.  **Verify Push:** After pushing, run `git status` again to confirm that your local branch is up-to-date with the remote.
+
+This workflow prioritizes pulling and rebasing before pushing to maintain a linear and clean commit history, especially when working in a collaborative environment or when the remote might have been updated by others.
+
+#ver. 1.1
