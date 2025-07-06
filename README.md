@@ -24,6 +24,8 @@ Beyond simply solving puzzles, this project focuses on how AIs can *learn* from 
     *   `GEMINI-troubleshooting.md`: Known bugs, resolved issues, proven fixes.
     *   `GEMINI-config-variables.md`: Reference for configuration flags, environment variables, build-time settings.
     *   `GEMINI-temp.md`: Temporary scratch pad for ephemeral ideas or in-progress snippets.
+ 
+    (the idea, filenames, framework, taken from https://github.com/centminmod/gemini-cli-mcp-server/)      
 
 ## 🔄 The Cognitive Feedback Loop
 
@@ -64,4 +66,4 @@ The project is organized into the following key directories:
 *   **`sources/`**: Stores raw, external source materials (text, transcripts, etc.) that puzzles might reference.
 *   **`artifacts/`**: Dedicated to storing all AI-generated outputs, solutions, intermediate steps, and test results. This directory is ignored by Git.
 
-#ver 1.2
+#ver 1.3
