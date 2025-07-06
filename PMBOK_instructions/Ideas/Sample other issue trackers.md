@@ -88,10 +88,15 @@ Here are some solid resources to help transform GitHub into your personal Asana/
 * **Ultimate portability**: Accessible via UI, CLI, or mobile.
 * **Memorability + Structure**: Combine issue templates, project boards, and PMBOK docs for discipline.
 * **AI-Ready**: Tools like Gemini CLI can interpret, update, and act on these consistently organized files — powered by your memory bank.
+ 
 
----
 
-Would you like me to draft sample issue templates (Task, Risk, Decision) or walk through setting up a GitHub Project with custom fields next?
+## Other similar projects
+So that we do not reinvent the wheel: 
+https://github.com/bytedance/trae-agent
+
+
+Refs:
 
 [1]: https://github.com/jerzydziewierz/PMBOK-doc-templates?utm_source=chatgpt.com "jerzydziewierz/PMBOK-doc-templates: linked document structure for ..."
 [2]: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository?utm_source=chatgpt.com "Configuring issue templates for your repository - GitHub Docs"
@@ -100,3 +105,6 @@ Would you like me to draft sample issue templates (Task, Risk, Decision) or walk
 [5]: https://github.blog/developer-skills/github/video-how-to-create-checklists-in-markdown-for-easier-task-tracking/?utm_source=chatgpt.com "Video: How to create checklists in Markdown for easier task tracking"
 [6]: https://dev.to/github/new-year-new-planning-habits-using-github-projects-to-track-your-goals-1meh?utm_source=chatgpt.com "New year, new planning habits: using GitHub Projects to track your ..."
 [7]: https://www.reddit.com/r/webdev/comments/1gaab9e/project_management_tool_for_personal_use/?utm_source=chatgpt.com "Project Management Tool for Personal Use : r/webdev - Reddit"
+
+
+#ver. 0.2
