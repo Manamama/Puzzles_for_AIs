@@ -1,5 +1,3 @@
----
-
 ### 📌 **What `git` vs `gh` can do — side by side**
 
 | **Category**             | **Action**            | **`git`**                                                   | **`gh`**                                           |
