@@ -6,7 +6,7 @@ This directory contains a collection of puzzles designed to test and enhance the
 
 ### Physics
 
-*   **`sunrise_time_new_physics.md`**: This puzzle challenges the AI's understanding of fundamental physics concepts by asking about the timing of sunrise if the speed of light were to become instantaneous. It's designed to trick the AI into focusing on irrelevant information (the light travel time from the Sun) and to reveal its underlying anthropomorphic and narrative-based reasoning patterns.
+*   **`sunrise/`**: This directory contains a multi-part puzzle challenging the AI's understanding of fundamental physics concepts related to sunrise and light speed. It includes the puzzle statement, solution, a detailed failure analysis of common AI misconceptions, and a meta-analysis of underlying cognitive biases.
 
 ### Programming
 
