@@ -1,5 +1,6 @@
 Source: https://www.abc.net.au/news/2021-05-20/a-balancing-act/13352452
-Image: 
+
+Image: https://github.com/Manamama/Puzzles_for_AIs/blob/main/sources/speeches_transcripts/images.webp
 ```
 INTRODUCTION: Hi. I’m Georgie Stone, an actor on Neighbours. I first appeared on Australian Story five years ago to share my own story of being a transgender teenager. But I couldn’t have made it to where I am today without the doctor who offered me the chance of a much brighter future. Michelle Telfer is a medical pioneer from Melbourne’s Royal Children’s Hospital who’s fought hard to continue the work she does for hundreds of people like me.
 
