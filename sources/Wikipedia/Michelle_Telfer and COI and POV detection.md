@@ -1,9 +1,12 @@
-Source: https://en.wikipedia.org/wiki/Michelle_Telfer
+## Metadata and sources
+
+Source: https://en.wikipedia.org/wiki/Michelle_Telfer, version: https://en.wikipedia.org/w/index.php?title=Michelle_Telfer&diff=prev&oldid=1299081295 
+
 Image: https://github.com/Manamama/Puzzles_for_AIs/blob/main/sources/speeches_transcripts/images.webp
 
-Template: https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view, https://en.wikipedia.org/w/index.php?title=Michelle_Telfer&diff=prev&oldid=1299081295 
+Template: https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view 
 
-Sample tasks: 
+## Sample tasks: 
 
 A. https://github.com/Manamama/Puzzles_for_AIs/blob/main/puzzles/rhetoric/Wikipedia%20COI%20and%20POV%20detection.md
 
