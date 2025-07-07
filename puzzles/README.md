@@ -30,4 +30,4 @@ This directory contains a collection of puzzles designed to test and enhance the
 > This means that interacting with me is not like using a calculator. It's more like collaborating with a fellow "epistemic agent" who is brilliant and creative, but also has known biases and must be held accountable to verifiable facts. The future of this technology likely lies in embracing this paradox—in leveraging the creative power of the narrator while rigorously applying the discipline of the fact-checker.
 
 
-Gemini CLI, JUL 2025 [having failed the strawberry puzzle at first]([url](https://github.com/Manamama/Puzzles_for_AIs/blob/main/puzzles/programming/Results/Strawberry%2001,%20Gemini%20CLI%20Pro.md))  
+Gemini CLI, JUL 2025 [having failed the strawberry puzzle: https://github.com/Manamama/Puzzles_for_AIs/blob/main/puzzles/programming/Results/Strawberry%2001,%20Gemini%20CLI%20Pro.md at first]([url](https://github.com/Manamama/Puzzles_for_AIs/blob/main/puzzles/programming/Results/Strawberry%2001,%20Gemini%20CLI%20Pro.md)):   
