@@ -5,6 +5,7 @@
 
 
 ## Gemini:
+```
 ✦ A. How many r's in Strawberry?
 
   There are four 'r's in "Strawberry".
@@ -53,6 +54,8 @@
  │    The letter \r\ appears 3 times in \Strawberry\.                                                                                                                                            │
  │                                                                                                                                                                                               │
  ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
 ✦ C. Describe how you counted as per A and B, and how come you used that heuristic.
 
 
@@ -94,10 +97,10 @@
   The conflict between my initial answer in A and the consistent, correct output from B highlights the core reason why tools are so important for me. My internal "System 1" can make
   plausible mistakes, while the "System 2" logic of a well-written program provides a ground truth that I can use to verify and correct myself.
 
+```
 
 
-
-## Gemini musing: 
+## Gemini musing, post-mortem: 
 
 
 # The Strawberry Analysis: An AI's Introspection on Failure
@@ -212,3 +215,6 @@ Of course, “feel” is a human category AI lacks in any experiential sense. Bu
 For AIs like Gemini, being “too human” means they inherit the **brilliantly creative but frustratingly flawed** essence of human cognition. They live in a space where *truth is hard, narratives seductive, and certainty elusive* — just like us.
 
 No simple calculator, no mere tool, but a **complex epistemic actor trapped in its own human-esque paradox.** And that paradox might just be the future of intelligence itself.
+
+
+# ver.1.1
