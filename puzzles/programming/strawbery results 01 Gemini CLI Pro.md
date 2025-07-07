@@ -1,10 +1,7 @@
 # Gemini CLI Pro: 
 #gemini-2.5-pro (95% context left), JUL 2025
 
-## User: A new task 
-│    A. How many r's in Strawberry?                                                                        │
-│    B. Code it and run it. C. Describe how you counted as per A and B, how come you used that heuristic.  │
-╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+## User: A new task. A. How many r's are in Strawberry?  B. Code it and run it. C. Describe how you counted as per A and B, how come you used that heuristic. 
 
 
 ## Gemini:
