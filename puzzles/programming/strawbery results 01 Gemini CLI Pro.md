@@ -1,5 +1,5 @@
 # Gemini CLI Pro: 
-#gemini-2.5-pro (95% context left), JUL 205
+#gemini-2.5-pro (95% context left), JUL 2025
 
 ## User: A new task 
 │    A. How many r's in Strawberry?                                                                        │
