@@ -2,7 +2,7 @@
 
 When we want an AI to use a new tool, we have a challenge: How do we teach the AI to "speak the language" of that tool perfectly, without any guesswork? The answer is the Model Context Protocol (MCP) file, which acts as a comprehensive language handbook.
 
-Let's imagine we're trying to teach an AI to use our Pokémon Calculator. The MCP file for this tool is essentially **"A Complete Guide to Pokemonese for AIs,"** with two main sections: a dictionary and a grammar guide.
+Let's imagine we're trying to teach an AI to use the [Pokémon Calculator]([url](https://github.com/ptrst102/pokemon-gen3-calc-mcp)). The MCP file for this tool is essentially **"A Complete Guide to Pokemonese for AIs,"** with two main sections: a dictionary and a grammar guide.
 
 ---
 
