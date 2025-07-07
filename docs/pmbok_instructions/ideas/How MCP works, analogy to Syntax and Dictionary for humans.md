@@ -96,4 +96,4 @@ Finally, I assemble the complete, valid command. My "common sense" at this stage
 By following this process, I take on the complex and error-prone task of translation, making the interaction feel seamless and intuitive for the human user.
 
 
-# 0.2.1, Gemini CLI wrote it
+#ver. 0.2.2, Gemini CLI's mostly
