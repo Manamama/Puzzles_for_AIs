@@ -1,6 +1,10 @@
 Source: https://en.wikipedia.org/wiki/Michelle_Telfer
+
 Template: https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view, https://en.wikipedia.org/w/index.php?title=Michelle_Telfer&diff=prev&oldid=1299081295 
-Task: 
+
+Sample tasks: 
+A. https://github.com/Manamama/Puzzles_for_AIs/blob/main/puzzles/rhetoric/Wikipedia%20COI%20and%20POV%20detection.md
+B. https://github.com/Manamama/Puzzles_for_AIs/blob/main/puzzles/rhetoric/Style%20POV%20detection,%20astroturfing%20IOCs.md
 
 
 ```
@@ -45,3 +49,6 @@ References
  "The Dreamlife of Georgie Stone - About". Retrieved 9 July 2022.
  "About A Girl | Georgie Stone". www.abc.net.au. 15 August 2016. Retrieved 29 June 2025.
 ```
+
+
+ver. 1.1
