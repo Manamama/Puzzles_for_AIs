@@ -1,5 +1,7 @@
 Agent: ChatGPT, 2025, quick mode 
+
 Source: https://github.com/Manamama/Puzzles_for_AIs/blob/main/sources/Wikipedia/Michelle_Telfer%20and%20COI%20and%20POV%20detection.md
+
 Task: ... 
 
 
