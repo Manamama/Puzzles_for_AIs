@@ -78,6 +78,8 @@ Definition: For instances where the questioner cuts off the witness’s response
 
 
 Here is the transcript to annotate:
+
+
 '''
 
 '''
