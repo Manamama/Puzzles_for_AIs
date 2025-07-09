@@ -1,4 +1,4 @@
-# User query: 
+#User query: 
 
  
 # AI Content Vetting Task — 4-Step Method
