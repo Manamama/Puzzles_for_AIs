@@ -23,8 +23,11 @@ This task requires deep understanding of context, nuances of language, and the a
 Please confirm if these instructions are clear to you.
  
 
-# ver. 1.3  
-# Emotional and Rhetorical Scale for Senate Hearings:
+
+# Emotional and Rhetorical Scale for Senate Hearings markers:
+
+#ver. 1.3  
+
 Stonewalling 🗿 
 Definition: Instances where the speaker avoids answering questions directly. Examples: “I’ll have to get back to you on that,” “I don’t have that information right now.”
 
