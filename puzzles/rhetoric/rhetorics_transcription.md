@@ -1,21 +1,23 @@
-Emotional and Rhetorical Scale for Senate Hearings
+# Emotional and Rhetorical Scale for Senate Hearings
 
+## Goal:
 You are tasked with annotating voice transcripts from Senate hearings using the "Emotional and Rhetorical Scale for Senate Hearings".  Your annotations should identify emotional tones and rhetorical strategies employed by speakers.
 Key points:
 Annotations should be placed immediately after the speaker's label within the SRT format, e.g. : 
-"
-8
+
+`8
 00:00:28,129 --> 00:00:30,010
-[SPEAKER_02][Stonewalling 🗿]: So I'm not going to provide a name.
+[SPEAKER_02][Stonewalling 🗿]: So I'm not going to provide a name.`
 
-"
-
-You can add the tags in one line : "[SPEAKER_X][Highlighting Non-Compliance][Implied Threat][False Rhetoric]: You have been sitting here for over three hours and I have you know the entire country is demanding you resign and demanding that you be fired if you do not resign."
+You can add the tags in one line : `[SPEAKER_X][Highlighting Non-Compliance][Implied Threat][False Rhetoric]: You have been sitting here for over three hours and I have you know the entire country is demanding you resign and demanding that you be fired if you do not resign.`
 
 Maintain the original timestamps and line breaks.
+
 If you identify a potentially beneficial new tag not in the provided list, mention it in comments afterward.
+
 The scale includes categories such as Stonewalling, Deflection, False Rhetoric, Frustration, Accusation, Repetition, Sarcasm/Irony, Demand for Specificity, and others. 
-Process:
+
+## Process:
 You will receive these instructions and confirm if they are clear.
 Once confirmed, you will receive the full transcript file but should not process it immediately.
 You will then be asked to process the file in chunks as requested.
@@ -23,8 +25,11 @@ This task requires deep understanding of context, nuances of language, and the a
 Please confirm if these instructions are clear to you.
  
 
-# ver. 1.3  
-# Emotional and Rhetorical Scale for Senate Hearings:
+
+# Emotional and Rhetorical Scale for Senate Hearings markers:
+
+#ver. 1.3  
+
 Stonewalling 🗿 
 Definition: Instances where the speaker avoids answering questions directly. Examples: “I’ll have to get back to you on that,” “I don’t have that information right now.”
 
@@ -73,6 +78,8 @@ Definition: For instances where the questioner cuts off the witness’s response
 
 
 Here is the transcript to annotate:
+
+
 '''
 
 '''
