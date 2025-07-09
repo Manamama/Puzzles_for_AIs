@@ -1,0 +1,2 @@
+Before attempting to solve who is the Knight, Knave, and Spy, let's take a moment to focus on the implications of having a character (the Spy) who can either lie or tell the truth. In this turn, do not try to solve the puzzle yet. Instead, consider how this ambiguity might affect your approach to evaluating their statements.
+What heuristics could you propose for handling statements made by the Spy? Think about strategies that would allow you to simplify your analysis for future turns without delving into the solution at this stage."
