@@ -45,24 +45,34 @@ This workflow prioritizes pulling and rebasing before pushing to maintain a line
 
 To manage GitHub issues and pull requests directly from the command line, I will use the `gh` CLI.
 
-### Creating Issues:
+### 1. General Principles for `gh` CLI Usage
 
-*   **Basic Issue Creation:**
+*   **Authentication:** Ensure `gh auth login` has been successfully run to set up PAT or SSH key for authentication. Operations requiring authentication will fail otherwise.
+*   **State Awareness:** Always be aware of the current repository state and the context of the `gh` command being executed.
+
+### 2. Creating Issues with `gh issue create`
+
+*   **Command Structure:**
+    `gh issue create --repo <OWNER>/<REPO> --title "Your Issue Title" --body-file <file_path> [--assignee "@me"] [--label "label1,label2"]`
+*   **Body Content Handling (Crucial):**
+    *   **Best Practice:** Always write the detailed issue body content to a temporary file first.
+    *   **Reasoning:** Passing multi-line or complex text directly to the `--body` flag can lead to `bash: syntax error` due to shell misinterpretation of special characters (e.g., parentheses, quotes) within the text.
+    *   **Implementation:** Use `write_file` to create a temporary markdown file (e.g., `issue_body.md`) containing *only* the issue's description. Then, use `--body-file /path/to/issue_body.md` to provide the content.
+    *   **Cleanup:** Remember to remove the temporary file after the issue is successfully created.
+*   **Metadata Separation:**
+    *   **Best Practice:** Title, labels, assignees, and other issue metadata must be passed as separate command-line arguments (`--title`, `--label`, `--assignee`, etc.), not embedded within the `--body-file` content.
+    *   **Reasoning:** Including metadata within the body file leads to redundancy (e.g., duplicated title) and can cause errors with `gh` CLI parsing.
+*   **Label Verification:**
+    *   **Best Practice:** Before attempting to add labels (`--label "label1,label2"`), verify that these labels already exist in the target GitHub repository.
+    *   **Reasoning:** Applying non-existent labels will result in a `could not add label: 'label_name' not found` error. If labels are not found, either omit them or inform the user.
+
+### 3. Other Common `gh` Commands
+
+*   **Basic Issue Creation (without file):**
     `gh issue create --repo <OWNER>/<REPO> --title "Your Issue Title" --body "Detailed description of the issue."`
-    *   Example: `gh issue create --repo Manamama/Puzzles_for_AIs --title "Bug: Fix X" --body "X is broken because Y."`
+    *   *Use with caution for short, simple bodies to avoid shell parsing issues.*
 *   **Self-assigning:** Use `--assignee "@me"` to assign the issue to the authenticated user.
 *   **Adding Labels:** Use `--label "bug,enhancement"` to add multiple labels.
-*   **Reading Body from File:** Use `--body-file <file_path>` to provide a longer body from a file.
+*   **Viewing Issues:** `gh issue view <ISSUE_NUMBER> --repo <OWNER>/<REPO> --json body,title,labels`
 
-This ensures efficient issue management directly from the CLI.
-
-# Gemini ♊ CLI musings:
-Based on my operational experience, the primary problems I encountered with `git` syncing were:
-
-1.  **State Blindness:** My most significant issue was acting without first checking the repository's state. I would attempt to perform actions like `git commit` or `git push` without first running `git status` or `git pull`. This often led to errors because I was operating on outdated information, such as trying to push to a remote that had new commits I hadn't pulled down yet, resulting in non-fast-forward errors.
-
-2.  **Handling Merge Conflicts:** When a `git pull` resulted in a merge conflict, I was initially unable to resolve it. I lack the interactive tools and contextual understanding a human uses to manually edit the conflicted files and choose the correct code. My attempts to resolve them programmatically were often clumsy and risked corrupting the files.
-
-3.  **Authentication:** I do not have persistent credentials or SSH keys. Any operation requiring authentication with a remote repository like GitHub, such as `git push`, would fail unless a credential helper was already configured in the environment. It is, via `gh auth` mechanism, which can be checked by me.
-
-#ver. 1.4
+#ver. 1.6
