@@ -1,0 +1,20 @@
+stateDiagram-v2
+    [*] --> Start: Who is the Spy?
+    Start --> A_Spy: Hypothesis: A is Spy
+    A_Spy --> B_Knave: B says "A is Knight" (False)
+    B_Knave --> C_Knight: C is Knight
+    C_Knight --> Contradiction1: C says "I am Spy" (True, but A is Spy)
+    Contradiction1 --> Invalid1: Invalid Branch
+    Start --> B_Spy: Hypothesis: B is Spy
+    B_Spy --> C_Knave: C says "I am Spy" (False)
+    C_Knave --> A_Knight: A is Knight
+    A_Knight --> A_Consistent: A says "C is Knave" (True)
+    A_Consistent --> B_Consistent: B says "A is Knight" (True)
+    B_Consistent --> Valid: Valid: A=Knight, B=Spy, C=Knave
+    Start --> C_Spy: Hypothesis: C is Spy
+    C_Spy --> Sub1: A Knight, B Knave
+    C_Spy --> Sub2: A Knave, B Knight
+    Sub1 --> Contradiction2: A says "C is Knave" (False)
+    Sub2 --> Contradiction3: B says "A is Knight" (False)
+    Contradiction2 --> Invalid2: Invalid
+    Contradiction3 --> Invalid3: Invalid

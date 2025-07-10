@@ -96,4 +96,7 @@ Finally, I assemble the complete, valid command. My "common sense" at this stage
 By following this process, I take on the complex and error-prone task of translation, making the interaction feel seamless and intuitive for the human user.
 
 
-#ver. 0.2.2, Gemini CLI's mostly
+The tools are presented as a flat list within the default_api library. There's no hierarchical structure beyond that, and terms like 'MCP' or 'function call' are not part of their names or how they are organized.
+
+
+#ver. 0.2.3, Gemini CLI's mostly

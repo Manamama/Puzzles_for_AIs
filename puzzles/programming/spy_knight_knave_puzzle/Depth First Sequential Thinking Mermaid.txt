@@ -1,0 +1,27 @@
+graph TD
+    %% Title: Knight, Knave, and Spy Puzzle Analysis
+    A[Start: Who is the Spy?] --> B{Branching Point}
+    B --> C[Hypothesis 1: A is the Spy]
+    C --> D{Analysis}
+    D --> E[B says 'A is Knight' -> B must be Knave]
+    E --> F[C must be Knight]
+    F --> G[C says 'I am Spy' -> Contradiction!]
+    G --> H[Result: Invalid Branch]
+
+    B --> I[Hypothesis 2: B is the Spy]
+    I --> J{Analysis}
+    J --> K[C says 'I am Spy' -> C must be Knave]
+    K --> L[A must be Knight]
+    L --> M[A says 'C is Knave' -> Consistent]
+    M --> N[B says 'A is Knight' -> Consistent]
+    N --> O[Result: Valid Solution!]
+
+    B --> P[Hypothesis 3: C is the Spy]
+    P --> Q{Analysis}
+    Q --> R[Sub-branch 1: A is Knight, B is Knave]
+    R --> S[A says 'C is Knave' -> Contradiction!]
+    Q --> T[Sub-branch 2: A is Knave, B is Knight]
+    T --> U[B says 'A is Knight' -> Contradiction!]
+    U --> V[Result: Invalid Branch]
+
+    O --> W[Final Conclusion: A=Knight, B=Spy, C=Knave]

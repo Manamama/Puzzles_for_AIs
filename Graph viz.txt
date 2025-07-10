@@ -1,0 +1,23 @@
+digraph G {
+    node [shape=box];
+    Root [label="Who is the Spy?"];
+    Hyp1 [label="A is Spy"];
+    Hyp2 [label="B is Spy"];
+    Hyp3 [label="C is Spy"];
+    Root -> Hyp3 -> Hyp2 -> Hyp1;
+    Hyp1 -> B_Knave [label="B says: 'A is Knight'"];
+    B_Knave -> C_Knight;
+    C_Knight -> Contradict1 [label="C says: 'I am Spy'"];
+    Contradict1 -> Invalid1 [label="Invalid"];
+    Hyp2 -> C_Knave [label="C says: 'I am Spy'"];
+    C_Knave -> A_Knight;
+    A_Knight -> A_Consistent [label="A says: 'C is Knave'"];
+    A_Consistent -> B_Consistent [label="B says: 'A is Knight'"];
+    B_Consistent -> Valid [label="Valid: A=Knight, B=Spy, C=Knave"];
+    Hyp3 -> Sub1 [label="A Knight, B Knave"];
+    Hyp3 -> Sub2 [label="A Knave, B Knight"];
+    Sub1 -> Contradict2 [label="A says: 'C is Knave'"];
+    Sub2 -> Contradict3 [label="B says: 'A is Knight'"];
+    Contradict2 -> Invalid2 [label="Invalid"];
+    Contradict3 -> Invalid3 [label="Invalid"];
+}
