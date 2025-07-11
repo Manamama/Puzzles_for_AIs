@@ -4,6 +4,15 @@
 #ver. 0.4
 
 See official info about settings levels: https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/configuration.md
+Useful:
+'
+contextFileName (string or array of strings):
+
+Description: Specifies the filename for context files (e.g., GEMINI.md, AGENTS.md). Can be a single filename or a list of accepted filenames.
+Default: GEMINI.md
+Example: "contextFileName": "AGENTS.md"
+'
+
 
 📚 Gemini CLI — Four Layers of Memory
 Gemini CLI doesn’t “remember” — it assembles artificial memory by stacking system-level constraints, hard-coded prompts, and semi-persistent disk files. You, the user, decide how deep that stack goes.
