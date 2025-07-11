@@ -1,9 +1,9 @@
 #This is a draft idea of implementing https://github.com/google-gemini/gemini-cli/discussions/3316#discussioncomment-13672455 and https://github.com/google-gemini/gemini-cli/discussions/2386 PMBOK-like rigour on AI's thinking so that they solve some puzzles better, like PM tasks/ 
 
 
-# ver. 0.0.3
+#ver. 0.4
 
-
+See official info about settings levels: https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/configuration.md
 
 📚 Gemini CLI — Four Layers of Memory
 Gemini CLI doesn’t “remember” — it assembles artificial memory by stacking system-level constraints, hard-coded prompts, and semi-persistent disk files. You, the user, decide how deep that stack goes.
