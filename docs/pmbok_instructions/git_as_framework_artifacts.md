@@ -1,8 +1,8 @@
 #ver. 1.0, ChatGPT's proposal
 
-Excellent. Let’s fold this **self-debug RCA framework** *inside `git`* — which is exactly the right mental model: **treat every bughunt as a version-controlled forensic investigation**, with the AI acting as both detective *and* scribe.
+## Ideas
+This serves as **self-debug RCA framework** *inside `git`* — which is the right mental model: **treat every bughunt as a version-controlled forensic investigation**, with the AI acting as both detective *and* scribe.
 
-Below is a **concrete proposal** for your **`bughunt.md` template pack**, including the `git` scaffolding to make Gemini CLI *self-track* its debugging artifacts and hypotheses as versioned commits and branches.
 
 ---
 
