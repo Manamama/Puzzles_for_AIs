@@ -64,3 +64,6 @@ ver. 1.0
 
 Ref, idea: https://github.com/google-gemini/gemini-cli/discussions/3316#discussioncomment-13672455
 
+📚 Gemini CLI — Four Layers of Memory
+Gemini CLI doesn’t “remember” — it assembles artificial memory by stacking system-level constraints, hard-coded prompts, and semi-persistent disk files. You, the user, decide how deep that stack goes.
+
