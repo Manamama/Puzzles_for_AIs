@@ -1,4 +1,5 @@
 #ver. 1.1, ChatGPT's proposal
+
 See also: [https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/configuration.md](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/configuration.md#context-files-hierarchical-instructional-context)
 
 ## Ideas
