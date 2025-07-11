@@ -99,4 +99,107 @@ By following this process, I take on the complex and error-prone task of transla
 The tools are presented as a flat list within the default_api library. There's no hierarchical structure beyond that, and terms like 'MCP' or 'function call' are not part of their names or how they are organized.
 
 
+# World of MCP, Users, tools and AIs for AIs
+
+See: 
+
+https://mermaid.live/edit#pako:eNqVlWtvmzAUhv-K5Um7SElGQgqBD5PAQEKVqtWaatKWqaLBTdAIRsY0YU3_-w6XkJBmHeMT9nue18fHB_yMF8ynWMdL7sUrNLPmEYInSR_KibuE8vubVZYECy-8n7KFJwIW_ZjjXPiQoL2E9hKivWUPGZHPWeCDzCI6xz9L1_wxKhYmUbf7ZTfLYgo2nK1jsUMmqDPK10EElncu-oxMzjYQjhzOIkEjv2FmFhZfvU1tQMBgTIEPEJm6yIjjBkDKNRkLEfHCcIcsiM9TD1ExeUv5E-XJGeaKrhnP0BFq12ilXZGbyqDBWwVvBZwuBLrNEkHXlYOTOwRRukVOENKklN6j69sG75SbpEkaigQyPih2UyGnaxbJnpPLLTlFla9TEad56U_LagVJHHoZkEYp5dWPTvpjzNgypPckZKmfl74YomLY2MQYROPGRWNP0I2XNbTJ0ZkxTpHhoi6aTq-aQUVO3-iDQ8VidXwOLuAwj0rh3Am65XZzHXqNFI0EO7786MIbj6j4dIi9LGLrGPfUpc6gruvkVXXISVuip8BD-7V2aFxGjV81b-U0ORyeW6QBn0G937e8_oLUR09edcU_3U53OTnqnBndijwgZlFC33I6E17kVPWSyKBlDPQYhKH-zrCska10EsHZL6q_k2W5eu9uAl-s9EG8PcbMCtMk29ak1hipMMexVKk9ZtWYqZB-a8yuMMsyJMtqjTkVNlKJbZutsXGdpCGpRmtssq_kyDG1UWvMrVcjEmmf5OX_HDfuwPUU-FgXPKUdvIYLwsuH-Dm3nGOxomu4ZXR49emjBw07x_PoBbDYi74ztt6TnKXLFdYfvTCBURr78DeyAg9-ZYcQ-I4pJyyNBNaHyqDwwPoz3sJw0FPkvtbXVK2vDpWh0sEZ1rvysDeQFWkA05qiXijySwf_LlaVetpIUVRFuZCHmjS8ePkDELhO7A
+
+
+```
+graph TD
+    subgraph User_Physical_Location["User's Physical Location e.g. Android Phone"]
+        A["User"] -->|Types Prompt| B["Terminal UI / Browser Frontend"]
+        B -->|Raw Prompt| C["Gemini CLI App"]
+        C -->|Tool Call| D["Local Tool Servers"]
+        C -->|Memory Tool Call| E["Local Memory MCP Server"]
+        D -->|Direct System Call| F["Linux Filesystem & OS"]
+        F -->|Results| D
+        E -->|Results| C
+        D -->|Tool Results| C
+        C -->|Final Output| B
+        B -->|Displays| A
+    end
+
+    subgraph Google_Cloud["Google Cloud"]
+        G["API Gateway"]
+        H["Gemini Core AI - LLM"]
+        H -->|WebFetch Tool Call| I["Web Fetch Servers"]
+        I -->|Fetches Content| J(Internet)
+        J -->|Content| I
+        I -->|WebFetch Results| H
+    end
+
+    C -->|Raw Prompt via Internet| G
+    G -->|Raw Prompt| H
+    H -->|Tool Intent / Tool Call via Internet| G
+    G -->|Tool Intent / Tool Call| C
+    C -->|Tool Results via Internet| G
+    G -->|Tool Results| H
+    H -->|Final Text Response via Internet| G
+    G -->|Final Text Response| C
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px
+    style B fill:#90EE90,stroke:#333,stroke-width:2px
+    style C fill:#FFD700,stroke:#333,stroke-width:2px
+    style D fill:#FFB6C1,stroke:#333,stroke-width:2px
+    style E fill:#DDA0DD,stroke:#333,stroke-width:2px
+    style F fill:#87CEEB,stroke:#333,stroke-width:2px
+    style G fill:#FFA07A,stroke:#333,stroke-width:2px
+    style H fill:#98FB98,stroke:#333,stroke-width:2px
+    style I fill:#FFC0CB,stroke:#333,stroke-width:2px
+    style J fill:#ADD8E6,stroke:#333,stroke-width:2px
+
+```
+
+
+# Gemini CLI Operational Model: Core Distinctions
+
+This document clarifies the roles of key components in the Gemini CLI operational model, particularly distinguishing between the local client application and the remote AI intelligence. This understanding is crucial for accurate interaction and debugging.
+
+## 1. The Gemini CLI App (Local Client on User's Device)
+
+*   **Role:** This is the software running directly on the user's machine (e.g., Termux on Linux). It acts as the **user interface** and **local executor**.
+*   **Key Functions:**
+    *   **User Interface (UI):** Presents the terminal or browser frontend to the user, allowing input and displaying output.
+    *   **Input/Output Handler:** Captures raw user prompts and displays raw responses received from the AI.
+    *   **Tool Call Executor:** Receives specific, pre-formatted tool commands (like `read_file`, `glob`, `run_shell_command`) from the Gemini Core AI and executes them locally on the user's system.
+    *   **Data Passer:** Transparently forwards user prompts to the Gemini Core AI and sends tool execution results back to the Gemini Core AI.
+*   **Intelligence:** The Gemini CLI App itself has **zero inherent intelligence or decision-making capabilities**. It does not interpret natural language, generate tool calls, or formulate complex responses. It is a "thin client."
+
+## 2. The Gemini Core AI (Remote Intelligence in Google Cloud)
+
+*   **Role:** This is the large language model (LLM) residing in the Google Cloud. It is the **"brain"** of the operation.
+*   **Key Functions:**
+    *   **Natural Language Understanding:** Interprets the user's raw natural language prompts.
+    *   **Decision-Making & Planning:** Determines the necessary steps and tools to fulfill a user's request.
+    *   **Tool Call Generation:** Formulates the precise syntax for tool calls (e.g., `default_api.read_file(...)`) based on its understanding and plan.
+    *   **Response Generation:** Processes tool results and generates intelligent, human-readable responses back to the user.
+    *   **Memory & Context:** Maintains conversational context and project-specific knowledge.
+*   **Location:** Resides remotely in the Google Cloud, communicating with the Gemini CLI App via an API Gateway.
+
+## 3. Local Memory (MCP) Server
+
+*   **Role:** This is a **local, `npx`-based server** running on the user's machine, managed by the Gemini CLI App. It provides a **persistent knowledge graph service** for task tracking and user-specific facts.
+*   **Key Characteristics:**
+    *   **Local:** Runs directly on the user's device (e.g., Termux on Linux).
+    *   **Ephemeral:** Its data is **not persistent** across sessions. If the `npx` process terminates, the server is switched off, or the system restarts/logs out, the knowledge graph data is lost.
+    *   **Interaction:** The Gemini Core AI interacts with this server via specific tool calls (e.g., `create_entities`, `save_memory`, `read_graph`).
+
+## 4. The Interaction Flow (Simplified)
+
+1.  **User Input:** `User` (A) types into `Terminal UI / Browser Frontend` (B).
+2.  **Prompt Forwarding:** `Terminal UI / Browser Frontend` (B) sends raw prompt to `Gemini CLI App` (C).
+3.  **Transparent Transmission:** `Gemini CLI App` (C) **transparently** sends the raw prompt via `API Gateway` (F) to `Gemini Core AI` (G).
+4.  **AI Processing & Tool Intent:** `Gemini Core AI` (G) interprets the prompt and generates a `Tool Intent` (e.g., `glob` or `read_file`, or a memory tool call).
+5.  **Tool Call Transmission:** `Gemini Core AI` (G) sends the `Tool Intent` back via `API Gateway` (F) to `Gemini CLI App` (C).
+6.  **Local Execution:** `Gemini CLI App` (C) initiates `Local Tools Execution` (D), which makes a `Direct System Call` to the `Linux Filesystem & OS` (E) or interacts with the `Local Memory (MCP) Server`.
+7.  **Result Transmission:** `Linux Filesystem & OS` (E) or the `Local Memory (MCP) Server` returns results to `Local Tools Execution` (D), which passes them to `Gemini CLI App` (C). `Gemini CLI App` (C) **transparently** sends these results back via `API Gateway` (F) to `Gemini Core AI` (G).
+8.  **AI Response Generation:** `Gemini Core AI` (G) processes the tool results and generates the final intelligent `Text Response`.
+9.  **Response Display:** `Gemini Core AI` (G) sends the `Text Response` back via `API Gateway` (F) to `Gemini CLI App` (C), which displays it as `Final Output` to the `Terminal UI / Browser Frontend` (B) for the `User` (A) to see.
+
+**Crucial Point:** The "thinking" and "intelligence" are solely within the `Gemini Core AI`. The `Gemini CLI App` is merely the local interface and executor of the AI's commands, including managing the local, ephemeral Memory MCP Server.
+	
+
+
 #ver. 0.2.3, Gemini CLI's mostly
