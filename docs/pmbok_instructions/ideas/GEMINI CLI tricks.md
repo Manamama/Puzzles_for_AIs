@@ -1,4 +1,8 @@
-See https://askdev.ai/github/google-gemini/gemini-cli?trk=public_post_comment-text
+See: https://askdev.ai/github/google-gemini/gemini-cli?trk=public_post_comment-text
+
+See: https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/configuration.md
+
+Example: "coreTools": ["ReadFileTool", "GlobTool", "ShellTool(ls)"]
 
 
 It understands (ingests) PDFs and videos by now, but does not know how, so: 
