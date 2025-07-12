@@ -28,3 +28,48 @@ This script automates the process of converting that data into a user-friendly f
 ## The Script
 
 The Python script that performs this conversion is `pretty_print_chat.py`.
+
+
+## Sample results: 
+
+```
+=====================================================
+ Gemini CLI Chat Log HTML Exporter
+=====================================================
+This script will scan for Gemini CLI projects and convert their
+JSON chat logs and checkpoints into readable HTML files.
+-----------------------------------------------------
+
+Found 25 potential project directories.
+
+Scanning project: f82ecedde95bc2921fb4c856690e6a6d6d1b5624507ddf04e9992923b3a22df6
+  Processing 1 files in f82ecedde95bc2921fb4c856690e6a6d6d1b5624507ddf04e9992923b3a22df6...
+... 
+
+-----------------------------------------------------
+ Export Complete!
+-----------------------------------------------------
+  - Projects Processed: 25
+  - HTML Files Generated: 32
+
+Generated files can be found in their respective project folders.
+You can open them in your browser. Here are the links:
+
+...
+
+  - file:///home/user/.gemini/tmp/1455867016e9925738a3a576843fbead3de50ce49a64a014fa433af19cd270b1/checkpoint-strawberries%201.html
+  - file:///home/user/.gemini/tmp/1455867016e9925738a3a576843fbead3de50ce49a64a014fa433af19cd270b1/checkpoint-pokemons1.html
+=====================================================
+
+```
+
+plus: 
+
+<img width="1881" height="421" alt="image" src="https://github.com/user-attachments/assets/ad6dbdd7-43f7-4f0b-95ac-b42b4114b631" />
+
+and 
+
+<img width="1856" height="885" alt="image" src="https://github.com/user-attachments/assets/7d178523-90b9-40a4-8a90-dc6c61e1de6d" />
+
+
+# ver. 0.1
