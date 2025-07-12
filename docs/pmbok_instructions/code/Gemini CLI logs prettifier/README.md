@@ -1,5 +1,6 @@
 # Gemini CLI Logs Prettifier
 
+Gemini CLI’s raw JSON logs and checkpoints are opaque to humans. This tool renders them readable and browsable as interlinked HTML, with thoughtful explanations and clickable links, improving transparency and usability for users debugging, auditing, or restoring sessions. 
 This script scans for Gemini CLI projects and converts their JSON chat logs and checkpoints into readable, interlinked HTML files.
 
 ## What it does
@@ -68,8 +69,9 @@ plus:
 <img width="1881" height="421" alt="image" src="https://github.com/user-attachments/assets/ad6dbdd7-43f7-4f0b-95ac-b42b4114b631" />
 
 and 
+<img width="1856" height="885" alt="Screenshot from 2025-07-12 14-07-48" src="https://github.com/user-attachments/assets/ee5f0146-e87e-4987-8215-3c010368e42a" />
 
-<img width="1856" height="885" alt="image" src="https://github.com/user-attachments/assets/7d178523-90b9-40a4-8a90-dc6c61e1de6d" />
+
 
 
 # ver. 0.2
