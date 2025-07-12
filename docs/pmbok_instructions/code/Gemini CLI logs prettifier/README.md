@@ -1,11 +1,11 @@
-# Gemini CLI Logs Prettifier
+# Gemini CLI Logs Prettifier: goal
 
-Gemini CLI’s raw JSON logs and checkpoints are opaque to humans. This tool renders them readable and browsable as interlinked HTML, with thoughtful explanations and clickable links, improving transparency and usability for users debugging, auditing, or restoring sessions. 
-This script scans for Gemini CLI projects and converts their JSON chat logs and checkpoints into readable, interlinked HTML files.
+Gemini CLI’s raw JSON logs and checkpoints are opaque to humans. The Gemini CLI stores chat history and session checkpoints in a series of JSON files located in `~/.gemini/tmp`. While this is great for the tool's own state management, it's not very human-readable.
 
 ## What it does
 
-The Gemini CLI stores chat history and session checkpoints in a series of JSON files located in `~/.gemini/tmp`. While this is great for the tool's own state management, it's not very human-readable.
+This tool renders them readable and browsable as interlinked HTML, with thoughtful explanations and clickable links, improving transparency and usability for users debugging, auditing, or restoring sessions. 
+This script scans for Gemini CLI projects and converts their JSON chat logs and checkpoints into readable, interlinked HTML files. 
 
 This script automates the process of converting that data into a user-friendly format. It iterates through all the project folders in your `~/.gemini/tmp` directory, finds all `logs.json` and `checkpoint-*.json` files, and generates a set of interlinked HTML files.
 
