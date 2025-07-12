@@ -2,6 +2,7 @@ import json
 import os
 import glob
 from pathlib import Path
+import markdown
 
 def generate_html_for_project(project_dir):
     """
@@ -101,7 +102,8 @@ def generate_html_checkpoint(data):
 
         for part in parts:
             if 'text' in part:
-                html += f"<p>{part['text'].replace(os.linesep, '<br>')}</p>"
+                processed_text = part['text'].replace('\n*   ', '\n\n*   ')
+                html += markdown.markdown(processed_text, extensions=['nl2br'])
             elif 'functionCall' in part:
                 fc = part['functionCall']
                 html += '<div class="tool-call">'

@@ -72,4 +72,8 @@ and
 <img width="1856" height="885" alt="image" src="https://github.com/user-attachments/assets/7d178523-90b9-40a4-8a90-dc6c61e1de6d" />
 
 
-# ver. 0.1
+# ver. 0.2
+
+## Updates
+
+- **Improved Markdown Rendering:** Now correctly renders Markdown formatting, including lists and preserving end-of-lines (EOLs).
