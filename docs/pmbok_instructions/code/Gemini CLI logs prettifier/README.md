@@ -76,9 +76,9 @@ and
 
 
 
-# ver. 0.3
+# ver. 0.3.1
 
 ## Updates
 
 - **Improved Markdown Rendering:** Now correctly renders Markdown formatting, including lists and preserving end-of-lines (EOLs).
-- Explanation that works in Termux too
+- Explanation that it works in Termux too
