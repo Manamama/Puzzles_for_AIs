@@ -10,6 +10,7 @@
 | **Fork Repo**            | Fork someone’s repo   | ❌ `git` can’t fork, only clone.                             | ✅ `gh repo fork` calls GitHub’s API.               |
 | **Clone Repo**           | Copy any repo         | ✅ `git clone` works for any readable repo.                  | ✅ `gh repo clone` wraps `git clone`.               |
 | **Issues**               | Manage issues         | ❌ `git` does not know about issues.                         | ✅ `gh issue list/create/view` uses API.            |
+| **Discussions**          | Manage discussions    | ❌ `git` does not know about discussions.                    | ✅ `gh discussion list/create/view` uses API.       |
 | **Pull Requests**        | Create/merge PRs      | ❌ `git` does not know PRs exist.                            | ✅ `gh pr create/merge` talks to API.               |
 | **Contribute to Others** | PR to another repo    | ✅ `git clone` → branch → commit → push fork → PR by browser | ✅ `gh` does same but `gh pr create` automates it.  |
 | **CI/CD**                | Manage workflows      | ❌ `git` has no clue about CI/CD.                            | ✅ `gh workflow` commands run/check GitHub Actions. |
@@ -74,5 +75,59 @@ To manage GitHub issues and pull requests directly from the command line, I will
 *   **Self-assigning:** Use `--assignee "@me"` to assign the issue to the authenticated user.
 *   **Adding Labels:** Use `--label "bug,enhancement"` to add multiple labels.
 *   **Viewing Issues:** `gh issue view <ISSUE_NUMBER> --repo <OWNER>/<REPO> --json body,title,labels`
+    *   **Viewing Comments:** To view comments associated with an issue, use the `-c` or `--comments` flag: `gh issue view <ISSUE_NUMBER> --comments --repo <OWNER>/<REPO>`
+*   **Adding Comments to Issues:**
+    `gh issue comment <ISSUE_NUMBER> --repo <OWNER>/<REPO> --body-file <file_path>`
+    *   **Body Content Handling:** Similar to creating issues, it's best practice to write detailed comment content to a temporary file first and use `--body-file` to avoid shell parsing issues with complex text.
+    *   **Basic Comment (without file):**
+        `gh issue comment <ISSUE_NUMBER> --repo <OWNER>/<REPO> --body "Your comment text."`
+        *   *Use with caution for short, simple bodies to avoid shell parsing issues.*
 
-#ver. 1.6
+### 4. Advanced `gh` Operations: Using `gh api` for GraphQL
+
+For operations not directly supported by `gh` subcommands (like managing GitHub Discussions), the `gh api` command provides direct access to the GitHub API, including its powerful GraphQL API.
+
+#### Reading GitHub Discussion Comments (Example)
+
+To read a specific comment from a GitHub Discussion, you need to use `gh api` with a GraphQL query. GitHub Discussions are primarily accessible via the GraphQL API, not the REST API.
+
+1.  **Construct the GraphQL Query:** The query needs to specify the repository, discussion number, and request the comments, including their `databaseId`, `body`, `author`, and `createdAt`.
+
+    ```graphql
+    query {
+      repository(owner: "google-gemini", name: "gemini-cli") {
+        discussion(number: 3965) {
+          comments(first: 100) { # Adjust 'first' for more comments, or implement pagination
+            nodes {
+              databaseId
+              body
+              author { login }
+              createdAt
+            }
+          }
+        }
+      }
+    }
+    ```
+
+2.  **Execute with `gh api`:** Pass the GraphQL query to `gh api`. As an AI, I can parse the raw JSON output directly, so `jq` is not necessary for my internal processing.
+
+    ```bash
+    gh api graphql -F query='query { repository(owner: "google-gemini", name: "gemini-cli") { discussion(number: 3965) { comments(first: 100) { nodes { databaseId body author { login } createdAt } } } } }'
+    ```
+
+    *   **Note on Quoting:** Pay close attention to quoting. The entire GraphQL query string needs to be properly quoted for the shell. Internal double quotes within the GraphQL query (e.g., for `owner` and `name` values) need to be escaped if the outer quote is a single quote, or vice-versa.
+    *   **Reading from File (Robust Method):** For complex queries, it's more robust to save the GraphQL query to a file (e.g., `graphql_query.txt`) and then reference it:
+        ```bash
+        gh api graphql -F query=@/path/to/graphql_query.txt
+        ```
+
+3.  **Process the JSON Output:** The command will return a JSON object. You (or I, as an AI) can then parse this JSON to extract the desired comment based on its `databaseId` or other criteria.
+
+    *   **Example Internal Parsing (for AI):** An AI would iterate through the `nodes` array in the `comments` object and find the comment matching the `databaseId`.
+
+#### Handling Pagination
+
+If a discussion has more comments than the `first` parameter specifies (e.g., more than 100), you will need to implement pagination using GraphQL cursors (`after` and `endCursor`) to fetch all comments. This involves making multiple `gh api` calls until all pages are retrieved.
+
+#ver. 2.75.0
