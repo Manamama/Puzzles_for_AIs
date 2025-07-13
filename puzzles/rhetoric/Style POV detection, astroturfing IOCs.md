@@ -1,7 +1,3 @@
-# Goal
-Here’s the precise task framed from your intent, focusing strictly on **style over content** — extracting and analyzing language for its rhetorical and evaluative charge, ignoring factual accuracy or substance:
-
----
 
 ### Task: Phrase-Level Rhetorical Sentiment and Neutrality Analysis (Style-First)
 
@@ -20,3 +16,4 @@ Disregard factual content. Extract key evaluative, ideological, or sentiment-bea
 4. Do not consider factual content, accuracy, or completeness. Focus strictly on style and rhetorical impact.
 
 --- 
+#ver. 1.1
