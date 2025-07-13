@@ -17,6 +17,7 @@ This script automates the process of converting that data into a user-friendly f
 - **HTML Conversion:** It converts the raw JSON into clean, styled HTML for easy reading in a web browser.
 - **Interlinked Pages:** Each generated HTML file contains navigation links to the other reports from the same project, making it easy to browse a complete session history.
 - **Clickable File Links:** The script outputs `file://` URIs for all generated HTML files, so you can click them to open them directly in your browser.
+- - **Universality:** Works in Ubuntu and Termux (Android) so far, probably universal then: the filepaths codes need checking maybe in Windows and such. 
 
 ## How to use
 
@@ -75,8 +76,9 @@ and
 
 
 
-# ver. 0.2
+# ver. 0.3
 
 ## Updates
 
 - **Improved Markdown Rendering:** Now correctly renders Markdown formatting, including lists and preserving end-of-lines (EOLs).
+- Explanation that works in Termux too
