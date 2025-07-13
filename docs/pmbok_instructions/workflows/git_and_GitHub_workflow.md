@@ -38,6 +38,28 @@ To ensure smooth Git operations and avoid common issues like divergent branches,
     *   `git pull origin main` (or your current branch name)
     *   If a "divergent branches" error occurs, use `git pull --rebase origin main` to rebase your local commits on top of the remote's history. This keeps the commit history clean.
 5.  **Push Changes:** After successfully pulling and resolving any conflicts (if necessary), push your changes to the remote: `git push origin main` (or your current branch name).
+
+#### Handling Rejected Pushes (Remote Changes)
+
+If your `git push` is rejected because the remote repository contains work you don't have locally (e.g., another team member or PC pushed changes), you'll see an error like:
+
+```
+! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/your/repo.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+```
+
+To resolve this and maintain a clean, linear history, use `git pull --rebase`:
+
+```bash
+git pull --rebase origin main
+```
+
+This command fetches the remote changes and reapplies your local commits on top of them, effectively integrating the remote work before you push your own. After a successful rebase, you can then `git push`.
+
 6.  **Verify Push:** After pushing, run `git status` again to confirm that your local branch is up-to-date with the remote.
 
 This workflow prioritizes pulling and rebasing before pushing to maintain a linear and clean commit history, especially when working in a collaborative environment or when the remote might have been updated by others.
