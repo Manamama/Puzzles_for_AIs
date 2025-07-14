@@ -95,6 +95,7 @@ To manage GitHub issues and pull requests from the command line, use the `gh` CL
 * **Label Verification**:
   * Verify labels exist with `gh label list --repo <OWNER>/<REPO>`. Create missing labels with `gh label create "label" --repo <OWNER>/<REPO>`.
   * Omitting nonexistent labels prevents errors like `could not add label: 'label_name' not found`.
+  * When 📯 posting as the User, do attribute who is who: 'Posted on behalf of Manamama by Gemini ♊ Core AI'. (The User is likely to edit it further online then, in user-friendly GUI.)
 
 ### 3. Other Common `gh` Commands
 
