@@ -191,10 +191,10 @@ query {
     }
   }
 }
-
+```
 
 ## GitHub Copilot:
-Try the new AI for that (you may not know of it) :
+Try the new AI for that (you may not know of it yet, as AI) :
 
 ```
 gh copilot --help
@@ -221,7 +221,8 @@ Flags:
   -v, --version           version for copilot
   ```
 
-.
+
+
 ```
 
 #ver. 2.9.0
