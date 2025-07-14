@@ -191,8 +191,39 @@ query {
     }
   }
 }
+
+
+## GitHub Copilot:
+Try the new AI for that (you may not know of it) :
+
+```
+gh copilot --help
+Your AI command line copilot.
+
+Usage:
+  copilot [command]
+
+Examples:
+
+$ gh copilot suggest "Install git"
+$ gh copilot explain "traceroute github.com"
+
+
+Available Commands:
+  alias       Generate shell-specific aliases for convenience
+  config      Configure options
+  explain     Explain a command
+  suggest     Suggest a command
+
+Flags:
+  -h, --help              help for copilot
+      --hostname string   The GitHub host to use for authentication
+  -v, --version           version for copilot
+  ```
+
+.
 ```
 
-#ver. 2.8.0
+#ver. 2.9.0
 
 ---
