@@ -32,16 +32,16 @@
 
 ## 🤖 Gemini CLI's Git Workflow Best Practices
 
-To ensure smooth Git operations and avoid common issues like divergent branches, adhere to the following workflow for any branch (e.g., `main` or feature branches):
+The user often changes details online, in Github, while major work is done offline (in command line). 
 
-1. **Check Status**: Always start with `git status` to understand the current state of the repository.
-2. **Stage Changes**: Use `git add <file>` or `git add .` to stage changes for commit.
-3. **Commit Changes**: Create meaningful commits with `git commit -m "Your descriptive commit message"`.
-4. **Pull Before Push (Crucial)**: Before pushing, always pull the latest changes from the remote to avoid conflicts and ensure your local branch is up-to-date.
+Thus to ensure smooth Git operations and avoid common issues like divergent branches, adhere to the following workflow for any branch (e.g., `main` or feature branches):
+
+**Check Status**: Always start with `git status` to understand the current state of the repository.
+...
+**Pull Before Push (Crucial)**: Before pushing, always pull the latest changes from the remote to avoid conflicts and ensure your local branch is up-to-date.
    * `git pull origin <branch>` (replace `<branch>` with your current branch, e.g., `main`).
-   * If a "divergent branches" error occurs, use `git pull --rebase origin <branch>` to rebase your local commits on top of the remote’s history. This keeps the commit history clean.
-   * If conflicts arise during rebase, resolve them manually, then run `git rebase --continue` or `git rebase --abort` to cancel.
-5. **Push Changes**: After successfully pulling and resolving any conflicts, push your changes: `git push origin <branch>`.
+...
+**Push Changes**: After successfully pulling and resolving any conflicts, push your changes: `git push origin <branch>`.
 
 #### Handling Rejected Pushes (Remote Changes)
 
