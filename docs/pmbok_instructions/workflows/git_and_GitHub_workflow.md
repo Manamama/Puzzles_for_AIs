@@ -43,6 +43,17 @@ Thus to ensure smooth Git operations and avoid common issues like divergent bran
 ...
 **Push Changes**: After successfully pulling and resolving any conflicts, push your changes: `git push origin <branch>`.
 
+Real code and pseudocode at once for that choice: 
+```
+git status
+git pull origin "$BRANCH" # Integrates remote changes via merge
+git add .
+git status # Sanity check: See what has been staged
+git commit -m "Your descriptive commit message"
+git push origin "$BRANCH"
+git status
+```
+
 #### Handling Rejected Pushes (Remote Changes)
 
 If your `git push` is rejected because the remote repository contains work you don’t have locally (e.g., another team member pushed changes), you’ll see an error like:
