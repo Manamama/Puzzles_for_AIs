@@ -24,3 +24,7 @@ This directory contains documentation and ideas related to applying Project Mana
 
 ### Ideas
 *   [Miscellaneous Musings](ideas/miscellaneous_musings.md): Miscellaneous notes and raw ideas.
+
+*   Ask AI about GitHub: https://askdev.ai/search
+
+#ver. 1.2
