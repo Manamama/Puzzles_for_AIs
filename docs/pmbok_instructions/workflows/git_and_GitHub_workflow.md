@@ -126,6 +126,17 @@ To manage GitHub issues and pull requests from the command line, use the `gh` CL
     ```
     * *Use with caution for simple text.*
 
+*   **Viewing Releases**:
+    ```bash
+    gh release view [<tag>] --repo <OWNER>/<REPO> [--json body,name,tagName]
+    ```
+    *   Use `<tag>` to specify a particular release (e.g., `v0.1.12`). If omitted, the latest release is shown.
+    *   Use `--json` to output specific fields in JSON format, which can then be parsed with `jq` (e.g., `--json body` to get the release notes).
+    *   Example to get release notes:
+        ```bash
+        gh release view v0.1.12 --repo google-gemini/gemini-cli --json body
+        ```
+
 ### 4. Advanced `gh` Operations: Using `gh api` for GraphQL
 
 For operations not directly supported by `gh` subcommands (like managing GitHub Discussions), the `gh api` command provides access to the GitHub GraphQL API.
