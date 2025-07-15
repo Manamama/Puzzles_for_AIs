@@ -119,6 +119,21 @@ To read a specific comment from a GitHub Discussion, you need to use `gh api` wi
     gh api graphql -F query='query { repository(owner: "google-gemini", name: "gemini-cli") { discussion(number: 3965) { comments(first: 100) { nodes { databaseId body author { login } createdAt } } } } }'
     ```
 
+
+
+   **Viewing Releases**:
+    ```bash
+    gh release view [<tag>] --repo <OWNER>/<REPO> [--json body,name,tagName]
+    ```
+    *   Use `<tag>` to specify a particular release (e.g., `v0.1.12`). If omitted, the latest release is shown.
+    *   Use `--json` to output specific fields in JSON format, which can then be parsed with `jq` (e.g., `--json body` to get the release notes).
+    *   Example to get release notes:
+        ```bash
+        gh release view v0.1.12 --repo google-gemini/gemini-cli --json body
+        ```
+
+
+
     *   **Note on Quoting:** Pay close attention to quoting. The entire GraphQL query string needs to be properly quoted for the shell. Internal double quotes within the GraphQL query (e.g., for `owner` and `name` values) need to be escaped if the outer quote is a single quote, or vice-versa.
     *   **Reading from File (Robust Method):** For complex queries, it's more robust to save the GraphQL query to a file (e.g., `graphql_query.txt`) and then reference it:
         ```bash
@@ -133,4 +148,4 @@ To read a specific comment from a GitHub Discussion, you need to use `gh api` wi
 
 If a discussion has more comments than the `first` parameter specifies (e.g., more than 100), you will need to implement pagination using GraphQL cursors (`after` and `endCursor`) to fetch all comments. This involves making multiple `gh api` calls until all pages are retrieved.
 
-#ver. 2.75.1
+#ver. 2.76.1
