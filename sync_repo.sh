@@ -11,6 +11,14 @@ if [ $? -ne 0 ]; then
 fi
 echo "All changes staged."
 
+echo ""
+echo "-------------------------------------------------------------------"
+echo "Changes to be committed:"
+echo "-------------------------------------------------------------------"
+git diff --staged
+echo "-------------------------------------------------------------------"
+echo ""
+
 # 2. Commit changes with an automated message
 COMMIT_MESSAGE="Automated sync: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "Committing changes with message: \"$COMMIT_MESSAGE\""
