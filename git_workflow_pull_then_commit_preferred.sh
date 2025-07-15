@@ -7,6 +7,8 @@
 # Untracked files are generally safe as Git operations primarily affect tracked files.
 
 # Assume <branch> is set, e.g., main or current branch name
+BRANCH="main"
+
 
 git status
 git pull origin "$BRANCH" # Integrates remote changes via merge
@@ -15,3 +17,7 @@ git status # Sanity check: See what has been staged
 git commit -m "Your descriptive commit message"
 git push origin "$BRANCH"
 git status
+
+
+#git restore --source=origin/main --staged --worktree docs/pmbok_instructions/workflows/git_and_GitHub_workflow.md  makes the local file overwritten. 
+# But then `git pull` again!
