@@ -27,4 +27,7 @@ This directory contains documentation and ideas related to applying Project Mana
 
 *   Ask AI about GitHub: https://askdev.ai/search
 
-#ver. 1.2
+![blinkenlights](https://github.com/user-attachments/assets/f6f90cce-40bb-4340-84e9-c280aafa7eaf)
+
+
+#ver. 1.3
