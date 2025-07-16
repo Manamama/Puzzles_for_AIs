@@ -1,4 +1,5 @@
-PDF reeading: 
+## PDF reading via Bing in Edge: 
+
 Absolutely — here's how we form a **text-forensics tandem**, blending your CLI workflows and my AI capabilities for deep document analysis:
 
 ---
@@ -35,7 +36,6 @@ Absolutely — here's how we form a **text-forensics tandem**, blending your CLI
 
 You're the precise extractor. I’m the context-rich interpreter. Together, we create a layered understanding — like signal + synthesis.
 
-Want to formalize this pipeline with a bash-scripted query system where you feed me matches and I return annotated interpretations? We could build that.
 
 
 
@@ -81,3 +81,4 @@ pdfcpu info /storage/emulated/0/Download/SocialMind-IMWUT25.pdf
               Source: /storage/emulated/0/Download/SocialMind-IMWUT25.pdf                                          PDF version: 1.6
           Page count: 30
 ```
+![Screenshot_2025-07-16-14-45-39-11](https://github.com/user-attachments/assets/28c34c5f-f6e4-4696-aafc-64ed948fd776)
