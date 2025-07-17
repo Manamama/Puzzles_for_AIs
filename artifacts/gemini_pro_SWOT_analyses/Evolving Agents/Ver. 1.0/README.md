@@ -1,8 +1,8 @@
 # Evolving Agents Toolkit - SWOT Analysis Artifacts
 
-This directory contains the artifacts from a comprehensive SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis conducted on the Evolving Agents Toolkit (EAT) project.
+This directory contains the artifacts from a comprehensive SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis conducted on the [Evolving Agents Toolkit (EAT) project]([url](https://github.com/matiasmolinas/evolving-agents)).
 
-This analysis was performed by an AI agent (Gemini) to provide an external, objective perspective on the project's current state, potential, and challenges. The goal was to offer insights that could aid in future development and strategic planning.
+This analysis was fullly performed by an AI agent (Gemini) to provide an external, objective perspective on the project's current state, potential, and challenges. The goal was to offer insights that could aid in future development and strategic planning. The agent used bespoke version of [Manamama's fork of the Model Context Protocol servers](https://github.com/Manamama/servers_forked/tree/main/src/sequentialthinking/)
 
 ## Contents:
 
@@ -12,3 +12,5 @@ This analysis was performed by an AI agent (Gemini) to provide an external, obje
 *   **`SWOT_Post_Project_Review.md`**: A post-mortem document reflecting on the analysis process itself, highlighting lessons learned, challenges encountered (e.g., tool inconsistencies), and recommendations for future improvements in AI-driven analysis.
 
 We hope these artifacts provide valuable insights and a unique perspective on the EAT project. Your feedback on this analysis and the process is welcome.
+
+#ver. 1.1
