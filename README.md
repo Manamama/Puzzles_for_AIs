@@ -61,6 +61,7 @@ The "wisdom" of these agents is only as good as the humans who curate their memo
 
 The project is organized into the following key directories:
 
+*   **`code/`**: Contains project-specific code, including helper scripts and tools.
 *   **`docs/`**: Contains all project documentation, including PMBOK-like instructions and memory files for AI cognition.
 *   **`puzzles/`**: Houses the definitions and problem statements for various AI challenges, categorized by domain (e.g., physics, programming).
 *   **`sources/`**: Stores raw, external source materials (text, transcripts, etc.) that puzzles might reference.

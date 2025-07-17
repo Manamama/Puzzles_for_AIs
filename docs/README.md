@@ -29,6 +29,4 @@ This directory contains all documentation for the Puzzles_for_AIs project, organ
 *   `debug_workflow.md`: A `git`-based framework for self-debugging and root cause analysis.
 *   `git_and_GitHub_workflow.md`: Best practices for Git and GitHub CLI usage.
 *   `google_api_interaction_guide.md`: A comprehensive guide to interacting with various Google APIs using `curl` and Python.
-*   `sequential_thinking_1.md`: Documentation for sequential thinking workflow (version 1).
-*   `sequential_thinking_2_for_messy_documents_or_DB_editing.md`: Documentation for sequential thinking workflow (version 2), for messy documents or DB editing.
-*   `sequential_thinking_for_content_housekeeping.md`: A strategic workflow for tackling content housekeeping tasks using sequential thinking.
+*   `sequential_thinking_workflow.md`: A unified guide to using the `sequentialthinking` tool for content housekeeping and reorganization.
