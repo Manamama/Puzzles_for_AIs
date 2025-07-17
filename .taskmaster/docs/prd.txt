@@ -1,0 +1,27 @@
+
+# Product Requirements Document: River Puzzle Solver
+
+## 1. Overview
+
+The goal is to solve the "River puzzle, goat, cabbage, wolf" logic puzzle. The final product will be a clear, step-by-step sequence of moves that transports all items across the river while adhering to all constraints.
+
+## 2. The Puzzle
+
+A human needs to transport a goat, a cabbage, and a wolf across a river in a boat.
+
+## 3. Constraints & Rules
+
+*   The boat can only carry the human and one other item (goat, cabbage, or wolf) at a time.
+*   The human must be in the boat for it to cross the river.
+*   The goat and the cabbage cannot be left alone together on the same riverbank.
+*   The cabbage and the wolf cannot be left alone together on the same riverbank.
+*   The human's presence on a riverbank prevents any conflicts.
+
+## 4. Goal
+
+Define the sequence of crossings that successfully moves the goat, cabbage, and wolf to the other side of the river without violating any constraints.
+
+## 5. Out of Scope
+
+*   Any variations of the puzzle with different items or rules.
+*   Physical simulation of the puzzle.
