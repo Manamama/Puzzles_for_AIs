@@ -2,7 +2,7 @@
 
 This directory contains the artifacts from a comprehensive SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis conducted on the [Evolving Agents Toolkit (EAT) project]([url](https://github.com/matiasmolinas/evolving-agents)).
 
-This analysis was fullly performed by an AI agent (Gemini) to provide an external, objective perspective on the project's current state, potential, and challenges. The goal was to offer insights that could aid in future development and strategic planning. The agent used bespoke version of [Manamama's fork of the Model Context Protocol servers](https://github.com/Manamama/servers_forked/tree/main/src/sequentialthinking/)
+This analysis was fullly performed by an AI agent (Gemini) to provide an external, objective perspective on the project's current state, potential, and challenges. The goal was to offer insights that could aid in future development and strategic planning. The agent used bespoke version of [Manamama's fork of the Model Context Protocol servers](https://github.com/Manamama/servers_forked/tree/main/src/sequentialthinking/), https://github.com/modelcontextprotocol/servers/issues/2332#issuecomment-3082113479
 
 ## Contents:
 
