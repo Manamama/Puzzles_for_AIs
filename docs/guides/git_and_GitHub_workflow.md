@@ -110,6 +110,9 @@ To manage GitHub issues and pull requests from the command line, use the `gh` CL
 
 ### 3. Other Common `gh` Commands
 
+*   **Gists**: `gh gist` allows you to create, list, view, edit, rename, and delete gists. This is useful for sharing code snippets or notes quickly.
+    *   Example: `gh gist delete <gist_id_or_url> --yes` (use `--yes` for non-interactive deletion).
+
 * **Basic Issue Creation**:
   ```bash
   gh issue create --repo <OWNER>/<REPO> --title "Your Issue Title" --body "Short description."

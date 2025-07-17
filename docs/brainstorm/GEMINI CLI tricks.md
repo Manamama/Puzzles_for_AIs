@@ -56,3 +56,9 @@ packages/core/src/utils/memoryDiscovery.ts → loadServerHierarchicalMemory() fi
 
 —
 In short: to Gemini CLI, memory—whether it’s the built-in file-based save_memory or a custom MCP memory server—is just another tool with a name, description and JSON schema. The MCP machinery discovers it, wraps it in a DiscoveredMCPTool, and lets you call it as part of your LLM workflow.
+
+
+
+# MCP mcpServers
+
+Use `mcp-inspector to inspect MCPs 
