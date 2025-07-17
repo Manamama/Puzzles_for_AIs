@@ -1,0 +1,1 @@
+/home/zezen/Downloads/GitHub/Puzzles_for_AIs/docs/Gemini_CLI_Shortcuts.md
