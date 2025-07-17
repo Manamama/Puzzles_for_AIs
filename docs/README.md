@@ -8,7 +8,11 @@ This directory contains all documentation for the Puzzles_for_AIs project, organ
 
 *   **`docs/` (This Directory):** Houses all documentation.
     *   **`concepts/`:** For foundational, theoretical, or abstract ideas that explain *what* something is or *why* it works (e.g., AI collaboration frameworks, memory systems).
-    *   **`brainstorm/`:** A dedicated space for unstructured thoughts, raw ideas, and miscellaneous notes.
+    *   **`brainstorm/`:** A dedicated space for unstructured thoughts, raw ideas, and miscellaneous notes, now organized into subfolders:
+    *   `tool_notes/`: Notes related to specific AI tools or platforms.
+    *   `project_management/`: Notes related to project management.
+    *   `conceptual_notes/`: Notes on conceptual ideas or analogies.
+    *   `draft_guides/`: Early drafts or notes for potential guides or scripts.
     *   **`strategy/`:** For high-level strategic documents, visions, and analyses that guide the project's direction (e.g., life assistant vision, implications and risks).
     *   **`guides/`:** For practical, actionable guides, workflows, and best practices (e.g., Git/GitHub workflows, sequential thinking guides, API interaction guides).
 
@@ -19,7 +23,7 @@ This directory contains all documentation for the Puzzles_for_AIs project, organ
 *   `memory_system.md`: Details on how Gemini CLI manages and utilizes its memory.
 
 ### Brainstorm
-*   Contains miscellaneous notes, ideas, and temporary thoughts. (e.g., `GEMINI CLI tricks.md`, `ideas_for_wolfram_queries.md`, `puppeteer_lessons_learned.md`).
+*   Contains miscellaneous notes, ideas, and temporary thoughts, now organized into specific subfolders.
 
 ### Strategy
 *   `implications_and_risks.md`: Analysis of the implications, strengths, weaknesses, opportunities, and threats of AI acting as a development and life actor.

@@ -61,10 +61,11 @@ The "wisdom" of these agents is only as good as the humans who curate their memo
 
 The project is organized into the following key directories:
 
+*   **`artifacts/`**: Dedicated to storing all AI-generated outputs, solutions, intermediate steps, and test results. This directory is ignored by Git.
+*   **`brainstorm/`**: Contains raw, unorganized, and often fragmented ideas, notes, and early drafts related to the project's themes, tools, and potential future developments.
 *   **`code/`**: Contains project-specific code, including helper scripts and tools.
 *   **`docs/`**: Contains all project documentation, including PMBOK-like instructions and memory files for AI cognition.
 *   **`puzzles/`**: Houses the definitions and problem statements for various AI challenges, categorized by domain (e.g., physics, programming).
 *   **`sources/`**: Stores raw, external source materials (text, transcripts, etc.) that puzzles might reference.
-*   **`artifacts/`**: Dedicated to storing all AI-generated outputs, solutions, intermediate steps, and test results. This directory is ignored by Git.
 
-#ver 1.3
+#ver 1.4
