@@ -15,7 +15,7 @@ Planning Thought 1: Problem Deconstruction & Formalization
 * Content:
   * Initial State: Clearly define all entities, their properties, and their starting conditions.
   * Goal State: Precisely articulate the desired outcome. What exactly needs to be achieved? (e.g., "exactly 6 liters in Jug B").
-  * Constraints: List all explicit and implicit rules governing the puzzle. Pay close attention to any "safety rules" or limitations on actions.
+  * Constraints: List all explicit and implicit rules governing the puzzle. Pay close attention to any "safety rules" or limitations on actions. Once identified and formalized, these constraints are immutable and must be strictly adhered to throughout the solution process.
   * Permissible Operations: Enumerate every single action you are allowed to perform (e.g., FILL, EMPTY, POUR). For each, consider its immediate effect on the state.
   * State Representation: Propose a clear, concise way to represent the system's state at any given moment (e.g., (jug1_amount, jug2_amount)).
   * Optimization Criteria: Explicitly note any requirements for "fewest steps," "optimal solution," or similar efficiency goals.
