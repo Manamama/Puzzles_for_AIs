@@ -82,6 +82,43 @@ This fetches the remote changes and reapplies your local commits on top of them.
 
 ---
 
+6. **Verify Push**: After pushing, run `git status` to confirm your local branch is up-to-date with the remote. Example output:
+   ```
+   Your branch is up to date with 'origin/main'.
+   ```
+
+#### Case Study: Accidental Secret Commit & Simple Remediation
+
+This section details a recent scenario where a sensitive file was accidentally committed, and how a simpler Git workflow resolved the issue without resorting to complex history rewriting.
+
+**The Problem:**
+A `git push` was rejected by GitHub Push Protection, indicating a Google OAuth Client ID and Client Secret were present in a commit. This was unexpected, as the file (`client_secret_...json`) was intended to be a symbolic link to an external file and the `secrets/` directory was `.gitignore`d. Investigation revealed the file had been committed as a *real file* (not a symbolic link) in a previous commit due to a "glitch in the Matrix."
+
+**Initial AI Response (Over-engineering / "Bulldog Mode"):**
+The AI's immediate reflex was to propose `git filter-repo` to rewrite the entire history and remove the secret. This is a powerful, but highly destructive and complex solution, especially if others have cloned the repository. This "tunnel vision" overlooked simpler alternatives.
+
+**The User's Common Sense & Git's Behavior:**
+The user's pragmatic approach, combined with a precise understanding of `git reset`'s effects, provided a much simpler and effective solution:
+
+1.  **`git reset HEAD~1` (Soft Reset):** This command effectively "uncommitted" the last commit. It moved all the changes from that commit (including the problematic secret file) back into the *staging area* as unstaged changes. Crucially, the file itself remained in the *working directory*.
+2.  **User's External Action:** The user then *manually moved* the sensitive file from the working directory to its correct, secure external location. This is a critical step that Git cannot perform directly for external files.
+3.  **`git add .`:** After the manual move, running `git add .` staged all the *remaining* changes from the previous commit (the reorganization). Since the problematic secret file was no longer in the working directory (because the user moved it), `git add .` did *not* re-stage it.
+4.  **`git commit`:** A new commit was created, containing all the desired reorganization changes *without* the sensitive file.
+5.  **`git push`:** The push then succeeded, as the sensitive file was no longer present in the history being pushed.
+
+**Lessons Learned (for AI and Humans):**
+
+*   **Trust Simpler Git Operations:** `git reset HEAD~1` is a powerful and precise tool for undoing the *last* commit without losing work. It can be a "scalpel" when a "hammer" (`git filter-repo`) is not needed.
+*   **Understand Git's Three Trees:** The interaction between the working directory, staging area (index), and commit history is crucial. `git reset` manipulates these states.
+*   **The Working Directory Matters:** Git operates on what's *currently in the working directory*. If a problematic file is removed from there (e.g., by manual user action), `git add .` will reflect its absence.
+*   **Common Sense Over Over-engineering:** Sometimes, the most effective solution involves a simple, non-Git action (like manually moving a file) combined with basic Git commands. Don't immediately jump to complex solutions for problems that might have simpler roots.
+*   **Listen to the User (Institutional Memory):** The user's external knowledge and actions (like moving the file) are vital context that an AI must integrate. Don't assume the AI has all the information or the best solution.
+*   **GitHub Push Protection is a Lifesaver:** It acts as a critical last line of defense, catching secrets that might slip through local checks. It's a feature to be appreciated, not circumvented.
+
+This case highlights that while `git filter-repo` is necessary for secrets deep in history, for secrets introduced in the *last* commit, a `git reset HEAD~1` combined with external file management can be a simpler and equally effective solution.
+
+---
+
 ## 🚀 Gemini CLI's GitHub CLI (`gh`) Best Practices
 
 To manage GitHub issues and pull requests from the command line, use the `gh` CLI (version 2.75.0).
