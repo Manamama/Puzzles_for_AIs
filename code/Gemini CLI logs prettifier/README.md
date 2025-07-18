@@ -20,7 +20,7 @@ This script automates the process of converting that data into a user-friendly f
 - **Universality:** Works in Ubuntu and Termux (Android) so far, probably universal then: the filepaths codes need checking maybe in Windows and such. 
 
 ## How to use
-
+0.  Just download this single .py file
 1.  Make sure you have Python 3 installed.
 2.  Run the script from your terminal:
     ```bash
@@ -76,9 +76,10 @@ and
 
 
 
-# ver. 0.3.1
+# ver. 0.3.2
 
 ## Updates
 
 - **Improved Markdown Rendering:** Now correctly renders Markdown formatting, including lists and preserving end-of-lines (EOLs).
 - Explanation that it works in Termux too
+- Info that one py file only here
