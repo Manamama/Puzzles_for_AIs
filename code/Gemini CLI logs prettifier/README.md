@@ -20,7 +20,7 @@ This script automates the process of converting that data into a user-friendly f
 - **Universality:** Works in Ubuntu and Termux (Android) so far, probably universal then: the filepaths codes need checking maybe in Windows and such. 
 
 ## How to use
-0.  Just download this single .py file in this folder, so [click here]([url](https://github.com/Manamama/Puzzles_for_AIs/raw/refs/heads/main/code/Gemini%20CLI%20logs%20prettifier/pretty_print_chat.py)): https://github.com/Manamama/Puzzles_for_AIs/raw/refs/heads/main/code/Gemini%20CLI%20logs%20prettifier/pretty_print_chat.py
+0.  Just download this single .py file in this folder, so [right click here]([url](https://github.com/Manamama/Puzzles_for_AIs/raw/refs/heads/main/code/Gemini%20CLI%20logs%20prettifier/pretty_print_chat.py)): https://github.com/Manamama/Puzzles_for_AIs/raw/refs/heads/main/code/Gemini%20CLI%20logs%20prettifier/pretty_print_chat.py etc. or just use `wget` with that URL. 
 1.  Make sure you have Python 3 installed.
 2.  Run the script from your terminal:
     ```bash
