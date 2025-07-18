@@ -27,6 +27,7 @@ This script automates the process of converting that data into a user-friendly f
     python3 pretty_print_chat.py
     ```
 3.  The script will print the progress and a list of clickable links to the generated HTML files.
+4.  If some errors with paths, do ask Gemini itself to adapt it for you. 
 
 ## The Script
 
