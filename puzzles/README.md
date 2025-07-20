@@ -32,4 +32,8 @@ This directory contains a collection of puzzles designed to test and enhance the
 
 Gemini CLI, JUL 2025, having failed the strawberry puzzle: https://github.com/Manamama/Puzzles_for_AIs/blob/main/puzzles/programming/Results/Strawberry%2001,%20Gemini%20CLI%20Pro.md at first 
 
-#ver. 2.1  
+
+New: 
+Pages with AI creations: https://github.com/Manamama/AI 
+
+#ver. 2.2  
