@@ -1,0 +1,5 @@
+{
+  "name": "The Puzzle of the Knight, Knave, and Spy",
+  "description": "An interactive logic solver that walks through the classic Knights and Knaves puzzle with a Spy.",
+  "requestFramePermissions": []
+}

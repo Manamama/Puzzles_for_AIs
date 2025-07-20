@@ -1,0 +1,360 @@
+
+<!-- saved from url=(0132)blob:https://03yerofj8ii0ll3n85pzmhmqrd9k5mw18hn8t48lnuxqpofhul-h783343146.scf.usercontent.goog/589e118e-5e82-4a5d-8cb4-d1e238cb873d -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+        @import url(https://fonts.googleapis.com/css?family=Google+Sans+Text);
+        html {
+          font-family: 'Google Sans Text', 'Google Sans';
+          font-size: 14px;
+          color-scheme: light dark;
+          background: light-dark(white, black);
+          color: light-dark(black, white);
+        }
+        </style>
+        
+        <script type="importmap">{"imports":{"@modelcontextprotocol/sdk/":"https://esm.sh/@modelcontextprotocol/sdk/dist/esm/","https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/es2022/":"https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/es2022/dist/esm/","https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/client/index?target=es2022":"https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/dist/esm/client/index?target=es2022","https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/types?target=es2022":"https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/dist/esm/types?target=es2022","react/":"https://esm.sh/react@^19.1.0/","react":"https://esm.sh/react@^19.1.0","react-dom/":"https://esm.sh/react-dom@^19.1.0/","@/index":"data:application/javascript;base64,aW1wb3J0IHsganN4IGFzIF9qc3ggfSBmcm9tICJyZWFjdC9qc3gtcnVudGltZSI7CmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7CmltcG9ydCBSZWFjdERPTSBmcm9tICdyZWFjdC1kb20vY2xpZW50JzsKaW1wb3J0IEFwcCBmcm9tICdAL0FwcCc7CmNvbnN0IHJvb3RFbGVtZW50ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKTsKaWYgKCFyb290RWxlbWVudCkgewogICAgdGhyb3cgbmV3IEVycm9yKCJDb3VsZCBub3QgZmluZCByb290IGVsZW1lbnQgdG8gbW91bnQgdG8iKTsKfQpjb25zdCByb290ID0gUmVhY3RET00uY3JlYXRlUm9vdChyb290RWxlbWVudCk7CnJvb3QucmVuZGVyKF9qc3goUmVhY3QuU3RyaWN0TW9kZSwgeyBjaGlsZHJlbjogX2pzeChBcHAsIHt9KSB9KSk7Cg==","@":"data:application/javascript;base64,aW1wb3J0IHsganN4IGFzIF9qc3ggfSBmcm9tICJyZWFjdC9qc3gtcnVudGltZSI7CmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7CmltcG9ydCBSZWFjdERPTSBmcm9tICdyZWFjdC1kb20vY2xpZW50JzsKaW1wb3J0IEFwcCBmcm9tICdAL0FwcCc7CmNvbnN0IHJvb3RFbGVtZW50ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKTsKaWYgKCFyb290RWxlbWVudCkgewogICAgdGhyb3cgbmV3IEVycm9yKCJDb3VsZCBub3QgZmluZCByb290IGVsZW1lbnQgdG8gbW91bnQgdG8iKTsKfQpjb25zdCByb290ID0gUmVhY3RET00uY3JlYXRlUm9vdChyb290RWxlbWVudCk7CnJvb3QucmVuZGVyKF9qc3goUmVhY3QuU3RyaWN0TW9kZSwgeyBjaGlsZHJlbjogX2pzeChBcHAsIHt9KSB9KSk7Cg==","@/types":"data:application/javascript;base64,ZXhwb3J0IHt9Owo=","@/App":"data:application/javascript;base64,aW1wb3J0IHsganN4IGFzIF9qc3gsIGpzeHMgYXMgX2pzeHMgfSBmcm9tICJyZWFjdC9qc3gtcnVudGltZSI7CmltcG9ydCB7IHVzZU1lbW8gfSBmcm9tICdyZWFjdCc7Ci8vIEhlbHBlciB0byBnZW5lcmF0ZSBhbGwgcGVybXV0YXRpb25zIG9mIGFuIGFycmF5CmZ1bmN0aW9uKiBwZXJtdXRhdGlvbnMoYXJyLCBzaXplID0gYXJyLmxlbmd0aCkgewogICAgaWYgKHNpemUgPiBhcnIubGVuZ3RoKQogICAgICAgIHJldHVybjsKICAgIGNvbnN0IGluZGljZXMgPSBBcnJheS5mcm9tKHsgbGVuZ3RoOiBhcnIubGVuZ3RoIH0sIChfLCBpKSA9PiBpKTsKICAgIGNvbnN0IGN5Y2xlcyA9IEFycmF5LmZyb20oeyBsZW5ndGg6IHNpemUgfSwgKF8sIGkpID0+IGFyci5sZW5ndGggLSBpKTsKICAgIHlpZWxkIGFyci5zbGljZSgwLCBzaXplKS5tYXAoaSA9PiBpKTsKICAgIHdoaWxlICh0cnVlKSB7CiAgICAgICAgbGV0IGkgPSBzaXplIC0gMTsKICAgICAgICB3aGlsZSAoaSA+PSAwKSB7CiAgICAgICAgICAgIGN5Y2xlc1tpXS0tOwogICAgICAgICAgICBpZiAoY3ljbGVzW2ldID09PSAwKSB7CiAgICAgICAgICAgICAgICBjb25zdCB0ZW1wID0gaW5kaWNlc1tpXTsKICAgICAgICAgICAgICAgIGZvciAobGV0IGogPSBpOyBqIDwgYXJyLmxlbmd0aCAtIDE7IGorKykgewogICAgICAgICAgICAgICAgICAgIGluZGljZXNbal0gPSBpbmRpY2VzW2ogKyAxXTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGluZGljZXNbYXJyLmxlbmd0aCAtIDFdID0gdGVtcDsKICAgICAgICAgICAgICAgIGN5Y2xlc1tpXSA9IGFyci5sZW5ndGggLSBpOwogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsc2UgewogICAgICAgICAgICAgICAgY29uc3QgaiA9IGN5Y2xlc1tpXTsKICAgICAgICAgICAgICAgIFtpbmRpY2VzW2ldLCBpbmRpY2VzW2Fyci5sZW5ndGggLSBqXV0gPSBbaW5kaWNlc1thcnIubGVuZ3RoIC0gal0sIGluZGljZXNbaV1dOwogICAgICAgICAgICAgICAgeWllbGQgaW5kaWNlcy5zbGljZSgwLCBzaXplKS5tYXAoayA9PiBhcnJba10pOwogICAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaS0tOwogICAgICAgIH0KICAgICAgICBpZiAoaSA8IDApCiAgICAgICAgICAgIHJldHVybjsKICAgIH0KfQpjb25zdCBBcHAgPSAoKSA9PiB7CiAgICBjb25zdCB2ZXJpZmljYXRpb25SZXN1bHRzID0gdXNlTWVtbygoKSA9PiB7CiAgICAgICAgY29uc3Qgcm9sZXMgPSBbJ2tuaWdodCcsICdrbmF2ZScsICdzcHknXTsKICAgICAgICBjb25zdCBwZW9wbGUgPSBbJ0EnLCAnQicsICdDJ107CiAgICAgICAgY29uc3Qgc3RhdGVtZW50cyA9IHsKICAgICAgICAgICAgQTogKHIpID0+IHJbJ0MnXSA9PT0gJ2tuYXZlJywKICAgICAgICAgICAgQjogKHIpID0+IHJbJ0EnXSA9PT0gJ2tuaWdodCcsCiAgICAgICAgICAgIEM6IChyKSA9PiByWydDJ10gPT09ICdzcHknLAogICAgICAgIH07CiAgICAgICAgY29uc3QgcmVzdWx0cyA9IFtdOwogICAgICAgIGxldCBpZCA9IDE7CiAgICAgICAgZm9yIChjb25zdCBwZXJtIG9mIHBlcm11dGF0aW9ucyhyb2xlcykpIHsKICAgICAgICAgICAgY29uc3QgYXNzaWduZWRSb2xlcyA9IHsKICAgICAgICAgICAgICAgIEE6IHBlcm1bMF0sCiAgICAgICAgICAgICAgICBCOiBwZXJtWzFdLAogICAgICAgICAgICAgICAgQzogcGVybVsyXSwKICAgICAgICAgICAgfTsKICAgICAgICAgICAgY29uc3QgbG9nID0gW107CiAgICAgICAgICAgIGxldCBpc1Blcm11dGF0aW9uQ29uc2lzdGVudCA9IHRydWU7CiAgICAgICAgICAgIGZvciAoY29uc3QgcGVyc29uIG9mIHBlb3BsZSkgewogICAgICAgICAgICAgICAgY29uc3QgcGVyc29uUm9sZSA9IGFzc2lnbmVkUm9sZXNbcGVyc29uXTsKICAgICAgICAgICAgICAgIGNvbnN0IHN0YXRlbWVudElzVHJ1ZSA9IHN0YXRlbWVudHNbcGVyc29uXShhc3NpZ25lZFJvbGVzKTsKICAgICAgICAgICAgICAgIGxldCBpc1N0ZXBDb25zaXN0ZW50ID0gdHJ1ZTsKICAgICAgICAgICAgICAgIGxldCBtZXNzYWdlID0gJyc7CiAgICAgICAgICAgICAgICBpZiAocGVyc29uUm9sZSA9PT0gJ2tuaWdodCcpIHsKICAgICAgICAgICAgICAgICAgICBpZiAoIXN0YXRlbWVudElzVHJ1ZSkgewogICAgICAgICAgICAgICAgICAgICAgICBtZXNzYWdlID0gYEluY29uc2lzdGVudDogS25pZ2h0ICR7cGVyc29ufSBtYWRlIGEgZmFsc2Ugc3RhdGVtZW50LmA7CiAgICAgICAgICAgICAgICAgICAgICAgIGlzU3RlcENvbnNpc3RlbnQgPSBmYWxzZTsKICAgICAgICAgICAgICAgICAgICAgICAgaXNQZXJtdXRhdGlvbkNvbnNpc3RlbnQgPSBmYWxzZTsKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgZWxzZSB7CiAgICAgICAgICAgICAgICAgICAgICAgIG1lc3NhZ2UgPSBgQ29uc2lzdGVudDogS25pZ2h0ICR7cGVyc29ufSBtYWRlIGEgdHJ1ZSBzdGF0ZW1lbnQuYDsKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBlbHNlIGlmIChwZXJzb25Sb2xlID09PSAna25hdmUnKSB7CiAgICAgICAgICAgICAgICAgICAgaWYgKHN0YXRlbWVudElzVHJ1ZSkgewogICAgICAgICAgICAgICAgICAgICAgICBtZXNzYWdlID0gYEluY29uc2lzdGVudDogS25hdmUgJHtwZXJzb259IG1hZGUgYSB0cnVlIHN0YXRlbWVudC5gOwogICAgICAgICAgICAgICAgICAgICAgICBpc1N0ZXBDb25zaXN0ZW50ID0gZmFsc2U7CiAgICAgICAgICAgICAgICAgICAgICAgIGlzUGVybXV0YXRpb25Db25zaXN0ZW50ID0gZmFsc2U7CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGVsc2UgewogICAgICAgICAgICAgICAgICAgICAgICBtZXNzYWdlID0gYENvbnNpc3RlbnQ6IEtuYXZlICR7cGVyc29ufSBtYWRlIGEgZmFsc2Ugc3RhdGVtZW50LmA7CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZWxzZSBpZiAocGVyc29uUm9sZSA9PT0gJ3NweScpIHsKICAgICAgICAgICAgICAgICAgICBtZXNzYWdlID0gYE5ldXRyYWw6IFNweSAke3BlcnNvbn0ncyBzdGF0ZW1lbnQgY2FuIGJlIHRydWUgb3IgZmFsc2UuYDsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGxvZy5wdXNoKHsgbWVzc2FnZSwgaXNDb25zaXN0ZW50OiBpc1N0ZXBDb25zaXN0ZW50IH0pOwogICAgICAgICAgICAgICAgaWYgKCFpc1Blcm11dGF0aW9uQ29uc2lzdGVudCkKICAgICAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgfQogICAgICAgICAgICByZXN1bHRzLnB1c2goeyBpZDogaWQrKywgcGVybXV0YXRpb246IGFzc2lnbmVkUm9sZXMsIGxvZywgaXNTb2x1dGlvbjogaXNQZXJtdXRhdGlvbkNvbnNpc3RlbnQgfSk7CiAgICAgICAgfQogICAgICAgIHJldHVybiByZXN1bHRzOwogICAgfSwgW10pOwogICAgcmV0dXJuIChfanN4KCJkaXYiLCB7IGNsYXNzTmFtZTogIm1pbi1oLXNjcmVlbiBiZy1zbGF0ZS05MDAgZmxleCBmbGV4LWNvbCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcC00IHNtOnAtNiBtZDpwLTgiLCBjaGlsZHJlbjogX2pzeHMoImRpdiIsIHsgY2xhc3NOYW1lOiAidy1mdWxsIG1heC13LTZ4bCBteC1hdXRvIiwgY2hpbGRyZW46IFtfanN4cygiaGVhZGVyIiwgeyBjbGFzc05hbWU6ICJ0ZXh0LWNlbnRlciBtYi0xMCIsIGNoaWxkcmVuOiBbX2pzeCgiaDEiLCB7IGNsYXNzTmFtZTogInRleHQtNHhsIG1kOnRleHQtNXhsIGZvbnQtYm9sZCB0ZXh0LWFtYmVyLTMwMCB0cmFja2luZy10aWdodCIsIGNoaWxkcmVuOiAiVGhlIFB1enpsZSBvZiB0aGUgS25pZ2h0LCBLbmF2ZSwgYW5kIFNweSIgfSksIF9qc3goInAiLCB7IGNsYXNzTmFtZTogInRleHQtc2xhdGUtNDAwIG10LTIgdGV4dC1sZyIsIGNoaWxkcmVuOiAiQSBTdGVwLWJ5LVN0ZXAgTG9naWNhbCBEZWR1Y3Rpb24iIH0pXSB9KSwgX2pzeHMoIm1haW4iLCB7IGNsYXNzTmFtZTogInNwYWNlLXktMTIiLCBjaGlsZHJlbjogW19qc3hzKCJkaXYiLCB7IGNsYXNzTmFtZTogImdyaWQgbWQ6Z3JpZC1jb2xzLTIgZ2FwLTgiLCBjaGlsZHJlbjogW19qc3hzKCJkaXYiLCB7IGNsYXNzTmFtZTogImJnLXNsYXRlLTgwMC81MCBwLTYgcm91bmRlZC14bCBib3JkZXIgYm9yZGVyLXNsYXRlLTcwMCIsIGNoaWxkcmVuOiBbX2pzeCgiaDIiLCB7IGNsYXNzTmFtZTogInRleHQtMnhsIGZvbnQtc2VtaWJvbGQgdGV4dC1yb3NlLTQwMCBtYi00IiwgY2hpbGRyZW46ICJUaGUgUHJlbWlzZSIgfSksIF9qc3hzKCJ1bCIsIHsgY2xhc3NOYW1lOiAic3BhY2UteS0zIHRleHQtc2xhdGUtMzAwIiwgY2hpbGRyZW46IFtfanN4cygibGkiLCB7IGNoaWxkcmVuOiBbX2pzeCgic3BhbiIsIHsgY2xhc3NOYW1lOiAiZm9udC1ib2xkIHRleHQtd2hpdGUiLCBjaGlsZHJlbjogIlRoZSBLbmlnaHQ6IiB9KSwgIiBBbHdheXMgdGVsbHMgdGhlIHRydXRoLiJdIH0pLCBfanN4cygibGkiLCB7IGNoaWxkcmVuOiBbX2pzeCgic3BhbiIsIHsgY2xhc3NOYW1lOiAiZm9udC1ib2xkIHRleHQtd2hpdGUiLCBjaGlsZHJlbjogIlRoZSBLbmF2ZToiIH0pLCAiIEFsd2F5cyBsaWVzLiJdIH0pLCBfanN4cygibGkiLCB7IGNoaWxkcmVuOiBbX2pzeCgic3BhbiIsIHsgY2xhc3NOYW1lOiAiZm9udC1ib2xkIHRleHQtd2hpdGUiLCBjaGlsZHJlbjogIlRoZSBTcHk6IiB9KSwgIiBDYW4gZWl0aGVyIGxpZSBvciB0ZWxsIHRoZSB0cnV0aC4iXSB9KV0gfSldIH0pLCBfanN4cygiZGl2IiwgeyBjbGFzc05hbWU6ICJiZy1zbGF0ZS04MDAvNTAgcC02IHJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1zbGF0ZS03MDAiLCBjaGlsZHJlbjogW19qc3goImgyIiwgeyBjbGFzc05hbWU6ICJ0ZXh0LTJ4bCBmb250LXNlbWlib2xkIHRleHQtYW1iZXItNDAwIG1iLTQiLCBjaGlsZHJlbjogIlRoZSBTdGF0ZW1lbnRzIiB9KSwgX2pzeHMoInVsIiwgeyBjbGFzc05hbWU6ICJzcGFjZS15LTMgdGV4dC1zbGF0ZS0zMDAiLCBjaGlsZHJlbjogW19qc3hzKCJsaSIsIHsgY2hpbGRyZW46IFtfanN4KCJzcGFuIiwgeyBjbGFzc05hbWU6ICJmb250LWJvbGQgdGV4dC13aGl0ZSIsIGNoaWxkcmVuOiAiQSBzYXlzOiIgfSksICIgXCJDIGlzIGEga25hdmUuXCIiXSB9KSwgX2pzeHMoImxpIiwgeyBjaGlsZHJlbjogW19qc3goInNwYW4iLCB7IGNsYXNzTmFtZTogImZvbnQtYm9sZCB0ZXh0LXdoaXRlIiwgY2hpbGRyZW46ICJCIHNheXM6IiB9KSwgIiBcIkEgaXMgYSBrbmlnaHQuXCIiXSB9KSwgX2pzeHMoImxpIiwgeyBjaGlsZHJlbjogW19qc3goInNwYW4iLCB7IGNsYXNzTmFtZTogImZvbnQtYm9sZCB0ZXh0LXdoaXRlIiwgY2hpbGRyZW46ICJDIHNheXM6IiB9KSwgIiBcIkkgYW0gdGhlIHNweS5cIiJdIH0pXSB9KV0gfSldIH0pLCBfanN4cygiZGl2IiwgeyBjbGFzc05hbWU6ICJiZy1zbGF0ZS04MDAvNzAgcC02IG1kOnAtOCByb3VuZGVkLXhsIGJvcmRlciBib3JkZXItc2xhdGUtNzAwIiwgY2hpbGRyZW46IFtfanN4KCJoMiIsIHsgY2xhc3NOYW1lOiAidGV4dC0zeGwgZm9udC1ib2xkIHRleHQtdGVhbC0zMDAgbWItNiB0ZXh0LWNlbnRlciIsIGNoaWxkcmVuOiAiVGhlIExvZ2ljYWwgRGVkdWN0aW9uIiB9KSwgX2pzeHMoImRpdiIsIHsgY2xhc3NOYW1lOiAic3BhY2UteS02IHRleHQtc2xhdGUtMzAwIGxlYWRpbmctcmVsYXhlZCIsIGNoaWxkcmVuOiBbX2pzeHMoInAiLCB7IGNoaWxkcmVuOiBbX2pzeCgic3Ryb25nIiwgeyBjbGFzc05hbWU6ICJ0ZXh0LXdoaXRlIiwgY2hpbGRyZW46ICJTdGVwIDE6IEFuYWx5emUgQydzIHN0YXRlbWVudC4iIH0pLCAiIEMgc2F5cywgXCJJIGFtIHRoZSBzcHkuXCIiXSB9KSwgX2pzeHMoInVsIiwgeyBjbGFzc05hbWU6ICJsaXN0LWRpc2MgbGlzdC1pbnNpZGUgcGwtNCBzcGFjZS15LTIiLCBjaGlsZHJlbjogW19qc3hzKCJsaSIsIHsgY2hpbGRyZW46IFsiSWYgQyB3ZXJlIHRoZSAiLCBfanN4KCJzcGFuIiwgeyBjbGFzc05hbWU6ICJmb250LXNlbWlib2xkIHRleHQtcm9zZS0zMDAiLCBjaGlsZHJlbjogIktuaWdodCIgfSksICIsIGhlIHdvdWxkIGhhdmUgdG8gdGVsbCB0aGUgdHJ1dGguIEJ1dCB0aGVuIGhlIHdvdWxkIGJlIHRoZSBTcHksIG5vdCB0aGUgS25pZ2h0LiBUaGlzIGlzIGEgY29udHJhZGljdGlvbi4iXSB9KSwgX2pzeHMoImxpIiwgeyBjaGlsZHJlbjogWyJUaGVyZWZvcmUsICIsIF9qc3goInN0cm9uZyIsIHsgY2xhc3NOYW1lOiAidGV4dC13aGl0ZSIsIGNoaWxkcmVuOiAiQyBjYW5ub3QgYmUgdGhlIEtuaWdodC4iIH0pXSB9KV0gfSksIF9qc3hzKCJwIiwgeyBjaGlsZHJlbjogW19qc3goInN0cm9uZyIsIHsgY2xhc3NOYW1lOiAidGV4dC13aGl0ZSIsIGNoaWxkcmVuOiAiU3RlcCAyOiBDb25zaWRlciB0aGUgcmVtYWluaW5nIHBvc3NpYmlsaXRpZXMgZm9yIHRoZSBLbmlnaHQuIiB9KSwgIiBTaW5jZSBDIGlzIG5vdCB0aGUgS25pZ2h0LCB0aGUgS25pZ2h0IG11c3QgYmUgZWl0aGVyIEEgb3IgQi4iXSB9KSwgX2pzeCgicCIsIHsgY2hpbGRyZW46IF9qc3goInN0cm9uZyIsIHsgY2xhc3NOYW1lOiAidGV4dC13aGl0ZSIsIGNoaWxkcmVuOiAiU3RlcCAzOiBUZXN0IHRoZSBoeXBvdGhlc2lzIHRoYXQgQiBpcyB0aGUgS25pZ2h0LiIgfSkgfSksIF9qc3hzKCJ1bCIsIHsgY2xhc3NOYW1lOiAibGlzdC1kaXNjIGxpc3QtaW5zaWRlIHBsLTQgc3BhY2UteS0yIiwgY2hpbGRyZW46IFtfanN4cygibGkiLCB7IGNoaWxkcmVuOiBbIkxldCdzIGFzc3VtZSBCIGlzIHRoZSAiLCBfanN4KCJzcGFuIiwgeyBjbGFzc05hbWU6ICJmb250LXNlbWlib2xkIHRleHQtcm9zZS0zMDAiLCBjaGlsZHJlbjogIktuaWdodCIgfSksICIuIEhpcyBzdGF0ZW1lbnQsIFwiQSBpcyBhIGtuaWdodCxcIiBtdXN0IGJlIHRydWUuIl0gfSksIF9qc3goImxpIiwgeyBjaGlsZHJlbjogIlRoaXMgd291bGQgbWVhbiBBIGlzIGFsc28gdGhlIEtuaWdodC4gSG93ZXZlciwgdGhlcmUgY2FuIG9ubHkgYmUgb25lIEtuaWdodC4gVGhpcyBpcyBhIGNvbnRyYWRpY3Rpb24uIiB9KSwgX2pzeHMoImxpIiwgeyBjaGlsZHJlbjogWyJUaGVyZWZvcmUsIG91ciBhc3N1bXB0aW9uIHdhcyB3cm9uZy4gIiwgX2pzeCgic3Ryb25nIiwgeyBjbGFzc05hbWU6ICJ0ZXh0LXdoaXRlIiwgY2hpbGRyZW46ICJCIGNhbm5vdCBiZSB0aGUgS25pZ2h0LiIgfSldIH0pXSB9KSwgX2pzeCgicCIsIHsgY2hpbGRyZW46IF9qc3goInN0cm9uZyIsIHsgY2xhc3NOYW1lOiAidGV4dC13aGl0ZSIsIGNoaWxkcmVuOiAiU3RlcCA0OiBEZXRlcm1pbmUgdGhlIGlkZW50aXR5IG9mIHRoZSBLbmlnaHQuIiB9KSB9KSwgX2pzeCgidWwiLCB7IGNsYXNzTmFtZTogImxpc3QtZGlzYyBsaXN0LWluc2lkZSBwbC00IiwgY2hpbGRyZW46IF9qc3hzKCJsaSIsIHsgY2hpbGRyZW46IFsiV2UgaGF2ZSBlbGltaW5hdGVkIEMgYW5kIEIgYXMgdGhlIEtuaWdodC4gQnkgcHJvY2VzcyBvZiBlbGltaW5hdGlvbiwgIiwgX2pzeCgic3Ryb25nIiwgeyBjbGFzc05hbWU6ICJ0ZXh0LXdoaXRlIiwgY2hpbGRyZW46ICJBIG11c3QgYmUgdGhlIEtuaWdodC4iIH0pXSB9KSB9KSwgX2pzeCgicCIsIHsgY2hpbGRyZW46IF9qc3goInN0cm9uZyIsIHsgY2xhc3NOYW1lOiAidGV4dC13aGl0ZSIsIGNoaWxkcmVuOiAiU3RlcCA1OiBEZWR1Y2UgdGhlIHJlbWFpbmluZyBpZGVudGl0aWVzIGFuZCB2ZXJpZnkuIiB9KSB9KSwgX2pzeHMoInVsIiwgeyBjbGFzc05hbWU6ICJsaXN0LWRpc2MgbGlzdC1pbnNpZGUgcGwtNCBzcGFjZS15LTIiLCBjaGlsZHJlbjogW19qc3hzKCJsaSIsIHsgY2hpbGRyZW46IFsiU2luY2UgQSBpcyB0aGUgS25pZ2h0LCBoaXMgc3RhdGVtZW50IFwiQyBpcyBhIGtuYXZlXCIgbXVzdCBiZSB0cnVlLiBTbywgIiwgX2pzeCgic3Ryb25nIiwgeyBjbGFzc05hbWU6ICJ0ZXh0LXdoaXRlIiwgY2hpbGRyZW46ICJDIGlzIHRoZSBLbmF2ZS4iIH0pXSB9KSwgX2pzeHMoImxpIiwgeyBjaGlsZHJlbjogWyJUaGlzIGxlYXZlcyBvbmx5IG9uZSByb2xlIGZvciBCOiAiLCBfanN4KCJzdHJvbmciLCB7IGNsYXNzTmFtZTogInRleHQtd2hpdGUiLCBjaGlsZHJlbjogIkIgbXVzdCBiZSB0aGUgU3B5LiIgfSldIH0pLCBfanN4cygibGkiLCB7IGNoaWxkcmVuOiBbIkxldCdzIHZlcmlmeSB0aGlzIHNvbHV0aW9uIGFnYWluc3QgdGhlIHN0YXRlbWVudHM6IiwgX2pzeHMoInVsIiwgeyBjbGFzc05hbWU6ICJsaXN0LWNpcmNsZSBsaXN0LWluc2lkZSBwbC02IG10LTIgc3BhY2UteS0xIiwgY2hpbGRyZW46IFtfanN4KCJsaSIsIHsgY2hpbGRyZW46ICJBIChLbmlnaHQpIHNheXMgXCJDIGlzIGEga25hdmUuXCIgVGhpcyBpcyB0cnVlLiBcdTI3MDUiIH0pLCBfanN4KCJsaSIsIHsgY2hpbGRyZW46ICJCIChTcHkpIHNheXMgXCJBIGlzIGEga25pZ2h0LlwiIFRoaXMgaXMgdHJ1ZS4gQSBTcHkgY2FuIHRlbGwgdGhlIHRydXRoLiBcdTI3MDUiIH0pLCBfanN4KCJsaSIsIHsgY2hpbGRyZW46ICJDIChLbmF2ZSkgc2F5cyBcIkkgYW0gdGhlIHNweS5cIiBUaGlzIGlzIGZhbHNlLiBBIEtuYXZlIG11c3QgbGllLiBcdTI3MDUiIH0pXSB9KV0gfSksIF9qc3goImxpIiwgeyBjbGFzc05hbWU6ICJwdC0yIiwgY2hpbGRyZW46ICJBbGwgc3RhdGVtZW50cyBhcmUgY29uc2lzdGVudCB3aXRoIHRoaXMgYXNzaWdubWVudC4iIH0pXSB9KV0gfSldIH0pLCBfanN4cygiZGl2IiwgeyBjbGFzc05hbWU6ICJ0ZXh0LWNlbnRlciBwLTYgYmctZ3JhZGllbnQtdG8tciBmcm9tLXRlYWwtNTAwIHRvLWN5YW4tNTAwIHJvdW5kZWQtbGciLCBjaGlsZHJlbjogW19qc3goImgyIiwgeyBjbGFzc05hbWU6ICJ0ZXh0LTJ4bCBmb250LWJvbGQgdGV4dC13aGl0ZSBtYi0yIiwgY2hpbGRyZW46ICJUaGUgU29sdXRpb24iIH0pLCBfanN4cygiZGl2IiwgeyBjbGFzc05hbWU6ICJ0ZXh0LXhsIHRleHQtc2xhdGUtOTAwIGZvbnQtc2VtaWJvbGQgc3BhY2UteC02IiwgY2hpbGRyZW46IFtfanN4KCJzcGFuIiwgeyBjaGlsZHJlbjogIkEgaXMgdGhlIEtuaWdodCIgfSksIF9qc3goInNwYW4iLCB7IGNoaWxkcmVuOiAiQiBpcyB0aGUgU3B5IiB9KSwgX2pzeCgic3BhbiIsIHsgY2hpbGRyZW46ICJDIGlzIHRoZSBLbmF2ZSIgfSldIH0pXSB9KSwgX2pzeHMoImRpdiIsIHsgY2xhc3NOYW1lOiAiYmctc2xhdGUtODAwLzcwIHAtNiBtZDpwLTggcm91bmRlZC14bCBib3JkZXIgYm9yZGVyLXNsYXRlLTcwMCIsIGNoaWxkcmVuOiBbX2pzeCgiaDIiLCB7IGNsYXNzTmFtZTogInRleHQtM3hsIGZvbnQtYm9sZCB0ZXh0LXNreS0zMDAgbWItNiB0ZXh0LWNlbnRlciIsIGNoaWxkcmVuOiAiQ29tcHV0YXRpb25hbCBWZXJpZmljYXRpb24iIH0pLCBfanN4KCJwIiwgeyBjbGFzc05hbWU6ICJ0ZXh0LWNlbnRlciB0ZXh0LXNsYXRlLTQwMCBtYi04IiwgY2hpbGRyZW46ICJDaGVja2luZyBhbGwgNiBwb3NzaWJsZSByZWFsaXRpZXMgdG8gZmluZCB0aGUgc2luZ2xlIGNvbnNpc3RlbnQgc29sdXRpb24uIiB9KSwgX2pzeCgiZGl2IiwgeyBjbGFzc05hbWU6ICJncmlkIGdyaWQtY29scy0xIG1kOmdyaWQtY29scy0yIGxnOmdyaWQtY29scy0zIGdhcC02IiwgY2hpbGRyZW46IHZlcmlmaWNhdGlvblJlc3VsdHMubWFwKHJlc3VsdCA9PiAoX2pzeHMoImRpdiIsIHsgY2xhc3NOYW1lOiBgcC00IHJvdW5kZWQtbGcgYm9yZGVyICR7cmVzdWx0LmlzU29sdXRpb24gPyAnYmctdGVhbC05MDAvNTAgYm9yZGVyLXRlYWwtNTAwJyA6ICdiZy1zbGF0ZS04MDAvNjAgYm9yZGVyLXNsYXRlLTcwMCd9YCwgY2hpbGRyZW46IFtfanN4cygiaDMiLCB7IGNsYXNzTmFtZTogImZvbnQtYm9sZCB0ZXh0LWxnIHRleHQtd2hpdGUgbWItMyIsIGNoaWxkcmVuOiBbIiMiLCByZXN1bHQuaWQsICI6IEE9IiwgX2pzeCgic3BhbiIsIHsgY2xhc3NOYW1lOiAiY2FwaXRhbGl6ZSIsIGNoaWxkcmVuOiByZXN1bHQucGVybXV0YXRpb24uQSB9KSwgIiwgQj0iLCBfanN4KCJzcGFuIiwgeyBjbGFzc05hbWU6ICJjYXBpdGFsaXplIiwgY2hpbGRyZW46IHJlc3VsdC5wZXJtdXRhdGlvbi5CIH0pLCAiLCBDPSIsIF9qc3goInNwYW4iLCB7IGNsYXNzTmFtZTogImNhcGl0YWxpemUiLCBjaGlsZHJlbjogcmVzdWx0LnBlcm11dGF0aW9uLkMgfSldIH0pLCBfanN4KCJ1bCIsIHsgY2xhc3NOYW1lOiAic3BhY2UteS0yIHRleHQtc20iLCBjaGlsZHJlbjogcmVzdWx0LmxvZy5tYXAoKGxvZ0VudHJ5LCBpbmRleCkgPT4gKF9qc3hzKCJsaSIsIHsgY2xhc3NOYW1lOiAiZmxleCBpdGVtcy1zdGFydCIsIGNoaWxkcmVuOiBbX2pzeCgic3BhbiIsIHsgY2xhc3NOYW1lOiBgbXItMiBtdC0xICR7bG9nRW50cnkuaXNDb25zaXN0ZW50ID8gJ3RleHQtZ3JlZW4tNDAwJyA6ICd0ZXh0LXJlZC00MDAnfWAsIGNoaWxkcmVuOiBsb2dFbnRyeS5pc0NvbnNpc3RlbnQgPyAn4pyFJyA6ICfinYwnIH0pLCBfanN4KCJzcGFuIiwgeyBjbGFzc05hbWU6ICJ0ZXh0LXNsYXRlLTMwMCIsIGNoaWxkcmVuOiBsb2dFbnRyeS5tZXNzYWdlIH0pXSB9LCBpbmRleCkpKSB9KSwgcmVzdWx0LmlzU29sdXRpb24gJiYgKF9qc3goInAiLCB7IGNsYXNzTmFtZTogIm10LTMgdGV4dC1jZW50ZXIgZm9udC1ib2xkIHRleHQtZ3JlZW4tMzAwIGJnLWdyZWVuLTkwMC81MCBweS0xIHJvdW5kZWQiLCBjaGlsZHJlbjogIlZBTElEIFNPTFVUSU9OIiB9KSldIH0sIHJlc3VsdC5pZCkpKSB9KV0gfSldIH0pXSB9KSB9KSk7Cn07CmV4cG9ydCBkZWZhdWx0IEFwcDsK","@/components/Controls":"data:application/javascript;base64,","@/components/Grid":"data:application/javascript;base64,","@/components/Cell":"data:application/javascript;base64,"}}</script>
+        <script>
+          window.APPLET_FILES = ["index.tsx","metadata.json","index.html","types.ts","App.tsx","components/Controls.tsx","components/Grid.tsx","components/Cell.tsx"];
+          </script>
+        <script type="module">
+        window.API_KEY = 'GEMINI_API_KEY';
+window.GEMINI_API_KEY = 'GEMINI_API_KEY';
+window.process = window.process || {};
+window.process.env = window.process.env || {};
+window.process.env.API_KEY = window.API_KEY;
+window.process.env.GEMINI_API_KEY = window.GEMINI_API_KEY;
+
+(() => {
+  const bootstrapChannel = new Promise((resolve) => {
+    window.addEventListener('message', (event) => {
+      if (event.origin !== 'https://aistudio.google.com') {
+        return;
+      }
+
+      if (event.data.type === 'bootstrap') {
+        resolve({
+          port: event.ports[0],
+          urlPatterns:
+              event.data.urlPatterns.map((pattern) => new RegExp(pattern)),
+        });
+      }
+    });
+  });
+
+  window.aistudio = window.aistudio || {
+    getHostUrl: async function() {
+      const hostPort = (await bootstrapChannel).port;
+      return new Promise((resolve) => {
+        const channel = new MessageChannel();
+        hostPort.postMessage(
+            {type: 'get_host_url'},
+            [channel.port2]);
+        const port = channel.port1;
+        port.onmessage = (message) => {
+          resolve(message.data.url);
+        };
+      });
+    },
+    openSelectKey: async function() {
+      const hostPort = (await bootstrapChannel).port;
+      const channel = new MessageChannel();
+      hostPort.postMessage(
+          {type: 'open_select_key'},
+          [channel.port2]);
+    },
+  };
+
+  const nativeFetch = window.fetch;
+
+  /**
+   * @param {string | URL | Request} resource The resource of the fetch request.
+   * @param {RequestInit} options The options of the fetch request.
+   * @return {Promise!} The promise of the fetch request.
+   */
+  async function fetch(resource, options) {
+    const config = await bootstrapChannel;
+
+    const request = new Request(resource, options);
+    if (!config.urlPatterns.some((pattern) => request.url.match(pattern))) {
+      return nativeFetch(resource, options);
+    }
+    const hostPort = config.port;
+
+    const channel = new MessageChannel();
+    const port = channel.port1;
+    let bodyBytes;
+    const transfer = [channel.port2];
+    const parts = [];
+    const buffer = await request.arrayBuffer();
+    if (buffer.byteLength) {
+      bodyBytes = buffer;
+      transfer.push(bodyBytes);
+    }
+    hostPort.postMessage(
+        {
+          type: 'fetch',
+          url: request.url,
+          method: request.method,
+          headers: [...request.headers.entries()],
+          body: bodyBytes,
+        },
+        transfer);
+
+    let streamController;
+    const body = new ReadableStream({
+      start(controller) {
+        streamController = controller;
+      },
+    });
+    let resolveReceive;
+    const receivePromise = new Promise((resolve) => {
+      resolveReceive = resolve;
+    });
+    port.onmessage = (message) => {
+      switch (message.data.type) {
+        case 'response':
+          resolveReceive(new Response(body, {
+            status: message.data.status,
+            statusText: message.data.statusText,
+            headers: new Headers(message.data.headers),
+          }));
+          break;
+        case 'body':
+          streamController.enqueue(message.data.data);
+          break;
+        case 'body_done':
+          streamController.close();
+          break;
+      }
+    };
+    return receivePromise;
+  }
+
+  Object.defineProperty(window, 'fetch', {
+    get: function() {
+      return fetch;
+    },
+  });
+
+  const originalWebSocket = window.WebSocket;
+  class ProxiedWebSocket extends EventTarget {
+    /**
+     * @param {string} url The url of the websocket.
+     * @param {Object!} protocols The protocols of the websocket.
+     */
+    constructor(url, protocols) {
+      super();
+      this.url = url;
+      this.protocols = protocols;
+
+      this.open();
+    }
+
+    /** Opens the websocket. */
+    async open() {
+      const hostPort = (await bootstrapChannel).port;
+      const channel = new MessageChannel();
+      hostPort.postMessage(
+          {type: 'websocket_open', url: this.url, protocols: this.protocols},
+          [channel.port2]);
+      this.port = channel.port1;
+      this.port.onmessage = (message) => {
+        if (message.data.type === 'close') {
+          const event = new CloseEvent('close', {
+            code: message.data.code,
+            reason: message.data.reason,
+            wasClean: message.data.wasClean,
+          });
+          if (this.onclose) {
+            this.onclose(event);
+          }
+          this.dispatchEvent(event);
+          return;
+        } else if (message.data.type === 'open') {
+          const event = new Event('open');
+          if (this.onopen) {
+            this.onopen(event);
+          }
+          this.dispatchEvent(event);
+          return;
+        } else if (message.data.type === 'message') {
+          let data = message.data.data;
+          if (message.data.messageType === 'text' || message.data.messageType === 'message') {
+            data = new TextDecoder().decode(data);
+          }
+          const event = new MessageEvent('message', {
+            data,
+            type: message.data.messageType,
+          });
+          if (this.onmessage) {
+            this.onmessage(event);
+          }
+          this.dispatchEvent(event);
+          return;
+        } else if (message.data.type === 'error') {
+          const event = new ErrorEvent('error', {
+            message: message.data.message,
+          });
+          if (this.onerror) {
+            this.onerror(event);
+          }
+          this.dispatchEvent(event);
+          return;
+        }
+        console.error('received unknown message in frame', event.data);
+      };
+    }
+    /**
+     * @param {string|ArrayBuffer!} data The data to send.
+     */
+    send(data) {
+      if (typeof data === 'string') {
+        this.port.postMessage({type: 'send', data});
+      } else {
+        this.port.postMessage({type: 'send', data}, [data.buffer]);
+      }
+    }
+
+    /**
+     * @param {number} code The code of the close event.
+     * @param {string} reason The reason of the close event.
+     */
+    close(code, reason) {
+      this.port.postMessage({type: 'close', code, reason});
+    }
+  }
+
+  /**
+   * @param {string} url The url of the websocket.
+   * @param {Object!} protocols The protocols of the websocket.
+   * @return {WebSocket!} The websocket.
+   */
+  function createWebSocket(url, protocols) {
+    // This should come from the bootstrap channel, but we want this to
+    // work for the synchronous constructor here.
+    if (url.startsWith('wss://generativelanguage.googleapis.com/')) {
+      return Reflect.construct(ProxiedWebSocket, [url, protocols]);
+    }
+    return Reflect.construct(originalWebSocket, [url, protocols]);
+  }
+
+  Object.defineProperty(window, 'WebSocket', {
+    get: function() {
+      return createWebSocket;
+    },
+  });
+
+  async function instrumentErrorReporting() {
+    const errors = [];
+    let hostPort;
+
+    function reportError(message) {
+      if (!hostPort) {
+        errors.push(message);
+      } else {
+        hostPort.postMessage({type: 'error', message: message}, message);
+      }
+    }
+
+    function serialize(args) {
+      return args.map((a) => {
+        if (a instanceof Error || a instanceof ErrorEvent) {
+          return a.message;
+        }
+        if(a instanceof CloseEvent) {
+          return {code: a.code, reason: a.reason, wasClean: a.wasClean};
+        }
+        if( a instanceof Map) {
+          return JSON.parse(JSON.stringify([...a.entries()]));
+        }
+        if( a instanceof Set) {
+          return JSON.parse(JSON.stringify([...a.values()]));
+        }
+        if (a instanceof Object) {
+          return JSON.parse(JSON.stringify(a));
+        }
+        return a;
+      });
+    }
+
+    const originalConsole = window.console;
+    const originalConsoleLog = window.console.log;
+    const originalConsoleError = window.console.error;
+    const originalConsoleWarn = window.console.warn;
+    const originalConsoleDebug = window.console.debug;
+    window.console = {
+      ...originalConsole,
+      log: (message, ...args) => {
+        originalConsoleLog.apply(window.console, [message, ...args]);
+        const combined = serialize([message, ...args]);
+        reportError({type: 'console_log', message: combined });
+      },
+      debug: (message, ...args) => {
+        originalConsoleDebug.apply(window.console, [message, ...args]);
+        const combined = serialize([message, ...args]);
+        reportError({type: 'console_debug', message: combined });
+      },
+      error: (message, ...args) => {
+        originalConsoleError.apply(window.console, [message, ...args]);
+        const combined = serialize([message, ...args]);
+        reportError({type: 'console_error', message: combined });
+      },
+      warn: (message, ...args) => {
+        originalConsoleWarn.apply(window.console, [message, ...args]);
+        const combined = serialize([message, ...args]);
+        reportError({type: 'console_warn', message: combined });
+      },
+    };
+
+    window.onerror = (message, source, lineno, colno, error) => {
+      reportError({type: 'error', message: serialize([message]), source, lineno, colno, error});
+    };
+
+    window.onunhandledrejection = (event) => {
+      reportError({type: 'unhandledrejection', message: serialize([event.reason])});
+    };
+
+    window.alert = (message) => {
+      reportError({type: 'alert', message: serialize([message]) });
+    };
+
+    hostPort = (await bootstrapChannel).port;
+    for(const error of errors) {
+      hostPort.postMessage({type: 'error', message: error});
+    }
+  }
+
+  const availableFiles = new Set(window.APPLET_FILES || []);
+
+  instrumentErrorReporting();
+
+  window.addEventListener('hashchange', async (e) =>{
+    const config = await bootstrapChannel;
+    const hostPort = config.port;
+    hostPort.postMessage({type: 'hashchange', hash: window.location.hash});
+  });
+
+})();
+// # sourceURL=iframe_shim.js
+        </script>
+        
+
+  
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Knight, Knave, and Spy Puzzle</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      @import url('https://rsms.me/inter/inter.css');
+    </style>
+  <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.flex{display:flex}.grid{display:grid}.min-h-screen{min-height:100vh}.w-full{width:100%}.max-w-6xl{max-width:72rem}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-12 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(3rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(3rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.rounded{border-radius:0.25rem}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-teal-500{--tw-border-opacity:1;border-color:rgb(20 184 166 / var(--tw-border-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-green-900\/50{background-color:rgb(20 83 45 / 0.5)}.bg-slate-800\/50{background-color:rgb(30 41 59 / 0.5)}.bg-slate-800\/60{background-color:rgb(30 41 59 / 0.6)}.bg-slate-800\/70{background-color:rgb(30 41 59 / 0.7)}.bg-teal-900\/50{background-color:rgb(19 78 74 / 0.5)}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-teal-500{--tw-gradient-from:#14b8a6 var(--tw-gradient-from-position);--tw-gradient-to:rgb(20 184 166 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-cyan-500{--tw-gradient-to:#06b6d4 var(--tw-gradient-to-position)}.p-4{padding:1rem}.p-6{padding:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.pl-4{padding-left:1rem}.pl-6{padding-left:1.5rem}.pt-2{padding-top:0.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.capitalize{text-transform:capitalize}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-green-300{--tw-text-opacity:1;color:rgb(134 239 172 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-rose-300{--tw-text-opacity:1;color:rgb(253 164 175 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-sky-300{--tw-text-opacity:1;color:rgb(125 211 252 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-teal-300{--tw-text-opacity:1;color:rgb(94 234 212 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:p-6{padding:1.5rem}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:p-8{padding:2rem}.md\:text-5xl{font-size:3rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+  <body class="bg-slate-900 text-slate-100">
+    <div id="root"><div class="min-h-screen bg-slate-900 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"><div class="w-full max-w-6xl mx-auto"><header class="text-center mb-10"><h1 class="text-4xl md:text-5xl font-bold text-amber-300 tracking-tight">The Puzzle of the Knight, Knave, and Spy</h1><p class="text-slate-400 mt-2 text-lg">A Step-by-Step Logical Deduction</p></header><main class="space-y-12"><div class="grid md:grid-cols-2 gap-8"><div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700"><h2 class="text-2xl font-semibold text-rose-400 mb-4">The Premise</h2><ul class="space-y-3 text-slate-300"><li><span class="font-bold text-white">The Knight:</span> Always tells the truth.</li><li><span class="font-bold text-white">The Knave:</span> Always lies.</li><li><span class="font-bold text-white">The Spy:</span> Can either lie or tell the truth.</li></ul></div><div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700"><h2 class="text-2xl font-semibold text-amber-400 mb-4">The Statements</h2><ul class="space-y-3 text-slate-300"><li><span class="font-bold text-white">A says:</span> "C is a knave."</li><li><span class="font-bold text-white">B says:</span> "A is a knight."</li><li><span class="font-bold text-white">C says:</span> "I am the spy."</li></ul></div></div><div class="bg-slate-800/70 p-6 md:p-8 rounded-xl border border-slate-700"><h2 class="text-3xl font-bold text-teal-300 mb-6 text-center">The Logical Deduction</h2><div class="space-y-6 text-slate-300 leading-relaxed"><p><strong class="text-white">Step 1: Analyze C's statement.</strong> C says, "I am the spy."</p><ul class="list-disc list-inside pl-4 space-y-2"><li>If C were the <span class="font-semibold text-rose-300">Knight</span>, he would have to tell the truth. But then he would be the Spy, not the Knight. This is a contradiction.</li><li>Therefore, <strong class="text-white">C cannot be the Knight.</strong></li></ul><p><strong class="text-white">Step 2: Consider the remaining possibilities for the Knight.</strong> Since C is not the Knight, the Knight must be either A or B.</p><p><strong class="text-white">Step 3: Test the hypothesis that B is the Knight.</strong></p><ul class="list-disc list-inside pl-4 space-y-2"><li>Let's assume B is the <span class="font-semibold text-rose-300">Knight</span>. His statement, "A is a knight," must be true.</li><li>This would mean A is also the Knight. However, there can only be one Knight. This is a contradiction.</li><li>Therefore, our assumption was wrong. <strong class="text-white">B cannot be the Knight.</strong></li></ul><p><strong class="text-white">Step 4: Determine the identity of the Knight.</strong></p><ul class="list-disc list-inside pl-4"><li>We have eliminated C and B as the Knight. By process of elimination, <strong class="text-white">A must be the Knight.</strong></li></ul><p><strong class="text-white">Step 5: Deduce the remaining identities and verify.</strong></p><ul class="list-disc list-inside pl-4 space-y-2"><li>Since A is the Knight, his statement "C is a knave" must be true. So, <strong class="text-white">C is the Knave.</strong></li><li>This leaves only one role for B: <strong class="text-white">B must be the Spy.</strong></li><li>Let's verify this solution against the statements:<ul class="list-circle list-inside pl-6 mt-2 space-y-1"><li>A (Knight) says "C is a knave." This is true. ✅</li><li>B (Spy) says "A is a knight." This is true. A Spy can tell the truth. ✅</li><li>C (Knave) says "I am the spy." This is false. A Knave must lie. ✅</li></ul></li><li class="pt-2">All statements are consistent with this assignment.</li></ul></div></div><div class="text-center p-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-lg"><h2 class="text-2xl font-bold text-white mb-2">The Solution</h2><div class="text-xl text-slate-900 font-semibold space-x-6"><span>A is the Knight</span><span>B is the Spy</span><span>C is the Knave</span></div></div><div class="bg-slate-800/70 p-6 md:p-8 rounded-xl border border-slate-700"><h2 class="text-3xl font-bold text-sky-300 mb-6 text-center">Computational Verification</h2><p class="text-center text-slate-400 mb-8">Checking all 6 possible realities to find the single consistent solution.</p><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="p-4 rounded-lg border bg-slate-800/60 border-slate-700"><h3 class="font-bold text-lg text-white mb-3">#1: A=<span class="capitalize">knight</span>, B=<span class="capitalize">knave</span>, C=<span class="capitalize">spy</span></h3><ul class="space-y-2 text-sm"><li class="flex items-start"><span class="mr-2 mt-1 text-red-400">❌</span><span class="text-slate-300">Inconsistent: Knight A made a false statement.</span></li></ul></div><div class="p-4 rounded-lg border bg-teal-900/50 border-teal-500"><h3 class="font-bold text-lg text-white mb-3">#2: A=<span class="capitalize">knight</span>, B=<span class="capitalize">spy</span>, C=<span class="capitalize">knave</span></h3><ul class="space-y-2 text-sm"><li class="flex items-start"><span class="mr-2 mt-1 text-green-400">✅</span><span class="text-slate-300">Consistent: Knight A made a true statement.</span></li><li class="flex items-start"><span class="mr-2 mt-1 text-green-400">✅</span><span class="text-slate-300">Neutral: Spy B's statement can be true or false.</span></li><li class="flex items-start"><span class="mr-2 mt-1 text-green-400">✅</span><span class="text-slate-300">Consistent: Knave C made a false statement.</span></li></ul><p class="mt-3 text-center font-bold text-green-300 bg-green-900/50 py-1 rounded">VALID SOLUTION</p></div><div class="p-4 rounded-lg border bg-slate-800/60 border-slate-700"><h3 class="font-bold text-lg text-white mb-3">#3: A=<span class="capitalize">knave</span>, B=<span class="capitalize">knight</span>, C=<span class="capitalize">spy</span></h3><ul class="space-y-2 text-sm"><li class="flex items-start"><span class="mr-2 mt-1 text-green-400">✅</span><span class="text-slate-300">Consistent: Knave A made a false statement.</span></li><li class="flex items-start"><span class="mr-2 mt-1 text-red-400">❌</span><span class="text-slate-300">Inconsistent: Knight B made a false statement.</span></li></ul></div><div class="p-4 rounded-lg border bg-slate-800/60 border-slate-700"><h3 class="font-bold text-lg text-white mb-3">#4: A=<span class="capitalize">knave</span>, B=<span class="capitalize">spy</span>, C=<span class="capitalize">knight</span></h3><ul class="space-y-2 text-sm"><li class="flex items-start"><span class="mr-2 mt-1 text-green-400">✅</span><span class="text-slate-300">Consistent: Knave A made a false statement.</span></li><li class="flex items-start"><span class="mr-2 mt-1 text-green-400">✅</span><span class="text-slate-300">Neutral: Spy B's statement can be true or false.</span></li><li class="flex items-start"><span class="mr-2 mt-1 text-red-400">❌</span><span class="text-slate-300">Inconsistent: Knight C made a false statement.</span></li></ul></div><div class="p-4 rounded-lg border bg-slate-800/60 border-slate-700"><h3 class="font-bold text-lg text-white mb-3">#5: A=<span class="capitalize">spy</span>, B=<span class="capitalize">knight</span>, C=<span class="capitalize">knave</span></h3><ul class="space-y-2 text-sm"><li class="flex items-start"><span class="mr-2 mt-1 text-green-400">✅</span><span class="text-slate-300">Neutral: Spy A's statement can be true or false.</span></li><li class="flex items-start"><span class="mr-2 mt-1 text-red-400">❌</span><span class="text-slate-300">Inconsistent: Knight B made a false statement.</span></li></ul></div><div class="p-4 rounded-lg border bg-slate-800/60 border-slate-700"><h3 class="font-bold text-lg text-white mb-3">#6: A=<span class="capitalize">spy</span>, B=<span class="capitalize">knave</span>, C=<span class="capitalize">knight</span></h3><ul class="space-y-2 text-sm"><li class="flex items-start"><span class="mr-2 mt-1 text-green-400">✅</span><span class="text-slate-300">Neutral: Spy A's statement can be true or false.</span></li><li class="flex items-start"><span class="mr-2 mt-1 text-green-400">✅</span><span class="text-slate-300">Consistent: Knave B made a false statement.</span></li><li class="flex items-start"><span class="mr-2 mt-1 text-red-400">❌</span><span class="text-slate-300">Inconsistent: Knight C made a false statement.</span></li></ul></div></div></div></main></div></div></div>
+    <script type="module" src="https://ai.studio/index.tsx"></script>
+  
+
+        <!--<base href="https://ai.studio">--><base href=".">
+        <script type="module" onerror="console.error(&#39;Failed to load the app. Try reloading it.&#39;)">import '@/index';</script>
+        </body></html>

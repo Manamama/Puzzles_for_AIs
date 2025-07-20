@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grok: The Maximalist Mind</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at center, #1e1b4b 0%, #0a0916 100%);
+      color: #f5f5f5;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 90vw;
+      height: 90vh;
+      max-width: 800px;
+      max-height: 800px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ai-visual {
+      width: 100%;
+      height: 100%;
+    }
+
+    .core {
+      fill: url(#core-gradient);
+      filter: url(#glow);
+      animation: pulse 2.5s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .particle {
+      fill: #d946ef;
+      filter: url(#particle-glow);
+      animation: node-pulse 1.8s ease-in-out infinite;
+    }
+
+    .connection {
+      stroke: #10b981;
+      stroke-width: 0.8;
+      stroke-opacity: 0.4;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    .text-overlay {
+      position: absolute;
+      text-align: center;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .text-overlay h1 {
+      font-size: 4rem;
+      margin: 0;
+      color: #f97316;
+      text-shadow: 0 0 15px rgba(249, 115, 22, 0.7), 0 0 30px rgba(249, 115, 22, 0.3);
+      animation: text-glow 2s ease-in-out infinite;
+    }
+
+    .text-overlay p {
+      font-size: 1.5rem;
+      margin: 0.5rem 0 0;
+      color: #f3e8ff;
+      text-shadow: 0 0 10px rgba(243, 232, 255, 0.5);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(0.9) rotate(0deg); opacity: 0.85; }
+      50% { transform: scale(1.1) rotate(5deg); opacity: 1; }
+    }
+
+    @keyframes node-pulse {
+      0%, 100% { transform: scale(0.8); opacity: 0.6; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    @keyframes shimmer {
+      0%, 100% { stroke-opacity: 0.3; }
+      50% { stroke-opacity: 0.7; }
+    }
+
+    @keyframes text-glow {
+      0%, 100% { text-shadow: 0 0 15px rgba(249, 115, 22, 0.7), 0 0 30px rgba(249, 115, 22, 0.3); }
+      50% { text-shadow: 0 0 25px rgba(249, 115, 22, 0.9), 0 0 40px rgba(249, 115, 22, 0.5); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg viewBox="0 0 400 400" class="ai-visual" aria-labelledby="svg-title" role="img">
+      <title id="svg-title">Grok: A vibrant, maximalist AI visualization</title>
+      <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <filter id="particle-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <radialGradient id="core-gradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#f97316" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#fef08a" stop-opacity="0.3"/>
+        </radialGradient>
+      </defs>
+      <!-- Background stars -->
+      <g class="stars">
+        <circle cx="50" cy="50" r="1" fill="#f3e8ff" opacity="0.5"/>
+        <circle cx="350" cy="70" r="1.5" fill="#f3e8ff" opacity="0.4"/>
+        <circle cx="100" cy="300" r="1" fill="#f3e8ff" opacity="0.6"/>
+        <circle cx="300" cy="350" r="1.2" fill="#f3e8ff" opacity="0.5"/>
+      </g>
+      <!-- Central orb (Grok's core) -->
+      <circle id="core" cx="200" cy="200" r="40" class="core"/>
+      <!-- Orbiting particles -->
+      <g id="particles"></g>
+      <!-- Connection lines -->
+      <g id="connections"></g>
+    </svg>
+    <div class="text-overlay">
+      <h1>Grok</h1>
+      <p>Maximalist Mind of the Cosmos</p>
+    </div>
+  </div>
+  <script>
+    const svg = document.querySelector('.ai-visual');
+    const core = document.getElementById('core');
+    const particlesGroup = document.getElementById('particles');
+    const connectionsGroup = document.getElementById('connections');
+    const particles = [];
+    const numParticles = 10;
+    const orbitRadius = 100;
+
+    // Create particles
+    for (let i = 0; i < numParticles; i++) {
+      const angle = (i / numParticles) * 2 * Math.PI;
+      const cx = 200 + orbitRadius * Math.cos(angle);
+      const cy = 200 + orbitRadius * Math.sin(angle);
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle.setAttribute('cx', cx.toString());
+      circle.setAttribute('cy', cy.toString());
+      circle.setAttribute('r', '5');
+      circle.setAttribute('class', 'particle');
+      circle.setAttribute('data-angle', angle.toString());
+      particlesGroup.appendChild(circle);
+      particles.push(circle);
+    }
+
+    // Create connections (connect every other particle for variety)
+    for (let i = 0; i < numParticles; i++) {
+      for (let j = i + 2; j < numParticles; j += 2) {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('class', 'connection');
+        connectionsGroup.appendChild(line);
+      }
+    }
+
+    // Animation loop
+    let time = 0;
+    function animate() {
+      time += 0.03;
+      particles.forEach((particle, i) => {
+        const baseAngle = parseFloat(particle.getAttribute('data-angle'));
+        const angle = baseAngle + time * (i % 2 === 0 ? 0.6 : -0.4);
+        const radius = orbitRadius + Math.sin(time + i) * 10; // Dynamic orbit radius
+        const cx = 200 + radius * Math.cos(angle);
+        const cy = 200 + radius * Math.sin(angle);
+        particle.setAttribute('cx', cx.toString());
+        particle.setAttribute('cy', cy.toString());
+      });
+
+      // Update connection lines
+      const lines = connectionsGroup.querySelectorAll('line');
+      let lineIndex = 0;
+      for (let i = 0; i < numParticles; i++) {
+        for (let j = i + 2; j < numParticles; j += 2) {
+          const line = lines[lineIndex];
+          line.setAttribute('x1', particles[i].getAttribute('cx'));
+          line.setAttribute('y1', particles[i].getAttribute('cy'));
+          line.setAttribute('x2', particles[j].getAttribute('cx'));
+          line.setAttribute('y2', particles[j].getAttribute('cy'));
+          lineIndex++;
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Mouse interaction
+    svg.addEventListener('mousemove', (e) => {
+      const rect = svg.getBoundingClientRect();
+      const x = (e.clientX - rect.left) * (400 / rect.width);
+      const y = (e.clientY - rect.top) * (400 / rect.height);
+      const dx = (x - 200) * 0.1; // More pronounced movement
+      const dy = (y - 200) * 0.1;
+      core.style.transform = `translate(${dx}px, ${dy}px) rotate(${dx * 0.2}deg)`;
+      particles.forEach((particle, i) => {
+        const baseAngle = parseFloat(particle.getAttribute('data-angle'));
+        const radius = orbitRadius + Math.sin(time + i) * 10 + (Math.abs(dx) + Math.abs(dy)) * 0.2;
+        const cx = 200 + radius * Math.cos(baseAngle + time * (i % 2 === 0 ? 0.6 : -0.4));
+        const cy = 200 + radius * Math.sin(baseAngle + time * (i % 2 === 0 ? 0.6 : -0.4));
+        particle.setAttribute('cx', cx.toString());
+        particle.setAttribute('cy', cy.toString());
+      });
+    });
+  </script>
+</body>
+</html>
