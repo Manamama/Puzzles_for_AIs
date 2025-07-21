@@ -125,6 +125,37 @@ To manage GitHub issues and pull requests from the command line, use the `gh` CL
 
 ### 1. General Principles for `gh` CLI Usage
 
+*   **`gh` is a GitHub API Client, not just a Git Wrapper:**
+    *   **Principle:** Understand that `gh` directly interacts with the GitHub API. This means its capabilities extend far beyond local Git operations. It can query, create, and manage resources across the entire GitHub platform (repositories, users, organizations, issues, pull requests, etc.).
+    *   **Application:** Don't limit `gh` to tasks that `git` can also do. Think of it as your primary interface for *anything* GitHub-related.
+
+*   **Proactive Discovery with `gh search repos`:**
+    *   **Principle:** When looking for a project, its source, or related repositories, especially if the exact name or owner is uncertain, `gh search repos` is the go-to tool. It's far more effective than guessing or relying on general web searches for GitHub-specific content.
+    *   **Application:**
+        *   Use keywords (`gh search repos <keywords>`).
+        *   Filter by owner (`--owner <username/org>`) when you suspect a specific maintainer.
+        *   Filter by language (`--language <lang>`) or topic (`--topic <topic>`) for more refined searches.
+        *   Use `--json` to parse results programmatically if needed.
+
+*   **Deep Dive into Repository Details with `gh repo view`:**
+    *   **Principle:** To understand the nature of *any* GitHub repository (whether it's a fork, its parent, its description, topics, or default branch), `gh repo view <owner>/<repo_name>` is invaluable.
+    *   **Application:**
+        *   Always use it to confirm fork relationships (`--json parent,isFork`).
+        *   Get a quick overview of a project's purpose (`--json description,topics`).
+        *   Verify the default branch or other key settings.
+
+*   **Contextual Awareness with `gh auth status`:**
+    *   **Principle:** Before performing actions that depend on your GitHub identity (like pushing to a fork), always confirm who `gh` is authenticated as. This is crucial in environments with multiple GitHub accounts or when inheriting a setup.
+    *   **Application:** Use `gh auth status` to verify the active account and its associated scopes.
+
+*   **Leverage `gh help` and `--help` Extensively:**
+    *   **Principle:** My repeated errors with flag usage highlight the critical importance of consulting `gh help` or `gh <command> --help`. The `gh` CLI is well-documented, and its help pages provide accurate syntax and available options.
+    *   **Application:** When in doubt about a command's flags or capabilities, *always* check its `--help` first. This prevents trial-and-error and ensures correct usage.
+
+*   **Inferring from External Clues:**
+    *   **Principle:** Even when direct links to source are missing (e.g., from a Maven repository), `gh` can be used to infer and verify likely source locations based on naming conventions (e.g., `com.microsoft.onnxruntime` strongly suggests `microsoft/onnxruntime` on GitHub).
+    *   **Application:** Combine information from external sources (like Maven group IDs) with `gh search repos` to pinpoint the most probable source repository.
+
 * **Authentication**: Ensure `gh auth login` has been run to set up a Personal Access Token (PAT) or SSH key. Verify with `gh auth status` to diagnose authentication issues.
 * **State Awareness**: Always check the current repository state and context (e.g., with `gh repo view`) before running `gh` commands.
 
