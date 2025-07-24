@@ -265,26 +265,58 @@ To read a specific comment from a GitHub Discussion, use `gh api` with a GraphQL
 
 #### Handling Pagination
 
-If a discussion has more comments than specified (e.g., `first: 100`), use GraphQL cursors (`after` and `endCursor`) to fetch additional pages:
+To fetch all pages of results when a GraphQL query might return more items than a single request can handle, use the `--paginate` flag with `gh api graphql`. For this to work, your GraphQL query must be structured to support cursor-based pagination.
+
+**Required GraphQL Query Structure for Pagination:**
+
+1.  **Define an `$endCursor: String` variable:** This variable will be used by `gh` to pass the cursor for the next page.
+2.  **Use `after: $endCursor` in the paginated connection:** This tells the GraphQL API to start fetching results after the given cursor.
+3.  **Include `pageInfo { hasNextPage, endCursor }` in the response:** This is crucial for `gh` to determine if there are more pages and what the next cursor is.
+
+**Example of a Paginated GraphQL Query:**
+
 ```graphql
-query {
-  repository(owner: "owner", name: "repo") {
-    discussion(number: N) {
-      comments(first: 100, after: "cursor") {
-        nodes {
-          databaseId
-          body
-          author { login }
+query($endCursor: String) {
+  search(query: "repo:google-gemini/gemini-cli is:issue is:open INVALID_ARGUMENT in:body", type: ISSUE, first: 100, after: $endCursor) {
+    issueCount
+    edges {
+      node {
+        ... on Issue {
+          number
+          title
+          url
+          state
           createdAt
-        }
-        pageInfo {
-          hasNextPage
-          endCursor
+          body
+          comments(first: 10) {
+            totalCount
+            nodes {
+              body
+              author {
+                login
+              }
+            }
+          }
         }
       }
     }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
   }
 }
+```
+
+**Executing a Paginated Query with `gh api graphql`:**
+
+To execute such a query and retrieve all pages, use the `--paginate` flag. The `--slurp` flag is often useful in conjunction with `--paginate` to collect all paginated JSON objects/arrays into a single outer JSON array, making it easier to process the entire dataset with tools like `jq`.
+
+```bash
+gh api graphql --paginate --slurp -F query=@/path/to/your/graphql_query.txt > output.json
+```
+
+This ensures that all results are fetched and combined into a single file for comprehensive analysis.
 ```
 
 ## GitHub Copilot:
