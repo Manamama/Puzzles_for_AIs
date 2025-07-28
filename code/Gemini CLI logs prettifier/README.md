@@ -20,8 +20,8 @@ This script automates the process of converting that data into a user-friendly f
 - **Universality:** Works in Ubuntu and Termux (Android) so far, probably universal then: the filepaths codes need checking maybe in Windows and such. 
 
 ## How to use
-0.  Just download this single .py file in this folder, so [right click here]([url](https://github.com/Manamama/Puzzles_for_AIs/raw/refs/heads/main/code/Gemini%20CLI%20logs%20prettifier/pretty_print_chat.py)): https://github.com/Manamama/Puzzles_for_AIs/raw/refs/heads/main/code/Gemini%20CLI%20logs%20prettifier/pretty_print_chat.py etc. or just use `wget` with that URL. 
-1.  Make sure you have Python 3 installed.
+1.  The Python script that performs this conversion is `pretty_print_chat.py`. Just download this single .py file in this folder, so [right click here]([url](https://github.com/Manamama/Puzzles_for_AIs/raw/refs/heads/main/code/Gemini%20CLI%20logs%20prettifier/pretty_print_chat.py)): https://github.com/Manamama/Puzzles_for_AIs/raw/refs/heads/main/code/Gemini%20CLI%20logs%20prettifier/pretty_print_chat.py etc. or just use `wget` with that URL. 
+
 2.  Run the script from your terminal:
     ```bash
     python3 pretty_print_chat.py
@@ -29,9 +29,6 @@ This script automates the process of converting that data into a user-friendly f
 3.  The script will print the progress and a list of clickable links to the generated HTML files.
 4.  If some errors with paths, do ask Gemini itself to adapt it for you. 
 
-## The Script
-
-The Python script that performs this conversion is `pretty_print_chat.py`.
 
 
 ## Sample results: 
@@ -77,10 +74,10 @@ and
 
 
 
-#ver. 0.3.2
+#ver. 0.3.3
 
 #Updates
 
 - **Improved Markdown Rendering:** Now correctly renders Markdown formatting, including lists and preserving end-of-lines (EOLs).
 - Explanation that it works in Termux too
-- Info that one py file only here
+- Info that one .py file only here
