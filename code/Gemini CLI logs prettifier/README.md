@@ -1,7 +1,7 @@
 # Gemini CLI Logs Prettifier
 
 ## Problem
-Gemini CLI stores chat sessions and checkpoints as raw JSON under `~/.gemini/tmp`. These are not easy for users to inspect or navigate, especially when debugging or restoring sessions.
+Gemini CLI https://github.com/google-gemini/gemini-cli stores chat sessions and checkpoints as raw JSON under `~/.gemini/tmp`. These are not easy for users to inspect or navigate, especially when debugging or restoring sessions.
 
 ## What this program does
 
