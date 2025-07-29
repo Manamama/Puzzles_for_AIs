@@ -19,7 +19,15 @@ This section outlines the complete real-world workflow for transforming unstruct
 
 This seamless process allows for rapid prototyping and exploration of knowledge extracted from text.
 
-## 2. Verification and Visualization (Detailed)
+## 2. Core Concepts: `neo4j-cypher` vs. `neo4j-memory` Toolsets
+
+There is a fundamental difference in how the two toolsets interact with the Neo4j database:
+
+*   **`neo4j-cypher` (`get_neo4j_schema`)**: This tool provides a **raw, low-level view** of the entire database. It inspects and returns all nodes, relationships, and properties that exist, without any assumptions about the data's structure or meaning.
+
+*   **`neo4j-memory` (`read_graph`, `create_entities`, etc.)**: This toolset operates on a **specific, high-level data model**. It is designed to work with a structured concept of "entities" and "relations". As a result, `read_graph` will only return data that conforms to this specific model. An initially empty result from `read_graph` indicates that no data matching this model exists, even if the database itself is not empty.
+
+## 3. Verification and Visualization (Detailed)
 
 Beyond the immediate online visualization, it's helpful to understand the current state of the graph programmatically. You can get a schema overview directly using the `get_neo4j_schema()` tool.
 
@@ -51,12 +59,12 @@ This query will:
 *   `RETURN n, r, m`: Return the filtered nodes and relationships.
 *   `LIMIT 100`: Limits the number of results to prevent overwhelming the visualization.
 
-## 3. Problems to Solve Soon
+## 4. Problems to Solve Soon
 
 1.  **Automate Graph Visualization Filtering:** Explore ways to programmatically apply the filtering Cypher query or configure the Neo4j Console to default to a cleaner view, rather than requiring manual pasting of the query.
 2.  **Improve High-Level Memory/Entity Tools:** Test and refine the `neo4j_memory__` prefixed tools to ensure they provide a robust and intuitive way to manipulate the graph without needing direct Cypher queries for common tasks. This includes verifying their behavior for creating, updating, and deleting entities and relationships, and ensuring they handle edge cases (e.g., non-existent nodes) gracefully.
 
-## 4. Best Practices for Knowledge Graph Construction
+## 5. Best Practices for Knowledge Graph Construction
 
 Transforming unstructured text into a structured knowledge graph requires significant intellectual effort beyond just knowing how to use the Neo4j tools. This process involves:
 
@@ -67,9 +75,7 @@ Transforming unstructured text into a structured knowledge graph requires signif
 
 While the `write_neo4j_cypher` tool simplifies database interaction, the intellectual task of transforming natural language into a structured knowledge graph remains a key challenge and a critical step for effective graph population.
 
-
-
-## 2. Interaction Methods
+## 6. Interaction Methods
 
 There are two primary methods for interacting with the database:
 
@@ -86,18 +92,71 @@ This method provides the most power and flexibility. It is ideal for complex que
 This method is more abstract and intuitive, allowing you to work with "entities" and "relations" without writing raw Cypher. This is preferable for structured data entry and simpler graph manipulations.
 
 **Primary Tools:**
-*   `neo4j_memory__create_entities`: To create new nodes.
-*   `neo4j_memory__create_relations`: To create relationships between existing nodes.
-*   `neo4j_memory__add_observations`: To add properties or facts to nodes.
+*   `neo4j_memory__create_entities`
+    *   This tool requires a list of entity objects. Each object **must** contain the following fields:
+        *   `name` (string): A unique identifier for the entity.
+        *   `type` (string): The category or classification of the entity (e.g., "Person", "Location").
+        *   `observations` (list): A list of observations related to the entity. **This field is mandatory, even if it is an empty list (`[]`)**.
+        *   `properties` (dict, optional): A dictionary for any additional, unstructured attributes.
+
+    **Example:**
+    ```json
+    [
+      {
+        "name": "Arthur",
+        "type": "Person",
+        "properties": { "title": "Sir" },
+        "observations": []
+      }
+    ]
+    ```
+
+*   `neo4j_memory__create_relations`
+    *   This tool requires a list of relation objects. Each object **must** contain the following fields:
+        *   `source` (string): The `name` of the entity where the relationship originates.
+        *   `target` (string): The `name` of the entity where the relationship terminates.
+        *   `relationType` (string): The name or type of the relationship (e.g., "SERVES", "LOVES").
+
+    **Example:**
+    ```json
+    [
+      {
+        "source": "Arthur",
+        "target": "Uther",
+        "relationType": "SERVES"
+      }
+    ]
+    ```
+
+*   `neo4j_memory__add_observations`
+    *   **Practical Use:** Adds new information to an entity's `observations` list, making it more descriptive and discoverable via `search_memories`.
+    *   **Tips & Mistakes to Avoid:** The input structure is precise. It requires a list of objects, where each object has an `entityName` and an `observations` field which is a list of strings.
+        *   **Incorrect:** `{"entityName": "Uther", "observation": "He is King."}`
+        *   **Correct:** `{"entityName": "Uther", "observations": ["He is the King."]} `
+
 *   `neo4j_memory__delete_entities`: To remove nodes and their relationships.
+
+*   `read_graph`
+    *   **Practical Use:** Retrieves the *entire* knowledge graph that conforms to the memory model. Use this for a complete overview of all entities and their relationships.
+    *   **Tips & Mistakes to Avoid:** Can return a large amount of data. It's the "show me everything" command.
+
+*   `find_memories_by_name`
+    *   **Practical Use:** Fetches one or more specific entities by their exact `name`. This is the most efficient way to retrieve an entity if you know its unique identifier.
+    *   **Tips & Mistakes to Avoid:** Requires an *exact, case-sensitive match* of the name. Returns the entities and their direct relationships.
+
+*   `search_memories`
+    *   **Practical Use:** Performs a keyword search. Use this when you're looking for entities based on a concept or attribute but don't know their specific names.
+    *   **Tips & Mistakes to Avoid:**
+        *   **CRUCIAL:** The search primarily targets the `observations` field. An entity may not appear in search results if the keyword is only in its `properties` or `name`.
+        *   To make entities searchable, add relevant keywords and descriptions to their `observations` list.
 
 **Important Distinction:** Be aware that there is another set of generic `memory` tools. For direct Neo4j manipulation, ensure you are using the `neo4j_memory__` prefixed tools.
 
-## 5. Common Cypher Query Patterns
+## 7. Common Cypher Query Patterns
 
 This section provides examples of common Cypher query patterns for interacting with the Neo4j database. These examples focus purely on the Cypher syntax, as the MCP server handles the connection and execution.
 
-### 5.1. Creating Nodes
+### 7.1. Creating Nodes
 
 **Create a single node with a label and properties:**
 ```cypher
@@ -115,7 +174,7 @@ CREATE (p2:Person {name: 'Charlie'})
 MERGE (c:City {name: 'London'})
 ```
 
-### 5.2. Creating Relationships
+### 7.2. Creating Relationships
 
 **Create a relationship between existing nodes:**
 ```cypher
@@ -135,7 +194,7 @@ MATCH (p:Person {name: 'Alice'}), (c:City {name: 'London'})
 MERGE (p)-[:LIVES_IN]->(c)
 ```
 
-### 5.3. Matching Nodes and Relationships
+### 7.3. Matching Nodes and Relationships
 
 **Match all nodes with a specific label:**
 ```cypher
@@ -161,7 +220,7 @@ MATCH (p1:Person)-[r:WORKS_AT {since: 2020}]->(c:Company)
 RETURN p1.name, c.name, r.since
 ```
 
-### 5.4. Updating Node Properties
+### 7.4. Updating Node Properties
 
 **Set a new property or update an existing one:**
 ```cypher
@@ -177,7 +236,7 @@ SET p.age = 25, p.city = 'New York'
 RETURN p
 ```
 
-### 5.5. Deleting Nodes and Relationships
+### 7.5. Deleting Nodes and Relationships
 
 **Delete a node and all its relationships:**
 ```cypher
@@ -193,7 +252,7 @@ DELETE r
 
 These examples cover the most frequent operations you'll perform when working with Neo4j using Cypher. Remember to adapt the labels, relationship types, and properties to your specific graph model.
 
-### 6.1. Official Neo4j Drivers and docs
+## 8. Official Neo4j Drivers and docs
 
 *   **Python:**
     *   Neo4j Python Driver Manual: [https://neo4j.com/docs/python-driver/current/](https://neo4j.com/docs/python-driver/current/)
@@ -202,7 +261,7 @@ These examples cover the most frequent operations you'll perform when working wi
 
 
 
-### 6.3. Connectors
+## 9. Connectors
 
 *   **Neo4j Connector for Apache Kafka:**
     *   Neo4j Documentation: [https://neo4j.com/docs/kafka-connector/current/](https://neo4j.com/docs/kafka-connector/current/)
@@ -216,7 +275,7 @@ These examples cover the most frequent operations you'll perform when working wi
 *   **Neo4j Connector for Business Intelligence (JDBC):**
     *   Neo4j Documentation: [https://neo4j.com/docs/bi-connector/current/](https://neo4j.com/docs/bi-connector/current/)
     *   Magnitude Simba Documentation: [https://www.simba.com/drivers/neo4j-odbc-jdbc/](https://www.simba.com/drivers/neo4j-odbc-jdbc/)
-*   **Neo4j Connector for Business Intelligence (ODBC):**
+*   **Neo4j Connector for Business Intelligence (ODBC):
     *   CData Software Documentation: [https://www.cdata.com/drivers/neo4j/odbc/](https://www.cdata.com/drivers/neo4j/odbc/)
     *   Magnitude Simba Documentation: [https://www.simba.com/drivers/neo4j-odbc-jdbc/](https://www.simba.com/drivers/neo4j-odbc-jdbc/)
 *   **Neo4j Data Warehouse Connector:**
@@ -226,9 +285,8 @@ These examples cover the most frequent operations you'll perform when working wi
     *   Neo4j Documentation: [https://neo4j.com/docs/operations-manual/current/authentication/kerberos/](https://neo4j.com/docs/operations-manual/current/authentication/kerberos/)
 *   **Spring Data Neo4j:**
     *   Spring Data Neo4j Project Page: [https://spring.io/projects/spring-data-neo4j](https://spring.io/projects/spring-data-neo4j)
-    *   Spring Data Neo4j Documentation: [https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/](https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/)
+    *   Spring Data Neo4j Documentation: [https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/](https://docs.io/spring-data/neo4j/docs/current/reference/html/)
     *   GitHub Releases (for specific versions): [https://github.com/spring-projects/spring-data-neo4j/releases](https://github.com/spring-projects/spring-data-neo4j/releases)
 *   **Neo4j-OGM:**
     *   Neo4j Documentation: [https://neo4j.com/docs/ogm/current/](https://neo4j.com/docs/ogm/current/)
     *   GitHub Repository: [https://github.com/neo4j/neo4j-ogm](https://github.com/neo4j/neo4j-ogm)
-
