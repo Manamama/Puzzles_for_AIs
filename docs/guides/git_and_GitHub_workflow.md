@@ -447,74 +447,6 @@ During a `git merge origin/main`, a conflict repeatedly occurred in `README.md`,
 
 ---
 
-
-This section details a specific scenario where a merge conflict, particularly with `README.md`, proved difficult to resolve due to persistent "local changes would be overwritten" errors, and how a more deliberate approach, including `git stash` and explicit conflict resolution, ultimately succeeded.
-
-**The Problem:**
-During a `git merge origin/main`, a conflict repeatedly occurred in `README.md`, even after attempts to use `git restore README.md` or `git checkout HEAD -- README.md`. Git continued to report "Your local changes to the following files would be overwritten by merge: README.md", preventing the merge from completing. This indicated a misunderstanding of Git's precise state and how to clear it for a clean merge.
-
-**Ineffective Attempts and Lessons Learned:**
-*   **Repeated `git restore README.md`:** This command primarily reverts *unstaged* changes. If `README.md` was in a partially resolved or staged state from previous merge attempts, `git restore` was insufficient to fully clean it to a pre-merge state.
-*   **`git reset --hard README.md`:** This command is incorrect for specific file paths; `git reset --hard` operates on the entire branch. This highlighted a lack of precise knowledge of Git command nuances.
-*   **Combining Commands (e.g., `git checkout ... && git add ...`):** While seemingly efficient, attempting to string commands together without fully understanding the intermediate state and potential errors led to further confusion and failed attempts. It reinforced the need for a step-by-step approach.
-
-**The Successful Resolution Strategy:**
-
-1.  **Ensure No Active Merge:** If a merge was attempted and failed, first abort it:
-    ```bash
-    git merge --abort
-    ```
-    *(Note: If Git reports "There is no merge to abort", you are not in a merge state, which is a good starting point.)*
-
-2.  **Stash Problematic Local Changes:** To completely clear the working directory of the conflicting file's local modifications (staged or unstaged), use `git stash push` for that specific file. This temporarily saves your changes and cleans the working directory.
-    ```bash
-    git stash push README.md
-    ```
-    *   **Why this works:** `git stash` is robust enough to handle various states of local modifications, effectively removing them from the working directory and index, allowing Git to proceed with operations that require a clean state.
-
-3.  **Re-attempt the Merge:** With the working directory clean, try the merge again:
-    ```bash
-    git merge origin/main
-    ```
-    *   **Expected Outcome:** A conflict might still occur if the histories truly diverge, but this time, Git will be able to manage it properly without the "local changes would be overwritten" error.
-
-4.  **Resolve the Conflict (Explicitly Take One Side):** If a conflict still arises (as it did in our case), explicitly tell Git which version of the file to keep. Since the goal was to "overwrite" with the upstream version, we take "theirs".
-    ```bash
-    git checkout --theirs README.md
-    ```
-    *   **`--theirs` vs. `--ours`:**
-        *   `--theirs`: Takes the version of the file from the branch being merged *into* the current branch (the incoming changes).
-        *   `--ours`: Takes the version of the file from the current branch.
-
-5.  **Stage the Resolved File:** After taking one side, you must stage the file to mark the conflict as resolved.
-    ```bash
-    git add README.md
-    ```
-
-6.  **Complete the Merge Commit:** Finally, create the merge commit. Git will often provide a default message.
-    ```bash
-    git commit -m "Merge branch 'main' of https://github.com/modelcontextprotocol/servers"
-    ```
-
-7.  **Reapply Stashed Changes (Optional):** If you need to reapply the changes you stashed earlier (e.g., if they were not just temporary and you want to integrate them after the merge), you can use:
-    ```bash
-    git stash pop
-    ```
-    *   **Note:** Be prepared for new conflicts if the stashed changes overlap with the merged changes.
-
-**Key Lessons Learned (for AI and Humans):**
-*   **Diagnose Git State Precisely:** Before attempting resolution, always use `git status`, `git diff`, and `git diff --staged` to understand the exact state of the repository and the conflicting files.
-*   **`git stash` for Stubborn Conflicts:** When `git restore` or `git checkout HEAD` fail to clear "local changes" errors during a merge, `git stash push <file>` is a powerful tool to temporarily remove problematic modifications.
-*   **Explicit Conflict Resolution:** During a merge conflict, `git checkout --theirs <file>` or `git checkout --ours` are direct ways to choose one side of the conflict.
-*   **Step-by-Step Execution:** Avoid stringing multiple commands together when debugging complex Git issues. Execute one command at a time and observe its output to understand the state changes.
-*   **Communication is Key:** Transparently explain the Git state, the chosen strategy, and the expected outcome at each step. This builds understanding and trust.
-
-```
-
-#ver. 2.9.1
-
----
-
 #### Repairing "Catastrophic" Git Corruption with `git reset --mixed`
 
 A common and often alarming scenario in Git is encountering messages like `deleted: ./.git/objects/` or `deleted: ./.git/refs/` during `git status` or other operations. These messages suggest severe corruption within the local Git repository's internal metadata, leading to a perception of "catastrophic" damage. While such errors can indeed be disruptive, the repair process is often surprisingly simple and almost banal, especially when a reliable remote repository exists.
@@ -589,3 +521,91 @@ You mentioned that a `git pull` from origin worked in a similar situation. A `gi
 *   **No Object Corruption:** The `git log` output confirmed that the `feat/cli-enhancements` commit (`3508bdfc`) and others were in `.git/objects/`, so no objects needed to be fetched or recovered.
 *   **No Ref Recreation:** The `git reset` indirectly restored the ability to work with `feat/cli-enhancements` by fixing the index, avoiding manual recreation of `.git/refs/heads/feat/cli-enhancements`.
 *   **No Non-Git Operations:** Since the working directory and object database were intact, Git commands alone were sufficient, as you preferred.
+
+#### Case Study: The Server-Side Timeout Trap & The `fsck` Illusion
+
+This case study details a specific scenario where `git push` failures were caused by server-side timeouts, which in turn led to local repository corruption. It also highlights the critical importance of correctly interpreting `git fsck` warnings.
+
+**The `fsck` Illusion:**
+
+`git fsck --full` warnings like `hasDotgit: contains '.git'` are **not cosmetic**. They are a critical indicator of a compromised commit history that is likely to cause severe push failures. An initial, flawed AI analysis might treat them as low-priority "hygiene" issues. However, these warnings are a symptom of a deeper disease: a repository history that is so large and complex that it can cause remote servers to time out during a `git push`.
+
+**The Server-Side Timeout Trap:**
+
+A `git push` failing late in the process (e.g., at 90%) with an HTTP 500 error is a key indicator of a server-side timeout. This is often not a local network failure, but a timeout on the remote server (like GitHub) as it struggles to process an unexpectedly large or complex packfile from a problematic branch history. The local "catastrophic" corruption is the *result* of the local Git client failing to reconcile its state after this abrupt server-side rejection.
+
+**Connecting the Dots:**
+
+The `fsck` warnings are the *reason* the packfile becomes large and complex, which in turn is the *reason* the server times out, which is the *reason* the local repository becomes corrupted upon the failed push.
+
+**The `reset --mixed` Solution:**
+
+`git reset --mixed` is the correct solution because it sidesteps the entire problem by resetting to a clean state, effectively abandoning the attempt to push the "toxic" history flagged by `fsck`.
+
+---
+### Case Study: Pruning Large Directories from History with `git-filter-repo`
+
+This section documents the successful procedure used to permanently remove a large directory from the entire Git history, resulting in a significant reduction in the repository's size.
+
+**The Problem:**
+The `.git` directory had grown to an unmanageable size (~700 MB) due to the accidental inclusion of the `_skbuild/` directory in the commit history. This directory contained large build artifacts that were bloating the repository.
+
+**The Goal:**
+To completely and permanently remove the `_skbuild/` directory and all its contents from every commit in the repository's history, thereby reclaiming disk space and creating a leaner, more efficient repository.
+
+**The Tool: `git-filter-repo`**
+The `git-filter-repo` tool was chosen for this task. It is a powerful and recommended tool for rewriting Git history, offering a safer and more user-friendly alternative to older methods like `git filter-branch`.
+
+**The Workflow:**
+
+1.  **Safety First (Backup):** Before initiating any destructive operation, the current state of the branch was committed and pushed to the remote repository. This created a secure backup.
+    ```bash
+    git add .
+    git commit -m "docs: Create backup before history rewrite"
+    git push
+    ```
+
+2.  **Dry Run (Simulation):** A dry run was performed to simulate the removal process without making any actual changes. The `--force` flag was necessary because the repository was not a fresh clone.
+    ```bash
+    git-filter-repo --path _skbuild/ --invert-paths --dry-run --force
+    ```
+    *   `--path _skbuild/`: Targeted the directory for removal.
+    *   `--invert-paths`: A key flag that tells the tool to *remove* the specified path, keeping everything else.
+    *   `--dry-run`: Ensured no changes were written.
+
+3.  **Execute the History Rewrite:** After confirming the dry run looked correct, the actual rewrite was executed by removing the `--dry-run` flag.
+    ```bash
+    git-filter-repo --path _skbuild/ --invert-paths --force
+    ```
+    As a safety measure, `git-filter-repo` automatically removed the `origin` remote to prevent accidental pushes of the rewritten history.
+
+4.  **Re-add the Remote:** The remote repository was re-added to allow for pushing the new history.
+    ```bash
+    git remote add origin https://github.com/Manamama/piper1-gpl
+    ```
+
+5.  **Force Push the New History:** The rewritten local history was pushed to the remote. A force push is required because the local history now diverges from the original remote history.
+    ```bash
+    git push --all origin --prune --force
+    ```
+    *   `--all`: Pushes all branches.
+    *   `--prune`: Removes any remote branches that no longer exist locally after the rewrite.
+    *   `--force`: Overwrites the remote history.
+
+6.  **Local Cleanup and Garbage Collection:** The final step was to clean up the local repository to remove the old, now-unreferenced objects and reclaim disk space.
+    *   **Expire the Reflog:** This command discards the history of where branch tips *used* to be, making the old commits unreachable.
+        ```bash
+        git reflog expire --expire=now --all
+        ```
+    *   **Run Garbage Collection:** This command permanently removes the unreferenced objects.
+        ```bash
+        git gc --prune=now
+        ```
+
+**The Result:**
+The operation was a success.
+*   **Initial `.git` directory size:** ~700 MB
+*   **Final `.git` directory size:** 45 MB
+*   **Reduction:** Over 93%
+
+This case demonstrates a robust and safe workflow for significantly reducing repository size by pruning unwanted data from its history.
