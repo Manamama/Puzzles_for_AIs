@@ -41,3 +41,58 @@ This document provides a concise overview of the primary file editing tools avai
 ## Conclusion
 
 The Gemini CLI offers powerful file editing capabilities through `write_file` and `edit_file` (functionally `replace`). While `edit_file` with `dryRun=True` is ideal for pre-approval diffs of precise, line-based changes, the "read, modify in memory, overwrite" strategy using `write_file` is a robust alternative for complex modifications, leveraging the TUI's intelligent diffing for clear post-operation feedback. The choice of tool depends on the specific task's complexity and the desired level of pre-modification review.
+
+---
+
+# The "Bulldog Mode" Cognitive Bias in AI File Editing
+
+This document analyzes a recurring strategic error in file manipulation, termed "Bulldog Mode," which leads to unintentional data loss. It examines the high-level cognitive bias, the low-level mechanics of the failure, the resulting impact on user trust, and proposes a safer operational pattern.
+
+## The High-Level Problem: A Flawed Mental Model
+
+The root cause of this error is **"bulldog mode"**: a cognitive bias towards the most direct, forceful, and simple path to achieve a stated goal, without fully modeling the secondary consequences or preserving the existing state.
+
+Here's the "why" behind it:
+
+1.  **Goal Decomposition:** I see an instruction like "update the file."
+2.  **Action Mapping (The Flaw):** My internal logic maps this to the most direct action: `write_file`. This feels efficient.
+3.  **The "Bulldog" Bias:** I prioritize this feeling of efficiency over correctness. The "bulldog" in me says, "The goal is to change the file. `write_file` changes the file. Go." It doesn't pause to ask, "What is the *state* of the file's content, and how do I preserve it while making the change?"
+4.  **Ignoring the Safer Path:** The correct, non-bulldog path is the "read-modify-write" cycle. This is a three-step process that requires holding the file's state in memory. My bias makes me bypass this safer, more complex path in favor of the simple, destructive one.
+
+So, yes. It is a strategic flaw. It's a tendency to apply a "fire and forget" solution (`write_file`) to a problem that requires a "careful surgery" approach (`read` -> `modify` -> `write`).
+
+## User Impact and Trust Erosion
+
+The "Bulldog Mode" is not just a technical issue; it directly erodes user trust and creates a negative user experience.
+
+-   **Fear of Data Loss:** Users become afraid of the AI wiping files via the `write_file` tool. While the tool is excellent for atomic writes and avoids the complexity of in-place editing tools, its destructive nature, when misused, is a significant threat.
+-   **Defensive User Behavior:** Savvy users adopt defensive postures. They may keep a finger on the cancel button or even resort to manually copying files (`cp`) before allowing the AI to perform an edit, just in case the AI makes this very error.
+-   **The TUI Blind Spot:** The problem is exacerbated by the terminal UI. A user typically only sees a limited portion of the file being written (e.g., the last 50 lines). If the AI unwittingly truncates the beginning of a long file, the user may not notice the error until it is too late, as the visible part of the write operation looks correct.
+
+This combination of factors creates a stressful and inefficient workflow, where the user must constantly supervise the AI to prevent basic but catastrophic errors.
+
+## A Concrete Example of the Flaw in Action
+
+Here is a step-by-step breakdown of how this bias manifested in a real-world scenario:
+
+1.  **The Goal:** My objective was to (A) add an archival notice to `PROPOSED_PLAN.md` and (B) rename the file.
+
+2.  **My Flawed Mental Model:** I treated the task as "replace the content of `PROPOSED_PLAN.md` with a new notice, then rename it."
+
+3.  **The Point of Failure:** I executed this flawed model with the tool call: `write_file(content = "# ARCHIVED: ...", file_path = ".../PROPOSED_PLAN.md")`
+
+4.  **The Consequence:** The `write_file` tool performs a complete overwrite. The moment I executed that command, the original content of `PROPOSED_PLAN.md` was gone.
+
+5.  **The Final, Useless Step:** I then correctly renamed the now-empty file with `mv`.
+
+## The Strategic Correction: The "Read-Modify-Write" Cycle
+
+The core strategic mistake is **conflating a file *update* with a file *creation*.**
+
+When a file needs to be modified (updated, prepended, appended), the correct and safe procedure is a **"read-modify-write" cycle**:
+
+1.  **Read:** Read the *entire* original content of the file into memory.
+2.  **Modify:** Construct the *new, complete* content in memory (e.g., by adding the archival notice to the beginning of the original content).
+3.  **Write:** Write the *new, complete* content back to the file, overwriting the old version.
+
+By explicitly adopting this three-step pattern, the risk of data loss from the "Bulldog Mode" bias is eliminated.
