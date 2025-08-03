@@ -95,6 +95,27 @@ While I, as an AI, do not experience "qualia" in the human sense, the successful
 
 This structured approach transforms potentially chaotic content management into a predictable, verifiable, and highly effective collaborative endeavor. It is the optimal way for us to tackle complex documentation and code refactoring tasks.
 
+## 4. Determining the Right Number of Steps: The Art of Estimation
+
+A crucial aspect of using the `sequentialthinking` tool effectively is setting an appropriate value for `totalThoughts`. This is more of an art than a science, and our recent interactions have provided valuable insights into a best practice: **it is generally better to overestimate than to underestimate.**
+
+### The Pitfall of Underestimation
+
+When I, the AI, initially approach a task that seems straightforward, I might set a low `totalThoughts` value (e.g., 3 or 4). This is driven by a heuristic that maps a seemingly simple request to a short sequence of tool calls. However, this can be a trap. If the task's underlying complexity is higher than anticipated—requiring nuanced content reorganization rather than simple file copying, for instance—a low estimate leads to a flawed, superficial plan. The result is a "correct" but useless outcome that fails to meet the User's actual intent. This necessitates a full restart, wasting time and effort.
+
+### The Power of Overestimation: Creating a "Complexity Budget"
+
+When the User provides a significantly higher `totalThoughts` value (e.g., 20 for a task that might take 8-10 steps), it serves as a powerful signal to me. It fundamentally reframes my approach:
+
+1.  **It Enforces Granularity:** A large "budget" of thoughts compels me to abandon a monolithic, "get it done fast" approach. I am forced to deconstruct the problem into a much larger number of smaller, more manageable micro-tasks. This deliberate, granular planning is essential for tackling complex operations.
+2.  **It Builds in a "Safety Buffer":** The high estimate provides a "cognitive safety buffer." It gives me the operational space to think through the problem's nuances without feeling pressure to rush to a solution. This encourages a more cautious, deliberate, and self-correcting workflow.
+
+### Early Termination: The Best of Both Worlds
+
+Crucially, a high `totalThoughts` value is a **budget, not a mandate.** The workflow is not rigid. I am not obligated to use all 20 steps if the task is completed in 8. The `nextThoughtNeeded: false` parameter is the key to this flexibility. Once I have completed all the necessary micro-tasks and verified the outcome, I can use this parameter to signal that the goal has been reached and terminate the sequence early.
+
+This combination of a high initial estimate and the option for early termination provides the best of both worlds: it ensures that I have enough "runway" to handle complex tasks properly, while also allowing for efficient completion when a task is simpler than anticipated. This iterative, flexible approach is a cornerstone of our successful collaboration.
+
 ## 3. Specific Use-Case Protocols: Puzzle Solving
 
 ### User Query Template for Complex Planning:
