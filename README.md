@@ -67,5 +67,9 @@ The project is organized into the following key directories:
 *   **`docs/`**: Contains all project documentation, including PMBOK-like instructions and memory files for AI cognition.
 *   **`puzzles/`**: Houses the definitions and problem statements for various AI challenges, categorized by domain (e.g., physics, programming).
 *   **`sources/`**: Stores raw, external source materials (text, transcripts, etc.) that puzzles might reference.
+<details>
 
+Details here
+
+</details>
 #ver 1.4
