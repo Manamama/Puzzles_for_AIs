@@ -47,3 +47,15 @@ This heuristic is designed to be executed using the `sequentialthinking` tool, l
 *   **`nextThoughtNeeded`**: To control the flow and signal completion.
 
 Crucially, content-based renaming often requires subjective judgment. Therefore, this process inherently involves a **human-in-the-loop**. The AI's role is to present the file content and propose a rename, but the final decision on the new filename (or whether to rename at all) rests with the user. This ensures accuracy and alignment with user intent, especially for nuanced content analysis.
+
+## Practical Tips from Experience
+
+Based on recent real-world application of this heuristic, here are some practical tips:
+
+1.  **Overestimate `totalThoughts`:** When initiating a `sequentialthinking` process for a task like recursive renaming, it is highly beneficial to overestimate the `totalThoughts` parameter. This provides a generous "complexity budget" that encourages a more granular, deliberate, and self-correcting approach. It allows for unexpected complexities, re-evaluations, and detailed verification steps without prematurely exhausting the thought budget.
+
+2.  **Leverage Early Termination:** The `nextThoughtNeeded: false` parameter is crucial for efficiency. Once the task's objective has been fully achieved and verified, terminate the `sequentialthinking` sequence early, even if the `totalThoughts` budget has not been exhausted. This demonstrates effective task management and avoids unnecessary steps.
+
+3.  **Handle Symbolic Links:** Be aware that `list_directory` (or `ls -F`) may return symbolic links (indicated by an `@` suffix). Attempting to `read_file` on a symbolic link will result in an error. For tasks like renaming, it is often best to skip symbolic links unless their content or target is explicitly relevant to the task. Note them for potential future resolution if their content becomes necessary.
+
+These practices contribute to a more robust, adaptable, and efficient collaborative workflow.
