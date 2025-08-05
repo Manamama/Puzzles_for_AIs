@@ -11,3 +11,5 @@ In very short, after recreation:
 GEMINI_SYSTEM_MD=$HOME/.gemini/system.md
 #in $HOME/.gemini/.env files
 
+
+See how_to_modify_system_message.md for more

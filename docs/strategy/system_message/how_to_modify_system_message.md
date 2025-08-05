@@ -1,0 +1,1 @@
+/home/zezen/Downloads/GitHub/gemini-cli/how_to_modify_system_message.md
