@@ -202,6 +202,64 @@ if __name__ == "__main__":
 ```
 *(Install dependencies: `pip install google-api-python-client google-auth-oauthlib`)*
 
+### Google Tasks API: Creating Hierarchical Tasks
+
+The Google Tasks API allows for the creation of hierarchical task structures, where tasks can be nested under a parent task. This is achieved by utilizing the `parent` parameter when creating a new task.
+
+#### Creating a Parent Task (Root Node)
+
+To create a top-level task (a parent node in the hierarchy), simply create the task without specifying a `parent` ID.
+
+**Example:**
+
+```python
+# Assuming 'default_api' is your tool interface
+# Create the main "Paint task"
+print(default_api.create_task(
+    task_list_id="@default",
+    title="Paint task",
+    user_google_email="abovetrans@gmail.com"
+))
+# This will return the ID of the created parent task, e.g., "MnJmLU8wQ2J5SjdRMkg0Ug"
+```
+
+#### Creating Subtasks (Child Nodes)
+
+Once you have the ID of the parent task, you can create subtasks by passing the parent's ID to the `parent` parameter of the `create_task` tool.
+
+**Example:**
+
+```python
+# Assuming 'default_api' is your tool interface
+# And 'parent_task_id' is the ID of your "Paint task" (e.g., "MnJmLU8wQ2J5SjdRMkg0Ug")
+
+# Create a subtask for "Visit Color-Serwis s.c."
+print(default_api.create_task(
+    task_list_id="@default",
+    title="Visit Color-Serwis s.c. (Address: Oleśnicka 27, 50-320 Wrocław)",
+    user_google_email="abovetrans@gmail.com",
+    parent="MnJmLU8wQ2J5SjdRMkg0Ug" # Use the ID of the parent task here
+))
+
+# Create a subtask for "Visit Paint shop Beckers and Tikkurila"
+print(default_api.create_task(
+    task_list_id="@default",
+    title="Visit Paint shop - shop with paints Beckers and Tikkurila (Address: Bystrzycka 69C, 54-215 Wrocław)",
+    user_google_email="abovetrans@gmail.com",
+    parent="MnJmLU8wQ2J5SjdRMkg0Ug" # Use the ID of the parent task here
+))
+
+# Create a subtask for "Visit PPG Deco Polska sp. z o.o."
+print(default_api.create_task(
+    task_list_id="@default",
+    title="Visit PPG Deco Polska sp. z o.o. (Address: Kwidzyńska 8, 51-416 Wrocław)",
+    user_google_email="abovetrans@gmail.com",
+    parent="MnJmLU8wQ2J5SjdRMkg0Ug" # Use the ID of the parent task here
+))
+```
+
+By using the `parent` parameter, the newly created tasks will appear nested under the specified parent task in the Google Tasks interface, forming a true hierarchy.
+
 ## Key Takeaways
 
 *   **No "Simple" API Key for Sensitive Data:** For user-sensitive data like contacts, a full OAuth 2.0 flow is mandatory. There's no simple API key.
