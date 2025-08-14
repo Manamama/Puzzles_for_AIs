@@ -1,11 +1,11 @@
 # SWOT Analysis Plan for Evolving Agents Toolkit (EAT)
 
-This document outlines the active plan for conducting a SWOT analysis of the Evolving Agents Toolkit (EAT).
+This document outlines the plan for conducting a SWOT analysis of the Evolving Agents Toolkit (EAT).
 
 
 ## Active Plan: Deep-Dive SWOT Analysis
 
-This is the active plan. This option involves a more in-depth analysis of the project, including code review and running the examples. The analysis will be conducted using the `sequentialthinking` tool to track progress, files read, and other relevant information.
+This is the plan. This option involves a more in-depth analysis of the project, including code review and running the examples. The analysis will be conducted using the `sequentialthinking` tool to track progress, files read, and other relevant information.
 
 **Steps:**
 
