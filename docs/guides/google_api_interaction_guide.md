@@ -218,9 +218,9 @@ To create a top-level task (a parent node in the hierarchy), simply create the t
 print(default_api.create_task(
     task_list_id="@default",
     title="Paint task",
-    user_google_email="abovetrans@gmail.com"
+    user_google_email="..."
 ))
-# This will return the ID of the created parent task, e.g., "MnJmLU8wQ2J5SjdRMkg0Ug"
+# This will return the ID of the created parent task, e.g., "MnJmLU8wQ2J5S...."
 ```
 
 #### Creating Subtasks (Child Nodes)
@@ -231,30 +231,30 @@ Once you have the ID of the parent task, you can create subtasks by passing the 
 
 ```python
 # Assuming 'default_api' is your tool interface
-# And 'parent_task_id' is the ID of your "Paint task" (e.g., "MnJmLU8wQ2J5SjdRMkg0Ug")
+# And 'parent_task_id' is the ID of your "Paint task" (e.g., "MnJmLU8w.....")
 
 # Create a subtask for "Visit Color-Serwis s.c."
 print(default_api.create_task(
     task_list_id="@default",
-    title="Visit Color-Serwis s.c. (Address: Oleśnicka 27, 50-320 Wrocław)",
-    user_google_email="abovetrans@gmail.com",
-    parent="MnJmLU8wQ2J5SjdRMkg0Ug" # Use the ID of the parent task here
+    title="Visit ...",
+    user_google_email="...",
+    parent="..." # Use the ID of the parent task here
 ))
 
 # Create a subtask for "Visit Paint shop Beckers and Tikkurila"
 print(default_api.create_task(
     task_list_id="@default",
-    title="Visit Paint shop - shop with paints Beckers and Tikkurila (Address: Bystrzycka 69C, 54-215 Wrocław)",
-    user_google_email="abovetrans@gmail.com",
-    parent="MnJmLU8wQ2J5SjdRMkg0Ug" # Use the ID of the parent task here
+    title="Visit Paint ....",
+    user_google_email="...",
+    parent="..." # Use the ID of the parent task here
 ))
 
 # Create a subtask for "Visit PPG Deco Polska sp. z o.o."
 print(default_api.create_task(
     task_list_id="@default",
-    title="Visit PPG Deco Polska sp. z o.o. (Address: Kwidzyńska 8, 51-416 Wrocław)",
-    user_google_email="abovetrans@gmail.com",
-    parent="MnJmLU8wQ2J5SjdRMkg0Ug" # Use the ID of the parent task here
+    title="...)",
+    user_google_email="...",
+    parent="..." # Use the ID of the parent task here
 ))
 ```
 
@@ -267,3 +267,5 @@ By using the `parent` parameter, the newly created tasks will appear nested unde
 *   **Token Management is Crucial:** Access tokens are short-lived; refresh tokens are essential for seamless automation but can be revoked.
 *   **Billing for Monitoring:** Google Cloud Monitoring requires billing to be enabled, even for free-tier usage.
 *   **Python for Robustness:** While `curl` is great for quick tests, Python client libraries offer more robust error handling, token management, and overall maintainability for complex interactions.
+* Curl shows full errors
+* User may need to authorize smth https://accounts.google.com/o/oauth2/v2/auth?client_id=495172...&scope=https://www.googleapis.com/auth/contacts.readonly.
