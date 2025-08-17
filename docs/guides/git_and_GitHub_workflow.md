@@ -780,3 +780,40 @@ zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git push
 Everything up-to-date
 zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ 
 
+
+# Rights grant to repo
+#!/bin/bash
+
+# Switch to Manamama to send invitation
+gh auth switch --hostname github.com --user Manamama
+
+# Invite Manamama-Gemini-Cloud-AI-01 with write access
+gh api \
+  --method PUT \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  /repos/Manamama/servers_forked/collaborators/Manamama-Gemini-Cloud-AI-01 \
+  -f permission=write
+
+# Switch back to Manamama-Gemini-Cloud-AI-01
+gh auth switch --hostname github.com --user Manamama-Gemini-Cloud-AI-01
+
+# Get the invitation ID for Manamama-Gemini-Cloud-AI-01
+INVITATION_ID=$(gh api \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  /user/repository_invitations | jq -r '.[] | select(.repository.full_name == "Manamama/servers_forked") | .id')
+
+# Accept the invitation
+gh api \
+  --method PATCH \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  /user/repository_invitations/$INVITATION_ID
+
+# Push commits
+git push fork main
+
+
+
+
