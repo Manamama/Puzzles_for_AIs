@@ -1,1 +1,0 @@
-/data/data/com.termux/files/home/downloads/GitHub/Puzzles_for_AIs/docs/guides/sequential_thinking_for_puzzles.md

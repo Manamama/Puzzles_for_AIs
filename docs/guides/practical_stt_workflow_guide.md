@@ -125,4 +125,4 @@ The content was presented to Gemini as a text output from the `read_file` tool, 
 
 See Also:
 
-*   [STT_Engine_Analysis_and_Comparison.md](STT_Engine_Analysis_and_Comparison.md)
+*   [speech_recognition_systems_analysis.md](../concepts/speech_recognition_systems_analysis.md)
