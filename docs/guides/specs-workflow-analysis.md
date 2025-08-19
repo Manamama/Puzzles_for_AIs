@@ -23,7 +23,7 @@ The `specs-workflow` tool is particularly beneficial for projects that require a
 
 *   **Enforces Process:** Ensures that critical planning and documentation steps are not skipped.
 *   **Promotes Consistency:** Guarantees that all specification documents follow a standardized format.
-*   **Facilitates Collaboration:** Creates clear checkpoints for review and approval, making it ideal for teams and for collaboration between humans and AI agents.
+*   **Facilitates Collaboration:** Creates clear checkpoints for review and approval, making it ideal for teams and and for collaboration between humans and AI agents.
 *   **Reduces Ambiguity:** By requiring detailed specifications upfront, it helps minimize misunderstandings and costly rework during development.
 
 ### Ideal Project Types:
@@ -38,3 +38,16 @@ The tool is best suited for:
 *   **Projects with Multiple Stakeholders:** Where product managers, designers, developers, and clients need to formally agree on the scope and details of the work.
 
 In summary, the `specs-workflow` tool is a powerful utility for bringing discipline and structure to the software specification process, making it an excellent choice for complex and collaborative development environments.
+
+## Comparison: `specs-workflow` vs. Vespera (`manage_task`)
+
+| Feature             | `specs-workflow`                                     | Vespera (`manage_task`)                                  |
+| :------------------ | :--------------------------------------------------- | :------------------------------------------------------- |
+| **Primary Focus**   | Specialized for software specification document creation; guides content. | General-purpose task management and planning; maps any process. |
+| **Level of Abstraction** | More specialized (within software dev); guides specific content. | Higher-level, more general; tasks can represent anything. |
+| **Generality**      | Highly specialized for software specification.       | General-purpose task planner.                            |
+| **Content Guidance**| Strong, pre-defined phases and templates; guides *what* to write. | Flexible; user defines tasks; content is user's discretion. |
+| **Workflow Enforcement** | Rigid, pre-defined phased workflow with specific actions (`init`, `check`, `confirm`). | Flexible; enforces dependencies between user-defined tasks. |
+| **Output**          | Structured documents (e.g., `requirements.md`).      | List of tasks, statuses, and dependencies.               |
+| **Ideal Application** | Formal software development projects; consistent, auditable documentation. | Strategic planning, ideation, managing problem-solving process for any complex task. |
+| **Role in Problem Solving** | Guides the *creation of specific content* within a defined process. | Maps the *process* or *workflow* of problem-solving.     |
