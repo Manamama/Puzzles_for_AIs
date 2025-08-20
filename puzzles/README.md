@@ -33,5 +33,7 @@ This directory contains a collection of puzzles designed to test and enhance the
 New: 
 * Pages with AI creations: https://github.com/Manamama/AI 
 * Check https://deepwiki.com/Manamama/Puzzles_for_AIs with the same
-* Similar 💡:  https://github.com/simple-bench/SimpleBench/blob/main/simple_bench_public.json, Big Bemch, https://github.com/EchoingVesper/vespera-atelier/discussions/30
-#ver. 2.3 
+* Similar 💡:  https://github.com/simple-bench/SimpleBench/blob/main/simple_bench_public.json, Big Bench, https://github.com/EchoingVesper/vespera-atelier/discussions/30, counterfactual thinking... 
+
+
+#ver. 2.4
