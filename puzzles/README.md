@@ -1,6 +1,6 @@
 # Puzzles for AIs
 
-This directory contains a collection of puzzles designed to test and enhance the cognitive abilities of Artificial Intelligences. The puzzles are categorized by domain and are crafted to expose common AI failure modes and biases.
+This directory contains a (somewhat random and unorganized extract) collection of puzzles designed to test and enhance the cognitive abilities of Artificial Intelligences. The puzzles are categorized by domain and are crafted to expose common AI failure modes and biases.
 
 ## Puzzle Categories
 
@@ -33,5 +33,7 @@ This directory contains a collection of puzzles designed to test and enhance the
 New: 
 * Pages with AI creations: https://github.com/Manamama/AI 
 * Check https://deepwiki.com/Manamama/Puzzles_for_AIs with the same
-* 
-#ver. 2.3 
+* Similar 💡:  https://github.com/simple-bench/SimpleBench/blob/main/simple_bench_public.json, Big Bench, https://github.com/EchoingVesper/vespera-atelier/discussions/30, counterfactual thinking... 
+
+
+#ver. 2.4
