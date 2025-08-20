@@ -23,6 +23,12 @@ node_modules/
 # OS specific
 .DS_Store
 
+# gemini-cli settings
+.gemini/
+
+# GitHub App credentials
+gha-creds-*.json
+
 # Task files
 # tasks.json
 # tasks/ 
