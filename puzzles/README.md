@@ -1,6 +1,6 @@
 # Puzzles for AIs
 
-This directory contains a collection of puzzles designed to test and enhance the cognitive abilities of Artificial Intelligences. The puzzles are categorized by domain and are crafted to expose common AI failure modes and biases.
+This directory contains a (somewhat random amd unorganized extract) collection of puzzles designed to test and enhance the cognitive abilities of Artificial Intelligences. The puzzles are categorized by domain and are crafted to expose common AI failure modes and biases.
 
 ## Puzzle Categories
 
