@@ -33,5 +33,5 @@ This directory contains a collection of puzzles designed to test and enhance the
 New: 
 * Pages with AI creations: https://github.com/Manamama/AI 
 * Check https://deepwiki.com/Manamama/Puzzles_for_AIs with the same
-* 
+* https://github.com/simple-bench/SimpleBench/blob/main/simple_bench_public.json
 #ver. 2.3 
