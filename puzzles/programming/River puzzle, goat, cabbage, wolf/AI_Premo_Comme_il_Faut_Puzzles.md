@@ -1,0 +1,1 @@
+/home/zezen/Downloads/GitHub/Puzzles_for_AIs/docs/strategy/AI_Premo_Comme_il_Faut_Puzzles.md

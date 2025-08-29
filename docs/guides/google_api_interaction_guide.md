@@ -269,3 +269,55 @@ By using the `parent` parameter, the newly created tasks will appear nested unde
 *   **Python for Robustness:** While `curl` is great for quick tests, Python client libraries offer more robust error handling, token management, and overall maintainability for complex interactions.
 * Curl shows full errors
 * User may need to authorize smth https://accounts.google.com/o/oauth2/v2/auth?client_id=495172...&scope=https://www.googleapis.com/auth/contacts.readonly.
+
+
+
+
+##Updated draft: 
+
+This works in Termux: 
+
+```
+~ $ sudo ls /dev/fuse
+/dev/fuse
+~ $ 
+
+```
+
+
+so one can: 
+`gcloud cloud-shell get-mount-command`
+
+e.g.
+
+```
+~ $ lsd storage/
+ dcim   downloads   external_SD   external_SD_5951-9E0F   gcloud_01   movies   music   pictures   SD_card_data_Termux   shared
+~ $ 
+
+```
+
+then:
+```
+~ $ gcloud cloud-shell get-mount-command storage/gcloud_01/ 
+sshfs abovetrans@34.34.13.166: storage/gcloud_01/ -p 6000 -oIdentityFile=/data/data/com.termux/files/home/.ssh/google_compute_engine -oStrictHostKeyChecking=no
+~ $ 
+```
+
+and then: 
+` sudo sshfs abovetrans@34.34.13.166: storage/gcloud_01/ -p 6000 -oIdentityFile=/data/data/com.termux/files/home/.ssh/google_compute_engine -oStrictHostKeyChecking=no -o reconnect -o ServerAliveInterval=5 -o ServerAliveCountMax=3 -o TCPKeepAlive=yes  -o allow_other` 
+
+
+and check: 
+
+```
+~ $ mount | grep gcloud_01
+abovetrans@34.34.13.166: on /data/data/com.termux/files/home/storage/gcloud_01 type fuse.sshfs (rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other)
+~ $ 
+
+```
+etc. 
+
+Still, it may not work sometimes. `-o reconnect -o ServerAliveInterval=5 -o ServerAliveCountMax=3 -o TCPKeepAlive=yes` is key BTW. 
+
+ 
