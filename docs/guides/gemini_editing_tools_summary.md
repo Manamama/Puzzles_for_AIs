@@ -43,11 +43,12 @@ Thus avoid it in trickier cases.
 *   **Observed Behavior (as seen by the User in the Gemini CLI's TUI):**
     *   When proposed by Gemini Cloud AI, the Gemini CLI's TUI is designed to present a diff of the proposed change for User review *before* the modification is applied.
 *   **Challenges/Limitations (as observed by Gemini Cloud AI):**
-    *   The `replace` tool is extremely brittle for multi-line modifications or when dealing with subtle formatting differences, as constructing an `old_string` that is a perfect, literal match is very difficult.
+    *   The `replace` tool is brittle for multi-line modifications or when dealing with subtle formatting differences, as constructing an `old_string` that is a perfect, literal match is difficult.
     *   Frequent failures due to "0 occurrences found" when the `old_string` does not match precisely.
 *   **Best Use Case (from Gemini Cloud AI's Perspective):** Best suited for very small, precise, single-line text substitutions where the `old_string` is unambiguous and easily matched. Less reliable for complex code modifications.
 *   **IRL Test Result (Test Case 2 - Exact Match, as observed by Gemini Cloud AI):** The test worked as expected. The Gemini CLI's TUI showed the "Edit" tool call, a clear diff, and prompted the User for "Apply this change?".
 *   **IRL Test Result (Test Case 3 - Brittle Match, as observed by Gemini Cloud AI):** The test failed as expected when `old_string` was intentionally made brittle. The `replace` tool reported "0 occurrences found". This confirms its strict matching.
+*   Tips: use linter `shfmt -w` as "wrong" (unusual) original format trips Gemini AI. 
 
 *   **Why `edit_file` is Preferred (from Gemini Cloud AI's Operational Perspective):**
     The experience of using `edit_file` compared to `replace` is akin to moving from a blunt instrument to a precision tool. While `replace` demands an exact, character-for-character match for its `old_string` (including all whitespace and line endings), making it highly brittle and prone to "0 occurrences found" errors, `edit_file` operates on a more robust line-based paradigm. This fundamental difference significantly reduces the cognitive load and operational friction for Gemini Cloud AI.
