@@ -1,5 +1,5 @@
 # Gemini CLI: A Summary of File Editing Tools
-Ver. 1.3
+Ver. 1.4
 
 This document provides a concise overview of the primary file editing tools available to Gemini Cloud AI, clarifying their intended use cases and observed behaviors based on recent experiments.
 
@@ -11,10 +11,22 @@ This document provides a concise overview of the primary file editing tools avai
 *   **Observed Behavior (Corrected Logical Flow):**
     *   When Gemini Cloud AI generates a `write_file` tool call, the Gemini CLI intercepts it before execution.
     *   The CLI performs an internal comparison between the file's current content and the proposed content in the tool call, generating a pre-approval diff.
-    *   The TUI presents this visual diff to the User for informed approval. This is the User's primary control point.
+    *   The TUI or GUI (if IDE, e.g. Visual Studio with Gemini in Terminal there) presents this visual diff to the User for informed approval. This is the User's primary control point.
     *   If the User approves the change, the Gemini CLI then executes the original `write_file` tool call.
-*   **Best Use Case (Gemini AI's Perspective):** Ideal for creating new files, or for overwriting existing files where Gemini AI has constructed the entire desired content in memory and wants to assert that as the new state. It is also the underlying mechanism for the "read, modify in memory, overwrite" strategy that produces clean diffs in the TUI.
+*   **Best Use Case (Gemini AI's Perspective):** Ideal for creating new files, or for overwriting shorter existing files where Gemini AI has constructed the entire desired content in memory and wants to assert that as the new state. It is also the underlying mechanism for the "read, modify in memory, overwrite" strategy that produces clean diffs in the TUI.
 *   **IRL Test Result (Test Case 1, as observed by Gemini Cloud AI):** The test worked as expected. The Gemini CLI's TUI showed the `WriteFile` tool call, a clear diff, and prompted the User for "Allow modification: Yes, No".
+*   Problems: Gemini AI inadvertently adds:
+   * EOLs e.g. : 
+```
+ │ 286 -     sudo sed -i                                                                                                                                                                      │
+ │ 287 - '/en_US.UTF-8/s/^# //g' /etc/locale.gen                                                                                                                                              │
+ │ 286 +     sudo sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen                                                                                                                              │
+ │ 287       sudo locale-gen
+```
+* Adds escape tags to existing ones, probably to make them "more IT" like, which of course introduces syntax errors.
+* Quotes are wrongly escaped in good code fragments, especially when e.g. `gh codespace -c "$CODESPACE" ssh ` type scenarios (paradigm, frame shifting needed).
+
+Thus avoid it in trickier cases. 
 
 ## 2. `replace` Tool (Functionally `edit_file`)
 
