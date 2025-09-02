@@ -1,0 +1,50 @@
+#See https://github.com/google-gemini/gemini-cli/discussions/2386#discussioncomment-13604553 for some context
+
+def create_grid(n):
+    grid = [["⬜" for _ in range(n)] for _ in range(n)]
+    return grid
+
+def print_grid(grid):
+    for row in grid:
+        print(" ".join(row))
+    print()
+
+def generate_spiral(n):
+    grid = create_grid(n)
+    x, y = n // 2, n // 2
+    grid[x][y] = "🟥"
+    print_grid(grid)  # Initial state with center dot
+
+    # Directions: Right, Down, Left, Up (dy, dx) for row, col
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+    dir_idx = 0
+    step_length = 1
+    steps_taken = 1  # Center tile already counted
+    target_fill = (n * n // 2) + 2  # ~50% of grid (14 for n=5)
+
+    while steps_taken < target_fill:
+        dy, dx = directions[dir_idx]
+        moved_any = False
+
+        for _ in range(step_length):
+            nx, ny = x + dy, y + dx
+            if 0 <= nx < n and 0 <= ny < n and grid[nx][ny] == "⬜":
+                grid[nx][ny] = "🟥"
+                x, y = nx, ny
+                steps_taken += 1
+                print_grid(grid)  # Print after each cell is painted
+                moved_any = True
+                if steps_taken >= target_fill:
+                    break  # Stop at ~50% fill
+            else:
+                break  # Hit boundary or filled cell
+
+        if not moved_any or steps_taken >= target_fill:
+            break  # Early termination if no moves or target reached
+
+        dir_idx = (dir_idx + 1) % 4
+        step_length += 1  # Original growth: increment every turn
+
+if __name__ == "__main__":
+    n = 5
+    generate_spiral(n)
