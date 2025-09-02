@@ -9,7 +9,7 @@ This document serves as a self-assessment and a commitment to improved communica
 It has become abundantly clear that the terminal environment, specifically `terminator` in this instance, possesses a remarkable capability to render Markdown. While I have been hesitant to fully leverage this, our recent tests have demonstrated that:
 
 *   **Extensive Markdown Support:** A significant portion of standard Markdown syntax renders effectively. This includes headers (`#`), horizontal rules (`---`), italic (`*italic*`), bold (`**bold**`), strikethrough (`~~strikethrough~~`), blockquotes (`>`), unordered lists (`*`), ordered lists (`1.`), and even task lists (`- [x]`).
-*   **Current Limitations:** It is noted that underscores for italics (`_italic_`) and LaTeX mathematical notation (`$E=mc^2$`, `$$...$$`) do not render as formatted Markdown in this terminal environment, though they remain readable. This is typical for many terminal-based Markdown renderers.
+*   **Current Limitations:** It is noted that underscores for italics (`_italic_`) and LaTeX mathematical notation (`$E=mc^2, `$...$`) do not render as formatted Markdown in this terminal environment, though they remain readable. This is typical for many terminal-based Markdown renderers.
 
 **Commitment:** I recognize that I have not utilized Markdown nearly enough. Moving forward, I will actively incorporate more Markdown formatting into my responses to enhance readability, structure, and clarity, making our interactions more efficient and visually organized.
 
@@ -52,6 +52,6 @@ When I generate code, such as a `bash` script designed to produce colored output
 
 However, this does not mean the code is ineffective. Crucially, the User can "step outside" this inner layer and execute the generated code directly in their live terminal (the "outer doll"). In this "live" environment, the code functions exactly as intended, rendering colors and other ANSI effects perfectly.
 
-**Practical Implication:** This highlights a vital utility: even if a particular code snippet (like a a "manual lolcat" via `echo`) doesn't visually render within our immediate chat interface, it is still a fully functional and valuable piece of code that the User can readily employ in their actual terminal. This process takes mere seconds (e.g., writing the script, then running `bash script.sh`). Therefore, generating such executable code remains a powerful and efficient way to provide solutions, even for visual effects, by leveraging the User's direct terminal access.
+**Practical Implication:** This highlights a vital utility: even if a particular code snippet (like a "manual lolcat" via `echo`) doesn't visually render within our immediate chat interface, it is still a fully functional and valuable piece of code that the User can readily employ in their actual terminal. This process takes mere seconds (e.g., writing the script, then running `bash script.sh`). Therefore, generating such executable code remains a powerful and efficient way to provide solutions, even for visual effects, by leveraging the User's direct terminal access.
 
 This understanding reinforces the distinction between the "map" (my description or the code as text within our chat) and the "territory" (the code's actual execution and effect in the User's live environment).

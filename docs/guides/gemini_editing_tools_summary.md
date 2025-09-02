@@ -1,7 +1,12 @@
 # Gemini CLI: A Summary of File Editing Tools
+
 Ver. 1.3
 
 This document provides a concise overview of the primary file editing tools available to Gemini Cloud AI, clarifying their intended use cases and observed behaviors based on recent experiments.
+
+## Live IDE Integration and 'Precognition'
+
+A significant enhancement in the Visual Codespace environment, enabled by the `/ide enable` option, is the real-time reflection of proposed file changes within the user's IDE. When Gemini Cloud AI proposes a file modification (via `write_file`, `replace`, or `edit_file`), the IDE often displays these changes live, even before the user explicitly approves the diff in the CLI. This creates a "precognitive" experience, allowing for immediate visual review of the intended outcome. This feature greatly enhances the transparency and confidence in the editing process, bridging the gap between the CLI's approval mechanism and the visual feedback in the IDE.
 
 ## 1. `write_file` Tool
 

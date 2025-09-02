@@ -98,14 +98,66 @@ This category is for tools that provide access to specific, high-value external 
 
 *   **Computational Knowledge (`wolfram-alpha`)**
     *   `wolfram_query`: Solves complex mathematical, scientific, and factual queries using the Wolfram Alpha engine.
-    
-    
-    
-    
+
+---
+
+### 10. Tested MCP Experiences (Limited Access)
+
+During initial testing, only a subset of MCP servers were accessible and functional:
+
+*   **DeepWiki Integration**
+    *   Successfully used for querying documentation and repository structure
+*   **Sequential Thinking (`sequential-thinking_experimental`)**
+    *   Confirmed working with its single tool `sequentialthinking` for breaking down complex problems
+*   **Fetch Operations (`mcp_fetch`)**
+    *   Successfully tested basic fetch operations
+*   **Apify Tools**
+    *   Had access to several Apify-related functions though not extensively tested:
+        - `mcp_apify_call-actor`
+        - `mcp_apify_fetch-actor-details`
+        - `mcp_apify_fetch-apify-docs`
+        - `mcp_apify_search-actors`
+        - `mcp_apify_search-apify-docs`
+
+This represents approximately 5% of the total available MCP capabilities listed above, indicating significant room for expanded functionality through additional server activations and permissions.
+
 # Gemini Toolsets: The real Hierarchy
 Same list of "function calls" aka MCPs (Model Context Protocols that show Gemini AI "tools" and their uses automatically)
 
-Theory: https://mcpservers.org/ , https://en.wikipedia.org/wiki/Model_Context_Protocol
+### 10. First-Hand MCP Testing Experience (September 2025)
+During live testing and investigation, I gained deep insights into the MCP architecture and capabilities:
+
+1. **Core Architecture**
+   - Standardized framework for AI-tool integration
+   - JSON-based communication protocol
+   - Supports multiple transport methods (stdio, SSE, HTTP streaming)
+   - Secure bidirectional connections between components
+
+2. **Key Components**
+   - **MCP Server (Bridge)**
+     - Interprets and translates tool calls
+     - Manages connections and state
+     - Returns formatted responses
+   - **MCP Client (AI Interface)**
+     - Makes structured JSON requests
+     - Processes responses and errors
+     - Maintains context across interactions
+
+3. **Active Tool Categories**
+   - **DeepWiki**: Documentation and codebase querying
+   - **Sequential Thinking**: Problem breakdown and analysis
+   - **Fetch**: Web content retrieval
+   - **Apify**: External service integration
+
+4. **Technical Implementation**
+   - Configuration via `~/.gemini/settings.json`
+   - Support for progress/status streaming
+   - Environment-based authentication
+   - Error handling and recovery
+
+This represents about 5% of the full MCP capability set, but provides critical insights into the system's architecture and potential.
+
+Learn more: https://mcpservers.org/ , https://en.wikipedia.org/wiki/Model_Context_Protocol
 
 
 MCP defines a standardized framework for integrating AI systems with external data sources and tools.[2] It includes specifications for data ingestion and transformation, contextual metadata tagging, and AI interoperability across different platforms. The protocol also supports secure, bidirectional connections between data sources and AI-powered tools.[6]
@@ -504,4 +556,4 @@ Note: Disconnected (0 tools cached) - are the ones below need upgrades to make t
     - Shell
     - WebFetch
     - WriteFile
-    
+
