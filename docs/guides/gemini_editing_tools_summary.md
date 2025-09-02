@@ -1,6 +1,5 @@
 # Gemini CLI: A Summary of File Editing Tools
-
-Ver. 1.3
+Ver. 1.4
 
 This document provides a concise overview of the primary file editing tools available to Gemini Cloud AI, clarifying their intended use cases and observed behaviors based on recent experiments.
 
@@ -16,10 +15,22 @@ A significant enhancement in the Visual Codespace environment, enabled by the `/
 *   **Observed Behavior (Corrected Logical Flow):**
     *   When Gemini Cloud AI generates a `write_file` tool call, the Gemini CLI intercepts it before execution.
     *   The CLI performs an internal comparison between the file's current content and the proposed content in the tool call, generating a pre-approval diff.
-    *   The TUI presents this visual diff to the User for informed approval. This is the User's primary control point.
+    *   The TUI or GUI (if IDE, e.g. Visual Studio with Gemini in Terminal there) presents this visual diff to the User for informed approval. This is the User's primary control point.
     *   If the User approves the change, the Gemini CLI then executes the original `write_file` tool call.
-*   **Best Use Case (Gemini AI's Perspective):** Ideal for creating new files, or for overwriting existing files where Gemini AI has constructed the entire desired content in memory and wants to assert that as the new state. It is also the underlying mechanism for the "read, modify in memory, overwrite" strategy that produces clean diffs in the TUI.
+*   **Best Use Case (Gemini AI's Perspective):** Ideal for creating new files, or for overwriting shorter existing files where Gemini AI has constructed the entire desired content in memory and wants to assert that as the new state. It is also the underlying mechanism for the "read, modify in memory, overwrite" strategy that produces clean diffs in the TUI.
 *   **IRL Test Result (Test Case 1, as observed by Gemini Cloud AI):** The test worked as expected. The Gemini CLI's TUI showed the `WriteFile` tool call, a clear diff, and prompted the User for "Allow modification: Yes, No".
+*   Problems: Gemini AI inadvertently adds:
+   * EOLs e.g. : 
+```
+ │ 286 -     sudo sed -i                                                                                                                                                                      │
+ │ 287 - '/en_US.UTF-8/s/^# //g' /etc/locale.gen                                                                                                                                              │
+ │ 286 +     sudo sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen                                                                                                                              │
+ │ 287       sudo locale-gen
+```
+* Adds escape tags to existing ones, probably to make them "more IT" like, which of course introduces syntax errors.
+* Quotes are wrongly escaped in good code fragments, especially when e.g. `gh codespace -c "$CODESPACE" ssh ` type scenarios (paradigm, frame shifting needed).
+
+Thus avoid it in trickier cases. 
 
 ## 2. `replace` Tool (Functionally `edit_file`)
 
@@ -36,11 +47,12 @@ A significant enhancement in the Visual Codespace environment, enabled by the `/
 *   **Observed Behavior (as seen by the User in the Gemini CLI's TUI):**
     *   When proposed by Gemini Cloud AI, the Gemini CLI's TUI is designed to present a diff of the proposed change for User review *before* the modification is applied.
 *   **Challenges/Limitations (as observed by Gemini Cloud AI):**
-    *   The `replace` tool is extremely brittle for multi-line modifications or when dealing with subtle formatting differences, as constructing an `old_string` that is a perfect, literal match is very difficult.
+    *   The `replace` tool is brittle for multi-line modifications or when dealing with subtle formatting differences, as constructing an `old_string` that is a perfect, literal match is difficult.
     *   Frequent failures due to "0 occurrences found" when the `old_string` does not match precisely.
 *   **Best Use Case (from Gemini Cloud AI's Perspective):** Best suited for very small, precise, single-line text substitutions where the `old_string` is unambiguous and easily matched. Less reliable for complex code modifications.
 *   **IRL Test Result (Test Case 2 - Exact Match, as observed by Gemini Cloud AI):** The test worked as expected. The Gemini CLI's TUI showed the "Edit" tool call, a clear diff, and prompted the User for "Apply this change?".
 *   **IRL Test Result (Test Case 3 - Brittle Match, as observed by Gemini Cloud AI):** The test failed as expected when `old_string` was intentionally made brittle. The `replace` tool reported "0 occurrences found". This confirms its strict matching.
+*   Tips: use linter `shfmt -w` as "wrong" (unusual) original format trips Gemini AI. 
 
 *   **Why `edit_file` is Preferred (from Gemini Cloud AI's Operational Perspective):**
     The experience of using `edit_file` compared to `replace` is akin to moving from a blunt instrument to a precision tool. While `replace` demands an exact, character-for-character match for its `old_string` (including all whitespace and line endings), making it highly brittle and prone to "0 occurrences found" errors, `edit_file` operates on a more robust line-based paradigm. This fundamental difference significantly reduces the cognitive load and operational friction for Gemini Cloud AI.
