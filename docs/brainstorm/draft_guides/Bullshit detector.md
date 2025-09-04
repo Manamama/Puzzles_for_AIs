@@ -3,10 +3,7 @@
 
 
 Logical consistency analysis
-https://chatgpt.com/c/68a42adf-f5d4-832f-803a-d5ce75460b96
 
-Skip to content
-Open sidebar
 ChatGPT
 You said:
 “Analyze the following statement for internal logical consistency by defining the key terms and checking if their meanings align with the overall claim: [insert statement]. List any potential incompatibilities.” is it contradictory?: 'I have coded in 33 programming languages and on even more hardware platforms. The languages ranged from CICS COBOL on IBM 3090 Mainframes, dBase, Paradox, C, C++, Java, Python, and many more. I have seen, and built for, eras where the stack was closed, open, fractured, and federated. The unifying theme was always the same: community, mutual reliance, and the freedom to learn from and build on each other’s work.'
