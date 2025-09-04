@@ -1,1 +1,0 @@
-/home/zezen/Downloads/GitHub/Puzzles_for_AIs/docs/guides/AI_Heuristic_Distrust_Protocol.md
