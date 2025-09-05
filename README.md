@@ -2,6 +2,12 @@
 
 This project explores a novel approach to AI development by merging two core concepts: providing challenging "Puzzles for AIs" and implementing a rigorous framework for "Enhancing AI Cognition" based on the lessons learned from solving these puzzles.
 
+# Meta info
+This repository has been converted to Workspace: https://legendary-space-guide-v5rp479r6jj2p4px.github.dev/ so that Visual Code works from anywhere with it. Note to self: remember to `git commit` and `git push` it now and then or set it automatically. 
+
+
+
+
 ## 🧩 Puzzles for AIs: The Training Ground
 
 This section of the project comprises a curated collection of problems, challenges, and scenarios designed specifically for Artificial Intelligences and Large Language Models. These puzzles serve as:
