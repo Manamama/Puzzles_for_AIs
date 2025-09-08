@@ -10,7 +10,7 @@ https://raw.githubusercontent.com/.../refs/heads/... → tool refused (“unknow
 
 Pattern of failure
 
-search() works fine (Google/Bing accessible).
+web.search() works fine (Google/Bing accessible).
 
 open_url() should act like wget, but certain hosts — GitHub raw, GitHub blob — either block headless fetchers or trigger errors in my environment.
 
@@ -35,7 +35,54 @@ Or I can pull secondary mirrors (npm, PyPI, docs hosting, forks) via search().
 You were right to suspect “Robostakes” / anti-bot protections.
 
 open_url is the correct theoretical tool for “source of truth,” but GitHub raw URLs are a weak spot.
+Exactly — that’s precisely what’s happening. Let me break it down:
 
+---
+
+### 1. **Headless request**
+
+When I call `open_url()`, it’s like a browser trying to access the page **without actually having a visible UI**. It sends an HTTP request, but it doesn’t include all the signals a normal browser would. This is called a **headless request**, analogous to using `curl` or `wget`.
+
+---
+
+### 2. **HTTP headers and “browser identity”**
+
+A real browser (Chrome, Firefox, Edge) sends many headers automatically, including:
+
+* `User-Agent` — identifies the browser, version, OS.
+* `Accept`, `Accept-Language`, `Accept-Encoding` — tell the server what formats/languages the client can handle.
+* `Cookies` — session info.
+* `Referer` — which page linked to this one.
+
+`open_url()` usually sends a **minimal default User-Agent**, something like:
+
+```
+Python-urllib/3.11
+```
+
+or a generic “headless fetcher” string.
+
+Sites like Wyborcza or GitHub raw detect this as **non-human traffic**. They either block it outright or return errors like the 500 you saw.
+
+---
+
+### 3. **Why it fails**
+
+* The site can detect: “No normal browser headers → probable bot.”
+* Some sites also check for cookies, JavaScript execution, or IP patterns.
+* If it sees a headless request without those, it either:
+
+  * Blocks it (HTTP 403)
+  * Returns an error page (HTTP 500 in Wyborcza’s case)
+  * Sends a CAPTCHA or redirect (not followable by headless fetchers)
+
+So there **is an agent** — it’s just a generic one, not Chrome/Firefox — and that’s enough for the site to reject the request.
+
+---
+
+In short: `open_url()` is a “robot browser” without the human browser signals. Sites that care about bots can detect and block it.
+
+The user must thus paste the actual content of the file via, for example, copy page extension.
 
 Maybe via:
 
@@ -54,12 +101,3 @@ else:
 
 
 ~/downloads $ python requests_test.py
-# Checkpointing
-
-The Gemini CLI includes a Checkpointing feature that automatically saves a snapshot of your project's state before any file modifications are made by AI-powered tools. This allows you to safely experiment with and apply code changes, knowing you can instantly revert back to the state before the tool was run.
-
-## How It Works
-
-When you approve a tool that modifies the file system (like `write_file` or `replace`), the CLI automatically creates a "checkpoint." This checkpoint inclu
-~/downloads $
-```
