@@ -807,7 +807,7 @@ git remote set-url origin https://github.com/OWNER/REPO.git
 
 
 Additional disovery, if: 
-
+```
 $ git remote set-url origin https://github.com/Manamama-Gemini-Cloud-AI-01/mcp.git
 $ git push
 remote: Permission to browsermcp/mcp.git denied to Manamama-Gemini-Cloud-AI-01.
@@ -819,7 +819,7 @@ upstream	https://github.com/browsermcp/mcp (fetch)
 upstream	https://github.com/browsermcp/mcp (push)
 $ git push origin main
 Everything up-to-date
-
+```
 
 then this is useful: 
 ```
