@@ -822,7 +822,7 @@ Everything up-to-date
 
 
 then this is useful: 
-
+```
 $ git config --get branch.main.pushRemote
 $ git config branch.main.pushRemote origin
 $ git config --get branch.main.pushRemote
@@ -867,7 +867,7 @@ gh api \
 
 # Push commits
 git push fork main
-
+```
 
 # Added tips
 
