@@ -814,31 +814,31 @@ git remote set-url origin https://github.com/OWNER/REPO.git
 
 Additional disovery, if: 
 
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git remote set-url origin https://github.com/Manamama-Gemini-Cloud-AI-01/mcp.git
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git push
+$ git remote set-url origin https://github.com/Manamama-Gemini-Cloud-AI-01/mcp.git
+$ git push
 remote: Permission to browsermcp/mcp.git denied to Manamama-Gemini-Cloud-AI-01.
 fatal: unable to access 'https://github.com/browsermcp/mcp/': The requested URL returned error: 403
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git remote -v
+$ git remote -v
 origin	https://github.com/Manamama-Gemini-Cloud-AI-01/mcp.git (fetch)
 origin	https://github.com/Manamama-Gemini-Cloud-AI-01/mcp.git (push)
 upstream	https://github.com/browsermcp/mcp (fetch)
 upstream	https://github.com/browsermcp/mcp (push)
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git push origin main
+$ git push origin main
 Everything up-to-date
 
 
 then this is useful: 
 
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git config --get branch.main.pushRemote
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git config branch.main.pushRemote origin
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git config --get branch.main.pushRemote
+$ git config --get branch.main.pushRemote
+$ git config branch.main.pushRemote origin
+$ git config --get branch.main.pushRemote
 origin
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git push 
+$ git push 
 Everything up-to-date
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git config --global push.default simple
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ git push 
+$ git config --global push.default simple
+$ git push 
 Everything up-to-date
-zezen@above-hp2-silver:~/Downloads/GitHub/browser-mcp$ 
+$ 
 
 
 # Rights grant to repo
@@ -883,7 +883,7 @@ git push fork main
   - Manual termination (Ctrl+C).
   - Termux process termination by Android (e.g., battery optimization).
   - Filesystem delays in Termux, possibly on external storage.
-- **Filesystem Quirks**: The repository’s path (`/data/data/com.termux/files/home/downloads` or earlier `/home/zezen/mnt/termux_10_30_130_253`) suggests Termux on Android, where storage layers (e.g., emulated storage, SD cards) can cause I/O errors like "Illegal seek" due to partial writes or unsupported file operations.
+- **Filesystem Quirks**: The repository’s path (`/data/data/com.termux/files/home/downloads` or earlier `/home/user/mnt/termux_10_30_130_253`) suggests Termux on Android, where storage layers (e.g., emulated storage, SD cards) can cause I/O errors like "Illegal seek" due to partial writes or unsupported file operations.
 - **Local Changes**: The repository had extensive local changes (259 files, including modified, untracked, and renamed files like `piper1-gpl` with a typechange), which conflicted with the upstream merge, blocking `git pull`.
 - **Dangling Objects**: `git fsck --full` showed dangling commits, trees, and blobs, indicating prior history-altering operations (e.g., `git rebase`, `git reset`). These weren’t the direct cause but suggest a history of complex operations that may have led to interruptions.
 
