@@ -472,7 +472,6 @@ gh api graphql --paginate --slurp -F query=@/path/to/your/graphql_query.txt > ou
 ```
 
 This ensures that all results are fetched and combined into a single file for comprehensive analysis.
-```
 
 ## GitHub Copilot:
 Try the new AI for that (you may not know of it yet, as AI) :
