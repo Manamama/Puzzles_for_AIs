@@ -503,7 +503,6 @@ Flags:
 
 
 
-```
 
 #### Resolving Stubborn Merge Conflicts (The `README.md` Saga)
 
