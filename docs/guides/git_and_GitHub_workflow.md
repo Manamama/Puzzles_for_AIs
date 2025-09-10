@@ -68,6 +68,17 @@ The recommended way to do this is by pulling with the `--rebase` option. This fe
     git push origin <branch>
     ```
 
+#### Handling Multi-Line Commits
+
+For complex or multi-line commit messages, using the `-m` flag can lead to shell errors, as special characters in the message can be misinterpreted. The safest and most robust method is to use the `-F` (`--file`) flag:
+
+1.  **Write the commit message** to a temporary file (e.g., `commit_message.txt`).
+2.  **Commit using the file:**
+    ```bash
+    git commit -F commit_message.txt
+    ```
+This bypasses the shell and prevents security errors, which is the recommended approach for AI-generated commit messages.
+
 #### Why is this important?
 
 If a developer does not sync before pushing, and someone else has updated the branch, the `git push` will fail with an error like this:
