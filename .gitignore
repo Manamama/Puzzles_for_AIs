@@ -32,3 +32,6 @@ gha-creds-*.json
 # Task files
 # tasks.json
 # tasks/ 
+.taskmaster
+.vespera_scriptorium
+.vespera_v2
