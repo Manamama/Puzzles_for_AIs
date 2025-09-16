@@ -5,17 +5,16 @@ Gemini CLI https://github.com/google-gemini/gemini-cli stores chat sessions (che
 
 ## What this program does
 
-This tool renders the logs human readable (prettifies them) and browsable as interlinked HTML, with thoughtful explanations and clickable links, improving transparency and usability for users debugging, auditing, or restoring sessions. 
-This script scans for Gemini CLI projects and converts their JSON chat logs and checkpoints into readable, interlinked HTML files. 
+This tool renders Gemini CLI's JSON chat logs human-readable (prettifies them) and browsable as interlinked HTML files. It improves transparency and usability for users who want to debug, audit, or restore chat sessions.
 
-This script automates the process of converting that data into a user-friendly format. It iterates through all the project folders in your `~/.gemini/tmp` directory, finds all `logs.json` and `checkpoint-*.json` files, and generates a set of interlinked HTML files.
+This script automates the conversion process. It recursively scans the `~/.gemini/tmp` directory and its subdirectories, finds all `.json` chat log files, and generates a set of interlinked HTML files for easy browsing.
 
 ## Features
 
-- **Automatic Discovery:** The script automatically finds the Gemini CLI's temporary directory and scans all the project folders within it.
-- **Intelligent Formatting:** It distinguishes between `logs.json` (chat history) and `checkpoint-*.json` (session snapshots) and provides a clear explanation of what each file type is for.
+- **Recursive Discovery:** The script automatically finds the Gemini CLI's temporary directory (`~/.gemini/tmp`) and recursively scans all subdirectories for `.json` files.
+- **Intelligent Formatting:** It distinguishes between different types of log files (like `logs.json`, `checkpoint-*.json`, and `session-*.json`) and provides a clear explanation for each.
 - **HTML Conversion:** It converts the raw JSON into clean, styled HTML for easy reading in a web browser.
-- **Interlinked Pages:** Each generated HTML file contains navigation links to the other reports from the same project, making it easy to browse a complete session history.
+- **Interlinked Pages:** Each generated HTML file contains navigation links to other reports from the same directory, making it easy to browse a complete session history.
 - **Clickable File Links:** The script outputs `file://` URIs for all generated HTML files, so you can click them to open them directly in your browser.
 - **Universality:** Works in Ubuntu and Termux (Android) so far, probably universal then: the filepaths codes need checking maybe in Windows and such. 
 
@@ -37,23 +36,23 @@ This script automates the process of converting that data into a user-friendly f
 =====================================================
  Gemini CLI Chat Log HTML Exporter
 =====================================================
-This script will scan for Gemini CLI projects and convert their
-JSON chat logs and checkpoints into readable HTML files.
+This script will recursively scan for Gemini CLI chat logs (.json files)
+and convert them into readable HTML files.
 -----------------------------------------------------
 
-Found 25 potential project directories.
+Found 25 potential session directories.
 
-Scanning project: f82ecedde95bc2921fb4c856690e6a6d6d1b5624507ddf04e9992923b3a22df6
+Scanning session: f82ecedde95bc2921fb4c856690e6a6d6d1b5624507ddf04e9992923b3a22df6
   Processing 1 files in f82ecedde95bc2921fb4c856690e6a6d6d1b5624507ddf04e9992923b3a22df6...
 ... 
 
 -----------------------------------------------------
  Export Complete!
 -----------------------------------------------------
-  - Projects Processed: 25
+  - Sessions Processed: 25
   - HTML Files Generated: 32
 
-Generated files can be found in their respective project folders.
+Generated files can be found in their respective session folders.
 You can open them in your browser. Here are the links:
 
 ...
@@ -74,10 +73,11 @@ and
 
 
 
-#ver. 0.3.3
+#ver. 0.3.4
 
 #Updates
 
 - **Improved Markdown Rendering:** Now correctly renders Markdown formatting, including lists and preserving end-of-lines (EOLs).
+- **Bug Fix:** Fixed a `TypeError` that occurred when processing certain JSON files with complex nested data.
 - Explanation that it works in Termux too
 - Info that one .py file only here
