@@ -1,0 +1,1 @@
+You may solve it by hand or code via some Python etc here. Solve: 'Using each of the nine digits once, and only once, form a set of three primes that have the lowest possible sum. For example, the set 941, 827 and 653 sum to 2,421, but this is far from minimal' 
