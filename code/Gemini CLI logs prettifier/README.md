@@ -5,9 +5,9 @@ Gemini CLI https://github.com/google-gemini/gemini-cli stores various chat logs 
 
 ## What this program does
 
-This tool renders Gemini CLI's JSON chat logs human-readable (prettifies them) and browsable as interlinked HTML files. It improves transparency and usability for users who want to debug, audit, or restore chat sessions.
+This tool renders Gemini CLI's JSON chat logs (including `logs.json`, `checkpoint-*.json`, and `session-*.json` files) human-readable (prettifies them) and browsable as interlinked HTML files. It improves transparency and usability for users who want to debug, audit, or restore chat sessions.
 
-This script automates the conversion process. It recursively scans the `~/.gemini/tmp` directory and its subdirectories, finds all `.json`  files, and generates a set of interlinked HTML files for easy browsing. 
+This script automates the conversion process. It recursively scans the `~/.gemini/tmp` directory and its subdirectories, finds all relevant `.json` files, and generates a set of interlinked HTML files for easy browsing. 
 
 ## Features
 
