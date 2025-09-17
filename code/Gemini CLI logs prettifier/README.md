@@ -1,20 +1,18 @@
 # Gemini CLI Logs Prettifier
 
 ## Problem
-Gemini CLI https://github.com/google-gemini/gemini-cli stores chat sessions (checkpoints files) created by `/chat save` as raw JSON files under `~/.gemini/tmp`. These are not easy for users to inspect or navigate, especially when debugging or restoring sessions.
+Gemini CLI https://github.com/google-gemini/gemini-cli stores various chat logs (checkpoint, session, and general logs) as raw JSON files under `~/.gemini/tmp`. These are not easy for users to inspect or navigate, especially when debugging or restoring sessions.
 
 ## What this program does
 
 This tool renders Gemini CLI's JSON chat logs human-readable (prettifies them) and browsable as interlinked HTML files. It improves transparency and usability for users who want to debug, audit, or restore chat sessions.
 
-This script automates the conversion process. It recursively scans the `~/.gemini/tmp` directory and its subdirectories, finds all `.json` chat log files, and generates a set of interlinked HTML files for easy browsing.
+This script automates the conversion process. It recursively scans the `~/.gemini/tmp` directory and its subdirectories, finds all `.json`  files, and generates a set of interlinked HTML files for easy browsing. 
 
 ## Features
 
 - **Recursive Discovery:** The script automatically finds the Gemini CLI's temporary directory (`~/.gemini/tmp`) and recursively scans all subdirectories for `.json` files.
-- **Intelligent Formatting:** It distinguishes between different types of log files (like `logs.json`, `checkpoint-*.json`, and `session-*.json`) and provides a clear explanation for each.
-- **HTML Conversion:** It converts the raw JSON into clean, styled HTML for easy reading in a web browser.
-- **Interlinked Pages:** Each generated HTML file contains navigation links to other reports from the same directory, making it easy to browse a complete session history.
+- **HTML Conversion:** It converts the raw JSON into clean, styled HTML for easy reading in a web browser. 
 - **Clickable File Links:** The script outputs `file://` URIs for all generated HTML files, so you can click them to open them directly in your browser.
 - **Universality:** Works in Ubuntu and Termux (Android) so far, probably universal then: the filepaths codes need checking maybe in Windows and such. 
 
@@ -73,11 +71,10 @@ and
 
 
 
-#ver. 0.3.4
+#ver. 0.3.5
 
 #Updates
 
 - **Improved Markdown Rendering:** Now correctly renders Markdown formatting, including lists and preserving end-of-lines (EOLs).
-- **Bug Fix:** Fixed a `TypeError` that occurred when processing certain JSON files with complex nested data.
 - Explanation that it works in Termux too
 - Info that one .py file only here
