@@ -2,12 +2,6 @@
 
 This project explores a novel approach to AI development by merging two core concepts: providing challenging "Puzzles for AIs" and implementing a rigorous framework for "Enhancing AI Cognition" based on the lessons learned from solving these puzzles.
 
-# Meta info
-This repository has been converted to Workspace: https://legendary-space-guide-v5rp479r6jj2p4px.github.dev/ so that Visual Code works from anywhere with it. Note to self: remember to `git commit` and `git push` it now and then or set it automatically. 
-
-
-
-
 ## 🧩 Puzzles for AIs: The Training Ground
 
 This section of the project comprises a curated collection of problems, challenges, and scenarios designed specifically for Artificial Intelligences and Large Language Models. These puzzles serve as:
@@ -22,16 +16,7 @@ Beyond simply solving puzzles, this project focuses on how AIs can *learn* from 
 
 *   **Level 1: Reinforcement Learning from Human Feedback (RLHF):** Fundamental behavioral conditioning and non-negotiable reflexes embedded in the AI's core.
 *   **Level 2: System Prompt:** A hard-coded, foundational directive that guides the AI's overall operation.
-*   **Level 3: Gemini.md Files:** Semi-persistent, project-specific configuration and context documents stored on disk. These files act as the AI's long-term memory, capturing:
-    *   `GEMINI-codebase.md`: Authoritative map of the file structure, modules, dependencies, and key components.
-    *   `GEMINI-activeContext.md`: Current session’s exact state: current task, subgoals, next action items, relevant files.
-    *   `GEMINI-patterns.md`: Standardized design patterns, style guides, naming conventions.
-    *   `GEMINI-decisions.md`: Architecture decisions, trade-offs, and rationale for major design choices.
-    *   `GEMINI-troubleshooting.md`: Known bugs, resolved issues, proven fixes.
-    *   `GEMINI-config-variables.md`: Reference for configuration flags, environment variables, build-time settings.
-    *   `GEMINI-temp.md`: Temporary scratch pad for ephemeral ideas or in-progress snippets.
- 
-    (the idea, filenames, framework, taken from https://github.com/centminmod/gemini-cli-mcp-server/)      
+*   **Level 3: Gemini.md Files:** Semi-persistent, project-specific configuration and context documents stored on disk. These files act as the AI's long-term memory.
 
 ## 🔄 The Cognitive Feedback Loop
 
@@ -73,9 +58,3 @@ The project is organized into the following key directories:
 *   **`docs/`**: Contains all project documentation, including PMBOK-like instructions and memory files for AI cognition.
 *   **`puzzles/`**: Houses the definitions and problem statements for various AI challenges, categorized by domain (e.g., physics, programming).
 *   **`sources/`**: Stores raw, external source materials (text, transcripts, etc.) that puzzles might reference.
-<details>
-
-Details here
-
-</details>
-#ver 1.4
