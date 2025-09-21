@@ -203,9 +203,13 @@ def generate_html_for_project(project_dir: PathLike, *, export_root: Path | None
             fallback_path.mkdir(parents=True, exist_ok=True)
             fallback_file = fallback_path / output_filename.name
             logger.info("Writing fallback export to %s", fallback_file)
-            with open(fallback_file, 'w', encoding='utf-8') as handle:
-                handle.write(html_content)
-            generated_html_paths.append(str(fallback_file))
+            try:
+                with open(fallback_file, 'w', encoding='utf-8') as handle:
+                    handle.write(html_content)
+                generated_html_paths.append(str(fallback_file))
+                logger.info("Successfully wrote fallback export to %s", fallback_file)
+            except OSError as fallback_exc:
+                logger.error("Failed to write to fallback path %s: %s", fallback_file, fallback_exc)
 
     return generated_html_paths
 
