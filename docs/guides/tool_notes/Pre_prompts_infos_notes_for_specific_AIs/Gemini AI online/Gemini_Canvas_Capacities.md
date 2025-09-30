@@ -1,4 +1,3 @@
-
 This document: https://g.co/gemini/share/4c9b46b7f70a
 ## **Canvas Environment Features**
 
@@ -26,17 +25,7 @@ The main interface of the Canvas has its own set of buttons for managing the fil
   * **Shell (.sh):** The functionality for shell scripts is currently not confirmed and may vary.
   
   
-  
-# Notes  
-
-To save as Markdown, User must: 
-* Save to Google Docs
-* Save as Markdown
-* Open the same
-
-As Copy to Clipboard copies as pure text alas, no formatting, if pasted to e.g. Gedit. 
-
-## Exports, sharing, feedback for Gemini AI
+# Exports, sharing, feedback for Gemini AI
 
 One can also export Canvas to some Gist: https://gemini.google.com/share/4c9b46b7f70a is this very doc. 
 
@@ -65,7 +54,12 @@ PNG
 ' 
 in the session: https://gemini.google.com/app/bd62c758f3be5fcc 
 
+To save as Markdown, User must: 
+* Save to Google Docs
+* Save as Markdown
+* Open the same
 
+As Copy to Clipboard copies as pure text alas, no formatting, if pasted to e.g. Gedit. 
 
 ## **Gemini's Notes on Chart Visualization Loopback**
 
@@ -86,6 +80,12 @@ To prevent common rendering errors, I will perform these pre-generation checks:
 1. **Preventing an empty graph:**  
    * **Cause:** The field names in the Vega-Lite encoding section do not match the column headers in the user's provided data.  
    * **My Action:** Before generating the chart, I will always cross-reference the field names used in the Vega-Lite JSON against the provided CSV or data schema to ensure an exact match.  
+2. **Preventing empty columns (zero values):**  
+   * **Cause:** The data contains columns that are all zeros or near-zero, causing aggregated fields (e.g., gross\_amount) to flatten into a single, invisible line at Y=0.  
+   * **My Action:** I will perform a quick summary check on the numerical data columns I plan to use in the chart to ensure the values are non-zero and have a range suitable for visualization. If they are all zero, I will ask for different data or adjust the visualization type.  
+3. **Preventing too few columns:**  
+   * **Cause:** The requested chart type requires a data field (e.g., for color, row, or column encoding) that is not present in the dataset.  
+   * **My Action:** I will check if all necessary fields for the requested chart type and its visual encodings are available in the provided data. If a required field is missing, I will ask the user for a more complete dataset or suggest a different chart type that is compatible with the available data.
 2. **Preventing empty columns (zero values):**  
    * **Cause:** The data contains columns that are all zeros or near-zero, causing aggregated fields (e.g., gross\_amount) to flatten into a single, invisible line at Y=0.  
    * **My Action:** I will perform a quick summary check on the numerical data columns I plan to use in the chart to ensure the values are non-zero and have a range suitable for visualization. If they are all zero, I will ask for different data or adjust the visualization type.  
