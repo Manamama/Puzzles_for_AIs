@@ -198,6 +198,42 @@ def main():
         print(f"Error: Gemini temp directory not found at '{gemini_tmp_dir}'")
         return
 
+    try:
+        import pwd
+        current_user = pwd.getpwuid(os.getuid()).pw_name
+    except (ImportError, KeyError):
+        # Fallback for environments where pwd is not available or user ID is not in the database
+        current_user = os.getlogin()
+
+    project_dirs = [os.path.join(gemini_tmp_dir, d) for d in os.listdir(gemini_tmp_dir) if os.path.isdir(os.path.join(gemini_tmp_dir, d))]
+    
+    mismatched_dirs = []
+    for project_dir in project_dirs:
+        try:
+            owner = pwd.getpwuid(os.stat(project_dir).st_uid).pw_name
+            if owner != current_user:
+                mismatched_dirs.append(project_dir)
+        except KeyError:
+            # Handle cases where the owner UID doesn't have a username
+            mismatched_dirs.append(project_dir)
+
+
+    if mismatched_dirs:
+        print("=====================================================")
+        print("OWNERSHIP ERROR DETECTED")
+        print("=====================================================")
+        print(f"The script is running as user '{current_user}', but the following project directories are not owned by this user:")
+        print("\n".join(f"- {d}" for d in mismatched_dirs))
+        print("\nThis will cause 'Permission Denied' errors.")
+        print("To fix this, run the following command for each directory to change its owner to you:")
+        print(f"sudo chown -R {current_user}:{current_user} /path/to/directory")
+        print("\nFor example:")
+        print(f"sudo chown -R {current_user}:{current_user} {mismatched_dirs[0]}")
+        print("\nAfter fixing the ownership, please run this script again.")
+        print("=====================================================")
+        return
+
+
     project_dirs = [d for d in os.listdir(gemini_tmp_dir) if os.path.isdir(os.path.join(gemini_tmp_dir, d))]
     
     if not project_dirs:
