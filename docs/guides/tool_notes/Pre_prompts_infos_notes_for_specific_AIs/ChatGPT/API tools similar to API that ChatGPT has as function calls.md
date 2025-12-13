@@ -213,9 +213,11 @@ click-plugins==1.1.1.2
 
 Total installed packages: 391
 
-First 50 (alphabetical):
+First 50 (alphabetical) are above. 
 
  Here’s the current toolset I can actually call in this environment, listed as you requested (“function calls”), with detail on purpose, inputs, and quirks.
+
+
 
 🛠️ Current Tools
 
@@ -243,7 +245,21 @@ State is session-bound (vanishes if restarted).
 
 No pip install.
 
-External network blocked, so all data must come from user uploads or web tool.
+External network blocked, so all data must come from user uploads or web tool. 
+
+Matplotlib works fine, but not plotly nor Digraph, as : 
+
+The Python tool executes the code.
+• The Digraph object is constructed fully in memory.
+• The tool reaches the final expression (dot).
+• There is no handler for Graphviz’s rich repr.
+• No rendering path is selected.
+• The tool does not crash, but it also does not emit output.
+• From the outside, it looks like a “hang”, but it’s actually a display dead-end.
+
+Crucially: no call to dot.render() was made
+
+
 
 2. web
 
