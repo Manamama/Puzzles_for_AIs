@@ -124,30 +124,6 @@ In every case, the AI smuggles in a little homunculus to explain mechanics.
 
 
 
-AI Sunrise Puzzle: Pre-Solve Error Checklist
-Read these before answering. If any thought matches below, pause and reconsider!
-1. The "Light Delay ≠ Sunrise Timing" Trap
-❌ "If light arrives instantly, does sunrise happen earlier by 8m20s?"
-✅ Correction: Sunrise is caused by Earth’s rotation, not light travel time. Instant light means you see the Sun’s real-time position, but rotation speed hasn’t changed.
-2. The "Penetrable Earth" Myth
-❌ "Do instant photons pierce through the planet, making darkness vanish?"
-✅ Correction: Opacity is about absorption/scattering, not light speed. Earth still casts a shadow—no tunneling!
-3. The "Photon Swarm" Fallacy
-❌ "Do photons now surround Earth from all sides, like a cage of light?"
-✅ Correction: Light directionality still matters. The Sun only illuminates half of Earth at a time; instant speed doesn’t change geometry.
-4. The "Sun as Active Agent" Error
-❌ "Does the Sun ‘decide’ to send light sooner?"
-✅ Correction: The Sun emits light continuously. It’s not "waiting" to shine—Earth rotates into view.
-5. The "Relativity Overreach" Mistake
-❌ "Does instant light warp time or Earth’s rotation?"
-✅ Correction: Light speed changes don’t alter mechanical motion. Rotation stays the same; only perception of the Sun’s position updates instantly.
-6. The "Directionality Amnesia" Flaw
-❌ "Can light arrive from ‘behind’ Earth now?"
-✅ Correction: The Sun’s light only comes from the Sun! Instant speed doesn’t create new light sources.
-7. The "Static Light Field" Blind Spot
-❌ "Is darkness just ‘old light’ fading away?"
-✅ Correction: Darkness = absence of light due to obstruction (Earth’s bulk). It’s not a "laggy" signal—it’s a shadow!
-
 
 
 The Netflix Buffering Fallacy (Correct Model)

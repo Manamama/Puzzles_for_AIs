@@ -72,7 +72,7 @@ Quirks:
 
 Cannot generate realistic images of you without you providing a photo first.
 
-Limited to 1024×1024 (or variants like 512×512).
+Note: parameters and syntax changes often. See separate doc here. 
 
 4. canmore
 

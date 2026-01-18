@@ -1,6 +1,6 @@
 # Sunrise Puzzle: Failure Analysis
 
-# D Naive metaphors that AIs live by:
+# Naive metaphors that AIs live by:
 
 
 ❌ Wrong Metaphors (How AIs Get Fooled)
