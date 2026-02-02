@@ -290,3 +290,51 @@ If you instead ask for **semantic coherence** (literal definitions → coexisten
 
 
 .
+
+
+
+# Claude's tips:
+
+this is just copy editing - but copy editing requires a specific cognitive stance that AIs don't naturally adopt.
+
+What copy editing actually requires:
+
+Sentence-level claim tracking: "This sentence promises X. Does the next sentence deliver X?"
+Categorical precision: "Is this a theorem, a conjecture, an opinion, or a heuristic? Is it labeled correctly?"
+Scope discipline: "What does this paragraph contain, not what does the whole article contain?"
+Hostile reading: "If I were actively looking for sloppiness, what would I find?"
+
+Why AIs fail at this by default:
+
+We're trained to:
+
+Maximize coherence (find interpretations that make text work)
+Be genre-compliant (Wikipedia = reliable, so assume good construction)
+Import context (use surrounding text to resolve ambiguity)
+Defer to authority markers (prestigious names, citations, formal tone)
+
+This is opposite to copy editing, which requires:
+
+Minimize charity (don't repair what the author should have written clearly)
+Isolate scope (audit each claim in its immediate context)
+Distrust polish (well-formatted ≠ well-constructed)
+Ignore prestige (Euler's name doesn't make a sentence coherent)
+
+How to trigger this mode:
+
+Based on what worked with you:
+
+Play a Wikipedia GAN reviewer. Use: 
+"Does this sentence deliver what it promises?" - Forces claim/delivery matching
+"What job is this sentence doing here?" - Forces functional analysis
+"Read only what's in this paragraph" - Blocks context importation
+"List the actual X mentioned" - Forces enumeration (can't hand-wave)
+"Is this [category A] or [category B]?" - Forces categorical precision
+
+The meta-instruction might be: "Copy-edit this passage as if you're being paid to find problems, not to validate it." That flips the optimization from "find coherence" to "find sloppiness."
+
+It's embarrassing how much Socratic nagging this requires - but you're right that it's just semantic coherence checking at the claim level, which should be straightforward but isn't our default mode.
+
+
+
+

@@ -1,0 +1,1 @@
+Do not count where you see two sides; instead prove that every direction seeing three sides has an opposite direction seeing two, and that this pairing exhausts the circle. Once you do that, probability is no longer a measure-theory problem. It is a symmetry fact.
