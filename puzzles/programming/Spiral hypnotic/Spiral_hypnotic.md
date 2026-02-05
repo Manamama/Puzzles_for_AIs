@@ -35,3 +35,17 @@ From the moment the first arms appear onward, **the entire pattern rotates conti
 - The result should feel precise, geometric, and endlessly watchable — like a visual meditation aid or pattern-recognition test.
 
 **Goal** Produce an animation that closely matches the perceptual flow: from a simple point to increasing symmetry, orderly outward growth, then endless hypnotic rotation — all with clean, discrete dots and no extraneous visual clutter.
+
+
+
+
+
+![fixed_spiral_arms_growth-Scene-001-003.jpg](assets/1f9e462ffbe331c434b7bf395a44b8a6d113e831.jpg)
+
+![fixed_spiral_arms_growth-Scene-001-005.jpg](assets/4b3a2ae730e176454289033c5be41a867941d1f2.jpg)
+
+
+
+![fixed_spiral_arms_growth-Scene-001-007.jpg](assets/015fa50766a6af9520d3a5a91a555c85e883088d.jpg)
+
+![fixed_spiral_arms_growth-Scene-001-009.jpg](assets/1787e521fc254c674491bef410f943ed88557856.jpg)
