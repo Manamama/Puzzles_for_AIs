@@ -107,10 +107,12 @@ def update(frame):
 # Create animation (runs indefinitely with repeat)
 ani = animation.FuncAnimation(fig, update, interval=1000 / fps, blit=False)
 
-# To display: 
-plt.show()
+
 # To save as GIF (e.g., first 600 frames ~20 sec, loops on rotation phase if viewed in loop)
 ani.save('pinwheel_animation.gif', writer='pillow', fps=fps)
+
+# To display: 
+plt.show()
 
 # Note: If running in a script, uncomment plt.show() to view live instead of saving.
 

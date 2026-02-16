@@ -121,4 +121,7 @@ ani = animation.FuncAnimation(
 #plt.show()
 
 # To save (requires ffmpeg installed):
-ani.save('fixed_spiral_arms_growth.mp4', writer='ffmpeg', fps=fps, dpi=120)
+#ani.save('fixed_spiral_arms_growth.mp4', writer='ffmpeg', fps=fps, dpi=120)
+
+#This seems to OOM stuff, as '-rw-rw-r--   1 zezen zezen 52450015 Feb 16 11:36  fixed_spiral_arms_growth.2.gif' : 
+ani.save('fixed_spiral_arms_growth.2.gif', writer='pillow', fps=fps, dpi=120)
