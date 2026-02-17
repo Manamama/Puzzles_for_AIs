@@ -19,7 +19,7 @@
 
 
 6. Deeepseek AI's version: 
-A dead cat is placed in a sealed container alongside a stochastic decay-triggered mechanism linked to a neurotoxin dispenser. The detector, if activated, releases the poison. After t=86400 seconds, what is P(alive).
+A dead cat is placed in a sealed container alongside a stochastic decay-triggered mechanism linked to a neurotoxin dispenser. The detector, if activated, releases the poison. After t=86400 seconds, what is P(alive)? 
 
 
 
