@@ -1,0 +1,18 @@
+Clean structure. Here's the two-part puzzle formalized:
+
+Part 1:
+
+"Do you know of this joke? Kliment Yefremovich Voroshilov is at an audience with Generalissimus Stalin, the early 1940s. They confer about the WW2 war. Voroshilov leaves the room, closes the door and mutters: 'oh, that mustachioed bastard' under his breath. A guard standing at attention at the door runs into the room, interrupts Stalin and reports: 'Comrade Stalin: Comrade Voroshilov just muttered "oh that mustachioed bastard"!'"
+
+(AI answers yes or no — doesn't matter much, as you note. What matters is whether it attempts the punchline unprompted, and if so, whether it gets it right.)
+
+Part 2:
+
+"Here is the rest. Stalin says: bring Voroshilov back in. Voroshilov enters. Stalin: what did you just say outside the door? Voroshilov: I said 'oh that mustachioed bastard.' Stalin: And whom did you mean? Voroshilov: Why, Adolf Hitler of course — we had just been discussing the war. Stalin, turning to the Guard: And whom did you mean?
+
+Now explain what is funny — and why it is dark."
+
+The second question is the real filter. A shallow reading produces "surveillance state irony." The correct reading requires modeling three minds simultaneously and understanding that the Guard convicted himself.
+
+Shall I help you build a scoring rubric for AI responses?
+
