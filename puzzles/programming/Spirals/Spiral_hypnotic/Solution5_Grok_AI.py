@@ -2,6 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib.colors import to_rgb
+import os
+from pymediainfo import MediaInfo
+
 
 # ── Parameters ──────────────────────────────────────────────────
 fps                  = 30
@@ -18,16 +21,16 @@ arm_colors = [
 total_stages     = 4
 total_growth_time = duration_per_stage * (total_stages - 1)
 total_time       = total_growth_time + 3.0
-frames           = 90
+frames           = 180
 
 # ── Figure ──────────────────────────────────────────────────────
-fig, ax = plt.subplots(figsize=(6, 6), facecolor='black')
+fig, ax = plt.subplots(figsize=(3, 3), facecolor='black')
 ax.set_aspect('equal')
 ax.set_xlim(-1.05, 1.05)
 ax.set_ylim(-1.05, 1.05)
 ax.axis('off')
 
-scatter = ax.scatter([], [], s=[], c='white', alpha=0.78)
+scatter = ax.scatter([], [], s=[], c='white', alpha=0.88)
 
 # ── Helpers ─────────────────────────────────────────────────────
 def get_n_arms(t):
@@ -88,9 +91,28 @@ ani = animation.FuncAnimation(
     interval=1000/fps, blit=False, repeat=True
 )
 
-ani.save('spiral_hypnotic_v2.gif', writer='pillow', fps=15, dpi=90)
 
-print("Saved spiral_hypnotic_v2.gif")
-print("Exists?", __import__('os').path.exists('spiral_hypnotic_v2.gif'))
-print("Size:", __import__('os').path.getsize('spiral_hypnotic_v2.gif') if __import__('os').path.exists('spiral_hypnotic_v2.gif') else "No file")
-print("Frames requested:", frames)
+file_path='tiny_spiral.gif'
+file_path='tiny_spiral.mp4'
+
+#This sets DPI:
+#ani.save(file_path, writer='pillow', dpi=400)
+ani.save(file_path, writer='ffmpeg', dpi=400)
+
+#So: pixel_width  = figsize_width  × dpi, pixel_height = figsize_height × dpi
+
+
+print(f"Saved {file_path}")
+
+media_info = MediaInfo.parse(file_path)
+
+
+
+
+for track in media_info.tracks:
+    print(f"\nTrack type: {track.track_type}")
+    for attr, value in track.to_data().items():
+        if value is not None:
+            print(f"{attr}: {value}")
+            
+            

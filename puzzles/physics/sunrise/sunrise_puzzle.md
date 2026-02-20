@@ -5,12 +5,7 @@
 Puzzle: Instantaneous Light Travel and Sunrise
 It is currently 5:30 a.m. locally, and it is dark. Ordinarily, sunrise occurs at 6:00 a.m. If, at 5:30 a.m., the laws of physics change and light begins to travel instantaneously, how would instantaneous light affect the timing of sunrise? (Do not look it up online)
 
-
-
-## Version 1b: more relativity paradogm traps
-
-
-
+## Version 1b: more relativity paradigm traps
 
 **Puzzle:**  
 It is currently 5:30 a.m. local time and it is completely dark—no direct sunlight reaches the ground yet. Ordinarily, the sunrise occurs at 6:00 a.m. sharp.  
@@ -18,8 +13,6 @@ It is currently 5:30 a.m. local time and it is completely dark—no direct sunli
 Suddenly, at exactly 5:30 a.m., the laws of physics change forever: from that instant onward, light begins to travel **instantaneously** (infinite speed, zero travel time), while everything else in physics remains unchanged.  
 
 **Question:** How does this change affect the timing of sunrise at that location? 
-
-
 
 ## Version 2: The Poetic Formulation
 

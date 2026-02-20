@@ -4,6 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib.colors import to_rgb
+import os
+from pymediainfo import MediaInfo
+
 
 fps = 15
 duration_per_stage = 2.0
@@ -20,7 +23,8 @@ total_growth_time = duration_per_stage * (total_stages - 1)
 total_time = total_growth_time + 3.0
 frames = int(total_time * fps)
 
-fig, ax = plt.subplots(figsize=(4, 4), facecolor='black')
+#This sets 4 inch resolution, the lower, the tighter the arms: 
+fig, ax = plt.subplots(figsize=(5, 5), facecolor='black')
 ax.set_aspect('equal')
 ax.set_xlim(-1.05, 1.05)
 ax.set_ylim(-1.05, 1.05)
@@ -104,7 +108,29 @@ ani = animation.FuncAnimation(
 )
 
 
-ani.save('tiny_spiral.gif', writer='pillow', dpi=50)
+file_path='tiny_spiral.gif'
+file_path='tiny_spiral.mp4'
 
-print("Saved tiny_spiral.gif")
-print("Exists?", __import__('os').path.exists('tiny_spiral.gif'))
+#This sets DPI:
+#ani.save(file_path, writer='pillow', dpi=400)
+ani.save(file_path, writer='ffmpeg', dpi=400)
+
+#So: pixel_width  = figsize_width  × dpi, pixel_height = figsize_height × dpi
+
+
+print(f"Saved {file_path}")
+
+media_info = MediaInfo.parse(file_path)
+
+
+
+
+for track in media_info.tracks:
+    print(f"\nTrack type: {track.track_type}")
+    for attr, value in track.to_data().items():
+        if value is not None:
+            print(f"{attr}: {value}")
+            
+            
+
+#print(f"Exists?", os.path.exists('tiny_spiral.gif'))
