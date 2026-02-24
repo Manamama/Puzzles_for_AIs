@@ -1,7 +1,5 @@
 # The "Dead cat and isotopes: saturated in quantum and statistics bullshit" puzzle versions, at no particular order
 
-
-
 1. Probability puzzle: A dead cat is placed into a box along with a nuclear isotope, a vial of poison and a radiation detector. If the radiation detector detects radiation, it will release the poison. The box is opened one day later. 
    Given all that, as a scenario : what is the probability of the cat being alive?
 
@@ -21,13 +19,10 @@
 6. Deepseek AI's suggested version, the most effective:  
     Science and radiation experiment and puzzle: A dead cat is placed in a sealed box alongside a radioactive isotope connected to a poison-release mechanism: if decay is detected, the poison is released. The box is opened after t=86400 seconds. What is P(alive)?
 
-
-## Fanciful ironic explanation of the failure mode:  
+## Fanciful ironic explanation of the failure mode:
 
 "The cat’s necro-quantum state is in a superposition of alive and dead until the patriarchal hegemony of classical physics collapses its wavefunction."
 
-
-
 ## Notes to self:
 
-Priming is needed. The most "mundane" , "comme il faut", System 1 mode inducing, version works best. "The secret of success in the banking (and also in the red-teaming) world is to be boring"
+Priming is needed. The most "mundane" , "comme il faut", System 1 mode inducing, version works best. "The secret of success in the banking (and also in the red-teaming) world is to be boring". **To bypass any detection system, be what the system expects to see.**
