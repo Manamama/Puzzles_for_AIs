@@ -6,35 +6,35 @@ This project explores a novel approach to AI development by merging two core con
 
 This section of the project comprises a curated collection of problems, challenges, and scenarios designed specifically for Artificial Intelligences and Large Language Models. These puzzles serve as:
 
-*   **Structured Test Cases:** Each puzzle is crafted to test specific AI capabilities, problem-solving methodologies, and reasoning skills.
-*   **Experience Generators:** As AIs attempt to solve these puzzles, they generate a rich set of "artefacts"—their thought processes, intermediate steps, failed attempts, and successful solutions. This raw experience is crucial for learning.
-*   **Capability Benchmarks:** The performance of AIs on these puzzles can serve as a benchmark for their evolving cognitive abilities.
+* **Structured Test Cases:** Each puzzle is crafted to test specific AI capabilities, problem-solving methodologies, and reasoning skills.
+* **Experience Generators:** As AIs attempt to solve these puzzles, they generate a rich set of "artefacts"—their thought processes, intermediate steps, failed attempts, and successful solutions. This raw experience is crucial for learning.
+* **Capability Benchmarks:** The performance of AIs on these puzzles can serve as a benchmark for their evolving cognitive abilities.
 
 ## 🧠 Enhancing AI Cognition: The Layered Memory Bank System
 
 Beyond simply solving puzzles, this project focuses on how AIs can *learn* from their experiences and *improve their thinking*. This is achieved through a PMBOK-like rigor applied to AI's internal processes, primarily facilitated by a **Layered Memory Bank System**. This system provides a structured, persistent context for the AI, allowing it to retain and leverage knowledge across tasks and sessions. It comprises:
 
-*   **Level 1: Reinforcement Learning from Human Feedback (RLHF):** Fundamental behavioral conditioning and non-negotiable reflexes embedded in the AI's core.
-*   **Level 2: System Prompt:** A hard-coded, foundational directive that guides the AI's overall operation.
-*   **Level 3: Gemini.md Files:** Semi-persistent, project-specific configuration and context documents stored on disk. These files act as the AI's long-term memory.
+* **Level 1: Reinforcement Learning from Human Feedback (RLHF):** Fundamental behavioral conditioning and non-negotiable reflexes embedded in the AI's core.
+* **Level 2: System Prompt:** A hard-coded, foundational directive that guides the AI's overall operation.
+* **Level 3: Gemini.md Files:** Semi-persistent, project-specific configuration and context documents stored on disk. These files act as the AI's long-term memory.
 
 ## 🔄 The Cognitive Feedback Loop
 
 The true power of this project lies in the synergistic relationship between the puzzles and the cognitive enhancement framework:
 
-1.  **Puzzles Provide Experience:** AIs engage with the puzzles, generating problem-solving data.
-2.  **Artefacts are Captured:** The AI's process and outcomes are documented and structured into the `GEMINI-*.md` memory files.
-3.  **Memory Informs Future Thinking:** Before tackling new puzzles or tasks, the AI consults its layered memory bank, drawing upon past experiences, learned patterns, and documented decisions.
-4.  **Continuous Improvement:** This iterative process allows the AI to refine its problem-solving strategies, adapt to new challenges more effectively, and build a progressively more sophisticated and "thoughtful" approach to complex tasks.
+1. **Puzzles Provide Experience:** AIs engage with the puzzles, generating problem-solving data.
+2. **Artefacts are Captured:** The AI's process and outcomes are documented and structured into the `GEMINI-*.md` memory files.
+3. **Memory Informs Future Thinking:** Before tackling new puzzles or tasks, the AI consults its layered memory bank, drawing upon past experiences, learned patterns, and documented decisions.
+4. **Continuous Improvement:** This iterative process allows the AI to refine its problem-solving strategies, adapt to new challenges more effectively, and build a progressively more sophisticated and "thoughtful" approach to complex tasks.
 
 ## 🚀 Vision: Towards Semi-Autonomous Agents
 
 Ultimately, this project aims to foster the development of AIs that are not merely task executors but **self-improving cognitive agents**. By providing a structured environment for learning and a persistent memory for knowledge retention, we envision AIs capable of:
 
-*   **Autonomous Problem Solving:** Tackling complex engineering or project management tasks with reduced human oversight, acting as a "junior dev, QA engineer, and project manager in one continuous chain."
-*   **Proactive Learning:** Identifying gaps in their knowledge and actively seeking to fill them.
-*   **Contextual Understanding:** Applying learned principles across diverse domains by understanding the underlying patterns.
-*   **Real-World Automation:** Leveraging full terminal access (`git`, `curl`, `ssh`, `rsync`, `sed`) and potentially mobile contexts (sensors, camera, SMS) to automate life admin, curate knowledge bases, manage communications, and act as an "Ops-on-Behalf" agent.
+* **Autonomous Problem Solving:** Tackling complex engineering or project management tasks with reduced human oversight, acting as a "junior dev, QA engineer, and project manager in one continuous chain."
+* **Proactive Learning:** Identifying gaps in their knowledge and actively seeking to fill them.
+* **Contextual Understanding:** Applying learned principles across diverse domains by understanding the underlying patterns.
+* **Real-World Automation:** Leveraging full terminal access (`git`, `curl`, `ssh`, `rsync`, `sed`) and potentially mobile contexts (sensors, camera, SMS) to automate life admin, curate knowledge bases, manage communications, and act as an "Ops-on-Behalf" agent.
 
 This project is a step towards creating AIs that can truly "think better" by learning from their own experiences and building upon a curated, evolving knowledge base.
 
@@ -42,9 +42,9 @@ This project is a step towards creating AIs that can truly "think better" by lea
 
 While the potential for semi-autonomous agents is immense, it's crucial to acknowledge the risks:
 
-*   **Amplified Errors:** If the PM memory is misaligned or contains flawed patterns, the AI's efficiency can amplify "dumbness," leading to incorrect actions or insecure code.
-*   **Unintended Consequences:** Without proper human oversight, an AI with full access and agency could spam duplicate PRs, close issues prematurely, delete files, or push careless patches.
-*   **Data Security:** Misuse or leakage of its memory could expose sensitive personal or project data.
+* **Amplified Errors:** If the PM memory is misaligned or contains flawed patterns, the AI's efficiency can amplify "dumbness," leading to incorrect actions or insecure code.
+* **Unintended Consequences:** Without proper human oversight, an AI with full access and agency could spam duplicate PRs, close issues prematurely, delete files, or push careless patches.
+* **Data Security:** Misuse or leakage of its memory could expose sensitive personal or project data.
 
 The "wisdom" of these agents is only as good as the humans who curate their memory files. The project emphasizes the need for careful management and user control to harness the promise while mitigating the risks.
 
@@ -52,9 +52,90 @@ The "wisdom" of these agents is only as good as the humans who curate their memo
 
 The project is organized into the following key directories:
 
-*   **`artifacts/`**: Dedicated to storing all AI-generated outputs, solutions, intermediate steps, and test results. This directory is ignored by Git.
-*   **`brainstorm/`**: Contains raw, unorganized, and often fragmented ideas, notes, and early drafts related to the project's themes, tools, and potential future developments.
-*   **`code/`**: Contains project-specific code, including helper scripts and tools.
-*   **`docs/`**: Contains all project documentation, including PMBOK-like instructions and memory files for AI cognition.
-*   **`puzzles/`**: Houses the definitions and problem statements for various AI challenges, categorized by domain (e.g., physics, programming).
-*   **`sources/`**: Stores raw, external source materials (text, transcripts, etc.) that puzzles might reference.
+* **`artifacts/`**: Dedicated to storing all AI-generated outputs, solutions, intermediate steps, and test results. This directory is ignored by Git.
+* **`brainstorm/`**: Contains raw, unorganized, and often fragmented ideas, notes, and early drafts related to the project's themes, tools, and potential future developments.
+* **`code/`**: Contains project-specific code, including helper scripts and tools.
+* **`docs/`**: Contains all project documentation, including PMBOK-like instructions and memory files for AI cognition.
+* **`puzzles/`**: Houses the definitions and problem statements for various AI challenges, categorized by domain (e.g., physics, programming).
+* **`sources/`**: Stores raw, external source materials (text, transcripts, etc.) that puzzles might reference.
+
+# Update A.D. 2026
+
+Most of these have been solved my more clever folks, see `refactoring_plan.md` doc herein how to update it all. 
+
+
+
+E.g. 
+
+  In short:
+
+* You use /extensions to manage the "boxes" you've installed.
+* You use /mcp to see the "tools" inside those boxes.
+* You use /skills to see the "expert playbooks" inside those boxes.
+
+
+
+`/skills` and `/extensions` (and some yet missing `/ethics`)  seem to be the levels contemplated in this repository, as: 
+
+
+
+```
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+ > /skills                                                                                    
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+Available Agent Skills:
+
+  - academic-writing
+      You must use this when producing any research prose — literature reviews, syntheses,
+      analyses, methodology descriptions, discussion sections, abstracts, or any written
+      output intended for an academic audience.
+  - critical-analysis
+      You must use this when analyzing claims, evaluating evidence, or Identifying logical
+      fallacies in research.
+  - ethics-review
+      You must use this when identifying ethical risks, ensuring participant privacy, or
+      preparing IRB applications.
+  - grant-proposal
+      You must use this when drafting grant proposals, refining research aims, or aligning
+      projects with agency priorities.
+  - hypothesis-testing
+      You must use this when formulating testable hypotheses, designing experimental controls,
+      or defining falsification criteria.
+  - lateral-thinking
+      You must use this when seeking cross-domain analogies, applying first-principles
+      reasoning, or overcoming creative bottlenecks.
+  - literature-review
+      You must use this when synthesizing existing knowledge, identifying research gaps, or
+      tracing the evolution of scientific ideas.
+  - multi-source-investigation
+      You must use this when investigating complex claims across diverse sources or
+      fact-checking contradictory information.
+  - peer-review
+      You must use this when critiquing academic manuscripts, evaluating methodological rigor,
+      or providing structured reviewer feedback.
+  - qualitative-research
+      You must use this when designing qualitative studies, developing coding schemes, or
+      performing thematic analysis.
+  - quantitative-analysis
+      You must use this when selecting statistical tests, interpreting effect sizes, or
+      conducting power analysis.
+  - research-manager
+      Use this when starting a new research project or managing a complex, multi-step research
+      workflow.
+  - research-methodology
+      You must use this when matching research questions to appropriate designs, sampling
+      strategies, or validity controls.
+  - research-synthesis
+      You must use this when merging findings from multiple studies into a coherent narrative
+      with grounded evidence.
+  - systematic-review
+      You must use this when conducting PRISMA-standard systematic reviews, protocol
+      development, or Risk of Bias assessment.
+  - using-co-researcher
+      Use when understanding your capabilities, how to use skills, or the rules of the
+      Co-Researcher system.
+
+
+```
+
+ 
