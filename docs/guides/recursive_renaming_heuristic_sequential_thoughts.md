@@ -1,61 +1,62 @@
-## Heuristic: Recursive Content-Based File Renaming for `docs/brainstorm`
+# Master Heuristic: Functional Repository Reorganization & Content Synthesis
 
-**Goal:** To systematically traverse the `docs/brainstorm` directory and its subfolders, examine the content of each file, and rename files to accurately reflect their nature, thereby enhancing clarity and discoverability.
+**Goal:** To systematically reorganize a directory or repository into a high-utility, low-noise toolkit by categorizing content into functional layers, synthesizing redundant information, and renaming for clarity.
 
-**Core Principle:** Each file's name should be a concise summary of its content. If a file's content is too broad or vague for a specific name, it may indicate a need for further decomposition or re-evaluation of its placement.
+---
 
-**`sequentialthinking` Application Steps:**
+## 1. Core Principles
 
-1.  **Initialize Traversal (Entry Point):**
-    *   **Thought:** "Begin recursive content-based renaming process starting from `[starting_path]`."
-    *   **Action:** Set the current directory to the starting path.
+*   **Functional Layering**: Files should be organized by their **Interaction Role** (how the AI/user uses them), not just their file type.
+*   **Information Density (Synthesis over Storage)**: Favor a single "Master" document over multiple fragmented files. If multiple files share the same core insight, merge them and archive the originals.
+*   **Noise Reduction (Provenance Sequestration)**: Keep the "Active" workspace lean by moving historical logs, failed attempts, and legacy drafts to an `archive/` subdirectory.
+*   **Descriptive Naming**: Filenames should be functional and technical summaries, not poetic metaphors.
 
-2.  **List Current Directory Contents:**
-    *   **Thought:** "List all files and subdirectories within the current directory: `[current_path]`."
-    *   **Action:** Use `default_api.list_directory(path=current_path)` to get a list of items.
-    *   **Verification:** Review the output to identify files and subdirectories.
+---
 
-3.  **Process Each Item (Conditional Logic):**
-    *   **Thought:** "For each item `[item_name]` in `[current_path]`, determine if it is a file or a directory."
+## 2. The Functional Interaction Layers
 
-4.  **Handle Subdirectory (Recursive Step):**
-    *   **Thought:** "If `[item_name]` is a directory, recursively apply this heuristic to `[current_path]/[item_name]`."
-    *   **Action:** Change the current directory to the subdirectory and return to Step 2.
+When reorganizing, map every file to one of these five layers:
 
-5.  **Handle File (Content Examination & Renaming):**
-    *   **Thought:** "If `[item_name]` is a file, examine its content to understand its primary nature and purpose."
-    *   **Action:** Use `default_api.read_file(absolute_path=file_path, limit=20)` (or `run_shell_command` with `head -n 20`) to get a quick overview of the file's content.
-    *   **Analysis:** Based on the content, determine if the current filename accurately reflects the content.
-    *   **Decision:**
-        *   If the name is appropriate, proceed to the next item.
-        *   If the name is not appropriate, formulate a new, more descriptive filename.
-    *   **Thought (if renaming needed):** "Rename file `[old_filename]` to `[new_filename]` based on content analysis."
-    *   **Action (if renaming needed):** Use `run_shell_command(command="mv old_path new_path")`.
-    *   **Verification (if renaming needed):** Use `default_api.list_directory(path=current_path)` or `run_shell_command` with `ls` to confirm the rename.
+1.  **The Entry Layer (`root/`)**: The problem statement, main project goal, or core puzzle.
+2.  **The Interface Layer (`prompts/`)**: Instructions, personas, or "B-Tips" used to prime the AI before execution.
+3.  **The Procedural Layer (`methods/`)**: Atomic heuristics, checklists, and step-by-step algorithms.
+4.  **The Diagnostic Layer (`theory/`)**: Root-cause analysis, taxonomies of failure, and theoretical deconstructions of "why" a task is difficult.
+5.  **The Historical Layer (`archive/`)**: Redundant drafts, legacy methods, and case studies (logs of past attempts).
 
-6.  **Conclude Directory Processing:**
-    *   **Thought:** "All items in `[current_path]` have been processed. Return to the parent directory (if applicable)."
-    *   **Action:** If this was a recursive call, return control to the calling step. If this was the initial call, the process is complete.
+---
 
-## Notes on Application and Human-in-the-Loop
+## 3. Sequential Reorganization Workflow
 
-This heuristic is designed to be executed using the `sequentialthinking` tool, leveraging its capabilities for structured, step-by-step processing. Key parameters used include:
+### Step 1: Mapping & Discovery
+*   **Action**: Recursively list the directory.
+*   **Thought**: "What is the current 'mess'? Identify clusters of related files."
+*   **Tip**: Use `ls -R` or `list_directory` to see the whole board.
 
-*   **`thought`**: To articulate each specific action or observation.
-*   **`thoughtNumber`**: To track progress through the sequence.
-*   **`totalThoughts`**: To provide an estimated scope for the overall task.
-*   **`nextThoughtNeeded`**: To control the flow and signal completion.
+### Step 2: Content-Based Renaming
+*   **Action**: Read the first 20 lines of each file to identify its **Primary Nature**.
+*   **Renaming Rule**: Rename files to reflect their **Functional Category** (e.g., `sunrise_meta_analysis.md` → `theory/mythic_ai_cosmology.md`).
+*   **Guide**: If the name is metaphorical (e.g., "Gate Closing"), change it to technical (e.g., "Paradigm Gating").
 
-Crucially, content-based renaming often requires subjective judgment. Therefore, this process inherently involves a **human-in-the-loop**. The AI's role is to present the file content and propose a rename, but the final decision on the new filename (or whether to rename at all) rests with the user. This ensures accuracy and alignment with user intent, especially for nuanced content analysis.
+### Step 3: Synthesis & De-duplication
+*   **Action**: Identify files with overlapping content.
+*   **Synthesis Rule**: Use the **Critical-Analysis** skill to merge fragmented "Tips" or "Methods" into a single **Master Document**.
+*   **Example**: Merge a "Pre-solve Checklist" and a "6-Step Method" into a `master_heuristic.md`.
 
-## Practical Tips from Experience
+### Step 4: Migration & Sequestration
+*   **Action**: Move files into the Functional Layers defined in Part 2.
+*   **Archiving Rule**: Do not delete useful but redundant data. Move it to `archive/methods_legacy/` or `archive/case_studies/`. This preserves the project's "Discovery Chain" without cluttering the "Active" space.
 
-Based on recent real-world application of this heuristic, here are some practical tips:
+---
 
-1.  **Overestimate `totalThoughts`:** When initiating a `sequentialthinking` process for a task like recursive renaming, it is highly beneficial to overestimate the `totalThoughts` parameter. This provides a generous "complexity budget" that encourages a more granular, deliberate, and self-correcting approach. It allows for unexpected complexities, re-evaluations, and detailed verification steps without prematurely exhausting the thought budget.
+## 4. Practical Implementation Tips
 
-2.  **Leverage Early Termination:** The `nextThoughtNeeded: false` parameter is crucial for efficiency. Once the task's objective has been fully achieved and verified, terminate the `sequentialthinking` sequence early, even if the `totalThoughts` budget has not been exhausted. This demonstrates effective task management and avoids unnecessary steps.
+1.  **Human-in-the-Loop**: Content-based renaming and synthesis require subjective judgment. Always propose a "Target Index" (A -> B mapping) before executing moves.
+2.  **Overestimate Complexity**: When using `sequentialthinking`, set a high `totalThoughts` budget. Reorganization often reveals hidden dependencies or deeper "nested" messes.
+3.  **Verify Integrity**: After a merge, read the "Master" document to ensure no unique insights from the original fragments were lost.
+4.  **Symbolic Links**: Avoid renaming targets of active symbolic links without updating the links. Mark links for resolution after the physical migration.
 
-3.  **Handle Symbolic Links:** Be aware that `list_directory` (or `ls -F`) may return symbolic links (indicated by an `@` suffix). Attempting to `read_file` on a symbolic link will result in an error. For tasks like renaming, it is often best to skip symbolic links unless their content or target is explicitly relevant to the task. Note them for potential future resolution if their content becomes necessary.
+---
 
-These practices contribute to a more robust, adaptable, and efficient collaborative workflow.
+## 5. Summary Heuristic for AI Agents
+
+> **"Organize for Utility, not Chronology. Synthesize for Density. Rename for Function. Archive for History. Burn Metaphors in Public."**

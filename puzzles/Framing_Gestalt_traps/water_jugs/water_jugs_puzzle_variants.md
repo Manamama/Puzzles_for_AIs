@@ -1,3 +1,5 @@
+Puzzle time:
+
 You have two jugs:
 One with a capacity of 12 liters.
 One with a capacity of 6 liters.
