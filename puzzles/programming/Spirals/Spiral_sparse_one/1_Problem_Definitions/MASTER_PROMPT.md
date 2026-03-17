@@ -29,5 +29,5 @@ The spiral must be generated using the following precise steps:
 ## 3. Output and Termination Requirements
 
 * **Animation:** The process should be shown by printing the state of the grid after each full directional move is completed.
-* **Termination:** The spiral stops naturally when a full move would cause any step to go outside the grid bounds. There are no "partial moves."
+* **Termination:** The algorithm terminates when the next planned move would place any square outside the grid bounds. That move is never executed.
 * **Formatting:** Use 🟥 for red tiles and ⬜ for white tiles. Each row of the matrix should be printed as space-separated symbols.

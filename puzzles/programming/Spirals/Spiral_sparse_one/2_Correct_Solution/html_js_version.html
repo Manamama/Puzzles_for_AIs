@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Red Spiral</title>
+<style>
+  body { background: #1a1a1a; display: flex; flex-direction: column; align-items: flex-start; padding: 2rem; font-family: sans-serif; }
+  #grid { display: inline-grid; gap: 4px; margin-bottom: 1rem; }
+  .cell { width: 44px; height: 44px; border-radius: 6px; background: #2a2a2a; transition: background 0.2s; }
+  .cell.red { background: #E24B4A; }
+  #controls { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; flex-wrap: wrap; }
+  #step-label { font-size: 13px; color: #888; min-width: 80px; }
+  button { background: transparent; border: 0.5px solid #555; color: #ccc; padding: 6px 14px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+  button:hover { background: #2a2a2a; }
+  input[type=range] { flex: 1; min-width: 120px; }
+</style>
+</head>
+<body>
+
+<div id="controls">
+  <button onclick="step(-1)">&#8592; prev</button>
+  <button id="btn-play" onclick="togglePlay()">&#9654; play</button>
+  <button onclick="step(1)">next &#8594;</button>
+  <input type="range" id="slider" min="0" max="5" value="0" oninput="goTo(+this.value)">
+  <span id="step-label">step 0 / 5</span>
+</div>
+
+<div id="grid"></div>
+
+<script>
+const N = 5;
+const states = [
+  [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]],
+  [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,1,0],[0,0,0,0,0],[0,0,0,0,0]],
+  [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,1,0],[0,0,0,1,0],[0,0,0,1,0]],
+  [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,1,0],[0,0,0,1,0],[1,1,1,1,0]],
+  [[1,0,0,0,0],[1,0,0,0,0],[1,0,1,1,0],[1,0,0,1,0],[1,1,1,1,0]],
+  [[1,1,1,1,1],[1,0,0,0,0],[1,0,1,1,0],[1,0,0,1,0],[1,1,1,1,0]]
+];
+
+const gridEl = document.getElementById('grid');
+gridEl.style.gridTemplateColumns = `repeat(${N}, 44px)`;
+const cells = [];
+for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
+  const d = document.createElement('div');
+  d.className = 'cell';
+  gridEl.appendChild(d);
+  cells.push(d);
+}
+
+const slider = document.getElementById('slider');
+const label = document.getElementById('step-label');
+let current = 0, timer = null;
+
+function render(i) {
+  current = i;
+  slider.value = i;
+  label.textContent = `step ${i} / ${states.length-1}`;
+  const s = states[i];
+  for (let r = 0; r < N; r++) for (let c = 0; c < N; c++)
+    cells[r*N+c].className = 'cell' + (s[r][c] ? ' red' : '');
+}
+
+function step(d) { stopPlay(); render(Math.max(0, Math.min(states.length-1, current+d))); }
+function goTo(i) { stopPlay(); render(i); }
+
+function togglePlay() {
+  if (timer) { stopPlay(); return; }
+  document.getElementById('btn-play').textContent = '⏸ pause';
+  render(0);
+  timer = setInterval(() => {
+    if (current >= states.length - 1) { stopPlay(); return; }
+    render(current + 1);
+  }, 500);
+}
+
+function stopPlay() {
+  clearInterval(timer); timer = null;
+  document.getElementById('btn-play').textContent = '\u25B6 play';
+}
+
+render(0);
+</script>
+</body>
+</html>
