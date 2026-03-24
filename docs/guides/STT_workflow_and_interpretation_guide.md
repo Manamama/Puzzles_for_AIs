@@ -123,6 +123,23 @@ The content was presented to Gemini as a text output from the `read_file` tool, 
 
 ---
 
+## C. AI Interpretation Heuristics (English-39 / English-74 Transcriptions)
+
+When processing text transcribed from English-39 or English-74 Whisper models:
+
+**1. Punctuation & Formatting:**
+Expect the model to infer basic punctuation from prosody, but residual errors exist. Quotes/parentheses are model inferences, not spoken cues. Acronyms and numbers are often pre-normalized.
+
+**2. Overall Principle:**
+Treat transcription as the model's "best guess", not a perfect record. Never assume the user verbalized punctuation commands (like "comma" or "period"). Do not overcorrect into ambiguity.
+
+**Processing Tiers:**
+*   **Level 1:** Correct basic language issues (punctuation, capitalization, hyphens) for readability.
+*   **Level 2:** Apply logical reasoning to catch implausible data (e.g., chronological impossibility, negative percentages) caused by Word Error Rate (WER).
+*   **Level 3:** Apply domain knowledge to normalize proper nouns or technical terms. If unsure, mark explicitly as uncertain rather than inventing facts.
+
+---
+
 See Also:
 
 *   [speech_recognition_systems_analysis.md](../concepts/speech_recognition_systems_analysis.md)
