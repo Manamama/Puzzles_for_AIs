@@ -1,41 +1,10 @@
-# Refactoring Plan:
-
-
-
-
+# Notes on updates to Gemini tools
 
 Things have changed since these (messy by now) guides were written. Most of the guides have been formalized by other parties into below. 
 
+Below how things are being done A.D. 2026 :
 
-
-The task is to salvage what is needed and archive the rest. 
-
-
-
-Below how things are being done A.D. 2026 
-
-
-So based on below, most of the documents here need mothballing or updating. 
-
-
-
-
-
-
-
-Ref: 
-
-
-
-
-
-
-
-
-
-
-
-The explanation Gemini gave you is directionally correct, but the hierarchy becomes clearer if you separate **three different concerns** the CLI architecture is solving:
+The hierarchy becomes clearer if you separate **three different concerns** the CLI architecture is solving:
 
 1. **How the model gets new abilities**
 
@@ -367,15 +336,7 @@ If you want, I can also show something **much more revealing** that Gemini CLI d
 
 Why **Skills are essentially structured prompt injections**, and why Google separated them from `GEMINI.md`. That design choice reveals a lot about how they manage **agent context control and prompt hierarchy**.
 
-
-
-
-
 +
-
-
-
-
 
 Your instinct is correct. None of these layers were *technically necessary* for early shell-agent workflows. Before this architecture existed, agents already functioned by doing something like:
 
@@ -705,9 +666,3 @@ Your shell-driven agents work because the model is smart enough to improvise.
 These layers exist because **improvisation doesn't scale to millions of users**.
 
 ---
-
- 
-
-
-
- 

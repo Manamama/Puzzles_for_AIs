@@ -50,40 +50,32 @@ The "wisdom" of these agents is only as good as the humans who curate their memo
 
 ## 📂 Project Structure
 
-The project is organized into the following key directories:
+This project has been modernized (A.D. 2026) to adopt the **MCP → Skills → Extensions** architecture for AI agents. The directory structure is organized as follows:
 
 * **`artifacts/`**: Dedicated to storing all AI-generated outputs, solutions, intermediate steps, and test results. This directory is ignored by Git.
 * **`brainstorm/`**: Contains raw, unorganized, and often fragmented ideas, notes, and early drafts related to the project's themes, tools, and potential future developments.
 * **`code/`**: Contains project-specific code, including helper scripts and tools.
-* **`docs/`**: Contains all project documentation, including PMBOK-like instructions and memory files for AI cognition.
+* **`docs/`**: Contains all project documentation.
+  * *Note*: The legacy `docs/guides/` era is now **deprecated**. All active operational guides have been migrated to formal Agent Skills. Older or obsolete guides are kept in `docs/archive/`.
 * **`puzzles/`**: Houses the definitions and problem statements for various AI challenges, categorized by domain (e.g., physics, programming).
+* **`skills/`**: **[NEW]** Contains formal Agent Skills with YAML frontmatter. These represent the "expert playbooks" and workflows the AI uses to interact with MCP servers and resolve specific tasks autonomously. Examples include `neo4j-expert`, `android-saf`, and `remote-codespaces`.
 * **`sources/`**: Stores raw, external source materials (text, transcripts, etc.) that puzzles might reference.
 
-# Update A.D. 2026
+## Update A.D. 2026: The MCP/Skills Era
 
-Most of these have been solved my more clever folks, see `refactoring_plan.md` doc herein how to update it all. 
+Most of the earlier paradigms have been formalized by the Gemini CLI architecture. The project now relies on three distinct layers:
 
+1. **Extensions**: The distribution package ("boxes" you've installed, managed via `/extensions`).
+2. **MCP Servers**: The tool execution layer (capabilities and APIs, managed via `/mcp`).
+3. **Skills**: The procedural knowledge ("expert playbooks" instructing the model how to use tools, managed via `/skills`).
 
-
-E.g. 
-
-  In short:
-
-* You use /extensions to manage the "boxes" you've installed.
-* You use /mcp to see the "tools" inside those boxes.
-* You use /skills to see the "expert playbooks" inside those boxes.
-
-
-
-`/skills` and `/extensions` (and some yet missing `/ethics`)  seem to be the levels contemplated in this repository, as: 
-
-
+By migrating our legacy guides to the `skills/` folder, this repository now natively aligns with modern AI workflows. Below is an example of what our newly structured local skills hierarchy provides:
 
 ```
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
  > /skills                                                                                    
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-Available Agent Skills:
+Available Agent Skills (Global/Built-in):
 
   - academic-writing
       You must use this when producing any research prose — literature reviews, syntheses,
@@ -135,7 +127,31 @@ Available Agent Skills:
       Use when understanding your capabilities, how to use skills, or the rules of the
       Co-Researcher system.
 
+Available Agent Skills (Local Puzzles_for_AIs):
 
+  - android-saf
+      Sequential JSON-based workflow for accessing non-Termux files on Android using termux-saf-*.
+  - logical-bug-finder
+      Generalized template for diagnosing complex logical patterns and bugs in unstructured codebases or texts.
+  - neo4j-expert
+      Conceptual and operational master guide for interacting with Neo4j using MCP tools.
+  - remote-codespaces
+      Procedural instructions on tunneling and exposing GH Codespaces over SSH/SFTP directly to Termux.
+  - stt-interpreter
+      Log of STT input experiments alongside heuristics for adjusting logic and punctuation in English-39/74 transcriptions.
+  - thunderbird-reader
+      Instructions and Python snippet workflow for reading Thunderbird Mbox emails from the CLI.
 ```
 
- 
+## 🌟 Featured & Specialist Knowledge
+
+Among the repository's contents, the following are highlighted as **highly specific** or **unusual** tools that solve complex edge cases:
+
+### 🧩 Featured Skills
+* **[android-saf](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/android-saf/SKILL.md)**: A specialized JSON-based workflow for navigating Android's **Storage Access Framework**. Essential for agents operating in Termux to access the broader Android filesystem.
+* **[stt-interpreter](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/stt-interpreter/SKILL.md)**: A cognitive playbook for **interpreting and fixing Speech-to-Text errors**. It uses linguistic heuristics to correct logic and punctuation in raw transcripts (specialized for English-39/74 dialects).
+
+### 📖 Key Traditional Guides
+* **[AI Heuristic Distrust Protocol](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/docs/guides/01_AI_Psychology_and_Cognitive_Frameworks/AI_Heuristic_Distrust_Protocol.md)**: A behavioral alignment guide that teaches the AI to **proactively verify assumptions** and avoid "Bulldog Mode" (looping on failing solutions).
+* **[Docling Processing Guide](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/docs/guides/03_API_and_Cloud_Tool_Integrations/docling_processing_guide%20-%20how%20to%20use%20docling%20for%20PDF%20reading.md)**: An operational guide for using **Docling** to extract high-fidelity structure and tables from complex PDFs, significantly outperforming standard parsers.
+
