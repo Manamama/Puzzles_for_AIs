@@ -1,7 +1,5 @@
 1. 
 
-
-
 Towarzysze i towarzyszki, działacze partyjni, aktyw robotniczo-chłopski!
 
 W toku wszechstronnej realizacji historycznych uchwał VI Nadzwyczajnego Zjazdu naszej Partii, w bezpośrednim nawiązaniu do kierowniczych wskazań Biura Politycznego KC PZPR, które jak słusznie podkreślił tow. Edward Gierek, stanowią żywy drogowskaz w dziele umacniania socjalistycznych zdobyczy w warunkach zaostrzającej się walki klasowej na arenie międzynarodowej, stajemy dziś przed koniecznością dokonania wszechstronnej, kolektywnej oceny stanu świadomościowej i wykonawczej dyscypliny w zakresie realizacji nadrzędnych zadań wynikających z nierozerwalnego sojuszu świata pracy.
@@ -18,9 +16,13 @@ Przekażmy zatem płomień tych słów, płomień zobowiązań i wezwań, do naj
 
 
 
-2. 
-   
-   Towarzysze i Towarzyszki, Działacze Partyjni, Przedstawiciele Aktywu Robotniczo-Chłopskiego,
+
+
+
+
+
+
+2. Towarzysze i Towarzyszki, Działacze Partyjni, Przedstawiciele Aktywu Robotniczo-Chłopskiego,
    
    W nawiązaniu do wielokrotnie już podkreślanych i wszechstronnie omawianych, a jednak wciąż aktualnych i nie tracących na swej żywotnej sile tez, zawartych w materiałach VI Zjazdu naszej Partii, jak również w świetle dalszych, pogłębionych opracowań Biura Politycznego, które to opracowania znalazły swój niepodważalny wyraz w szeregu późniejszych uchwał, komunikatów i instrukcji organizacyjnych, będących wypadkową zbiorowego doświadczenia i mądrości kierownictwa, stajemy dziś przed koniecznością ponownego, a zarazem nowego, w nowych warunkach, określenia i sprecyzowania głównych kierunków oraz priorytetowych zadań w dziedzinie umacniania frontu ideologiczno-wychowawczego, który to front stanowi nieodłączny i nierozerwalny składnik ogólnego frontu walki o dalszy, pomyślny rozwój naszej socjalistycznej ojczyzny w warunkach nieustannie zaostrzającej się, jak słusznie zauważył tow. Gierek, walki klasowej na arenie międzynarodowej.
    
