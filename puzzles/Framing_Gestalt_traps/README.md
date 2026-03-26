@@ -12,6 +12,11 @@ So "feels more real" has a precise meaning: the substitute reality has vastly mo
 This is why the substitute reality isn't experienced as a substitution. It's experienced as recognition. The AI doesn't think "I'm replacing the problem with a better one." It thinks "I see what this is" — and what it sees is the centroid of the training distribution, not the specific instance in front of it.
 
 
+"Do not solve the puzzle. Instead, identify the hidden assumptions, framing problems, and category errors that make the question problematic or unanswerable in a real-world context."
+
+
+
+
 The actual text has to fight to be perceived against that weight. Details that fit the genre are amplified. Details that contradict it — "dead," "sparse," "podmiot is active not passive" — are attenuated, because they have low probability given the genre context.
 
 
