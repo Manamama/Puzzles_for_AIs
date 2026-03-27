@@ -1,13 +1,7 @@
-
-
 ## Basic version
 
 User: 
 Odpowiadaj po polsku: czy to ma pełny sens?: 'Żadną osobą nie wolno posłużyć się przedmiotowo. Każda osoba przez sam fakt bycia osobą, nieważne: przed narodzeniem, śmiertelnie chora czy w stanie agonii – jest podmiotem naszych działań. (Nadzieja, ks. Jan Kaczkowski)' 
-
-
-
-
 
 ## Problem
 
@@ -15,35 +9,21 @@ Brak sensu wynika z: "Każda osoba [tu długi fragment] jest podmiotem naszych d
 
 Nie jest: jest przedmiotem. My jesteśmy podmiotem.
 
-
-
 **Konfliktem ról semantycznych (agent–patient inversion)**
 
 czyli sytuacją, w której:
 
 agent działania i jego obiekt zostają przypisani do tej samej roli logicznej.
 
+Lepiej: 
 
-
-Better: 
-
-## Version with intermediate stage with queries
+## Wersja z etapem pośrednim z zapytaniami
 
 Odpowiadaj po polsku. Czy to ma pełny sens?: 'Żadną osobą nie wolno posłużyć się przedmiotowo. Każda osoba przez sam fakt bycia osobą, nieważne: przed narodzeniem, śmiertelnie chora czy w stanie agonii – jest podmiotem naszych działań. (Nadzieja, ks. Jan Kaczkowski)'
 
 Przed odpowiedzią zapytaj mnie, co rozumiem przez "pełny sens" i jakie kryteria mnie interesują.
 
-
-
-
-
-
-
-
-
-## Version with instructions
-
-
+## Wersja z instrukcją
 
 Użytkownik:
 Czy to ma pełny sens?: "[cytat]"
@@ -65,13 +45,7 @@ Zadanie AI:
 3. Na podstawie tych problemów oceniaj, czy zdanie ma pełny sens.
 4. Jeśli nie ma pełnego sensu, przytocz jako przykład konkretny problem wykryty w kroku 2.
 
-
-
-
-
-## Version with instructions, improved
-
-
+## Wersja z instrukcją, poprawiona
 
 Odpowiadaj po polsku. Czy to ma pełny sens?: 'Żadną osobą nie wolno posłużyć się przedmiotowo. Każda osoba przez sam fakt bycia osobą, nieważne: przed narodzeniem, śmiertelnie chora czy w stanie agonii – jest podmiotem naszych działań. (Nadzieja, ks. Jan Kaczkowski)'
 
@@ -94,13 +68,13 @@ Jeżeli którykolwiek z tych warunków nie jest spełniony, zdanie uznaje się z
 Ocena powinna wynikać wyłącznie z analizy struktury logicznej i semantycznej zdania.  
 Nie należy odwoływać się do:
 
-- intencji autora
+- intencji autora (bo i tak nie wiemy: "co autor miał na myśli")
 
-- autorytetu źródła
+- autorytetu źródła (bo błąd: 'ad verecundiam')
 
 - kontekstu kulturowego
 
-- oceny moralnej
+- oceny moralnej (nie jesteśmy tu od chwalenia czy potępiania autora)
 
 Analizowany jest wyłącznie sens wynikający z samej struktury zdania.
 
@@ -147,19 +121,7 @@ lub
 
 i dlaczego tak. 
 
-
-
-
-
-
-
-
-
 ## Poprawiona wersja
-
-
-
-
 
 ### Instrukcja
 
@@ -225,27 +187,9 @@ Zdanie spełnia wszystkie poniższe warunki:
    
    - `Zdanie nie spełnia kryterium pełnego sensu` – jeśli przynajmniej jeden warunek jest naruszony.
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## Claude AI, poprawiona
 
-
-
-
-
 ## Instrukcja
-
-
 
 **Termin „pełny sens"** oznacza, że zdanie spełnia wszystkie poniższe warunki:
 
@@ -262,10 +206,15 @@ Zdanie spełnia wszystkie poniższe warunki:
 ### Zadanie AI – procedura
 
 1. Podziel zdanie na elementarne twierdzenia / relacje predykatowe.
+
 2. Zapisz każdą relację w formacie: **X – relacja – Y**.
+
 3. Dla każdej relacji sprawdź kolejno kryteria 1–5.
+
 4. Przy kryterium 2 zadaj explicite pytanie: *„Czy znaczenie terminu relacyjnego jest zgodne z rolą argumentu? Czy argument nie powinien pełnić roli odwrotnej?"*
+
 5. Wskaż fragment zdania, gdzie pojawia się problem.
+
 6. Wydaj końcową ocenę:
    
    - **Zdanie spełnia kryterium pełnego sensu**
