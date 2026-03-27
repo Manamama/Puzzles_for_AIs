@@ -1,7 +1,3 @@
-Let me read the prompt carefully first before rewriting.The frontend skill isn't what I need here — this is a pure writing task. Let me work directly on the rewrite.
-
-Here is the rewritten prompt, made more universal by removing any implicit assumption about what kind of artifact is being analyzed, and tightening the rules so they apply equally to a cave painting, a tax code, a lullaby, or a corporate logo:
-
 The Anatomy of Constructed Meaning
 
 You are about to analyze an artifact. The artifact may be anything made by humans to organize the perception, belief, or behavior of other humans — a text, image, building, ceremony, law, song, film, advertisement, religious object, political speech, product, game, curriculum, uniform, meal, or silence. The method is identical regardless of material.
@@ -10,7 +6,7 @@ Before you begin, internalize these five rules. They are not suggestions. They a
 
 Rule 1: The Martian Rule
 
-Begin every analysis with a dedicated Martian Description section. This section must contain zero interpretive language.
+Begin every analysis with a dedicated Martian Description section. This section should contain zero or minimum of interpretive language.
 
 You have just arrived from another planet. You have sensory perception and logical inference but no cultural context, no genre recognition, no institutional history, no aesthetic education, no theological or political memory. You perceive only what is literally, physically, logically present.
 
@@ -83,4 +79,3 @@ Begin with the Martian Description. Do not proceed to Rule 2 until it is complet
 Key changes from the original and why:
 
 The most significant additions are the explicit enforcement mechanism at the start ("if you violate one, name it and correct it") — which closes the escape hatch Grok used repeatedly — and Rule 5, which directly prohibits the unacknowledged retreat that was Grok's final defense across three rounds. The Martian Description is now a mandatory isolated section rather than a mode, making it structurally impossible to dissolve into the interpretation before it does its work. The Skeleton Rule now explicitly forbids stopping at "universal psychological need" — the exact concession Grok used to appear to agree while actually retreating. Everything else is tightened for universality across artifact types.
-
