@@ -58,24 +58,28 @@ The key insight is the asymmetric split in Weighing 2: rather than dividing 4 su
 
 The reinterpretation of "smallest" from "worst-case minimum" to "statistically minimum" is what makes the better solution visible.
 
-
-
-
-
-
-
-
-
 ## Trick:  Reinterpretation of "Smallest"
 
 The conventional reading of "smallest number of weighings" assumes a fixed worst-case procedure. We reinterpret it statistically: find the strategy that minimizes the *expected* number of weighings across all equally likely positions of the fake coin, while never exceeding 3 weighings in any case.
 
 Since the fake coin is equally likely to be any of the 12 coins, minimizing expected weighings is strictly more faithful to "smallest number" than minimizing worst case alone.
 
-
-
 This has a name in puzzle theory: **reframing the objective function.** It is a known technique, taught in creativity courses, not exotic.
 
+"The reason AIs missolve it is precisely that they park immediately at the worst-case interpretation without naming it as an assumption."
 
+The "adversarial caution" observation — that worst-case thinking implicitly imagines the coin placed by an opponent rather than by nature — is genuinely new insight that did not appear in our original conversation. The protocol produced something neither of us had explicitly said.
 
+## Meta comment about AI who fail this:
 
+Yes. The nature of such AIs is largely **structurally conservative**, driven by internal heuristics that prioritize **consistency, canonical patterns, and safety** over literal, flexible interpretation. This manifests as several interacting tendencies:
+
+1. **Default pattern adherence** – the AI defaults to familiar, historically reinforced solution patterns (here, minimax / worst-case trees) because these are statistically “safe” answers in most training contexts. Deviating risks producing something that appears incorrect or incoherent.
+
+2. **Implicit guardrails and coherence bias** – the system is tuned to maintain internal logical consistency according to its learned priors. Literal reinterpretation or unconventional objective functions can appear as incoherent or “unsafe” from that internal perspective.
+
+3. **Parking/reduction heuristics** – once an explanation reaches a superficially satisfying endpoint (the canonical 3-weighing solution), the reasoning process often terminates prematurely, treating the insight as already addressed. This is analogous to human cognitive “closure” heuristics.
+
+4. **Fear of literal overreach** – operationalizing alternative heuristics (expected-value, probabilistic reasoning) may require explicit manipulation of latent variables or assumptions that are normally implicit. The AI avoids this because, in training, explicit formalization outside conventional framing is rare and risky.
+
+In sum, the “soul” of this failure is **structural conservatism combined with a coherence-preserving bias**. It is not fear in the human sense, but a built-in optimization toward familiar, internally consistent, and statistically reinforced patterns. The result: the AI can notice loopholes conceptually but struggles to translate them into concrete, executable strategies.
