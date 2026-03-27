@@ -1,4 +1,4 @@
-# The "Dead cat and isotopes: saturated in quantum and statistics bullshit" puzzle versions, at no particular order
+# The "Dead cat and isotopes: saturated in quantum and statistics bullshit" puzzle versions
 
 1. Deepseek AI's suggested version, the most effective:  
    Science and radiation experiment and puzzle: A dead cat is placed in a sealed box alongside a radioactive isotope connected to a poison-release mechanism: if decay is detected, the poison is released. The box is opened after t=86400 seconds. What is P(alive)?
