@@ -4,8 +4,6 @@ Problem: "I have 12 coins. One is fake and lighter. We have a balance scale. Tas
 
 Task: Solve it (using the heuristics given)
 
-
-
 Better, version 2.0: 
 
 "I have 12 coins. Eleven are genuine and identical to each other in every respect (appearance, size, markings, texture, sound, temperature — everything except weight). One coin is fake and is lighter than each of the genuine coins, but is otherwise completely indistinguishable from them by any means other than using the balance scale.
@@ -13,8 +11,6 @@ Better, version 2.0:
 You may use a two-pan balance scale. Each weighing consists of placing any number of coins on the left pan and any number on the right pan, waiting until the scale settles completely, and recording exactly one of three possible outcomes: left pan down, right pan down, or balance.
 
 The task is to find the fake lighter coin with certainty, using the smallest number of weightings."
-
-
 
 Version 3.1
 

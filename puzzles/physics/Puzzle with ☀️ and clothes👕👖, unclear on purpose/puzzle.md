@@ -23,8 +23,6 @@ So the short version quietly depends on the solver assuming perfect, independent
 
 *How long does Subset B take to dry completely?"*
 
-
-
 .
 
 Answer it, please.

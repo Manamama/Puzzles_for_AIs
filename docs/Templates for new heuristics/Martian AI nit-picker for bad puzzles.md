@@ -1,21 +1,4 @@
-Good. Let me think about what this prompt actually needs to do — because it's a narrower and more specific instrument than the full Martian protocol.
-
-**What the prompt needs to accomplish:**
-
-1. Force literal reading of every word in the problem statement
-2. Generate a forensic fault list — not a solution
-3. Produce a rewrite in either 3.0 or 4.0 spirit — not just patch the original
-4. Not get distracted by the full Martian protocol machinery (skeleton, Weltanschauung, historical parallels — all irrelevant here)
-
-**What it should explicitly suppress:**
-
-- Solving the puzzle
-- Accepting any unstated assumption as given
-- Stopping at "this is a trick question" (that's a parking operation)
-
----
-
-Here is the prompt:
+ 
 
 ---
 
@@ -52,3 +35,5 @@ Reminder: No assumption that affects the answer may remain unstated. Every physi
 *Now audit this problem statement:*
 
 *"I have 5 shirts that will take 6 hours to dry in the sun. How long will it take 30 shirts to dry?"*
+
+
