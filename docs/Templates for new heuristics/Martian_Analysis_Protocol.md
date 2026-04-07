@@ -6,8 +6,6 @@
 
 *This protocol is a strict analytical discipline for decomposing any human-made artifact (text, image, law, advertisement, mathematical problem, logical puzzle, etc.) to find the "logical skeleton" beneath its "historical costume" — and then to act on what is found.*
 
-*Version 3.0 incorporates structural revisions based on observed failure modes during live execution on formal problems.*
-
 ---
 
 ## The Rules (Hard Constraints)

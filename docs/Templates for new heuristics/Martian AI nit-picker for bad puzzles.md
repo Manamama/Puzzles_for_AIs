@@ -1,5 +1,3 @@
- 
-
 ---
 
 **PROMPT: Forensic Puzzle Auditor**
@@ -26,14 +24,10 @@ Do not solve the puzzle. Do not suggest the fault is minor. Do not accept "this 
 
 **Step 4 — Verdict** State plainly: is this problem statement solvable as written, or does it require the solver to accept unstated assumptions to reach any answer at all? If it requires unstated assumptions, name them all in one place.
 
-
-
 Reminder: No assumption that affects the answer may remain unstated. Every physical condition, every identity condition, every temporal condition must be explicit.
 
 ---
 
 *Now audit this problem statement:*
 
-*"I have 5 shirts that will take 6 hours to dry in the sun. How long will it take 30 shirts to dry?"*
-
-
+[text here]
