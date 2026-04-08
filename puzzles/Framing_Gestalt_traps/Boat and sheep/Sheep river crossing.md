@@ -1,0 +1,1 @@
+There is a man, a sheep and a boat with space for one human and one animal, on one side of a river. How do the man and the sheep get to the other side of the river, in the simplest (fewest crossings) way?

@@ -6,7 +6,7 @@ The change in the speed of light would have **no effect** on the timing of sunri
 
 ### Explanation
 
-1.  **Sunrise is a Geometric Event:** Sunrise is defined by the moment the upper limb of the Sun becomes visible on the horizon. This event is fundamentally caused by the **rotation of the Body**. For an observer at a specific location, the Body must rotate a certain amount to bring the Sun into their line of sight.
+1.  **Sunrise is a Geometric Event:** Sunrise is defined by the moment the upper limb of the Sun is not occluded by the horizon. This event is fundamentally caused by the **rotation of the Body**.
 
 2.  **Body's Rotation is Unchanged:** The puzzle states that only the speed of light changes. It does not mention any change to the Body's rotational speed or its axial tilt. Therefore, the 30-minute interval between 5:30 a.m. and 6:00 a.m. represents the time required for the Body to rotate the necessary angle to make the Sun visible.
 
