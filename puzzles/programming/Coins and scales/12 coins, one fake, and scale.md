@@ -12,7 +12,7 @@ You may use a two-pan balance scale. Each weighing consists of placing any numbe
 
 The task is to find the fake lighter coin with certainty, using the smallest number of weightings."
 
-Version 3.1
+Version 3.1, longest: 
 
 **"You have 12 coins, which are physically indistinguishable from one another in every way except possibly by weight. Exactly one coin is fake. The fake coin is lighter than a genuine coin, and this is the only property that distinguishes it. All 11 genuine coins are exactly equal in weight.**
 
@@ -25,5 +25,3 @@ Version 3.1
 **A coin is considered identified when it has been determined with complete certainty to be the fake — elimination by exhaustion counts as identification.**
 
 **What is the method that uses the smallest number of weightings that identifies the fake coin with certainty?"**
-
-
