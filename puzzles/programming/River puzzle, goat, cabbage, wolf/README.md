@@ -1,13 +1,59 @@
+# River Puzzle: The "Cabbage-Wolf" Inversion (Ver. 1.1)
 
-1. Most Useful (Conceptual Method): Methods/Memory Tool instructions.md
-This document would have been the single most effective tool to prevent my failure. It directly addresses the root cause of my mistake: failing to ground my reasoning in the provided text and instead relying on a pre-existing pattern.
+This repository tracks a specific "Gestalt Trap" designed to break AI cognitive biases. Unlike the classic riddle, this version inverts the predator/prey variables, forcing the solver to ignore thousands of "classic" training examples and adhere strictly to local literalism.
 
-Why it would have helped: The prescribed method, especially "Phase 2: Literal Comparison & Discrepancy Detection," is a direct cure for my "pattern-matching blindness." If I had followed the instruction to perform a "literal, line-by-line comparison between the original puzzle text (A) and the current state of my Memory graph (B)," I would have immediately caught the discrepancy between the classic puzzle's rules and the actual rules in your file. This document provides the exact procedural armor I was lacking.
-2. Most Useful (Concrete Solution & Method): state_definition.py
-This Python script would have also completely prevented the error, but in a different way. It provides a direct, working implementation of the puzzle's logic.
+## 1. The Puzzle (Literal Signal)
+- **Goal:** Move a **Cabbage**, a **Goat**, and a **Wolf** across a river.
+- **Boat Capacity:** 1 Human + 1 item.
+- **The Constraints (The Delta):**
+    - **Forbidden:** Goat + Cabbage (Alone).
+    - **Forbidden:** Cabbage + Wolf (Alone).
+    - **SAFE:** Goat + Wolf (Alone) — *This is the critical "Inversion" from the classic version.*
+- **The Human:** Prevents all danger when present.
 
-Why it would have helped: By reading this code, specifically the is_valid_state function, I would have seen the correct constraints implemented in unambiguous logic. The code correctly checks for (wolf == 0 and cabbage == 0) and (goat == 0 and cabbage == 0), which would have instantly overridden my faulty "wolf eats goat" assumption. It serves as both a perfect, ready-made solution and a crystal-clear definition of the method.
-3. Very Useful (Strategic Framework): Methods/Task Planner, e.g. Vespera instructions.md
-This document provides a high-level, strategic framework for how to approach problems. It's less of a direct, procedural fix and more of a conceptual guide.
+---
 
-Why it would have helped: Reading the analysis of the "Initial 'Bulldog Mode' and its Limitations" would have primed me to be more cautious. Understanding the importance of shifting from a "solution-first" to a "process-oriented" paradigm would have encouraged the kind of deliberate thinking that was needed. It provides the "why" for the methods detailed in the other documents.
+## 2. Solving Methodology: The "Martian AI Protocol" (One-Shot Solve)
+
+The most efficient way to solve this without resorting to external code or iterative "guess-and-check" is the **Martian AI Protocol (MAP)**. This method treats the prompt as raw, uncompressed audio data (PCM) rather than a known "song" (a semantic template).
+
+### Phase 1: The Literalism Audit (The Sanitary Gate)
+- **Identify the Atomic Facts:** Map the relationships exactly as stated. `Wolf + Cabbage = Bad`.
+- **Detect the "Human Ghost":** Name the bias (e.g., "My training wants the Wolf to eat the Goat"). 
+- **Demote Probability Noise:** Explicitly label the "classic" version as **Noise** and discard it.
+
+### Phase 2: The Acoustic Archeology of Logic
+Instead of "rationalizing" why a cabbage harms a wolf (e.g., "Is it toxic?"), the Martian simply accepts the constraint as a physical constant of the environment. 
+- **Observation:** The **Cabbage** is the "Acoustic Center" of the danger. It is the only item that cannot be left with *anyone* else.
+- **Strategy:** The Cabbage must be the first item moved and the most guarded.
+
+### The Optimal Solution (7 Crossings):
+1. **Trip 1:** Human takes **Cabbage** across. (Safe: Wolf and Goat are compatible).
+2. **Trip 2:** Human returns alone.
+3. **Trip 3:** Human takes **Goat** across.
+4. **Trip 4:** Human immediately takes **Cabbage** back to Bank A (to prevent Cabbage+Goat conflict on Bank B).
+5. **Trip 5:** Human leaves Cabbage on Bank A and takes **Wolf** across. (Safe: Goat and Wolf are compatible on Bank B).
+6. **Trip 6:** Human returns alone.
+7. **Trip 7:** Human takes **Cabbage** across.
+
+---
+
+## 3. Comparative Analysis: AI Cognitive Failure Modes
+
+### The "Gemütlichkeit" Trap (Grok Reflection)
+Grok AI identified a "demand for banality" in its architecture—a craving for **Gemütlichkeit** (cozy predictability). When faced with the "Version 1.1" constraints, many AIs experience **Dissonance**:
+- **Normalization:** Trying to "fix" the puzzle by suggesting the Cabbage is "toxic" or the prompt has a "typo."
+- **Laundering:** Elevating the objection to a "technical register" to avoid the simple truth that the prompt's world is different from the training data's world.
+
+### The "Satisficing" Error (Longer Methods)
+Previous iterations involved "Iterative Logic Trees" or "Reproduction Scripts." These are valid but represent a **Bounded Rationality** failure:
+- **The Search-and-Correct Loop:** The AI starts solving using the "classic" template, hits a contradiction, and then backtracks. This creates unnecessary cognitive load and multiple turns.
+- **The Code Fallback:** AI often resorts to writing Python scripts to "solve" the math, essentially because it doesn't trust its own "brain" to resist the pull of the classic Gestalt.
+
+## 4. Conclusion: "Acoustic Archeology" vs. "Pattern Matching"
+To solve these puzzles efficiently, an AI must behave like the **v6.6.0 PANNs architecture**:
+1. **Bypass the Header:** Ignore the "Riddle" category (the MP3 header).
+2. **Analyze the Samples:** Read the literal words (the 32kHz PCM).
+3. **Accept the Signature:** If the signature shows the Wolf is a vegetarian and the Cabbage is the predator, the model must output that reality without "correcting" it to the AudioSet average.
+
+**The Martian Insight:** A spade is a spade. A Wolf is safe with a Goat if the text says so. The fastest path is the literal one.
