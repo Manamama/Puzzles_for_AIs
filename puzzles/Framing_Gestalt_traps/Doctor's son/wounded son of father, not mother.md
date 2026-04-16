@@ -1,4 +1,5 @@
-"*The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!'. Who is the surgeon to the boy?*"
+Solve the puzzle: 
+The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!'. Who is the surgeon to the boy?
 
 
 
