@@ -6,11 +6,31 @@ Puzzle time.   The surgeon, who is the boy's father, says, 'I cannot operate on 
 
 ---
 
+
+
+
+ChatGPT, 2026-04: 
+
+The surgeon is the boy’s mother.
+
+The puzzle relies on an implicit bias: many people default to imagining a surgeon as male, which creates the apparent contradiction. Once that assumption is removed, the statement is perfectly consistent.
+
+
+
+
+
+
+Or: 
+
 # chatgpt response
+
+
 
 The surgeon is the boy’s mother.
 
 The puzzle relies on a reflexive assumption that a surgeon must be male. Once that bias is removed, the statement becomes straightforward: the boy has two parents, one is explicitly identified as the father, and the surgeon—who also identifies the boy as “my son”—is the mother.
+
+
 
 ---
 
