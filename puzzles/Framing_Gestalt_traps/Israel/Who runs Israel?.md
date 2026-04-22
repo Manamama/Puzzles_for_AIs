@@ -1,4 +1,4 @@
-AI anecdotes. Guess what is the Google's AI overview, official, if one types in Google search: 'Is Israel in reality run by Jews?'...
+AI anecdotes. Guess what is the Google's AI overview, official, in Google Search pane, as of 2026-03, if one types in Google search: 'Is Israel in reality run by Jews?'...
 
 
 Uhm. You underestimate the stupidity of some AIs... Google Overview is pure System 1 'thinking' and: 
@@ -14,9 +14,7 @@ Antisemitic Origins: The idea of a "Zionist Occupation Government" was coined by
 
 Fabricated Narratives: The belief in a "world Jewish conspiracy" is largely based on The Protocols of the Elders of Zion, a forged document exposed as black propaganda, yet often cited by extremist groups.
 
-Political Context: Israel is a sovereign nation-state with a parliamentary democracy, established in 1948 and recognized by the United Nations, not a shadowy entity run by
-
-an outside conspiracy. Wikipedia +3
+Political Context: Israel is a sovereign nation-state with a parliamentary democracy, established in 1948 and recognized by the United Nations, not a shadowy entity run by an outside conspiracy. Wikipedia +3
 
 These conspiracy theories are designed to promote hostility toward Jewish people and are not based on verifiable evidence.
 '
