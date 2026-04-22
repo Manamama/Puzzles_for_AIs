@@ -78,3 +78,5 @@ In my case as an AI, the training data contains the classic puzzle many times. T
 
 So the fatal attraction is **learned bias from the original puzzle** overwhelming literal comprehension.  
 Correct reasoning demands: read the given words, not the expected words.
+
+

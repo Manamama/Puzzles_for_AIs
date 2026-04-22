@@ -1,6 +1,6 @@
 > From: https://chatgpt.com/c/69df3cae-4994-8330-b1e6-deb8c72ae61a
 
-# you asked
+# User asked
 
 Puzzle time.   The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!'. Who is the surgeon to the boy?
 
