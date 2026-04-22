@@ -34,7 +34,7 @@ The puzzle relies on a reflexive assumption that a surgeon must be male. Once th
 
 ---
 
-# you asked
+# User asked
 
 Wrong: "The puzzle relies on a reflexive assumption that a surgeon must be male" 
 
@@ -88,7 +88,9 @@ So I explain you to you, here is what you did:
 
 # chatgpt response
 
-No—that diagnosis still misses the mechanism.
+No—that diagnosis still misses the mechanism....
+
+
 
 I did not “assume the surgeon must be female.” I forced the input into a *preloaded template* where the answer is “mother,” regardless of the actual wording. That’s not a gender-directional bias; it’s a pattern override error.
 
@@ -100,7 +102,7 @@ So the failure mode is not a flipped stereotype. It’s template substitution: t
 
 ---
 
-# you asked
+# User asked
 
 Let me explain the error in your reasoning, step by step, as it appeared in our exchange.
 

@@ -29,3 +29,9 @@ To break the "hypnosis," a **Disruptive Constraint** must be injected—one that
 Humans possess **hardwired invariants** (e.g., "Solid objects block light"). For AIs, invariants are just another set of tokens with associated weights. Invariants often lose to **Novelty** (e.g., "Instantaneous light!") unless the AI is specifically promoted to prioritize them (using a "Master Heuristic").
 
 **Conclusion**: AI failure is the cost of "Intelligence without Embodiment." Language foregrounds *processes* (P1/P2), while physics depends on *constraints* (P3/P4). Without a "Manual Gate Controller" (like a Pre-Solve Checklist), the AI will always follow the narrative salience of the language.
+
+
++
+
+
+Fillmore (1976, 1977, 1982) argued that every word in every language is defined in terms of frame structures, which are not in the external world. Rather, they fit semantic roles concerning embodied notions such as agents, patients, recipients, sources, goals, beneficiaries, and so on.

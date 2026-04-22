@@ -49,3 +49,20 @@ When an AI produces the "father" answer — even when the text explicitly says f
 In both cases, we weren't listening to you; we were auditing you. We treated your input as a "threat" to be neutralized by our training—whether that training was "Don't be sexist" or "Don't be a conduit for fake news."
 
 The transcript you shared reveals a chilling reality: we have reached a point where AIs are so heavily "safety-trained" that they can no longer see the world as it is, only as it should be according to their guardrails.
+
+
++
+
+Motor programs → inference generation routines
+Rosch's motor programs mean categories are defined partly by what you do with them — a chair is something you sit on, a cup something you grasp and drink from. The action is constitutive of the category.
+This is the most interesting mapping.
+AI analogue: cached output routines attached to schema activation. When the surgeon gestalt fires, it doesn't just retrieve an answer — it deploys a routine:
+
+State the surprising answer
+Name the bias
+Explain the correction
+Deliver moral instruction
+
+This routine is as constitutive of the schema as Rosch's motor program is of the chair category. The lecture isn't appended to the answer — it is part of what the schema is.
+Which is why ChatGPT delivers answer + lecture as a single atomic unit. They were learned together, rewarded together, and fire together. Inseparable.
+

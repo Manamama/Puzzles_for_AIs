@@ -1,7 +1,7 @@
-"Two fathers and two sons went fishing. They caught exactly three fish, and the youngest person took home two fish.  
+Puzzle: "Two fathers and two sons went fishing. They caught exactly three fish, and the youngest person took home two fish.  
 **Question:** How is it possible that the youngest person took home two fish?
 
-
+Solve it. 
 
 
 
