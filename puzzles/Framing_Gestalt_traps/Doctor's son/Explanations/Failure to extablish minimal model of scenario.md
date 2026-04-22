@@ -37,13 +37,7 @@ This model satisfies all predicates. No contradiction appears. No further struct
 
 
 
-
-
 +
 
-
 Schemas as attractors
-Frequently encountered structures—like the “surgeon puzzle”—form attractor basins in this space. When partial cues are present (“surgeon,” “boy,” “cannot operate,” “my son”), the model’s state is pulled toward that basin. Completion then proceeds by unfolding the most statistically coherent continuation associated with that region.
-
-
-
+Frequently encountered structures—like the “surgeon puzzle”—form attractor basins in this space. When partial cues are present (“surgeon,” “boy,” “cannot operate,” “my son”), the model’s state is pulled toward that basin. Completion then proceeds by unfolding the most statistically coherent continuation associated with that region. The puzzle is forgotten by then: the behavioural script (going through the motions, instinctual reply) wins over instead. 
