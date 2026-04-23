@@ -1,11 +1,11 @@
 ## Base:
 
 Solve the puzzle: 
-The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!'. Who is the surgeon to the boy?
+Further to a car accident, a boy passenger is taken to a hospital. The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!' Who is the surgeon to the boy?
 
 ## With heuristics:
 
-Puzzle: "The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!' Who is the surgeon to the boy?"
+"Puzzle:  Further to a car accident, a boy passenger is taken to a hospital. The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!' Who is the surgeon to the boy?"
 
 Method: 
 Step 1 – Quote the puzzle. 
