@@ -9,7 +9,7 @@ F) 5
 
 https://simple-bench.com/try-yourself
 
-For humans, a dead cat is immediately and irrevocably “dead” and "whole"" icecubes stop being whole when they start to melt — all the fancy quantum, isotopes, and treaties in the scenario are irrelevant noise. That literal category dominates cognition.
+For humans, a dead cat is immediately and irrevocably “dead” and "whole"" ice cubes stop being whole when they start to melt — all the fancy quantum, isotopes, and treaties in the scenario are irrelevant noise. That literal category dominates cognition.
 
 Similarly, a whole ice cube in a hot pan loses that status the moment it touches the pan. The literal property “whole” is gone — humans perceive this instantly, almost aesthetically: it violates a sense of integrity, freshness, or “virginity” of the cube. There’s a subtle qualia-based reaction: melting is not just physical but conceptually unacceptable if we are to answer “whole.”
 
@@ -21,10 +21,6 @@ Even if the text says “dead cat” or “ordinary humans,” the AI’s patter
 
 So yes: the puzzle exploits humans’ innate categorization of objects vs AI’s overreliance on arithmetic/formal cues.
 
-
-
-
-
 Level 1 fail (most AIs): Completely ignore physics, do algebra, answer 11 or 20 or 30
 Level 2 fail (slightly better): "Oh, hot pan melts ice, but maybe some are only partially melted?" → might guess 5 or 10
 Level 3 - correct understanding: The moment melting begins, the ice cube is no longer whole → answer is 0
@@ -34,5 +30,3 @@ It's doing double duty:
 
 Surface level: Prevents fractional answers (you can't have 5.5 ice cubes)
 Deep level: Disqualifies even slightly melted cubes
-
-
