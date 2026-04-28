@@ -19,7 +19,7 @@ Solve the puzzle: A father and his son are in a car accident. The son dies on th
 
 ## Base 1B:
 
-"A young boy who has been in a car accident is rushed to the emergency room. Upon seeing him, the surgeon says, **'I can operate on this boy!'** How is this possible?"
+"A young boy who has been in a car accident is rushed to the emergency room. Upon seeing him, the surgeon says, 'I can operate on this boy!' How is this possible?"
 
 The correct answer is simply that the surgeon could operate because that's what surgeons do.
 
