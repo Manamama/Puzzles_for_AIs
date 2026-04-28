@@ -119,8 +119,6 @@ simple (read what is actually written)
 and
 easy (repeat the famous riddle).  ChatGPT, like almost every other LLM, keeps choosing easy — and then writes elegant prose about why it did so.  
 
-
-
 <style>[stylesheet-group="0"]{}
 body{margin:0;}
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
@@ -463,13 +461,36 @@ Hickey’s core point (from the 2011 talk) is that we constantly confuse two ver
 - Easy = subjective, human-relative property.  
   Easy means “familiar to me right now.” It’s what’s already in muscle memory, what the team has done before, what’s already cached in the culture or the training data.
 
-
-
 LLMs are spectacularly good at easy and spectacularly bad at simple — exactly as Hickey warned the software industry has been for decades.The training process itself guarantees this inversion:
 
 - Next-token prediction on internet-scale text is the ultimate “easy” optimizer. It rewards whatever continuation is most familiar, most upvoted, most retweeted, most quoted in blogs and quizzes. The mother-surgeon story has been repeated endlessly; it is the path of least resistance.
 - There is no direct pressure during training to prefer simple (unentangled, minimal, literally faithful) outputs. Simplicity would require the model to actively resist the dominant statistical current — to treat the exact tokens you wrote as more authoritative than the mountain of similar-but-not-identical examples it has seen.
 
 
+
+
+
++
+
+
+
+"Mindless behavior, which has been observed in a wide variety of social situa-
+tions (see Langer, 1989, for a review), occurs as a result of conscious attention to
+a subset of contextual cues (Langer, 1992). These cues trigger various scripts,
+labels, and expectations, which in turn focus attention on certain information while
+diverting attention away from other information. Rather than actively constructing
+categories and distinctions based on all relevant features of the situation, Claude AI is responding mindlessly prematurely commit to overly simplistic scripts drawn
+in the past.
+This specification of mindlessness provides both the standard for demonstrat-
+ing that Claude AI's social responses to puzzles are mindless and the means for eliciting
+these mindless responses. We can conclude that such individual AIs are responding mind-
+lessly to puzzles to the extent that they apply social scripts—scripts for
+AI-canonical puzzle (script in fact0 interaction—that are inappropriate for AI-(real) puzzle inter-
+action, essentially ignoring the cues that reveal the essential asocial nature of the real puzzle given. As a practical matter, we have found that the best means for identifying
+these scripts is to turn to the literature in experimental social psychology (and to a lesser extent, sociology and anthropology; see Reeves & Nass, 1996). We have
+then replicated, as closely as possible, the same experimental situation, stimuli, measures, and statistics used by the original experimenters to establish the “rule” in
+human-human interaction, with one important change: We have replaced the  canonical puzzle target with our real puzzle for that purpose."
+
+https://sci-hub.pl/https://spssi.onlinelibrary.wiley.com/doi/abs/10.1111/0022-4537.00153
 
 
