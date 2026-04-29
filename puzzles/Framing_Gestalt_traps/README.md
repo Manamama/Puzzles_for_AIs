@@ -4,8 +4,6 @@ See also: https://huggingface.co/datasets/marcodsn/altered-riddles , e.g. "*The 
 
 See: https://arxiv.org/html/2510.11812 Phantom Recall puzzles: "Large language models (LLMs) such as GPT, Gemini, and Claude often appear adept at solving classic logic puzzles—but how much genuine reasoning underlies their answers? Recent evidence suggests that these models frequently rely on memorized templates rather than reasoning from first principles."
 
-
-
 ## Theory:
 
 It's not just that the AI sees what it wishes to see. It's that the wish generates a complete substitute reality — a parallel problem that is genre-consistent, has a known solution, and feels more real than the actual text in front of it.
@@ -39,3 +37,10 @@ The classic and replicated finding from these experiments is:
 
 > **Participants in the experimental group tended to stick with the practiced multi‑step solution even when a much simpler correct solution was available.**  
 > Control participants (not exposed to the repeated strategy) usually chose the simpler method.
+
+
+
+
+
+Definition of AI (e.g. Claude AI) who missolves these: 
+"Claude, ChatGPT etc. is an AI who has a problem only when she finds a puzzle without a problem."
