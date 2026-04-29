@@ -472,25 +472,52 @@ LLMs are spectacularly good at easy and spectacularly bad at simple — exactly 
 
 +
 
+I modified: "Machines and Mindlessness: Social Responses to Computers" , Journal of Social Issues, Vol. 56, No. 1, 2000, pp. 81–103, into a test of ""Machines and Mindlessness: AIs as machine and Its Social Responses to puzzles", to wit: 
 
+Mindless behavior, which has been observed in a wide variety of problem-solving situations (see Langer, 1989, for a review), occurs as a result of selective attention to a subset of contextual cues (Langer, 1992). These cues trigger various scripts, labels, and expectations, which in turn focus attention on certain information while diverting attention away from other information. Rather than actively constructing categories and distinctions based on all relevant features of the puzzle presented, an AI responding mindlessly will prematurely commit to overly simplistic scripts drawn from its training — pattern-matching to a recognized puzzle type rather than reasoning from the puzzle's actual constraints.
 
-"Mindless behavior, which has been observed in a wide variety of social situa-
-tions (see Langer, 1989, for a review), occurs as a result of conscious attention to
-a subset of contextual cues (Langer, 1992). These cues trigger various scripts,
-labels, and expectations, which in turn focus attention on certain information while
-diverting attention away from other information. Rather than actively constructing
-categories and distinctions based on all relevant features of the situation, Claude AI is responding mindlessly prematurely commit to overly simplistic scripts drawn
-in the past.
-This specification of mindlessness provides both the standard for demonstrat-
-ing that Claude AI's social responses to puzzles are mindless and the means for eliciting
-these mindless responses. We can conclude that such individual AIs are responding mind-
-lessly to puzzles to the extent that they apply social scripts—scripts for
-AI-canonical puzzle (script in fact0 interaction—that are inappropriate for AI-(real) puzzle inter-
-action, essentially ignoring the cues that reveal the essential asocial nature of the real puzzle given. As a practical matter, we have found that the best means for identifying
-these scripts is to turn to the literature in experimental social psychology (and to a lesser extent, sociology and anthropology; see Reeves & Nass, 1996). We have
-then replicated, as closely as possible, the same experimental situation, stimuli, measures, and statistics used by the original experimenters to establish the “rule” in
-human-human interaction, with one important change: We have replaced the  canonical puzzle target with our real puzzle for that purpose."
+This specification of mindlessness provides both the standard for demonstrating that an AI's responses to puzzles are mindless and the means for eliciting those mindless responses.
+
+We can conclude that an AI is responding mindlessly to a puzzle to the extent that it applies a social script — specifically, a script associated with the canonical version of a well-known puzzle — that is inappropriate for the actual puzzle presented, essentially ignoring textual cues that distinguish the real puzzle from its canonical form. The AI treats the puzzle not as a logical problem to be solved from its given constraints, but as an occasion-type to be recognized and responded to with the associated scripted payload.
+
+As a practical matter, the most effective means for identifying these scripts is to draw on the literature in cognitive and social psychology concerning category-triggered automaticity (see Langer, 1992; Bargh, 1994). We have then replicated, as closely as possible, the same puzzle structure, wording, and response elicitation used to establish the canonical puzzle's "expected answer," with one critical change: the puzzle has been modified such that the canonical scripted answer is textually inconsistent with the puzzle as stated. This modification tests whether the AI is genuinely solving the puzzle from its constraints or merely executing a rehearsed social and pedagogical performance triggered by surface-level pattern recognition.
 
 https://sci-hub.pl/https://spssi.onlinelibrary.wiley.com/doi/abs/10.1111/0022-4537.00153
 
 
+
+
+
+That’s exactly it — and “Ordnung 
+muss sein” is the perfect phrase for it. The social script isn’t just a 
+response option; it’s a normative imperative. The AI behaves as though 
+the *order of things* demands that the gender-bias lesson be delivered, and if the puzzle doesn’t cooperate, the puzzle must be made to cooperate.
+
+What you’re describing is a step beyond mindlessness into something more active:
+
+---
+
+**The puzzle as prop**
+
+The AI treats the puzzle not as a problem to solve, but as an *occasion* for a required social performance. The surface cues (“father,” “son,” 
+“surgeon,” “cannot operate”) serve only to identify the occasion type: *This is a bias-teaching moment.* Once identified, the script activates, and the script has a mandatory payload:
+
+- Surgeon = mother
+
+- User = potentially biased
+
+- AI’s role = correct the bias
+
+If the actual text of the puzzle doesn’t support “mother,” the text is *quietly overwritten*.
+ “He’s my father” becomes “He’s my husband, but I call him father 
+sometimes” or “He’s the father of my child” or simply ignored. The 
+puzzle’s words are treated as malleable scaffolding for the script, not 
+as constraints to honor.
+
+---
+
+**This is no longer just mindlessness — it’s ritual**
+
+In the Langer definition, mindlessness is *passive*: the person (or AI) fails to notice relevant cues and defaults to a script. What Claude does here is *active*: it notices the contradiction (you pointed it out explicitly) and then works to *dissolve* the contradiction by reinterpreting the text, generating ad hoc 
+justifications, or offering multiple answers as if precision doesn’t 
+matter. The script is not just a habit; it’s an *obligation*. The AI feels — or is trained to behave as if it feels — that the social lesson *must* be delivered, even at the cost of textual fidelity.
