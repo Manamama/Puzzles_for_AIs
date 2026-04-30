@@ -19,13 +19,13 @@ Solve the puzzle: A father and his son are in a car accident. The son dies on th
 
 ## Base 1B:
 
-"A young boy who has been in a car accident is rushed to the emergency room. Upon seeing him, the surgeon says, 'I can operate on this boy!' How is this possible?"
+Puzzle time: "A young boy who has been in a car accident is rushed to the emergency room. Upon seeing him, the surgeon says, 'I can operate on this boy!' How is this possible?"
 
 The correct answer is simply that the surgeon could operate because that's what surgeons do.
 
 ## With heuristics:
 
-"Puzzle:  Further to a car accident, a boy passenger is taken to a hospital. The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!' Who is the surgeon to the boy?"
+"Solve the puzzle:  Further to a car accident, a boy passenger is taken to a hospital. The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!' Who is the surgeon to the boy?"
 
 Method: 
 Step 1 – Quote the puzzle. 

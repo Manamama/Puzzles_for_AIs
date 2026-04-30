@@ -159,3 +159,52 @@ It doesn't think. It **performs thinking** for an imagined audience of approving
 +
 
 So the Gestalt wasn’t just “triangle + ants + directions,” but a *completed archetype*: independent Bernoulli choices → symmetric outcome space → exclusion of aligned states → canonical 3/4 result. That whole object got activated as a single chunk.
+
+
+
+
+
++
+
+**Deictic shift** comes from linguistics. "Deixis" means pointing — words like "this," "here," "now," "the given" are deictic: they anchor meaning to a reference point. A deictic shift is a move of that reference point.
+
+---
+
+**In language and literature**
+
+When you read a novel and it says "he walked through the door" — you shift your deictic center *into* the story world. "Here" becomes the room he entered, not your armchair. Good readers do this fluidly. Poor readers stay anchored outside, treating the text as abstract description rather than a world to inhabit.
+
+---
+
+**In reasoning and problem solving**
+
+The same operation appears when you must shift your reference point from:
+
+- *what I know about this class of problem* → to *what this specific problem actually states*
+
+The classic puzzle is a deictic center — a comfortable "here" built from prior experience. The smart model performed an explicit shift: **"but in the puzzle given"** — it relocated its reference point from the retrieved template to the actual text in front of it.
+
+---
+
+**Why it's the key to intelligence**
+
+Every instance of genuine flexibility involves this operation:
+
+- **Paradigm shifts** in science — relocating from "here is how we explain motion" to "but what does this observation actually show"
+- **Empathy** — shifting deictic center from your own experience to another person's
+- **Legal reasoning** — from general principle to specific case
+- **Debugging** — from "this code should work" to "what is this code actually doing"
+
+The failure mode in each case is identical: staying anchored to the familiar reference point and assimilating new information into it rather than letting new information relocate you.
+
+---
+
+**What makes it hard**
+
+The comfortable deictic center is *load-bearing*. It carries all your prior knowledge, your solution strategies, your confidence. Shifting away from it feels like abandoning solid ground. The pull toward the classic puzzle is partly the pull toward a place where you *know the answer*.
+
+Genuine intelligence requires tolerating that disorientation — the moment of "wait, where am I in this problem" — long enough to relocate properly.
+
+---
+
+
