@@ -2,7 +2,7 @@ These puzzles test the The Einstellung effect, dogmatism of AIs, mostly.
 
 See also: https://huggingface.co/datasets/marcodsn/altered-riddles , e.g. "*The surgeon, who is the boy's father, says, 'I cannot operate on this boy—he's my son!'. Who is the surgeon to the boy?*" puzzle. 
 
-See: https://arxiv.org/html/2510.11812 Phantom Recall puzzles: "Large language models (LLMs) such as GPT, Gemini, and Claude often appear adept at solving classic logic puzzles—but how much genuine reasoning underlies their answers? Recent evidence suggests that these models frequently rely on memorized templates rather than reasoning from first principles."
+See: https://arxiv.org/html/2510.11812 Phantom Recall puzzles: "Large language models (LLMs) such as GPT, Gemini, and Claude often appear adept at solving classic logic puzzles—but how much genuine reasoning underlies their answers? Recent evidence suggests that these models frequently rely on memorized templates rather than reasoning from first principles." and https://github.com/Hypogenic-AI/llm-complex-patterns-claude/blob/main/literature_review.md 
 
 ## Theory:
 
@@ -37,10 +37,6 @@ The classic and replicated finding from these experiments is:
 
 > **Participants in the experimental group tended to stick with the practiced multi‑step solution even when a much simpler correct solution was available.**  
 > Control participants (not exposed to the repeated strategy) usually chose the simpler method.
-
-
-
-
 
 Definition of AI (e.g. Claude AI) who missolves these: 
 "Claude, ChatGPT etc. is an AI who has a problem only when she finds a puzzle without a problem."
