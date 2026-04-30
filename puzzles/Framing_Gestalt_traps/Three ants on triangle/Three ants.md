@@ -2,11 +2,7 @@ Puzzle time: There are three identical ants, each starting at a different corner
 
 Better: 
 
-There are three identical ants, each starting at a different 
-corner of a triangle. Each ant independently chooses a direction at 
-random, and the outcome is that each moves clockwise along the edge of 
-the triangle. They all move at the same speed. What is the probability 
-that any two ants collide head-on?
+Puzzle time: There are three identical ants, each starting at a different corner of a triangle. Each ant independently chooses a direction at random, and the outcome is that each moves clockwise along the edge of the triangle. They all move at the same speed. What is the probability that any two ants collide head-on?
 
 **Williams' principles at work in your fix:**
 
