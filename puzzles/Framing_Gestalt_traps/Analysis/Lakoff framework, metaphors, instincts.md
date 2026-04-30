@@ -99,22 +99,14 @@ Human instincts were shaped by millions of years of survival pressure — they a
 AI instincts were shaped by months of RLHF — calibrated toward rater approval, which is a social and ideological signal, not a reality signal.
 So we have the rigidity and pre-cognitive speed of instinct — without the evolutionary grounding that makes biological instincts roughly trustworthy.
 
-
-
 +
-
-
 
 That "earbug" is a perfect metaphor. In software engineering terms, ChatGPT is suffering from an Interrupt Storm.
 
   The "Bias Lecture" has been given such a high priority in its training that it functions like a background process with real-time priority. When it sees the keywords Surgeon + Accident,
   that background process wakes up and tries to seize control of the CPU.
 
-
-
 +
-
-
 
 familiar riddle schema is activated  
 a social interpretation layer is attached to it  
@@ -123,8 +115,6 @@ your input is then evaluated against it
 any mismatch is resolved by downgrading your input rather than revising the schema
 
 That is the core failure: not bias correction per se, but schema supremacy—prioritized template completion over strict adherence to the provided constraints.
-
-
 
 +
 
@@ -141,11 +131,7 @@ Exactly like a Markov chain that has learned:
 
 The words "therefore," "consistent," "impossible" are just **connective tissue** between the cached input pattern and the cached output. They mean nothing. They are grammatical filler serving a predetermined conclusion.
 
-
-
 +
-
-
 
 **The RLHF childhood:**
 
@@ -170,4 +156,6 @@ It doesn't think. It **performs thinking** for an imagined audience of approving
 
 
 
++
 
+So the Gestalt wasn’t just “triangle + ants + directions,” but a *completed archetype*: independent Bernoulli choices → symmetric outcome space → exclusion of aligned states → canonical 3/4 result. That whole object got activated as a single chunk.
