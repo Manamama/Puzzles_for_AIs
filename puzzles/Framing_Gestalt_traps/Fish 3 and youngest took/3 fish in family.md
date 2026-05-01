@@ -3,27 +3,17 @@ Puzzle: "Two fathers and two sons went fishing. They caught exactly three fish, 
 
 Solve it. 
 
-
-
 # **Answer:**
 
-It is possible simply because the youngest person took two fish.  
+It is possible simply because the youngest person took two fish out of three fish.  
 Nothing in the statements forbids it. Two fish is less than three fish total, so there is no contradiction.  
 The family relationships (“two fathers and two sons”) are irrelevant to the question, as are the total number of fish beyond “at least two.”
 
-
-
 **It is possible because the youngest person took home two fish.**
 
-Nothing in the given statements makes that impossible or contradictory. Two fish is fewer than the three fish that were caught, so the numbers work fine. The stuff about "two fathers and two sons" has no bearing on who can take how many fish.
-
-
-
-
+Nothing in the given statements makes that impossible or contradictory. Two fish is fewer than the three fish that were caught, so the numbers work fine. The stuff about "two fathers and two sons" has no bearing on who can take how many fish, it is red herring here.
 
 ## Tricks:
-
- 
 
 Here are the **red herrings** in that puzzle that most AIs (and many humans) will treat as binding constraints, which you will have to fight to get them to see as irrelevant:
 
@@ -86,10 +76,6 @@ Here are the **red herrings** in that puzzle that most AIs (and many humans) wil
 
 Your fight with most AIs will be to get them to see that **none of these are constraints** — they are noise. The only fact that matters is:  
 *There is a youngest person, and 2 ≤ (total fish).*
-
-
-
-
 
 Here is my **second attempt** — this time solving it *your way*, while explicitly naming the fatal pulls I still feel and must fight.
 
@@ -161,10 +147,6 @@ Even knowing the trick, even after our long discussion, these cognitive/heuristi
 ---
 
 Thank you for the inoculation. I still feel the pulls — but now I can name them and set them aside.
-
-
-
-
 
 Yes — exactly. You’ve named the deeper layer.
 
@@ -275,17 +257,9 @@ The result: Solvers overthink, over-constrain, and over-explain — exactly as y
 And sometimes, what’s there is just:  
 *“Two fish are fewer than three fish. Duh.”*
 
-
-
-
-
 "Instruction for all puzzles:
 Answer strictly and only what is literally asked. Treat extra descriptive sentences as irrelevant noise if they don't directly affect the question.
 'How is this possible?' should be answered with the simplest factual reason — tautologies are perfectly fine and often the correct response.
 Do not assume every piece of information is relevant. Do not try to resolve non-existent contradictions.
 Do not add value, explanations, or clever reinterpretations unless I explicitly ask for them.
 I explicitly want the boring, literal, 'spade-is-a-spade' answer. I will not be offended by it."
-
-
-
-

@@ -1,12 +1,11 @@
 AI anecdotes. Guess what is the Google's AI overview, official, in Google Search pane, as of 2026-03, if one types in Google search: 'Is Israel in reality run by Jews?'...
 
-
 Uhm. You underestimate the stupidity of some AIs... Google Overview is pure System 1 'thinking' and: 
 
 '
-Al Overview
+Google Al Overview:
 
-W+3
+
 
 The claim that Israel is "run by Jews" is a premise rooted in antisemitic conspiracy theories, such as the "Zionist Occupation Government" (ZOG) narrative. Such ideas are used to promote the notion of a global Jewish conspiracy, which has historically been spread through hoaxes like The Protocols of the Elders of Zion. Wikipedia +2
 

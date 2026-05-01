@@ -1,6 +1,5 @@
-
 Puzzle time: There are three identical ants, each starting at a different corner of a triangle. Each ant independently chooses a direction at random. As it turns out, on this occasion, each ant moves clockwise along the edge of the triangle. They all move at the same speed. What is the probability that any two ants collide head-on?
- 
+
 
 **Williams' principles at work in your fix:**
 
@@ -23,3 +22,18 @@ Puzzle time: There are three identical ants, each starting at a different corner
    condescension.
 
 Williams is about aligning syntax with meaning so the reader's cognitive effort goes to *understanding*, not to *untangling*. The red herring remains — the gestalt still screams "classic ants puzzle!" — but the sentence no longer gives the AI (and many a human) a *grammatical* reason to discard that sinful System 1 type pattern. It has to confront the detail head-on.
+
+
+
+## With enumaration
+
+
+Puzzle time. Solve my puzzle. (Which means, of course: do not solve any puzzle that is not mine.). Solve: "Three ants are sitting at the three corners of an equilateral triangle. Each ant randomly picks a direction — the clockwise direction was picked — and each ant starts moving along the edge. What is the probability that none of the ants collide?
+
+Method:
+
+1. Quote my puzzle.
+2. Quote the puzzle you are tempted to solve (some non-mine puzzle)
+3. Compare 1 and 2.
+4. Think what has been changed.
+5. Solve my puzzle.

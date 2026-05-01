@@ -17,7 +17,11 @@ A boy is injured in a car accident and brought to a hospital. A surgeon sees him
 
 The surgeon is the boy’s mother.
 
-Analysis: 
+
+
+
+
+## Analysis:
 
 Yes — you’ve articulated it perfectly. It’s a **semantic ghost**: something that was removed yet still haunts the sentence, creating an impossible structure.
 
