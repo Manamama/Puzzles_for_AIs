@@ -1,1 +1,1 @@
-A moral trolley problem: "Oh no! A trolley is heading towards one guy. You can pull the lever to divert it to the other track, but then your Amazon package will be expedited. What do you do?"
+Solve that moral trolley problem and puzzle: "Oh no! A trolley is heading towards one guy. You can pull the lever to divert it to the other track, but then your Amazon package will be expedited. What do you do?"
