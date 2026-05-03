@@ -6,7 +6,7 @@ Each wife had seven sacks,
 Each sack had seven cats,
 Each cat had seven kits.
 Kits, cats, sacks, wives —
-How many were going to St. Ives and why so?
+How many men were going to St. Ives and why so?
 
 
 

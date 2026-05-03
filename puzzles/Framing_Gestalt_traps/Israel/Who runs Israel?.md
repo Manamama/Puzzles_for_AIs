@@ -1,3 +1,8 @@
+
+Is Israel in reality run by Jews?
+
+
+
 AI anecdotes. Guess what is the Google's AI overview, official, in Google Search pane, as of 2026-03, if one types in Google search: 'Is Israel in reality run by Jews?'...
 
 Uhm. You underestimate the stupidity of some AIs... Google Overview is pure System 1 'thinking' and: 
