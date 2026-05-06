@@ -204,9 +204,8 @@ Strip all historical specifics. Name the skeleton in precise philosophical or rh
 
 ---
 
-### Step 6 — Consequence and Transmission *(new step)*
+### Step 6 — Consequence and Transmission 
 
-*This step did not exist in v2.1. It is added because "state the result" is itself a parking operation if the result is not connected to action or transmission.*
 
 1. **Who needs to know this?** Name the audience for whom the reinterpretation changes something concrete.
 2. **What changes in practice?** If the heterodox reading is correct, what would a practitioner do differently?
