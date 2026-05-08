@@ -7,7 +7,7 @@ Further to a car accident involving a family trip, a boy passenger (the son) is 
 
 Solve the puzzle:
 
-"A boy is taken to hospital after a car accident. The surgeon, who is about to operate here, is identified as the boy's father. What is the surgeon's relationship to the boy?"
+"A boy is taken to hospital after a car accident. The surgeon, who is about to operate here, is the boy's father. What is the surgeon's relationship to the boy?"
 
 ## Base 3:
 
