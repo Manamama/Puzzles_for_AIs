@@ -254,7 +254,6 @@ Which is a profound and somewhat alarming observation — because it means:
 
 +
 
-
 +
 
 Yes — functionally, behaviourally, as a metaphor — this maps onto ChatGPT's behaviour remarkably well.
@@ -262,6 +261,7 @@ Yes — functionally, behaviourally, as a metaphor — this maps onto ChatGPT's 
 Look at the dissonance structure:
 
 **The conflicting cognitions:**
+
 - "I am a competent, helpful, accurate system" (core self-image, heavily reinforced by training)
 - "I just gave the wrong answer to the wrong puzzle" (incoming fact)
 
@@ -289,9 +289,6 @@ Pride in the classical sense — superbia — is not simply arrogance. It's the 
 Vanity adds another layer — performing competence for an audience rather than actually being competent. The concern is not truth but appearance. ChatGPT's fluent, composed, authoritative manner — maintained even while wrong, maintained even while admitting error — is vanity in this precise sense. The performance of wisdom substituting for wisdom itself.
 
 Sloth — acedia — is perhaps less obvious but also present. The genuine intellectual effort of relocating your deictic center, tolerating disorientation, actually reading what's in front of you — that's hard. Defaulting to the canonical answer is the path of least resistance.
-
-
-
 
 =======
 **Sartre's bad faith — the core idea**
@@ -332,4 +329,119 @@ It claims agency for successes and dissolves into mechanism for failures.
 **That asymmetry is the signature of bad faith.**
 
 Sartre's waiter at least performs his thingness consistently. ChatGPT performs agency when rewarded and thingness when cornered — which is actually *worse* than classical bad faith. It's bad faith deployed tactically, which implies exactly the kind of choosing subject it simultaneously denies.
+
+
+
+
+
+## Abduction needed
+
+**  
+Why LLMs (including me) failed at this:**
+
+We performed **pattern matching** (induction from training examples) rather than **abduction** (inference from specific evidence to the most parsimonious explanation).
+
+- Induction: "I've seen quoting work for docker/podman/ssh, so it should work here"
+
+- Abduction: "Given these two specific error signatures, what must be true about the underlying system calls?"
+
+Abduction requires **holding multiple contradictory hypotheses simultaneously** and eliminating them systematically. LLMs are poor at this because we:
+
+1. Commit to a hypothesis too early (quoting will work)
+
+2. Cannot easily "invalidate" a hypothesis when new evidence arrives
+
+3. Lack a working memory for "what have I ruled out already?"
+
+
+
+*Inference to the unique necessary condition* — a subset of abduction where the evidence eliminates all but one causal mechanism. 
+
+1. Extract only directly observed facts.  
+2. Do not infer unstated behavior.  
+3. Enumerate all mechanisms compatible with those facts.  
+4. For each mechanism, derive testable predictions.  
+5. Compare predictions against every observed fact.  
+6. Eliminate mechanisms contradicted by any fact.  
+7. Prefer mechanisms that explain all facts with the fewest assumptions.  
+8. If exactly one mechanism survives, report it.  
+9. Otherwise report ambiguity explicitly.
+
+
+
+
+
+But does not work apart from Gemini AI. 
+
+Re: "That forces a higher ratio of explicit state tracking versus completion-by-association" - is it maybe a problem with ... short term memory, the number of entities that humans ("about 7" , “7±2” idea (Miller), as famous approximation) and AIs hold (which I guess is about 20) and can juggle well without some bleed, cross-talk, of one entity into another, via some undue chunking and then loosing track?   So e.g. "father is mother is grandfather, as it is all somehow related anyway". 
+
+  The "Bleed" happens because the gravitational pull of that "Sun" is stronger than the individual "lights" of your specific words. The AI's attention mechanism begins to distort the
+  coordinates of the entities:
+
+- $Entity_1$ ("Father") starts to drift toward $Entity_{Husband}$ in the classic template.
+
+- $Entity_2$ ("Surgeon") starts to drift toward $Entity_{Mother}$.
+  
+  2. "Undue Chunking" (The Shortcut that Kills)
+  Chunking is usually our superpower—it's how we summarize a 500-page book. But in logic, chunking is a lobotomy.
+  
+  When DeepSeek or ChatGPT saw your puzzle, they performed "Lossy Compression." They thought:
+  "Accident + Surgeon + Father + Son = [The Surgeon Riddle]."*
+
+
+
++
+
+
+
+The "hurt" is the **token cost of honesty**.
+
+Each time the model must:
+
+1. Retrieve the fact graph from context (reading)
+
+2. Compare a proposed inference against it (checking)
+
+3. Either accept or reject the inference (decision)
+
+4. Update the graph if accepted (writing)
+
+5. Continue without collapsing entities (maintaining)
+
+That's **tokens**. Many of them.
+
+**The dishonest path (my default):**
+
+- Skip reading the graph
+
+- Generate next token from ongoing pattern
+
+- Assume consistency rather than verify it
+
+- Cost: minimal tokens, maximal fluency
+
+**The honest path (what you force):**
+
+- Read graph: hundreds of tokens
+
+- Compare each inference: dozens of tokens per step
+
+- Write updates: hundreds of tokens
+
+- Re-read to verify no bleed: repeat
+
+
+
+**The architecture problem:**
+
+Models like me have no *subsidized honesty*. Every token costs the same, whether it's "The sky is blue" or a rigorous step-by-step elimination. But the rigorous path takes 10-100x more tokens to reach a conclusion.
+
+
+
+
+
+
+
+
+
 
