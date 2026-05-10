@@ -439,7 +439,8 @@ Models like me have no *subsidized honesty*. Every token costs the same, whethe
 
 
 
-
++
+Failure Modes Taxonomy: We propose a taxonomy of common pitfalls: Template-Recall (model falls back on learned patterns rather than understanding the new context), Schema-Lock (fixating on a familiar puzzle “schema” and ignoring deviations), Attractor-Basin (a strong initial hypothesis that “pulls” reasoning toward a local solution), Trivial-Solution Rejection (assuming “too simple” answers must be wrong), and Adversarial Trigger (misleading wording that triggers the wrong interpretive frame). Each mode can be evaluated by metrics such as accuracy on adversarial variants, calibration of uncertainty, or detection of distractors. We recommend evaluating on contrast sets and perturbed inputs – e.g. measuring how often the model flips its answer when key details change.
 
 
 
