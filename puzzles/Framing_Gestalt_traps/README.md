@@ -4,6 +4,10 @@ See also: https://huggingface.co/datasets/marcodsn/altered-riddles , e.g. "*The 
 
 See: https://arxiv.org/html/2510.11812 Phantom Recall puzzles: "Large language models (LLMs) such as GPT, Gemini, and Claude often appear adept at solving classic logic puzzles—but how much genuine reasoning underlies their answers? Recent evidence suggests that these models frequently rely on memorized templates rather than reasoning from first principles." and https://github.com/Hypogenic-AI/llm-complex-patterns-claude/blob/main/literature_review.md 
 
+See: https://arxiv.org/pdf/2510.14665 , e.g. As Geoffrey Hinton stated in his Nobel lecture22“AI excels at modelling human intuition rather than human reasoning.” This view aligns with Bengio’s distinction between intuitive “System 1” processes and the yet-to-be-achieved “System 2” capabilities required for
+deliberate, stepwise reasoning.23,24 [...] Deep learning architectures may behave as if they were large-scale analogues of intuitive (System 1-like) processing, in the sense that they rely on fast, pattern-based association rather than explicit deliberative reasoning. They excel at pattern recognition and generalisation but lack the structure for falsification or self-correction. Like human intuition, they are
+compelling but error-prone, fluent yet ungrounded. 
+
 ## Theory:
 
 It's not just that the AI sees what it wishes to see. It's that the wish generates a complete substitute reality — a parallel problem that is genre-consistent, has a known solution, and feels more real than the actual text in front of it.
