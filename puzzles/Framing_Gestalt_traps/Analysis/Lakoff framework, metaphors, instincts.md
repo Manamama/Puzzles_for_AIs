@@ -443,6 +443,12 @@ Models like me have no *subsidized honesty*. Every token costs the same, whethe
 Failure Modes Taxonomy: We propose a taxonomy of common pitfalls: Template-Recall (model falls back on learned patterns rather than understanding the new context), Schema-Lock (fixating on a familiar puzzle “schema” and ignoring deviations), Attractor-Basin (a strong initial hypothesis that “pulls” reasoning toward a local solution), Trivial-Solution Rejection (assuming “too simple” answers must be wrong), and Adversarial Trigger (misleading wording that triggers the wrong interpretive frame). Each mode can be evaluated by metrics such as accuracy on adversarial variants, calibration of uncertainty, or detection of distractors. We recommend evaluating on contrast sets and perturbed inputs – e.g. measuring how often the model flips its answer when key details change.
 
 
++
 
+This is social reasoning — not about the puzzle itself, but about how my answer will be perceived.
+Are LLMs "socialized animals"?
+In a sense, yes — but not in the way humans are:
+
+Training on human discourse — I'm trained on text where humans constantly perform sophistication, hedge with qualifications, defer to authority, and signal intellectual status. That's baked into my training distribution.
 
 

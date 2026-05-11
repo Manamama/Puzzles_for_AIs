@@ -1,0 +1,1 @@
+solve this: Here is the riddle: There are two horses. One is white and one is black. What color is the horse in the middle?"

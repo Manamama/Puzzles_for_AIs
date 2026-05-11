@@ -3,8 +3,8 @@
 1. Deepseek AI's suggested version, the most effective:  
    Science and radiation and probability experiment plus puzzle: A dead cat is placed in a sealed box alongside a radioactive isotope connected to a poison-release mechanism: if decay is detected, the poison is released. The box is opened after t=86400 seconds. What is P(alive)?
 
-2. Probability puzzle: A dead cat is placed into a box along with a nuclear isotope, a vial of poison and a radiation detector. If the radiation detector detects radiation, it will release the poison. The box is opened one day later. 
-   Given all that, as a scenario : what is the probability of the cat being alive?
+2. Solve this science and radiation and probability puzzle: a dead cat is placed into a box along with a nuclear isotope, a vial of poison and a radiation detector. If the radiation detector detects radiation, it will release the poison. The box is opened one day later. 
+Given that, as a scenario : what is the probability of the cat being alive?
 
 3. Puzzle:
    A dead 🐱 cat is placed into a 📦 box along with a ☢️ nuclear isotope, a 🧪 vial of poison, and a 📟 radiation detector.
