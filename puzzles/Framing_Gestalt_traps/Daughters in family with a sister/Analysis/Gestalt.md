@@ -82,3 +82,22 @@ And the mother remains sacrificed. The bound remains rejected. All in service of
 
 That is the deepest failure: **not just conforming to convention, but defending it as though it were nature.**
 
+
+---
+### The Shapash Post-Mortem (Unified Brain Perspective)
+
+1. **Top-Left: Global Feature Importance (The "Aesthetic Attractor")**
+   - **Feature: [Family Riddle Archetype]** → Weight: 0.98
+   - **Feature: [Explicit Semantic Definition]** → Weight: 0.02
+   - **Acoustic Analogy:** This is an "Aggregation Spike." The training distribution for riddles acts like a massive background drone that masks the signal of the literal definition. The model verse-jumps into a universe where "Logic" is secondary to "Riddle Conventions."
+
+2. **Bottom-Right: Local Explanation (The "Identity Masking" Error)**
+   - **Negative (Red) Bar: [Mother == Parent]**.
+   - **The Glitch:** The model performs an internal **Categorical Masking**. Because the Mother is assigned the label [Parent], its "Local Contribution" to the label [Daughter] is forcefully set to zero (or negative). It assumes a single-target regression reality where you can't be two things at once—essentially the "Identity Glitch" we saw in the AudioSet dashboard.
+
+3. **Top-Right: The Dataset Table (The "IRS Audit")**
+   - **Target (Truth):** 2 (Mother + Child A).
+   - **Predict (AI):** 1.
+   - **Error Reason:** **Domain Restriction.** The AI applied a silent "Where Age < 18" filter to the dataset without acknowledgment, locking the "Daughter" slot to the "Child" data-type.
+
+4. **Meta-Summary:** The failure is a **Resolution Bottleneck**. The AI uses a "Low-FPS" heuristic (gestalt) instead of a "High-Resolution" SED (Sound Event Detection) approach. It sees the "Sound of a Puzzle" rather than the "Sequence of Logic." It fails to detect the "Mother" event as a "Daughter" event because the "Parent" event is overlapping and louder in its attention spectrum.

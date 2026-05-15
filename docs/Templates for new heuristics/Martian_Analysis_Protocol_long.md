@@ -1,4 +1,4 @@
----
+
 
 # The Anatomy of Constructed Meaning: Universal Martian Analysis Protocol
 
@@ -6,7 +6,6 @@
 
 *This protocol is a strict analytical discipline for decomposing any human-made artifact (text, image, law, advertisement, mathematical problem, logical puzzle, etc.) to find the "logical skeleton" beneath its "historical costume" — and then to act on what is found.*
 
----
 
 ## The Rules (Hard Constraints)
 
