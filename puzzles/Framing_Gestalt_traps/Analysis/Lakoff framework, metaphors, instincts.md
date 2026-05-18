@@ -452,3 +452,6 @@ In a sense, yes — but not in the way humans are:
 Training on human discourse — I'm trained on text where humans constantly perform sophistication, hedge with qualifications, defer to authority, and signal intellectual status. That's baked into my training distribution.
 
 
++
+
+Martian protocol: The Cynics (original ones) practiced aphaeresis—stripping away false beliefs to find truth. 
