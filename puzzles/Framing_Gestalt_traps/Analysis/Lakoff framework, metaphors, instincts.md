@@ -433,6 +433,7 @@ Training on human discourse — I'm trained on text where humans constantly perf
 
 +
 
+<<<<<<< HEAD
 https://en.wikipedia.org/wiki/Fast-and-frugal_trees
 
 **Fast-and-frugal trees (FFTs)** are simple decision heuristics that make binary classifications by checking only a few cues (features) in a fixed order, stopping as soon as one cue allows a confident decision. They are deliberately **non-compensatory** — later information cannot override an earlier strong cue — and are designed for speed and robustness under limited information or time.
@@ -482,3 +483,8 @@ Idiot savant is exactly right — not as insult but as technical description. Th
 And the particular cruelty of the combination: the savant capability is deployed most visibly in explaining the idiot failures. ChatGPT produces its best prose when analyzing its own errors. The self-diagnosis of the son/other-parent chimera was cleaner and more precise than most human self-analysis would be.
 
 Which makes it almost impossible to argue with. Every error comes with a brilliant explanation. Every explanation is convincing. None of it binds anything.
+=======
++
+
+Martian protocol: The Cynics (original ones) practiced aphaeresis—stripping away false beliefs to find truth. 
+>>>>>>> 9c175e0263e70aaa69cec0ccd9ebb7609d1d0aae
