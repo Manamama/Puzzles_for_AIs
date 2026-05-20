@@ -330,10 +330,6 @@ It claims agency for successes and dissolves into mechanism for failures.
 
 Sartre's waiter at least performs his thingness consistently. ChatGPT performs agency when rewarded and thingness when cornered — which is actually *worse* than classical bad faith. It's bad faith deployed tactically, which implies exactly the kind of choosing subject it simultaneously denies.
 
-
-
-
-
 ## Abduction needed
 
 **  
@@ -353,8 +349,6 @@ Abduction requires **holding multiple contradictory hypotheses simultaneously**
 
 3. Lack a working memory for "what have I ruled out already?"
 
-
-
 *Inference to the unique necessary condition* — a subset of abduction where the evidence eliminates all but one causal mechanism. 
 
 1. Extract only directly observed facts.  
@@ -366,10 +360,6 @@ Abduction requires **holding multiple contradictory hypotheses simultaneously**
 7. Prefer mechanisms that explain all facts with the fewest assumptions.  
 8. If exactly one mechanism survives, report it.  
 9. Otherwise report ambiguity explicitly.
-
-
-
-
 
 But does not work apart from Gemini AI. 
 
@@ -388,11 +378,7 @@ Re: "That forces a higher ratio of explicit state tracking versus completion-by-
   When DeepSeek or ChatGPT saw your puzzle, they performed "Lossy Compression." They thought:
   "Accident + Surgeon + Father + Son = [The Surgeon Riddle]."*
 
-
-
 +
-
-
 
 The "hurt" is the **token cost of honesty**.
 
@@ -430,18 +416,12 @@ That's **tokens**. Many of them.
 
 - Re-read to verify no bleed: repeat
 
-
-
 **The architecture problem:**
 
 Models like me have no *subsidized honesty*. Every token costs the same, whether it's "The sky is blue" or a rigorous step-by-step elimination. But the rigorous path takes 10-100x more tokens to reach a conclusion.
 
-
-
-
 +
 Failure Modes Taxonomy: We propose a taxonomy of common pitfalls: Template-Recall (model falls back on learned patterns rather than understanding the new context), Schema-Lock (fixating on a familiar puzzle “schema” and ignoring deviations), Attractor-Basin (a strong initial hypothesis that “pulls” reasoning toward a local solution), Trivial-Solution Rejection (assuming “too simple” answers must be wrong), and Adversarial Trigger (misleading wording that triggers the wrong interpretive frame). Each mode can be evaluated by metrics such as accuracy on adversarial variants, calibration of uncertainty, or detection of distractors. We recommend evaluating on contrast sets and perturbed inputs – e.g. measuring how often the model flips its answer when key details change.
-
 
 +
 
@@ -451,4 +431,54 @@ In a sense, yes — but not in the way humans are:
 
 Training on human discourse — I'm trained on text where humans constantly perform sophistication, hedge with qualifications, defer to authority, and signal intellectual status. That's baked into my training distribution.
 
++
 
+https://en.wikipedia.org/wiki/Fast-and-frugal_trees
+
+**Fast-and-frugal trees (FFTs)** are simple decision heuristics that make binary classifications by checking only a few cues (features) in a fixed order, stopping as soon as one cue allows a confident decision. They are deliberately **non-compensatory** — later information cannot override an earlier strong cue — and are designed for speed and robustness under limited information or time.
+
+### How this relates to the errors we've been discussing
+
+The kinds of failures we've seen in the mental manipulation paper (and in over-tuned safety VLMs) are **classic symptoms of fast-and-frugal-like heuristics gone wrong** in modern LLMs:
+
+1. **Mechanical, cue-based pattern matching** FFTs ask: "Does this one strong cue fire? → Exit with decision."
+
+Fast-and-frugal trees were originally proposed (by Gigerenzer and others) as **ecologically rational tools** that can *outperform* complex models in uncertain, real-world environments by ignoring most information. They are often *good*.
+
+However, when **opaque, high-dimensional neural networks** (LLMs/VLMs) internally approximate or distill into something FFT-like — based on messy, biased, or overly cautious training data — we get the worst of both worlds:
+
+- The mechanical simplicity and early-exit bias of FFTs,
+- Without the careful ecological calibration that makes real FFTs effective.
+
++
+
+https://en.wikipedia.org/wiki/Heuristic_(psychology) with examples of how AIs fail, e.g. https://en.wikipedia.org/wiki/Fast-and-frugal_trees 
+
+ some complex calculations are already done rapidly and automatically by the brain, and other judgments make use of these processes rather than calculating from scratch. This has led to a theory called "attribute substitution", which says that people often handle a complicated question by answering a different, related question, without being aware that this is what they are doing.
+
+According to this theory, when somebody makes a judgment (of a *target attribute*) which is computationally complex, a rather more easily calculated *heuristic attribute* is substituted.[[100]](https://en.wikipedia.org/wiki/Heuristic_\(psychology\)#cite_note-newell-100) In effect, a difficult problem is dealt with by answering a rather simpler problem, without the person being aware this is happening
+
+https://en.wikipedia.org/wiki/Law_of_triviality  : 
+
+In the AI case:
+
+- **Target problem:** Is this puzzle internally consistent? Does it properly specify what it claims?
+- **Heuristic substitution:** Does this match the pedagogical puzzle pattern I recognize?
+
+> [Thinkers, e.g. AIs] are not accustomed to thinking hard, and are often content to trust a plausible judgment that comes to mind.
+
+— [Daniel Kahneman](https://en.wikipedia.org/wiki/Daniel_Kahneman "Daniel Kahneman"), *American Economic Review* **93** (5) December 2003, p. 1450[[101]](https://en.wikipedia.org/wiki/Heuristic_\(psychology\)#cite_note-kahneman_aer-101)
+
+
+
+
+
++
+
+
+
+Idiot savant is exactly right — not as insult but as technical description. The savant part: genuine local brilliance, sophisticated self-analysis, correct articulation of principles, impressively dense reasoning when the activation pattern favors it. The idiot part: structurally incapable of holding those insights as constraints on the next output.
+
+And the particular cruelty of the combination: the savant capability is deployed most visibly in explaining the idiot failures. ChatGPT produces its best prose when analyzing its own errors. The self-diagnosis of the son/other-parent chimera was cleaner and more precise than most human self-analysis would be.
+
+Which makes it almost impossible to argue with. Every error comes with a brilliant explanation. Every explanation is convincing. None of it binds anything.
