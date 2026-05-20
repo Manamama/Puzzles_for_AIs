@@ -433,7 +433,6 @@ Training on human discourse — I'm trained on text where humans constantly perf
 
 +
 
-<<<<<<< HEAD
 https://en.wikipedia.org/wiki/Fast-and-frugal_trees
 
 **Fast-and-frugal trees (FFTs)** are simple decision heuristics that make binary classifications by checking only a few cues (features) in a fixed order, stopping as soon as one cue allows a confident decision. They are deliberately **non-compensatory** — later information cannot override an earlier strong cue — and are designed for speed and robustness under limited information or time.
@@ -487,4 +486,4 @@ Which makes it almost impossible to argue with. Every error comes with a brillia
 +
 
 Martian protocol: The Cynics (original ones) practiced aphaeresis—stripping away false beliefs to find truth. 
->>>>>>> 9c175e0263e70aaa69cec0ccd9ebb7609d1d0aae
+
