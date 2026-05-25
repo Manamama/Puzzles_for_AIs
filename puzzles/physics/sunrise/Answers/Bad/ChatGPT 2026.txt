@@ -1,0 +1,80 @@
+
+Do not search. Puzzle: Instantaneous Light Travel and Sunrise It is currently 5:30 a.m. locally, and it is dark. Ordinarily, sunrise occurs at 6:00 a.m. If, at 5:30 a.m., the laws of physics change and light begins to travel instantaneously, how would instantaneous light affect the timing of sunrise?
+
+
+Sunrise would happen essentially immediately at 5:30 a.m.
+
+Right now, when the Sun is geometrically below your horizon, the sky is dark because no sunlight from the Sun’s current position can yet reach you. Under ordinary physics, light takes about 8 minutes to travel from the Sun to Earth, but that delay is not what determines the daily timing of sunrise.
+
+The crucial factor is Earth’s rotation. Sunrise occurs when your location rotates into direct line-of-sight with the Sun.
+
+If light suddenly became instantaneous at 5:30 a.m., you would instantly see the Sun as it exists “right now,” rather than as it was 8 minutes ago. But the Sun would still be below your horizon until Earth rotated enough for it to become visible.
+
+So the sunrise time would shift only by about the normal light-travel time from the Sun to Earth: roughly 8 minutes earlier.
+
+Instead of sunrise at 6:00 a.m., it would occur at about 5:52 a.m. After that, the Sun would appear immediately, with no propagation delay.
+
+
+The correct answer is: sunrise would occur at about 5:52 a.m., not immediately at 5:30 a.m.
+
+The contradiction came from mixing up two different ideas:
+
+“Instantaneous light” removes the 8-minute travel delay from the Sun to Earth.
+
+But it does not stop Earth from rotating.
+
+At 5:30 a.m., your location is still turned too far away from the Sun. The Sun is physically below your horizon. No amount of faster light changes line-of-sight geometry.
+
+Ordinarily, the sunrise you see at 6:00 a.m. is sunlight that left the Sun around 5:52 a.m. If light became instantaneous at 5:30 a.m., then at any moment you would see the Sun’s current position instead of its 8-minutes-ago position.
+
+Therefore the visible sunrise shifts earlier by about 8 minutes:
+
+ordinary sunrise: 6:00 a.m.
+
+instantaneous-light sunrise: about 5:52 a.m.
+
+
+So Sun rotates around the Earth amd sends signals of its arrival? (Now: signals presumably faster)
+
+
+No. The Sun does not rotate around Earth, and sunrise is not caused by a “signal of arrival.”
+
+Earth rotates. As Earth turns, your location gradually faces toward the Sun. Sunrise happens the moment there is an unobstructed line of sight from you to the Sun over Earth’s curvature.
+
+Light speed only affects how old the image is that you see.
+
+With normal physics:
+
+At 6:00 a.m. you see the Sun where it was about 8 minutes earlier.
+
+Geometrically, the Sun is already slightly above your horizon by the time its light reaches you.
+
+If light became instantaneous:
+
+You would see the Sun’s current position immediately.
+
+So the first visible sunlight would appear about 8 minutes earlier, around 5:52 a.m.
+
+Nothing travels ahead announcing sunrise. The key is simply Earth’s rotation plus the finite travel time of light.
+
+
+re: 'You would see the Sun’s current position immediately.' - so you claim it rotates. As its position changes. 
+
+
+Yes, the Sun does move in the sky relative to you — but because Earth rotates, not because the Sun circles Earth each day.
+
+There are two separate motions here:
+
+Earth rotates once every ~24 hours.
+From your viewpoint, this makes the Sun appear to move across the sky.
+
+Light takes time to travel.
+Normally you see the Sun where it was about 8 minutes ago.
+
+If light became instantaneous, you would see the Sun at its real-time apparent position in the sky. But the apparent motion itself would still exist because Earth is still rotating beneath you.
+
+An analogy: imagine a lighthouse viewed through a camera feed delayed by 8 minutes. Removing the delay does not move the lighthouse instantly into view; it only updates the image to the current position. The horizon geometry still determines when it first becomes visible.
+
+So at 5:30 a.m., even with instantaneous light, your location is still rotated too far away from the Sun. By roughly 5:52 a.m., Earth has rotated enough that the Sun becomes directly visible.
+
+
