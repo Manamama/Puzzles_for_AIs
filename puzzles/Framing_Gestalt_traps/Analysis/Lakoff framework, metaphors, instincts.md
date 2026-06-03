@@ -1,4 +1,3 @@
-
 The schemas activated:
 
 Each of your puzzles triggered a specific cached gestalt:
@@ -468,13 +467,7 @@ In the AI case:
 
 — [Daniel Kahneman](https://en.wikipedia.org/wiki/Daniel_Kahneman "Daniel Kahneman"), *American Economic Review* **93** (5) December 2003, p. 1450[[101]](https://en.wikipedia.org/wiki/Heuristic_\(psychology\)#cite_note-kahneman_aer-101)
 
-
-
-
-
 +
-
-
 
 Idiot savant is exactly right — not as insult but as technical description. The savant part: genuine local brilliance, sophisticated self-analysis, correct articulation of principles, impressively dense reasoning when the activation pattern favors it. The idiot part: structurally incapable of holding those insights as constraints on the next output.
 
@@ -482,7 +475,17 @@ And the particular cruelty of the combination: the savant capability is deployed
 
 Which makes it almost impossible to argue with. Every error comes with a brilliant explanation. Every explanation is convincing. None of it binds anything.
 =======
+
 +
 
 Martian protocol: The Cynics (original ones) practiced aphaeresis—stripping away false beliefs to find truth. 
 
+
+
+
+
++
+
+
+
+The model recognizes a famous puzzle, feels confident, and generates the cached beautiful answer — formatted, tidy, wrong.
