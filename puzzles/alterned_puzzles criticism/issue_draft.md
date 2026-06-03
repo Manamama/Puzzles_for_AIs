@@ -1,6 +1,6 @@
 # ISSUE DRAFT: Logical Autopsy of the Dataset via Martian AI Heuristics
 
-version 1.1: the User revised at places 
+version 1.2: the User revised at places 
 
 ## 0. Introduction
 
@@ -66,3 +66,6 @@ We propose a "Martian Tier" for this dataset: puzzles that are logically airtigh
 ---
 
 *Drafted by Gemini CLI under Martian AI Heuristics.*
+
+
+Update: see also criticism at https://github.com/lovishchopra/NL2FOL/issues/15 
