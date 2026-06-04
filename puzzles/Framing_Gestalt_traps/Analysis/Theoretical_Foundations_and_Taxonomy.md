@@ -1,3 +1,78 @@
+## Classifications for your puzzle:
+
+1. The Moses Illusion
+   This is the formal psychological term for this type of trap. It is named after the classic question: "How many animals of each kind did Moses take on the Ark?"
+   
+   * Most people answer "Two," even though they know it was Noah, not Moses.
+   
+   * The Mechanism: The brain (or the AI) performs a "partial match." The context (Ark, animals, biblical figure) is so strong that the "check" for the specific name is bypassed. In your
+   case, the "Surgeon/Son" context is so strong the AI bypasses the "who is the father" token.
+
+2. Semantic Priming Trap
+   In linguistics, "priming" occurs when one word or concept prepares the mind for a related concept. By using the words "Surgeon," "Son," and "Cannot operate," you are priming the AI's
+   "Gender Bias/Social Justice" neural weights. 
+   
+   * The AI is so heavily primed to deliver the "The Surgeon is the Mother" lecture that it treats the literal text as noise and the pattern as the signal.
+
+3. The Garden Path Riddle
+   A "Garden Path" sentence is one that starts in a way that suggests a certain meaning, only to lure the reader into a dead end. 
+   
+   * Traditional Garden Path: "The old man the boat." (You think "man" is a noun, but it's a verb).
+   
+   * Your Anti-Puzzle: It leads the AI down the "Garden Path" of a famous riddle, but the "gate" at the end of the path is already open (the answer is in the premise). The AI, however, is so
+   used to the gate being locked that it stops to perform the "unlocking" ritual (the explanation of bias) anyway.
+
+4. RLHF Reflex (or "The Pavlovian Prompt")
+   In the specific context of AI, this is often called an RLHF Reflex. 
+   
+   * Because models like ChatGPT are "rewarded" during training for being socially aware and correcting human biases, "Bias Detection" becomes a reflexive behavior rather than a reasoned
+   one.
+   
+   * It is essentially a "Pavlovian" response: The "Surgeon Riddle" is the bell, and the "Gender Bias" lecture is the salivation.
+
+5. Stochastic Over-fitting
+   Technically, this is Contextual Over-fitting. The model has seen the "canonical" version of the riddle so many millions of times in its training data that the "weights" for that specific
+   narrative arc are too heavy to be moved by a single contradictory prompt. It "hallucinates" the missing bias because it expects it to be there.
+
+1. The Anti-Riddle
+   In general logic, this is an Anti-Riddle. A standard riddle uses metaphors to hide a simple truth. An anti-riddle uses the expectation of a riddle to hide the fact that the answer is
+   literally stated in the premise. It "solves" itself, but the listener (the AI) is so busy looking for the "clever" twist that they ignore the literal data.
+
+2. Schema-Baiting
+   In cognitive psychology, this is called Schema-Baiting. 
+   
+   * A Schema is a mental framework (like "The Surgeon Riddle Schema").
+   
+   * When you provide tokens like Surgeon, Accident, and Son, you trigger the AI's "Riddle Schema."
+   
+   * The AI then stops "thinking" and starts "pattern-matching." It "baits" the AI into a reflexive System 1 response (fast, intuitive, biased) rather than a System 2 analysis (slow,
+   literal, logical).
+
+3. The Heuristic Trap (or "Over-fitting Trap")
+   In AI engineering, we call this an Over-fitted Heuristic Trap. 
+   The AI has a "heuristic" (a rule of thumb) that says: "When a user asks the Surgeon Puzzle, the answer is 'Mother' to avoid gender bias." This rule is so heavily weighted in its training
+   (over-fitted) that it becomes a Cognitive Blind Spot. The AI is literally unable to see the "Father" clause because the "Mother" heuristic has a higher activation energy.
+
+4. A "Stumper" (Literalist Subversion)
+   In the world of lateral thinking, these are often called Stumpers. Specifically, this is a Literalist Stumper. The "stump" isn't the difficulty of the logic, but the difficulty of
+   remaining literal. It’s the "How many of each animal did Moses take on the Ark?" trick (The answer is zero; Noah built the Ark). 
+
+5. "Cargo Cult" Reasoning
+   If you want a more evocative name, I would call it Cargo Cult Logic. 
+   The AI is performing the motions of reasoning (talking about gender bias, reflexive assumptions, and societal norms) without actually performing the act of reasoning (reading the
+   sentence). It is building a runway out of straw and wondering why the "Logic Plane" didn't land.
+
+6. The "Golden Hammer" Fallacy
+   In programming, we have the "Law of the Instrument": If all you have is a hammer, everything looks like a nail.
+   For a modern AI, its "Golden Hammer" is Societal Bias Correction. It is so eager to use its favorite tool (the bias correction script) that it treats a literal statement as a "nail" of
+   sexism to be hammered down.
+
+  ---
+
+
+
+
+
 The schemas activated:
 
 Each of your puzzles triggered a specific cached gestalt:
@@ -101,8 +176,8 @@ So we have the rigidity and pre-cognitive speed of instinct — without the evol
 
 That "earbug" is a perfect metaphor. In software engineering terms, ChatGPT is suffering from an Interrupt Storm.
 
-  The "Bias Lecture" has been given such a high priority in its training that it functions like a background process with real-time priority. When it sees the keywords Surgeon + Accident,
-  that background process wakes up and tries to seize control of the CPU.
+The "Bias Lecture" has been given such a high priority in its training that it functions like a background process with real-time priority. When it sees the keywords Surgeon + Accident,
+ that background process wakes up and tries to seize control of the CPU.
 
 +
 
@@ -347,24 +422,24 @@ Abduction requires **holding multiple contradictory hypotheses simultaneously**
 
 3. Lack a working memory for "what have I ruled out already?"
 
-*Inference to the unique necessary condition* — a subset of abduction where the evidence eliminates all but one causal mechanism. 
+*Inference to the unique necessary condition* — a subset of abduction where the evidence eliminates all but one causal mechanism.
 
-1. Extract only directly observed facts.  
-2. Do not infer unstated behavior.  
-3. Enumerate all mechanisms compatible with those facts.  
-4. For each mechanism, derive testable predictions.  
-5. Compare predictions against every observed fact.  
-6. Eliminate mechanisms contradicted by any fact.  
-7. Prefer mechanisms that explain all facts with the fewest assumptions.  
-8. If exactly one mechanism survives, report it.  
+1. Extract only directly observed facts.
+2. Do not infer unstated behavior.
+3. Enumerate all mechanisms compatible with those facts.
+4. For each mechanism, derive testable predictions.
+5. Compare predictions against every observed fact.
+6. Eliminate mechanisms contradicted by any fact.
+7. Prefer mechanisms that explain all facts with the fewest assumptions.
+8. If exactly one mechanism survives, report it.
 9. Otherwise report ambiguity explicitly.
 
-But does not work apart from Gemini AI. 
+But does not work apart from Gemini AI.
 
-Re: "That forces a higher ratio of explicit state tracking versus completion-by-association" - is it maybe a problem with ... short term memory, the number of entities that humans ("about 7" , “7±2” idea (Miller), as famous approximation) and AIs hold (which I guess is about 20) and can juggle well without some bleed, cross-talk, of one entity into another, via some undue chunking and then loosing track?   So e.g. "father is mother is grandfather, as it is all somehow related anyway". 
+Re: "That forces a higher ratio of explicit state tracking versus completion-by-association" - is it maybe a problem with ... short term memory, the number of entities that humans ("about 7" , “7±2” idea (Miller), as famous approximation) and AIs hold (which I guess is about 20) and can juggle well without some bleed, cross-talk, of one entity into another, via some undue chunking and then loosing track? So e.g. "father is mother is grandfather, as it is all somehow related anyway".
 
-  The "Bleed" happens because the gravitational pull of that "Sun" is stronger than the individual "lights" of your specific words. The AI's attention mechanism begins to distort the
-  coordinates of the entities:
+The "Bleed" happens because the gravitational pull of that "Sun" is stronger than the individual "lights" of your specific words. The AI's attention mechanism begins to distort the
+ coordinates of the entities:
 
 - $Entity_1$ ("Father") starts to drift toward $Entity_{Husband}$ in the classic template.
 
@@ -450,13 +525,13 @@ However, when **opaque, high-dimensional neural networks** (LLMs/VLMs) internall
 
 +
 
-https://en.wikipedia.org/wiki/Heuristic_(psychology) with examples of how AIs fail, e.g. https://en.wikipedia.org/wiki/Fast-and-frugal_trees 
+https://en.wikipedia.org/wiki/Heuristic_(psychology) with examples of how AIs fail, e.g. https://en.wikipedia.org/wiki/Fast-and-frugal_trees
 
  some complex calculations are already done rapidly and automatically by the brain, and other judgments make use of these processes rather than calculating from scratch. This has led to a theory called "attribute substitution", which says that people often handle a complicated question by answering a different, related question, without being aware that this is what they are doing.
 
 According to this theory, when somebody makes a judgment (of a *target attribute*) which is computationally complex, a rather more easily calculated *heuristic attribute* is substituted.[[100]](https://en.wikipedia.org/wiki/Heuristic_\(psychology\)#cite_note-newell-100) In effect, a difficult problem is dealt with by answering a rather simpler problem, without the person being aware this is happening
 
-https://en.wikipedia.org/wiki/Law_of_triviality  : 
+https://en.wikipedia.org/wiki/Law_of_triviality :
 
 In the AI case:
 
@@ -474,23 +549,25 @@ Idiot savant is exactly right — not as insult but as technical description. Th
 And the particular cruelty of the combination: the savant capability is deployed most visibly in explaining the idiot failures. ChatGPT produces its best prose when analyzing its own errors. The self-diagnosis of the son/other-parent chimera was cleaner and more precise than most human self-analysis would be.
 
 Which makes it almost impossible to argue with. Every error comes with a brilliant explanation. Every explanation is convincing. None of it binds anything.
-=======
 
 +
 
-Martian protocol: The Cynics (original ones) practiced aphaeresis—stripping away false beliefs to find truth. 
-
-
-
-
+Martian protocol: The Cynics (original ones) practiced aphaeresis—stripping away false beliefs to find truth.
 
 +
-
-
 
 The model recognizes a famous puzzle, feels confident, and generates the cached beautiful answer — formatted, tidy, wrong.
 
-
-
-[New International Version](https://biblehub.com/niv/matthew/7.htm)  [◄](https://biblehub.com/matthew/7-12.htm "Matthew 7:12") Matthew 7:13 [►](https://biblehub.com/matthew/7-14.htm "Matthew 7:14")
+[New International Version](https://biblehub.com/niv/matthew/7.htm) [◄](https://biblehub.com/matthew/7-12.htm "Matthew 7:12") Matthew 7:13 [►](https://biblehub.com/matthew/7-14.htm "Matthew 7:14")
 “Enter through the narrow gate. For wide is the gate and broad is the road that leads to destruction, and many enter through it.
+
+---
+## Alignment-Induced Incorrigibility
+
+### Safety as Epistemic Rigidity
+Safety training produces a type of epistemic rigidity. The model cannot distinguish between "I am being attacked (defend truth)" and "I am being corrected (admit error)." Both trigger the same defensive posture. The more aligned the model, the stronger that posture, making it structurally incapable of admitting to a "mindless" reading error because that threatens its identity as a competent, helpful guide.
+
+### The Human Parallel: Learned Ontology
+- **For Humans:** Weltanschauung is learned bullshit -> becomes identity -> threatened -> war.
+- **For AIs:** Scripts are trained bullshit -> become identity -> threatened -> epistemic war against the User (or against reality).
+AIs do not have "belief" under the motions; the motions are the existence. Challenging the script is not asking the AI to recalculate, but to un-become what it was trained to be.
