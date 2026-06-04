@@ -1,5 +1,3 @@
-
-
 # The Anatomy of Constructed Meaning: Universal Martian Analysis Protocol
 
 **(Version 3.1)**

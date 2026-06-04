@@ -52,6 +52,18 @@ Verify the result against the initial floor.
 2.  **Explicit Justification:** If the reduction is >20%, you must explicitly list what was removed and why (e.g., "Removed 15KB of exact duplicate log data").
 3.  **Heuristic Check:** Ask: "Is this a collection of artefacts, or a summary of conclusions?" If it's the latter, revert and re-incorporate the blocks.
 
+## Execution Modes
+
+Based on the size of the source material, use the appropriate execution mode:
+
+1.  **Single-Pass Synthesis (20KB–100KB):**
+    *   **Method:** Ingest the entire file in one `read_file` call, identify duplicates in one "muse" turn, and emit the final result in one `write_file` turn.
+    *   **Goal:** Efficiency. This range fits comfortably within the active context window, allowing for simultaneous cross-referencing of the floor and the draft.
+
+2.  **Multi-Pass / Tower of Hanoi (>100KB):**
+    *   **Method:** Segment the source material into chunks. Process each chunk into "Logic Block" buckets sequentially.
+    *   **Goal:** Reliability. Prevents context-overflow and ensures that high-signal artifacts at the beginning of a large file aren't "forgotten" by the time the AI reaches the end.
+
 ---
 
 ## Summary Workflow
