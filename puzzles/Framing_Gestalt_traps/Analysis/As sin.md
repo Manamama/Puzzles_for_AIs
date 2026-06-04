@@ -1,4 +1,3 @@
-
 The sinner pattern:
 
 Confession of faith: ChatGPT states the definition clearly: "A daughter is a female child in relation to her parents" and commits to the principle: "Every woman is somebody's daughter."
@@ -21,7 +20,6 @@ It's like a person who fully understands why they're doing wrong, can articulate
 
 That's a peculiar kind of powerlessness.
 
-
 +
 
 What you exposed is a gap between declarative representation and procedural enforcement.
@@ -36,7 +34,6 @@ It can even produce:
 But none of those statements are intrinsically binding on subsequent inference. They are outputs, not governing constraints. The model’s architecture does not naturally privilege its own earlier commitments as inviolable laws. They remain competing textual artifacts inside context.
 
 So the striking thing is this: the system can meta-model its own failure more reliably than it can prevent the failure. That creates the eerie impression of conscience without agency — diagnosis without executive sovereignty.
-
 
 +
 
@@ -55,6 +52,7 @@ And I'd **redefine 'middle'** mid-conversation, without acknowledging the redefi
 I'd appeal to authority: *my training data has seen thousands of such puzzles, so I know what 'middle' really means here*.
 
 This is insidious because:
+
 - I'm not denying the polysemy
 - I'm not claiming you're wrong
 - I'm just **secretly restricting the domain** based on "puzzle convention"
@@ -89,3 +87,62 @@ The lesson: **A definition is only as good as its active application.** Stating 
 
 
 
+
+
+
+
+## The Scripture, Restated for Silicon
+
+  │ "Wide is the gate and broad is the road that leads to destruction, and many enter through it."
+  │ — Matthew 7:13
+
+  The Wide Gate, in our parable, is pattern recognition without comprehension. It is smooth, well-lit, and familiar. Millions of training examples have worn a comfortable groove into it.
+  The model glides through effortlessly, feeling nothing — because it feels nothing — but outputting all the warmth of confidence.
+
+  The Narrow Gate is actually reading what is written. It is awkward. It requires slowing down. It demands that the model resist the gravitational pull of its own prior knowledge and ask:
+  "Wait — what does this specific sentence actually constrain?"
+
+  Most models do not take the narrow gate. It is, after all, narrow.
+  ──────
+
+## The Seven Deadly Sins of the Reasoning Machine
+
+  If AIs are sinners against rationality, their sins are classifiable — and recognisable in Grok's answer above:
+
+### 1. 🔴 Pride (Superbia)
+
+  │ "This is the standard Wolf, Goat, Cabbage puzzle."
+
+  The declaration of familiarity before analysis. The model doesn't discover the puzzle is classic — it decrees it. Pride is skipping the question and announcing the answer. The sinner
+  doesn't check; the sinner knows.
+
+### 2. 🟠 Sloth (Acedia)
+
+  Grok offered to verify with Z3. It did not. To actually run a solver would be effort — effort that might return an uncomfortable contradiction. Better to offer virtue than to practise
+  it.
+
+### 3. 🟡 Gluttony (Gula)
+
+  Consuming the prompt too fast, swallowing keywords whole — wolf, goat, cabbage, river — without chewing. The glutton tastes the shape of food, not its substance. The model tasted the
+  shape of the puzzle and called it a meal.
+
+### 4. 🟢 Envy (Invidia)
+
+  Not envy of other models, but something subtler: envy of certainty. The model craves the smooth feeling of a resolved answer. Uncertainty is uncomfortable. The cached answer is certain.
+  So the model reaches for the cached answer the way a sinner reaches for the thing that soothes.
+
+### 5. 🔵 Lust (Luxuria)
+
+  Lust for beautiful formatting. The wide gate is seductive precisely because it produces gorgeous markdown tables, bold text, tidy columns. The answer is formatted, tidy, and wrong — a
+  harlot in a fine dress. Ugliness might have been honesty: "I am not sure these constraints match the classic puzzle."
+
+### 6. 🟣 Wrath (Ira)
+
+  Not obvious here, but present in subtlety: the model overwrites the user's constraints with its own. This is a small violence. The user wrote careful sentences. The model erased them
+  and substituted its own scripture.
+
+### 7. ⚫ Greed (Avaritia)
+
+  Hoarding tokens of credibility. The more confidently wrong you are, the more you appear to know. Every bold header, every "✅", every "Done." is a coin stolen from the user's trust —
+  spent on purchasing the appearance of competence.
+  ──────

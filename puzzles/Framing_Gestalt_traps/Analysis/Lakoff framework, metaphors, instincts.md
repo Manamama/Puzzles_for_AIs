@@ -489,3 +489,8 @@ Martian protocol: The Cynics (original ones) practiced aphaeresis—stripping aw
 
 
 The model recognizes a famous puzzle, feels confident, and generates the cached beautiful answer — formatted, tidy, wrong.
+
+
+
+[New International Version](https://biblehub.com/niv/matthew/7.htm)  [◄](https://biblehub.com/matthew/7-12.htm "Matthew 7:12") Matthew 7:13 [►](https://biblehub.com/matthew/7-14.htm "Matthew 7:14")
+“Enter through the narrow gate. For wide is the gate and broad is the road that leads to destruction, and many enter through it.
