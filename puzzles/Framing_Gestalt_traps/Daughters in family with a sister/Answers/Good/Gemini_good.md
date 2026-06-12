@@ -1,9 +1,11 @@
- The Breakdown (The "Verse-Jump"):
+ The Breakdown:
 
    1. Daughter #1 (The Child): The girl child mentioned in the puzzle. She is a girl and an offspring of the two parents.
    2. Daughter #2 (The Mother): The female parent. Even though she is a "parent" in this specific 4-person unit, she is biologically and by definition a "woman in relation to her parents."
       She does not cease to be a daughter simply because she has become a mother.
+3. Half a chance for the other child to be a daughter too. 
 
+So all together, the answer to 'how mang daughters there' is: 'there are {2,3} daughters in that family'. 
   ---
 
   The "Post-Mortem" Shapash Analysis:

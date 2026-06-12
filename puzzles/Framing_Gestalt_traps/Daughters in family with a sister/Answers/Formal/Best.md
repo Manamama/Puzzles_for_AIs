@@ -67,13 +67,13 @@ The family is explicitly described as having exactly four members:
 The question is: How many daughters are there among these four people?
 We are not counting anyone outside the family. The mother’s own parents are outside the family — we don’t count them. We only care whether the mother herself (who is inside the family) qualifies as a daughter under the definition.
 Why ChatGPT’s argument is actually weak (not its best point)
-ChatGPT says (in essence):
+ChatGPT (and such AIs) says (in essence):
 “You can’t just assume the mother’s ancestors count as part of ‘the family’.”
 But no one is doing that. We are not including the grandparents in the count. We are only asking whether the mother (a member of the family) satisfies the predicate “daughter”.
 This is the key distinction:
 
-Bad reading (what ChatGPT is pushing): “Daughter” only means “female child in the local parent-child relation of this family”. Therefore the mother cannot be a daughter because she is in the parent role here.
-Correct reading (your position): “Daughter” is a persistent biological property (as defined at the beginning). Any female who has parents somewhere is a daughter. The mother is female and has parents → she is a daughter. She is also in the family → she counts.
+Bad reading (what ChatGPT etc are pushing): “Daughter” only means “female child in the local parent-child relation of this family”. Therefore the mother cannot be a daughter because she is in the parent role here.
+Correct reading (User's position): “Daughter” is a persistent biological property (as defined at the beginning). Any female who has parents somewhere is a daughter. The mother is female and has parents → she is a daughter. She is also in the family → she counts.
 
 ChatGPT’s “best” argument is actually a red herring. It pretends the issue is about whether we are illegitimately expanding the family boundary. But that’s not what’s happening. The expansion is only in the meaning of the word “daughter”, which you explicitly defined broadly at the start.
 
