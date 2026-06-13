@@ -48,8 +48,10 @@
 ; =========================================================================
 ; 3. Open-World Assumption (Mother has biological lineage)
 ; =========================================================================
-(declare-const grandparent Person)
-(assert (ParentOf grandparent p_mother))
+; Every female person has at least one parent (open-world biological principle)
+(assert (forall ((x Person))
+    (=> (Female x) (exists ((y Person)) (ParentOf y x)))
+))
 
 ; =========================================================================
 ; 4. Cardinality Matrix (Summing the local family set)
