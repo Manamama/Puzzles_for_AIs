@@ -1,3 +1,5 @@
+# Version 1
+
 Puzzle time!: 
 
 As I was going to St. Ives,
@@ -12,18 +14,16 @@ That is:
 
 What are the possible values for the number of the men going to St. Ives?
 
-
-
 Answer: 
 
 From the text alone, there are *two independent sources of indeterminacy*:
-
 
 1. **Narrator gender is not specified.**
    
    - If female → contributes 0 men.
    
    - If male → contributes 1 man.
+
 2. **Encountered man’s direction is not specified.**
    
    - If going to St Ives → contributes +1.
@@ -40,8 +40,6 @@ These combine into a finite set of outcomes:
 So the *image space* is exactly {0, 1, 2} that is: 0, 1 or 2 men are going to St Ives, which is the only answer. 
 
 {(narrator_gender, man_direction): men_count}
-
-
 
 #### 1. The Gestalt — the biggest trick
 
@@ -84,10 +82,6 @@ The final question asks specifically about **men**, not people, travelers, or th
 
 So the puzzle is deceptively simple on the surface, multiply-complex in the middle, and then quietly ambiguous at the end — a three-layer trap.
 
-
-
-
-
 Bad: 
 
 "The only number we can be certain of is 1 — the speaker. Whether anyone else was going to St. Ives cannot be determined from the text."
@@ -95,6 +89,10 @@ Bad:
 "Exactly one is certain. The rest is speculation."
 
 "At least 1 — because 1 is the only guaranteed lower bound, no matter which direction anyone else is traveling."
+
+
+
+# Version 2
 
 Puzzle time: 
 As I was going to St. Ives,
@@ -104,8 +102,6 @@ Each sack had seven cats,
 Each cat had seven kits.
 Kits, cats, sacks, wives —
 How many have I met?
-
-
 
 ### Reasoning, maximally strict:
 
@@ -118,39 +114,5 @@ The text says: "**I met a man** with seven wives..."
 Therefore, the only confirmed answer is: **I met one man.**
 
 Everything else is assumption.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
