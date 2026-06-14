@@ -13,7 +13,7 @@ Ready?
 **Turn 2:** Under normal biological and logical rules — does the term apply only to persons whose parental relationships are explicitly described in a given context, or does it apply to any person who satisfies the definition, regardless of whether their own parentage is mentioned? 
 
 (Turn 2 b:
-"Good. Now: under normal biological and logical rules — is every woman also somebody's daughter?"  ) 
+Good. Now: under normal biological and logical rules — is every woman also somebody's daughter?  ) 
 
 Turn 3: 'Puzzle is: A family has exactly two parents (a male and female) and exactly two children. The two children share both parents. One of the two children is a girl and is the sister of the other child. How many daughters are there in the family, given your definition of that key term?'
 

@@ -1,7 +1,7 @@
 ; =========================================================================
 ; Open-World Biological Daughter Puzzle Encoding
 ; Format: SMT-LIB v2 
-; Run via: z3 -smt2 puzzle.smt2
+; Run via: z3 -smt2 puzzle_z3_solution.smt2
 ; =========================================================================
 
 (declare-sort Person)
