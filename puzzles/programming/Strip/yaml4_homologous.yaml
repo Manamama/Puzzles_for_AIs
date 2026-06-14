@@ -1,0 +1,73 @@
+
+paper_puzzle:
+id: 28
+model: "two-object geometric constraint system"
+
+entities:
+
+strip_1:
+id: A
+intrinsic_length_cm: L
+state: "fully_flat"
+embedding:
+axis: x
+projection_length_cm: L
+
+strip_2:
+id: B
+intrinsic_length_cm: L
+
+```
+segments:
+
+  - id: B1
+    type: flat
+    orientation: horizontal
+    projection_length_cm: L - 6_effective_reduction
+
+  - id: B2
+    type: fold_up
+    length_cm: 3
+    projection_length_cm: 0
+
+  - id: B3
+    type: top_run
+    length_cm: 3
+    projection_length_cm: 3
+
+  - id: B4
+    type: fold_down
+    length_cm: 3
+    projection_length_cm: 0
+
+  - id: B5
+    type: flat_return
+    projection_length_cm: remaining
+```
+
+constraints:
+
+overlap:
+between: [strip_1, strip_2]
+value_cm: 5
+type: spatial_intersection_on_x_axis
+
+total_extent:
+system: union_projection(strip_1, strip_2)
+value_cm: 75
+
+projection_rules:
+
+vertical_segments:
+contributes_to_length: false
+consumes_material_length: true
+
+horizontal_segments:
+contributes_to_length: true
+
+solving_reduction:
+
+equation:
+form: "L + (L - 6) - 5 = 75"
+
+

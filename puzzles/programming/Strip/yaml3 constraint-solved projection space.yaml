@@ -1,0 +1,130 @@
+
+---
+
+paper_puzzle:
+id: 28
+source: Cambridge
+
+problem:
+statement: "Two identical rectangular strips overlap by 5 cm; one strip is folded; total horizontal span is 75 cm."
+unknown: "length_of_one_strip_cm"
+answer_type: scalar
+
+global_constraints:
+overlap:
+value_cm: 5
+type: horizontal_overlap
+
+total_span:
+value_cm: 75
+type: end_to_end_projection
+
+core_model:
+entity_type: "single_continuous_strip"
+assumption: "each strip is rigid, uniform length L, only geometry changes via folding"
+
+---
+
+strip_A:
+role: "flat_reference_strip"
+
+path:
+type: linear_segment
+direction: horizontal
+projection_axis: x
+
+```
+segments:
+  - id: A1
+    type: flat
+    projection_length_cm: L
+    visual_hint: "left strip baseline"
+```
+
+---
+
+strip_B:
+role: "folded_strip"
+
+path:
+type: piecewise_continuous_path
+projection_axis: x
+
+```
+segments:
+
+  - id: B1
+    type: flat
+    direction: horizontal
+    projection_length_cm: (L - 6)_projected_contribution
+    note: "initial flat run before fold region"
+
+  - id: B2
+    type: fold_rise
+    orientation: vertical
+    physical_length_cm: 3
+    projection_length_cm: 0
+    visual_hint: "upward step"
+
+  - id: B3
+    type: fold_top_run
+    orientation: horizontal
+    physical_length_cm: 3
+    projection_length_cm: 3
+    visual_hint: "top bridge segment"
+
+  - id: B4
+    type: fold_descent
+    orientation: vertical
+    physical_length_cm: 3
+    projection_length_cm: 0
+    visual_hint: "downward return"
+
+  - id: B5
+    type: flat
+    direction: horizontal
+    projection_length_cm: remaining_to_L
+    visual_hint: "returns to base plane"
+```
+
+---
+
+measurements:
+overlap_region:
+between: [strip_A.end_left, strip_B.start_region]
+value_cm: 5
+effect: "subtracts from double-counted projection"
+
+total_projection:
+includes:
+- strip_A.full_projection
+- strip_B.full_projection_adjusted
+equals_cm: 75
+
+---
+
+derived_reasoning_model:
+key_step: "convert folded geometry into projection-loss accounting"
+
+projection_rule:
+vertical_segments:
+physical_length_counts: true
+projection_contribution: 0
+
+```
+horizontal_segments:
+  physical_length_counts: true
+  projection_contribution: full
+```
+
+reduction:
+folded_penalty_cm: 6
+explanation: "3 cm up + 3 cm down removes 6 cm from horizontal extent"
+
+---
+
+solvable_equation:
+expression: "L + (L - 6) - 5 = 75"
+
+---
+
