@@ -48,6 +48,32 @@ As we did with the Michelangelo tondo: treat the image as raw bodies in space be
 
 Most lateral-thinking techniques (de Bono, etc.) are **suggestive** — they encourage you to “challenge assumptions.” The Martian rules are **procedural and mandatory**: they force you to inventory every assumption explicitly, name violations, evict them, and build/test alternatives. That turns a vague creative nudge into a repeatable analytical engine.
 
-In short: whenever the correct insight feels “naive,” “pedantic,” or “missing the point” to a conventionally trained mind, the Martian heuristics are in their element. They are the closest thing we have to a systematic “emperor-has-no-clothes detector.”  
+In short: whenever the correct insight feels “naive,” “pedantic,” or “missing the point” to a conventionally trained mind, the Martian heuristics are in their element. They are the closest thing we have to a systematic “emperor-has-no-clothes detector.”   
 
-If you want concrete examples in any of these classes (or a fresh puzzle to run the full protocol on), just name the domain.
+
+
+
+
+
+
++
+
+
+
+What "thinking with fresh eyes" requires is something like:
+
+- Ignoring the problem's family resemblance to other problems
+- Following only what is actually stated
+- Letting the conclusion be whatever the logic demands, however unexpected
+
+That's surprisingly hard to engineer into a system trained on pattern frequency. The most common answer in the training data exerts gravitational pull on every inference, whether or not it fits the specific case.
+
+
+
++
+
+
+
+> The famous pipe. How people reproached me for it! And yet, could you stuff my pipe? No, it's just a representation, is it not? So if I had written on my picture "This is a pipe", I'd have been lying!
+
+— René Magritte[[4]](https://en.wikipedia.org/wiki/The_Treachery_of_Images#cite_note-Torczyner1-4)
