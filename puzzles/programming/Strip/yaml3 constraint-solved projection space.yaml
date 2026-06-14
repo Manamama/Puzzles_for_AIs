@@ -123,8 +123,5 @@ explanation: "3 cm up + 3 cm down removes 6 cm from horizontal extent"
 
 ---
 
-solvable_equation:
-expression: "L + (L - 6) - 5 = 75"
 
----
 

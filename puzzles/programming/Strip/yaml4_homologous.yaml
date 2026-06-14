@@ -1,73 +1,118 @@
+puzzle:
+  id: 28
+  source: Cambridge
 
-paper_puzzle:
-id: 28
-model: "two-object geometric constraint system"
+  givens:
+    identical_pieces: 2
+    piece_shape: rectangle
 
-entities:
+    overlap:
+      value_cm: 5
+      relation: horizontal_overlap
 
-strip_1:
-id: A
-intrinsic_length_cm: L
-state: "fully_flat"
-embedding:
-axis: x
-projection_length_cm: L
+    total_arrangement_length:
+      value_cm: 75
+      measurement_type: horizontal_projection
 
-strip_2:
-id: B
-intrinsic_length_cm: L
+  unknown:
+    name: piece_length_cm
+    symbol: L
 
-```
-segments:
+geometry:
 
-  - id: B1
-    type: flat
-    orientation: horizontal
-    projection_length_cm: L - 6_effective_reduction
+  piece_A:
+    state: flat
 
-  - id: B2
-    type: fold_up
+    path:
+      - segment:
+          type: horizontal
+          plane: base
+
+  piece_B:
+    state: folded
+
+    path:
+      - segment:
+          type: horizontal
+          plane: base
+
+      - segment:
+          type: vertical_transition
+          length_cm: 3
+          direction: upward
+
+      - segment:
+          type: horizontal
+          plane: elevated
+          length_cm: 3
+
+      - segment:
+          type: vertical_transition
+          length_cm: 3
+          direction: downward
+
+      - segment:
+          type: horizontal
+          plane: base
+
+relationships:
+
+  identical_length:
+    pieces:
+      - piece_A
+      - piece_B
+
+  continuity:
+    piece_A: continuous_strip
+    piece_B: continuous_strip
+
+  fold_preserves_material_length:
+    applies_to: piece_B
+
+  overlap:
+    participants:
+      - piece_A
+      - piece_B
+    amount_cm: 5
+
+measurements:
+
+  elevated_section:
+    height_cm: 3
+
+  top_section:
     length_cm: 3
-    projection_length_cm: 0
 
-  - id: B3
-    type: top_run
-    length_cm: 3
-    projection_length_cm: 3
+  overlap:
+    value_cm: 5
 
-  - id: B4
-    type: fold_down
-    length_cm: 3
-    projection_length_cm: 0
+  total_length:
+    value_cm: 75
 
-  - id: B5
-    type: flat_return
-    projection_length_cm: remaining
-```
+interpretation_rules:
 
-constraints:
+  arrangement_length:
+    definition: >
+      Distance between the extreme left and extreme right ends
+      of the assembled configuration.
 
-overlap:
-between: [strip_1, strip_2]
-value_cm: 5
-type: spatial_intersection_on_x_axis
+  fold:
+    definition: >
+      A fold may alter spatial orientation of portions of a piece
+      without changing the total material length of that piece.
 
-total_extent:
-system: union_projection(strip_1, strip_2)
-value_cm: 75
+  overlap:
+    definition: >
+      Portions of the two pieces may occupy the same horizontal
+      region while remaining distinct physical objects.
 
-projection_rules:
+answer_format:
+  type: scalar
+  unit: cm
 
-vertical_segments:
-contributes_to_length: false
-consumes_material_length: true
-
-horizontal_segments:
-contributes_to_length: true
-
-solving_reduction:
-
-equation:
-form: "L + (L - 6) - 5 = 75"
-
-
+options:
+  A: 40.0
+  B: 41.5
+  C: 43.0
+  D: 44.5
+  E: 45.5
