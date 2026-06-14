@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 720 460" role="img">
+  <title>Cambridge puzzle 28 — two overlapping paper strips, one folded, 3D oblique view</title>
+  <desc>Two identical rectangular paper strips arranged horizontally, overlapping by 5cm.
+  The left strip is flat throughout.
+  The right strip has a rectangular step fold near its left end: rises 3cm, runs 3cm flat on top, descends 3cm, then continues flat to the right. The fold forms a square cross-section (3cm x 3cm).
+  Overlap zone is 5cm wide. Total horizontal arrangement length is 75cm.
+  What is the length of one piece?</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!--
+    Coordinate system:
+      Base plane front-bottom y=210, strip thickness=12px, so front-top y=198.
+      Oblique depth offset: dx=+28, dy=-16.
+      Scale: 1cm = 12px.
+      Step: 3cm=36px up, 3cm=36px across, 3cm=36px down.
+      Elevated front-top y=162, elevated front-bottom y=174.
+
+    Piece A (flat): x=30..450
+    Piece B (folded): x=330..660
+      Overlap zone: x=330..390 (60px=5cm)
+      Step rise:  x=390
+      Step top:   x=390..426
+      Step fall:  x=426
+      Right tail: x=426..660
+  -->
+
+  <!-- PIECE A — flat strip -->
+  <!-- top face -->
+  <polygon points="30,198 450,198 478,182 58,182"/>
+  <!-- front face -->
+  <polygon points="30,198 450,198 450,210 30,210"/>
+  <!-- left end face -->
+  <polygon points="30,198 30,210 58,194 58,182"/>
+  <!-- dashed left extensions -->
+  <line x1="30" y1="198" x2="10" y2="198" stroke-dasharray="4 3"/>
+  <line x1="30" y1="210" x2="10" y2="210" stroke-dasharray="4 3"/>
+  <line x1="58" y1="182" x2="38" y2="182" stroke-dasharray="4 3"/>
+
+  <!-- PIECE B — folded strip -->
+  <!-- Top surface: one continuous polygon tracing the entire top, no gaps -->
+  <polygon points="358,182 330,198 390,198 390,162 426,162 426,198 660,198 688,182 454,182 454,146 418,146 418,182"/>
+  <!-- Front face silhouette: one continuous polygon -->
+  <polygon points="330,198 390,198 390,162 426,162 426,198 660,198 660,210 330,210"/>
+  <!-- Left end face -->
+  <polygon points="330,198 330,210 358,194 358,182"/>
+  <!-- Right end face -->
+  <polygon points="660,198 660,210 688,194 688,182"/>
+  <!-- Left riser side face (oblique, square 3x3) -->
+  <polygon points="390,162 390,198 418,182 418,146"/>
+  <!-- Right riser side face (oblique, square 3x3) -->
+  <polygon points="426,162 426,198 454,182 454,146"/>
+  <!-- dashed right extensions -->
+  <line x1="660" y1="198" x2="680" y2="198" stroke-dasharray="4 3"/>
+  <line x1="660" y1="210" x2="680" y2="210" stroke-dasharray="4 3"/>
+  <line x1="688" y1="182" x2="668" y2="182" stroke-dasharray="4 3"/>
+
+  <!-- DIMENSION ANNOTATIONS -->
+
+  <!-- 3cm vertical (step height) -->
+  <line x1="436" y1="162" x2="436" y2="198" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="440" y="185">3 cm</text>
+
+  <!-- 3cm horizontal (top run) -->
+  <line x1="390" y1="153" x2="426" y2="153" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="393" y="148">3 cm</text>
+
+  <!-- 5cm overlap bracket -->
+  <line x1="330" y1="232" x2="390" y2="232" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <line x1="330" y1="212" x2="330" y2="235" stroke-dasharray="3 3"/>
+  <line x1="390" y1="212" x2="390" y2="235" stroke-dasharray="3 3"/>
+  <text x="344" y="248">5 cm</text>
+
+  <!-- 75cm total length bracket -->
+  <line x1="30" y1="268" x2="660" y2="268" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <line x1="30" y1="212" x2="30" y2="271" stroke-dasharray="3 3"/>
+  <line x1="660" y1="212" x2="660" y2="271" stroke-dasharray="3 3"/>
+  <text x="318" y="284">75 cm</text>
+
+  <!-- divider -->
+  <line x1="20" y1="304" x2="700" y2="304"/>
+
+  <!-- question text -->
+  <text x="20" y="324">Two identical rectangular pieces of paper are arranged to overlap each other by 5 cm.</text>
+  <text x="20" y="344">One of the rectangles has been folded to make the structure above (not to scale).</text>
+  <text x="20" y="364">The length of the whole arrangement is 75 cm.</text>
+  <text x="20" y="390">What is the length of one of the pieces of paper?</text>
+  <text x="20" y="414">A   40.0 cm</text>
+  <text x="20" y="432">B   41.5 cm</text>
+  <text x="20" y="450">C   43.0 cm</text>
+  <text x="20" y="468">D   44.5 cm</text>
+  <text x="20" y="486">E   45.5 cm</text>
+</svg>

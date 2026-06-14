@@ -7,4 +7,4 @@ xmlstarlet ed -d '//@*[starts-with(name(),"font")]' \
               -d '//@text-anchor' \
               -d '//@dominant-baseline' \
               -d '//@color' \
-              paper_fold_puzzle_3d_svg.svg > clean.svg
+              /home/zezen/Downloads/GitHub/Puzzles_for_AIs/puzzles/programming/Strip/paper_fold_puzzle_2d_ai_friendly.svg > paper_fold_puzzle_2d_ai_friendly.svg_clean.svg

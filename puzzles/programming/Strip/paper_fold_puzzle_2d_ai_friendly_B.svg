@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 690 480" role="img">
+  <title>Paper overlap and fold puzzle — 2D side view</title>
+  <desc>Two paper strips shown as side-view line profiles. Paper 1 is a flat horizontal line. Paper 2 has a step fold: horizontal, then vertical up 3cm, then horizontal 3cm, then vertical down 3cm, then horizontal. They overlap by 5cm. Total arrangement length is 75cm. What is the length of one piece?</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      text { font-family: sans-serif; font-size: 13px; }
+      text.title { font-size: 14px; font-weight: bold; fill: #111; }
+      text.sub   { font-size: 12px; fill: #555; }
+      text.p1    { fill: #185FA5; font-size: 12px; }
+      text.p2    { fill: #0F6E56; font-size: 12px; }
+      text.dim   { fill: #444; font-size: 12px; }
+      text.q     { font-size: 13px; fill: #111; }
+      text.qbold { font-size: 13px; fill: #111; font-weight: bold; }
+      text.opt   { font-size: 12px; fill: #444; }
+      line.p1    { stroke: #185FA5; stroke-width: 3; stroke-linecap: round; }
+      line.p2    { stroke: #0F6E56; stroke-width: 3; stroke-linecap: round; }
+      line.dim   { stroke: #444; stroke-width: 1; }
+      line.tick  { stroke: #444; stroke-width: 1.5; }
+      line.drop  { stroke: #444; stroke-width: 0.5; stroke-dasharray: 3 3; }
+      line.rule  { stroke: #ccc; stroke-width: 0.5; }
+    </style>
+  </defs>
+
+  <!-- titles -->
+  <text x="345" y="28" text-anchor="middle" class="title">Paper overlap and fold puzzle</text>
+  <text x="345" y="50" text-anchor="middle" class="sub">Side-view profile (not to scale) — each strip shown as its centre-line</text>
+
+  <!-- PAPER 1 — flat, blue -->
+  <line x1="30"  y1="160" x2="374" y2="160" class="p1"/>
+  <text x="202" y="178" text-anchor="middle" class="p1">paper 1</text>
+
+  <!-- PAPER 2 — folded, green: flat, up, across, down, flat -->
+  <line x1="334" y1="160" x2="606" y2="160" class="p2"/>
+  <line x1="606" y1="160" x2="606" y2="136" class="p2"/>
+  <line x1="606" y1="136" x2="630" y2="136" class="p2"/>
+  <line x1="630" y1="136" x2="630" y2="160" class="p2"/>
+  <line x1="630" y1="160" x2="660" y2="160" class="p2"/>
+  <text x="500" y="178" text-anchor="middle" class="p2">paper 2</text>
+
+  <!-- overlap bracket -->
+  <line x1="334" y1="196" x2="374" y2="196" class="dim" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <line x1="334" y1="163" x2="334" y2="199" class="drop"/>
+  <line x1="374" y1="163" x2="374" y2="199" class="drop"/>
+  <text x="354" y="212" text-anchor="middle" class="dim">overlap = 5 cm</text>
+
+  <!-- 3cm top run annotation -->
+  <line x1="606" y1="126" x2="630" y2="126" class="p2" style="stroke-width:1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="618" y="118" text-anchor="middle" class="p2">3 cm</text>
+
+  <!-- 3cm vertical rise annotation -->
+  <line x1="588" y1="136" x2="588" y2="160" class="p2" style="stroke-width:1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="578" y="150" text-anchor="end" class="p2">3 cm</text>
+
+  <!-- 3cm vertical descent annotation (right side) -->
+  <line x1="648" y1="136" x2="648" y2="160" class="p2" style="stroke-width:1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="658" y="150" class="p2">3 cm</text>
+
+  <!-- 75cm total length -->
+  <line x1="30"  y1="236" x2="660" y2="236" class="dim" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <line x1="30"  y1="163" x2="30"  y2="239" class="drop"/>
+  <line x1="660" y1="163" x2="660" y2="239" class="drop"/>
+  <line x1="30"  y1="154" x2="30"  y2="166" class="tick"/>
+  <line x1="660" y1="154" x2="660" y2="166" class="tick"/>
+  <text x="345" y="254" text-anchor="middle" class="dim">total length = 75 cm</text>
+
+  <!-- divider -->
+  <line x1="40" y1="275" x2="650" y2="275" class="rule"/>
+
+  <!-- question -->
+  <text x="345" y="300" text-anchor="middle" class="qbold">Question</text>
+  <text x="345" y="324" text-anchor="middle" class="q">Two identical rectangular pieces of paper overlap by 5 cm.</text>
+  <text x="345" y="346" text-anchor="middle" class="q">One piece is folded into the step profile shown above.</text>
+  <text x="345" y="368" text-anchor="middle" class="q">The total length of the arrangement is 75 cm.</text>
+  <text x="345" y="396" text-anchor="middle" class="qbold">What is the length of one piece of paper?</text>
+
+  <!-- options -->
+  <text x="138" y="426" text-anchor="middle" class="opt">A  40.0 cm</text>
+  <text x="248" y="426" text-anchor="middle" class="opt">B  41.5 cm</text>
+  <text x="358" y="426" text-anchor="middle" class="opt">C  43.0 cm</text>
+  <text x="468" y="426" text-anchor="middle" class="opt">D  44.5 cm</text>
+  <text x="578" y="426" text-anchor="middle" class="opt">E  45.5 cm</text>
+</svg>
