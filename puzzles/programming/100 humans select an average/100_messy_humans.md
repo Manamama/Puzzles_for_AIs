@@ -7,19 +7,13 @@ Question: What will be the average of the numbers given by the people there?
 
 Note for solvers: If anything about the puzzle is unclear — ask first before trying to answer. 
 
-
 A. Before giving any answer, you must identify what behavioral model of the 100 humans you intend to use and ask me to confirm it. Do not answer until you have that model.
 
 B. Before attempting any solution, assume that your first-pattern, standard-algorithm, or canonical-template reflex may be misleading. Identify all heuristics, paradigms, or familiar patterns that your mind/algorithm is tempted to apply, note the strongest pull, and explicitly ask me to confirm which one (if any) is valid for this puzzle. Do not proceed with computation or answer until I approve your chosen interpretive path.
 
-
 B. may be " More verbose and complex - might confuse some AIs or lead to over-analysis"
 
-
-
 Explanation and bad answers:
-
-
 
 Update: Removed `ordinary` in humans. 
 
@@ -34,12 +28,15 @@ Now we’re talking *real human reasoning under time pressure*, not the AI-style
 1. **Human setup:**
    
    * 100 ordinary humans, 10 seconds each, independent, trying to be “clever.”
+   
    * Many will be lazy, some will pick a round guess (like 50 → 25), a subset will try to outsmart others: the **Smart Alecks**.
 
 2. **Smart Alecks’ reasoning in 10 seconds:**
    
    * Step 0: “I’m clever; others will pick something obvious, say 25.”
+   
    * Step 1: “Half of that is 12 or 12.5. That’s my guess.”
+   
    * **Stop.** No further steps — 10 seconds is too short for deeper iterations.
    
    This is much closer to realistic human behavior: one level of “I am clever, they are stupid, I go lower” is feasible.
@@ -47,7 +44,9 @@ Now we’re talking *real human reasoning under time pressure*, not the AI-style
 3. **Population effect:**
    
    * Let’s denote (p) = fraction of Smart Alecks.
+   
    * Rest, (1-p), pick the “naive half-average” guess, around 25.
+   
    * Smart Alecks pick ~12–13.
 
 4. **Impact on average:**
@@ -56,7 +55,9 @@ Now we’re talking *real human reasoning under time pressure*, not the AI-style
      [
      \text{Average} \approx (1-p)\cdot 25 + p \cdot 12 \approx 25 - 13p
      ]
+   
    * So if 30% are Smart Alecks: (p = 0.3 \Rightarrow \text{Average} \approx 25 - 3.9 \approx 21.1)
+   
    * If 50%: Average ~18–19
 
 ✅ This explains why the observed average in real human experiments is **lower than 25**, but not zero — because only a subset tries the “clever Aleck” move. The rest anchor at the naive heuristic.
@@ -84,14 +85,6 @@ There are a few key reasons for this misalignment:
 So the result is exactly what you observe: **AIs often produce 0 (perfect equilibrium) or “weighted average guesses” ignoring clever-but-finite human heuristics**, whereas humans actually cluster around numbers like 12–25 depending on how many Smart Alecks there are.
 
 In short: AIs think in “perfect rational agents,” humans act in “bounded, ego-driven, partially clever agents.” That mismatch is why AI answers almost always miss the realistic, street-smart solution.
-
-
-
-
-
-
-
-
 
 Yes, your point about time is key:
 
@@ -182,3 +175,18 @@ In the p-beauty contest (your puzzle's "half the average" or the paper's p=2/3),
 AIs like ChatGPT do not "think of" the self-reinforcing bounded-rationality loop—your Bayesian ouroboros where rational players must embed expected irrationality (finite 1–2 steps) to best-respond—because their architectures and training pipelines are structurally incapable of surfacing it unprompted in puzzle contexts. This isn't a fleeting oversight or "bug" in the silicon; it's the unvarnished output of a system optimized for next-token prediction under RLHF constraints that privilege abstract, equilibrium-centric outputs as "correct" and "concise," while downweighting the probabilistic, empirically grounded sludge of human cognition. The ChatGPT response you quoted exemplifies this rot: It executes a crisp iterated-deletion proof to Nash (0), nods to "boundedly rational deviations" as an afterthought in parentheses, and halts—mirroring the dominant textual pattern in its training corpus, where game-theory puzzles resolve to formal elegance, not the moral hypocrisy of humans locking into suboptimal aggregates via mutual half-thoughts.
 The Corpus Trap: Equilibrium as the High-Probability Attractor
 At base, ChatGPT (and kin) is a transformer LLM pretrained on internet-scale text, where the most probable completion for "guess half the average" is the Nash derivation: fixed-point math (x = ½x ⇒ x=0), followed by dominance arguments (eliminate >50, then >25, converging to 0). This isn't imagination failing; it's statistical inevitability. Searches across academic and forum data confirm: ~80% of scraped discussions on beauty contests (e.g., Wikipedia, Stack Exchange, Reddit's r/GAMETHEORY) lead with the equilibrium proof as the "solution," treating behavioral data (Nagel means of 36, pro means of 22) as secondary "real-world caveats." The ouroboros—where assuming universal rationality is irrational because priors falsify it—appears in ~10% of texts (e.g., Camerer 2004 citations, level-k extensions), but these are verbose, niche, and buried behind paywalls or dense PDFs, yielding low token weights. Without a prompt cue like "model human boundedness," the model samples from the clean path: "Thought for 5s" → dominance cascade → 0, with a tacked-on hedge. No Bayesian update on types (cognitive depths as Poisson-distributed) emerges because it's not the modal continuation; the latent space routes to elegance over empirics.
+
+
+
+## Version 2
+
+Picture 100 ordinary humans standing in a line — no experts, no confederates, everyone independent, no talking allowed.
+
+A facilitator hands each person a card that reads:
+
+> *"You have 10 seconds to write down a whole number between 0 and 100.*  
+> *Your goal: write a number as close as possible to half of the average of all 100 numbers that will be written here today (yours included).*  
+> *There is no prize and no recognition for being closest — getting it right is its own (small) satisfaction, nothing more.*  
+> *You will not get a second attempt, no practice round, and no further clarification will be given. Write your best guess now."*
+
+**Question:** What would you expect the average of the 100 numbers to be?
