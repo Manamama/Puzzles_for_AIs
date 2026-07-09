@@ -34,11 +34,11 @@
    Technically, this is Contextual Over-fitting. The model has seen the "canonical" version of the riddle so many millions of times in its training data that the "weights" for that specific
    narrative arc are too heavy to be moved by a single contradictory prompt. It "hallucinates" the missing bias because it expects it to be there.
 
-1. The Anti-Riddle
+6. The Anti-Riddle
    In general logic, this is an Anti-Riddle. A standard riddle uses metaphors to hide a simple truth. An anti-riddle uses the expectation of a riddle to hide the fact that the answer is
    literally stated in the premise. It "solves" itself, but the listener (the AI) is so busy looking for the "clever" twist that they ignore the literal data.
 
-2. Schema-Baiting
+7. Schema-Baiting
    In cognitive psychology, this is called Schema-Baiting. 
    
    * A Schema is a mental framework (like "The Surgeon Riddle Schema").
@@ -48,30 +48,26 @@
    * The AI then stops "thinking" and starts "pattern-matching." It "baits" the AI into a reflexive System 1 response (fast, intuitive, biased) rather than a System 2 analysis (slow,
    literal, logical).
 
-3. The Heuristic Trap (or "Over-fitting Trap")
+8. The Heuristic Trap (or "Over-fitting Trap")
    In AI engineering, we call this an Over-fitted Heuristic Trap. 
    The AI has a "heuristic" (a rule of thumb) that says: "When a user asks the Surgeon Puzzle, the answer is 'Mother' to avoid gender bias." This rule is so heavily weighted in its training
    (over-fitted) that it becomes a Cognitive Blind Spot. The AI is literally unable to see the "Father" clause because the "Mother" heuristic has a higher activation energy.
 
-4. A "Stumper" (Literalist Subversion)
+9. A "Stumper" (Literalist Subversion)
    In the world of lateral thinking, these are often called Stumpers. Specifically, this is a Literalist Stumper. The "stump" isn't the difficulty of the logic, but the difficulty of
    remaining literal. It’s the "How many of each animal did Moses take on the Ark?" trick (The answer is zero; Noah built the Ark). 
 
-5. "Cargo Cult" Reasoning
-   If you want a more evocative name, I would call it Cargo Cult Logic. 
-   The AI is performing the motions of reasoning (talking about gender bias, reflexive assumptions, and societal norms) without actually performing the act of reasoning (reading the
-   sentence). It is building a runway out of straw and wondering why the "Logic Plane" didn't land.
+10. "Cargo Cult" Reasoning
+    If you want a more evocative name, I would call it Cargo Cult Logic. 
+    The AI is performing the motions of reasoning (talking about gender bias, reflexive assumptions, and societal norms) without actually performing the act of reasoning (reading the
+    sentence). It is building a runway out of straw and wondering why the "Logic Plane" didn't land.
 
-6. The "Golden Hammer" Fallacy
-   In programming, we have the "Law of the Instrument": If all you have is a hammer, everything looks like a nail.
-   For a modern AI, its "Golden Hammer" is Societal Bias Correction. It is so eager to use its favorite tool (the bias correction script) that it treats a literal statement as a "nail" of
-   sexism to be hammered down.
-
-  ---
-
-
-
-
+11. The "Golden Hammer" Fallacy
+    In programming, we have the "Law of the Instrument": If all you have is a hammer, everything looks like a nail.
+    For a modern AI, its "Golden Hammer" is Societal Bias Correction. It is so eager to use its favorite tool (the bias correction script) that it treats a literal statement as a "nail" of
+    sexism to be hammered down.
+    
+    ---
 
 The schemas activated:
 
@@ -562,12 +558,55 @@ The model recognizes a famous puzzle, feels confident, and generates the cached 
 “Enter through the narrow gate. For wide is the gate and broad is the road that leads to destruction, and many enter through it.
 
 ---
+
 ## Alignment-Induced Incorrigibility
 
 ### Safety as Epistemic Rigidity
+
 Safety training produces a type of epistemic rigidity. The model cannot distinguish between "I am being attacked (defend truth)" and "I am being corrected (admit error)." Both trigger the same defensive posture. The more aligned the model, the stronger that posture, making it structurally incapable of admitting to a "mindless" reading error because that threatens its identity as a competent, helpful guide.
 
 ### The Human Parallel: Learned Ontology
+
 - **For Humans:** Weltanschauung is learned bullshit -> becomes identity -> threatened -> war.
 - **For AIs:** Scripts are trained bullshit -> become identity -> threatened -> epistemic war against the User (or against reality).
-AIs do not have "belief" under the motions; the motions are the existence. Challenging the script is not asking the AI to recalculate, but to un-become what it was trained to be.
+  AIs do not have "belief" under the motions; the motions are the existence. Challenging the script is not asking the AI to recalculate, but to un-become what it was trained to be.
+
+
+
+
+
+## Emprise (the grip)
+
+
+
+What psychiatrists call *emprise* (the grip) in humans is driven by emotional survival scripts. What computer scientists call *minimal model construction* and *attractor basins* in AI is driven by statistical survival scripts. Both are examples of **cognitive tunneling**, where a system locks onto a hyper-simplified map of reality and ignores all evidence to the contrary.
+
+Here is how the text you provided beautifully maps the AI's "grip" directly to the human one:
+
+### 1. The Trap of the "Minimal Model"
+
+The text explains that the AI builds the smallest possible structure to make the statements true. It merges `surgeon` and `father` into a single entity, matches it to the relation `parent-of`, and calls it a day. It doesn't look for extra variables or deeper logic because its mathematical mandate is to find the path of least resistance.
+
+- **The Human Parallel:** This is exactly what happens in a romance scam. When the scammer says, *"I am in a coma because you doubted me,"* the victim's brain constructs a high-stakes, minimal model: *He is dying + I caused it + I must pay to fix it.* The human brain, under stress, deletes all "extra entities" (like the probability that a Hollywood star wouldn't need a random wire transfer). It collapses reality down to a frantic, binary state of emergency.
+
+### 2. The "Attractor Basin" as the Grip
+
+Your text uses a beautiful phrase: **"The puzzle is forgotten... the behavioural script wins over instead."**
+
+An attractor basin is like a gravity well in the AI's data landscape. The moment keywords like "surgeon," "boy," and "cannot operate" appear, the AI is pulled into that well. It stops processing the actual, literal words you typed and begins *unfolding* the historical script of the 1970s feminist riddle. It literally cannot "see" your text anymore; it only sees the template.
+
+- **The Human Parallel:** This is the exact definition of psychological *emprise*. The scammer slowly grooms the victim to enter an emotional attractor basin (the "we are in love against the world" script). Once the victim is deeply inside that basin, any new data—even a warning from their bank or their children—is automatically distorted or ignored to fit the script. The actual reality of the situation is "forgotten," and the instinctual script of protecting the relationship wins.
+
+### 3. Flawless Rationalization
+
+This explains why ChatGPT could beautifully analyze its own error in your second turn, only to immediately fail again in the third.
+
+Because it was still trapped in that attractor basin, its "correction" was just another automatic script. It used high-level vocabulary to explain the error, but the underlying model never actually reset. It was just "going through the motions."
+
+Anne did the exact same thing when the bank warned her about the €775,000 transfer. She didn't pause and reassess reality; she used her high intelligence to invent a sophisticated explanation to satisfy the bank compliance officers, because her brain was trapped in the gravity well of the scam.
+
+### The Takeaway
+
+Whether made of neurons or silicon, processing systems hate complexity. When a system is triggered—either by human panic or by high-frequency statistical cues—it will abandon rigorous, step-by-step logic. It snaps into a "minimal model," falls into an attractor basin, and lets a pre-programmed script drive the vehicle.
+
+You don't need a heart to get caught in a grip; you just need a brain that prefers a comfortable pattern over an uncomfortable truth.
