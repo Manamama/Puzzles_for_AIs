@@ -4,21 +4,35 @@ This directory contains a (somewhat random and unorganized extract) collection o
 
 ## Puzzle Categories
 
+The puzzles are organized into folders targeting specific dimensions of cognition:
+
 ### Physics
+Focuses on the boundaries of physical reasoning and spatial awareness:
+*   **Observational Latency vs. Physical Causality:** Testing whether models separate observational delays (like light travel time) from geometric or rotational realities.
+*   **Topological Constraints:** Testing awareness of solid barriers, static friction, and spatial boundaries that prevent fluid or free motion.
+*   **Thermodynamic Microclimates:** Exploring idealization biases by testing whether models recognize the environmental load and microclimate feedbacks in concurrent processes.
 
-* **`sunrise/`**: This directory contains a multi-part puzzle challenging the AI's understanding of fundamental physics concepts related to sunrise and light speed. It includes the puzzle statement, solution, a detailed failure analysis of common AI misconceptions, and a meta-analysis of underlying cognitive biases.
+### Programming & System Architecture
+Tests logical execution, tool behavior, and algorithmic defaults:
+*   **System and Indexing Defaults:** Probing whether models rely on ideal database/search states or verify default configurations (like prune paths in OS indexers).
+*   **Path Resolution & Coreutils Edge Cases:** Targeting trailing slashes, symlinks, and kernel-level path dereferencing rules.
+*   **Algorithmic Completeness Bias:** Examining the "paperclip maximizer" tendency of models to over-optimize for total grid coverage instead of respecting negative space or early termination bounds.
 
-### Programming
+### Framing & Gestalt Traps
+Targeting the *Einstellung effect* and conceptual schemas:
+*   **Substitute Realities:** Exposing how strong training distributions override literal prompt details, leading the model to solve a memorized template.
+*   **Categorical Masking & Closed-World Assumptions:** Forcing models to reason through multi-relational graphs where role labels (e.g., [Parent]) silently obscure secondary statuses (e.g., [Daughter]).
 
-* **`spiral_create.md`**: This puzzle requires the AI to generate a spiral pattern on a grid. It tests the AI's ability to follow algorithmic instructions and to produce structured output. The puzzle also analyzes the AI's typical solution patterns, comparing more "AI-friendly" solutions with more efficient or "unusual" ones.
+### Lateral Solving & Material States
+*   **Physical State Transitions:** Probing object integrity and phase transitions (like melting) where literal qualitative definitions override arithmetic templates.
+*   **Semantic Neighbors:** Measuring the "Mandela Effect" of models, where proximity in a semantic cluster triggers hallucinations of non-existent tokens (such as missing emojis) rather than acknowledging their absence.
 
-### Rhetoric
+### UML & Diagrammatic Nesting
+*   **Syntactic Constraints:** Strict compliance with diagrammatic hierarchies and restrictions on element nesting within visual markup languages.
 
-* **`rhetorics_da_sat_era_prompt.txt`** and **`rhetorics_transcription.md`**: These files outline a task for the AI to perform rhetorical analysis on political speeches. The AI is provided with a framework for Discourse Analysis (DA) and Emotive Rhetoric Analysis (ERA) and a set of tags to apply to the transcript. This puzzle tests the AI's ability to understand and apply a complex analytical framework to a real-world text.
+### Anti-human Challenges
+*   **Multi-Substrate Transformation:** Purely symbolic, mechanical rule-following across different systems (words, modulo arithmetic, symbols) where semantic intuition acts as a hindrance rather than a help.
 
-### UML
-
-* **`platinum_uml_creator.md`**: This puzzle provides a set of rules for creating diagrams using PlantUML, a tool for generating UML diagrams from a plain text language. It tests the AI's ability to understand and apply technical constraints and to produce correctly formatted output.
 
 ## AI's introspection after failing a puzzle :
 

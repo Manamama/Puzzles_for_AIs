@@ -4,11 +4,14 @@ This project explores a novel approach to AI development by merging two core con
 
 ## 🧩 Puzzles for AIs: The Training Ground
 
-This section of the project comprises a curated collection of problems, challenges, and scenarios designed specifically for Artificial Intelligences and Large Language Models. These puzzles serve as:
+This section of the project comprises a curated collection of problems, challenges, and scenarios designed specifically to analyze the cognitive limits and biases of Artificial Intelligences and Large Language Models. Rather than focusing on simple factual accuracy, these challenges are structured to test for System 2 capabilities and to expose specific **cognitive failure modes**:
 
-* **Structured Test Cases:** Each puzzle is crafted to test specific AI capabilities, problem-solving methodologies, and reasoning skills.
-* **Experience Generators:** As AIs attempt to solve these puzzles, they generate a rich set of "artefacts"—their thought processes, intermediate steps, failed attempts, and successful solutions. This raw experience is crucial for learning.
-* **Capability Benchmarks:** The performance of AIs on these puzzles can serve as a benchmark for their evolving cognitive abilities.
+*   **Einstellung Effect & Gestalt Traps:** The tendency of a high-probability training distribution to act as a visual or contextual "attractor state," causing the model to solve a memorized template or a "genre-consistent" substitute reality rather than the literal, modified text of the puzzle.
+*   **Semantic Contamination:** Proximity in the model's high-dimensional vector space casts a "semantic shadow" over nearby concepts. When a target token does not exist, the model's attention flows to the nearest neighbor (e.g., neighboring marine life emojis), leading to false positives rather than acknowledging the absence of a direct match.
+*   **Idealization Bias & Concurrency Overhead:** An default assumption of a frictionless vacuum (e.g., perfect parallelism or instantaneous state change) that ignores thermodynamic, systemic, or physical overheads (like microclimates, relative humidity, or operating system path resolution rules).
+*   **Closed-World Assumptions & Categorical Masking:** The silent constriction of domain boundaries, where role labels (such as [Parent] or [File]) foreclose other relational states (like [Daughter] or [Symlink]), or where undocumented elements in a description are treated as ontologically non-existent.
+*   **Systems Edge Cases:** Subverting standard CLI/filesystem habits by targeting the narrow boundary lines where core utilities, shell scripts, and kernel path-resolution mechanisms interact in non-intuitive ways.
+
 
 ## 🧠 Enhancing AI Cognition: The Layered Memory Bank System
 

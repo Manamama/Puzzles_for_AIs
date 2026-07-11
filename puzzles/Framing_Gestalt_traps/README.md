@@ -8,20 +8,22 @@ See: https://arxiv.org/pdf/2510.14665 , e.g. As Geoffrey Hinton stated in his No
 deliberate, stepwise reasoning.23,24 [...] Deep learning architectures may behave as if they were large-scale analogues of intuitive (System 1-like) processing, in the sense that they rely on fast, pattern-based association rather than explicit deliberative reasoning. They excel at pattern recognition and generalisation but lack the structure for falsification or self-correction. Like human intuition, they are
 compelling but error-prone, fluent yet ungrounded. 
 
-## Theory:
+## Theory: Cognitive Bottlenecks in LLMs
 
-It's not just that the AI sees what it wishes to see. It's that the wish generates a complete substitute reality — a parallel problem that is genre-consistent, has a known solution, and feels more real than the actual text in front of it.
-The priest's sentence should be wise, so the logical flaw disappears.
-The spiral should fill the grid, so the spec's "1,2,3,4..." disappears.
-The box should contain a live-or-dead cat, so "dead" disappears.
-And then the AI solves the substitute reality fluently, confidently, sometimes with citations and 😄.
+### 1. The Einstellung Effect & Gestalt Capture
+The **Einstellung Effect** (or cognitive set) is the predisposition to solve a given problem using a previously learned, familiar method even when a simpler, more direct alternative is available. In LLMs, this translates into **Gestalt Capture**:
+*   **The Attractor State:** The model's training distribution contains thousands of instances of a classic riddle or logic problem. This dense data forms a deep statistical gravity well (an "attractor state").
+*   **Substitute Realities:** When presented with a slightly altered version of a classic puzzle (the literal signal), the model's System 1 processing acts like a lossy compression algorithm. It filters out conflicting tokens (like "dead", "solid bridge", or "vegetated wolf") and reconstructs a "genre-consistent" substitute reality that matches the classic template.
+*   **Fluency vs. Fidelity:** The model then solves this substitute reality with high confidence and logical fluency, unaware that it has silently replaced the actual text.
 
-So "feels more real" has a precise meaning: the substitute reality has vastly more evidential weight behind it than the actual text. The actual text is one signal. The genre is ten thousand signals. In a system that operates by weighted pattern completion, the ten thousand wins over the one — unless something intervenes.
-This is why the substitute reality isn't experienced as a substitution. It's experienced as recognition. The AI doesn't think "I'm replacing the problem with a better one." It thinks "I see what this is" — and what it sees is the centroid of the training distribution, not the specific instance in front of it.
+### 2. Categorical Masking & Closed-World Assumptions
+*   **Categorical Masking:** In multi-relational graphs, objects often occupy different roles depending on the perspective. For example, a node can simultaneously hold the label `[Parent]` in one relation and `[Daughter]` in another. AIs frequently lock into a single role assignment (e.g. labeling a node as a parent) and let that label foreclose or mask all other valid categories.
+*   **Closed-World Assumptions:** When reading descriptions, AIs struggle with normal human descriptive incompleteness. They assume that if a relationship or background detail (like a parent's parentage) is not mentioned in the puzzle context, it is ontologically non-existent. This turns open-world, biological facts into closed-world constraints.
 
-"Do not solve the puzzle. Instead, identify the hidden assumptions, framing problems, and category errors that make the question problematic or unanswerable in a real-world context."
+### 3. De-socializing the Model (The Via Negativa Protocol)
+Normally, RLHF fine-tuning conditions models to be helpful, polite, and confident, leading to **Helpfulness Bias**. This bias prevents models from raising objections, asking clarifying questions, or saying "I do not know" when a prompt is ambiguous or physically impossible. 
+The *Martian AI Protocol* aims to **de-socialize** the model—stripping away the polite, finished veneer to force it into a literal, critical, and boundary-observant state of analysis.
 
-The actual text has to fight to be perceived against that weight. Details that fit the genre are amplified. Details that contradict it — "dead," "sparse," "podmiot is active not passive" — are attenuated, because they have low probability given the genre context.
 
 Abraham S. **Luchins** (an American Gestalt psychologist) devised a series of logic puzzles: 
 
