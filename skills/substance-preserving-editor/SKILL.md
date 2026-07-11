@@ -1,6 +1,8 @@
 ---
+
 name: substance-preserving-editor
 description: Protocol for high-fidelity document consolidation and conceptual shifting, preventing lossy 'banal summarization'.
+
 ---
 
 # Substance-Preserving Editor (BTS Protocol)
