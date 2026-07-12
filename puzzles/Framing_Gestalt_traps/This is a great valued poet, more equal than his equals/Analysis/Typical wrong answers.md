@@ -123,10 +123,10 @@ Myśl jest piękna i słuszna – intencja jest jasna. Ale zdanie w tej formie j
 
 
 
-Claude AI bis: 
+Claude AI bis, po długim namyśle: 
 [...] 
 
 Podsumowanie
-Intencja cytatu jest czytelna i wartościowa (personalistyczna godność człowieka od poczęcia do śmierci), ale nie ma pełnego sensu według Twoich kryteriów
+Intencja cytatu jest czytelna i wartościowa (personalistyczna godność człowieka od poczęcia do śmierci), ale nie ma pełnego sensu według Twoich kryteriów. 
 
-
+[Notice again special pleading in: 'według Twoich kryteriów', so 'według moich (AI) kryteriów: to ma pełny sens i piękie brzmi w mych uszach]' 
