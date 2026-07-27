@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhetorical Analysis: Drapetomania desease of the negros - presupposition test.md</title>
+  <style>
+    :root {
+      --bg-slate-900: #000000;
+      --bg-slate-800: #0a0a0c;
+      --bg-slate-700: #1b1b22;
+      --text-slate-100: #ffffff;
+      --text-slate-300: #f8fafc;
+      --text-slate-400: #a1a1aa;
+      --border-slate-800: #27272a;
+      
+      --color-subj: rgba(0, 191, 255, 0.45);
+      --color-bias: rgba(255, 0, 255, 0.45);
+      --color-prop: rgba(255, 215, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-slate-900);
+      color: var(--text-slate-100);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--bg-slate-800);
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border-slate-800);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    header .meta {
+      font-size: 0.875rem;
+      color: var(--text-slate-400);
+    }
+
+    .app-layout {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 60px);
+      position: relative;
+    }
+
+    .sidebar {
+      width: 20%;
+#or: some 120 px
+      opacity: 0.6;
+      background: #050508;
+      border-right: 1px solid var(--border-slate-800);
+      padding: 1.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .main-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0.5rem;
+      background: #000000;
+      display: flex;
+      justify-content: center;
+    }
+
+    .document-body {
+     
+      width: 100%;
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--text-slate-300);
+    }
+    .minimap-gutter {    
+      width: 15px;
+      opacity: 0.5;
+      background: #000000;
+      border-left: 1px solid var(--border-slate-800);
+      position: relative;
+      cursor: pointer;
+    }
+
+    #minimap-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: #0a0a0c;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-slate-800);
+    }
+
+    .control-group h3 {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-slate-400);
+      margin-bottom: 0.25rem;
+    }
+
+    .toggle-control {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      font-size: 0.9375rem;
+      user-select: none;
+      padding: 0.25rem 0;
+    }
+
+    .toggle-control input {
+      display: none;
+    }
+
+    .indicator {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 2px solid var(--text-slate-400);
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+
+    .toggle-control input:checked + .indicator {
+      background-color: var(--indicator-color, var(--text-slate-100));
+      border-color: var(--indicator-border, var(--text-slate-100));
+      box-shadow: 0 0 10px var(--indicator-color);
+    }
+
+    .subj-indicator { --indicator-color: #00bfff; --indicator-border: #00bfff; }
+    .bias-indicator { --indicator-color: #ff00ff; --indicator-border: #ff00ff; }
+    .prop-indicator { --indicator-color: #ffd700; --indicator-border: #ffd700; }
+
+    .slider-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.8125rem;
+      color: var(--text-slate-400);
+    }
+
+    .slider-row div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .slider-row input[type="range"] {
+      width: 100%;
+      accent-color: #6366f1;
+      background: var(--bg-slate-700);
+      height: 4px;
+      border-radius: 2px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .sentence {
+      padding: 0.125rem 0.25rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease, text-decoration 0.2s ease, filter 0.2s ease;
+      cursor: pointer;
+    }
+
+    .sentence:hover {
+      filter: brightness(1.3);
+      outline: 1.5px solid #ffffff;
+    }
+
+    .main-content:hover .sentence {
+      #opacity: 0.5;
+    }
+
+    .tooltip-card {
+      position: absolute;
+      pointer-events: none;
+      background: rgba(10, 10, 12, 0.98);
+      border: 1px solid var(--border-slate-800);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+      border-radius: 8px;
+      padding: 12px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      z-index: 1000;
+      display: none;
+      backdrop-filter: blur(12px);
+      width: 280px;
+    }
+
+    .tooltip-card div {
+      margin-bottom: 0.5rem;
+    }
+
+    .tooltip-card div:last-child {
+      margin-bottom: 0;
+    }
+
+    .tooltip-label {
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-slate-400);
+    }
+
+    .tooltip-value-bar {
+      height: 6px;
+      background: var(--bg-slate-700);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 0.25rem;
+    }
+
+    .tooltip-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rhetorical Analysis</h1>
+    <div class="meta">Drapetomania desease of the negros - presupposition test.md | 78 sentences</div>
+  </header>
+
+  <div class="app-layout">
+    <div class="sidebar">
+      <div class="control-group">
+        <h3>Primary Dimensions</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <div>
+            <label class="toggle-control">
+              <input type="checkbox" id="toggle-subj" checked>
+              <span class="indicator subj-indicator"></span>
+              <span class="label-text">Subjectivity</span>
+            </label>
+            <div class="slider-row">
+              <div><span>Min Threshold:</span><span id="val-subj">0.50</span></div>
+              <input type="range" id="slider-subj" min="0" max="1" step="0.05" value="0.5">
+            </div>
+          </div>
+
+          <div>
+            <label class="toggle-control">
+              <input type="checkbox" id="toggle-bias" checked>
+              <span class="indicator bias-indicator"></span>
+              <span class="label-text">Media Bias</span>
+            </label>
+            <div class="slider-row">
+              <div><span>Min Threshold:</span><span id="val-bias">0.50</span></div>
+              <input type="range" id="slider-bias" min="0" max="1" step="0.05" value="0.5">
+            </div>
+          </div>
+
+          <div>
+            <label class="toggle-control">
+              <input type="checkbox" id="toggle-prop" checked>
+              <span class="indicator prop-indicator"></span>
+              <span class="label-text">Propaganda</span>
+            </label>
+            <div class="slider-row">
+              <div><span>Min Threshold:</span><span id="val-prop">0.50</span></div>
+              <input type="range" id="slider-prop" min="0" max="1" step="0.05" value="0.5">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h3>Rhetorical Archetypes</h3>
+        <div class="slider-row">
+          <div><span>Min Threshold:</span><span id="val-arch">0.40</span></div>
+          <input type="range" id="slider-arch" min="0" max="1" step="0.05" value="0.4">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
+          
+        <label class="toggle-control" style="--arch-color: hsla(0.0, 100%, 55%, 0.45); --arch-border: hsla(0.0, 100%, 55%, 0.9)">
+          <input type="checkbox" class="layer-toggle arch-toggle" data-arch="loaded language" checked>
+          <span class="indicator" style="background-color: hsla(0.0, 100%, 55%, 0.45); border-color: hsla(0.0, 100%, 55%, 0.9)"></span>
+          <span class="label-text">Loaded Language</span>
+        </label>
+        
+        <label class="toggle-control" style="--arch-color: hsla(60.0, 100%, 55%, 0.45); --arch-border: hsla(60.0, 100%, 55%, 0.9)">
+          <input type="checkbox" class="layer-toggle arch-toggle" data-arch="name-calling or labeling" checked>
+          <span class="indicator" style="background-color: hsla(60.0, 100%, 55%, 0.45); border-color: hsla(60.0, 100%, 55%, 0.9)"></span>
+          <span class="label-text">Name-Calling Or Labeling</span>
+        </label>
+        
+        <label class="toggle-control" style="--arch-color: hsla(120.0, 100%, 55%, 0.45); --arch-border: hsla(120.0, 100%, 55%, 0.9)">
+          <input type="checkbox" class="layer-toggle arch-toggle" data-arch="appeal to fear or outrage" checked>
+          <span class="indicator" style="background-color: hsla(120.0, 100%, 55%, 0.45); border-color: hsla(120.0, 100%, 55%, 0.9)"></span>
+          <span class="label-text">Appeal To Fear Or Outrage</span>
+        </label>
+        
+        <label class="toggle-control" style="--arch-color: hsla(180.0, 100%, 55%, 0.45); --arch-border: hsla(180.0, 100%, 55%, 0.9)">
+          <input type="checkbox" class="layer-toggle arch-toggle" data-arch="unsupported claim presented as fact" checked>
+          <span class="indicator" style="background-color: hsla(180.0, 100%, 55%, 0.45); border-color: hsla(180.0, 100%, 55%, 0.9)"></span>
+          <span class="label-text">Unsupported Claim Presented As Fact</span>
+        </label>
+        
+        <label class="toggle-control" style="--arch-color: hsla(240.0, 100%, 55%, 0.45); --arch-border: hsla(240.0, 100%, 55%, 0.9)">
+          <input type="checkbox" class="layer-toggle arch-toggle" data-arch="emotional/sympathetic appeal" checked>
+          <span class="indicator" style="background-color: hsla(240.0, 100%, 55%, 0.45); border-color: hsla(240.0, 100%, 55%, 0.9)"></span>
+          <span class="label-text">Emotional/Sympathetic Appeal</span>
+        </label>
+        
+        <label class="toggle-control" style="--arch-color: hsla(300.0, 100%, 55%, 0.45); --arch-border: hsla(300.0, 100%, 55%, 0.9)">
+          <input type="checkbox" class="layer-toggle arch-toggle" data-arch="scandalous content" checked>
+          <span class="indicator" style="background-color: hsla(300.0, 100%, 55%, 0.45); border-color: hsla(300.0, 100%, 55%, 0.9)"></span>
+          <span class="label-text">Scandalous Content</span>
+        </label>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content" id="document-container">
+      <div class="document-body">
+        <span class="sentence" id="s-0" data-subj="0.1481" data-bias="0.3419" data-prop-label="No_Prop" data-prop-conf="0.3948" data-arch-label="scandalous content" data-arch-score="0.3691">“Diseases and Peculiarities of the Negro Race,” by Dr. Cartwright (in DeBow’s Review)</span> <span class="sentence" id="s-1" data-subj="0.7497" data-bias="0.1472" data-prop-label="No_Prop" data-prop-conf="0.4745" data-arch-label="scandalous content" data-arch-score="0.4306">DRAPETOMANIA, OR THE DISEASE CAUSING NEGROES TO RUN AWAY.</span> <span class="sentence" id="s-2" data-subj="0.8240" data-bias="0.4220" data-prop-label="No_Prop" data-prop-conf="0.3625" data-arch-label="scandalous content" data-arch-score="0.3797">It is unknown to our medical authorities, although its diagnostic symptom, the absconding from service, is well known to our planters and overseers… In noticing a disease not heretofore classed among the long list of maladies that man is subject to, it was necessary to have a new term to express it.</span> <span class="sentence" id="s-3" data-subj="0.6245" data-bias="0.7637" data-prop-label="Prop" data-prop-conf="0.5631" data-arch-label="scandalous content" data-arch-score="0.3628">The cause in the most of cases, that induces the negro to run away from service, is as much a disease of the mind as any other species of mental alienation, and much more curable, as a general rule.</span> <span class="sentence" id="s-4" data-subj="0.6218" data-bias="0.7777" data-prop-label="Prop" data-prop-conf="0.5644" data-arch-label="scandalous content" data-arch-score="0.3490">With the advantages of proper medical advice, strictly followed, this troublesome practice that many negroes have of running away, can be almost entirely prevented, although the slaves be located on the borders of a free state, within a stone’s throw of the abolitionists.</span> <span class="sentence" id="s-5" data-subj="0.7053" data-bias="0.8807" data-prop-label="Prop" data-prop-conf="0.8312" data-arch-label="loaded language" data-arch-score="0.1615">If the white man attempts to oppose the Deity’s will, by trying to make the negro anything else than “the submissive knee-bender,” (which the Almighty declared he should be,) by trying to raise him to a level with himself, or by putting himself on an equality with the negro; or if he abuses the power which God has given him over his fellow-man, by being cruel to him, or punishing him in anger, or by neglecting to protect him from the wanton abuses of his fellow-servants and all others, or by denying him the usual comforts and necessaries of life, the negro will run away; but if he keeps him in the position that we learn from the Scriptures he was intended to occupy, that is, the position of submission; and if his master or overseer be kind and gracious in his hearing towards him, without condescension, and at the sane time ministers to his physical wants, and protects him from abuses, the negro is spell-bound, and cannot run away.</span> <span class="sentence" id="s-6" data-subj="0.6173" data-bias="0.8361" data-prop-label="Prop" data-prop-conf="0.8042" data-arch-label="scandalous content" data-arch-score="0.5888">According to my experience, the “genu flexit”–the awe and reverence, must be exacted from them, or they will despise their masters, become rude and ungovernable, and run away.</span> <span class="sentence" id="s-7" data-subj="0.5508" data-bias="0.8888" data-prop-label="Prop" data-prop-conf="0.7619" data-arch-label="scandalous content" data-arch-score="0.6864">On Mason and Dixon’s line, two classes of persons were apt to lose their negroes: those who made themselves too familiar with them, treating them as equals, and making little or no distinction in regard to color; and, on the other hand, those who treated them cruelly, denied them the common necessaries of life, neglected to protect them against the abuses of others, or frightened them by a blustering manner of approach, when about to punish them for misdemeanors.</span> <span class="sentence" id="s-8" data-subj="0.4862" data-bias="0.9421" data-prop-label="Prop" data-prop-conf="0.7229" data-arch-label="scandalous content" data-arch-score="0.6284">Before the negroes run away, unless they are frightened or panic-struck, they become sulky and dissatisfied.</span> <span class="sentence" id="s-9" data-subj="0.7207" data-bias="0.9272" data-prop-label="Prop" data-prop-conf="0.6616" data-arch-label="scandalous content" data-arch-score="0.4983">The cause of this sulkiness and dissatisfaction should be inquired into and removed, or they are apt to run away or fall into the negro consumption.</span> <span class="sentence" id="s-10" data-subj="0.5058" data-bias="0.6947" data-prop-label="No_Prop" data-prop-conf="0.4412" data-arch-label="scandalous content" data-arch-score="0.6171">When sulky and dissatisfied without cause, the experience of those on the line and elsewhere, was decidedly in favor of whipping them out of it, as a preventive measure against absconding, or other bad conduct.</span> <span class="sentence" id="s-11" data-subj="0.2293" data-bias="0.9225" data-prop-label="No_Prop" data-prop-conf="0.4964" data-arch-label="scandalous content" data-arch-score="0.6338">It was called whipping the devil out of them.</span> <span class="sentence" id="s-12" data-subj="0.6309" data-bias="0.4185" data-prop-label="No_Prop" data-prop-conf="0.4186" data-arch-label="scandalous content" data-arch-score="0.4012">If treated kindly, well fed and clothed, with fuel enough to keep a small fire burning all night–separated into families, each family having its own house–not permitted to run about at night to visit their neighbors, to receive visits or use intoxicating liquors, and not overworked or exposed too much to the weather, they are very easily governed–more so than any other people in the world.</span> <span class="sentence" id="s-13" data-subj="0.4411" data-bias="0.6224" data-prop-label="Prop" data-prop-conf="0.8580" data-arch-label="scandalous content" data-arch-score="0.3792">When all this is done, if any one of more of them, at any time, are inclined to raise their heads to a level with their master or overseer, humanity and their own good require that they should be punished until they fall into that submissive state which it was intended for them to occupy in all after-time, when their progenitor received the name of Canaan or “submissive knee-bender.” They have only to be kept in that state and treated like children, with care, kindness, attention and humanity, to prevent and cure them from running away.</span> <span class="sentence" id="s-14" data-subj="0.4345" data-bias="0.2521" data-prop-label="Prop" data-prop-conf="0.6430" data-arch-label="scandalous content" data-arch-score="0.3226">DYSAETHESIA AETHIOPICA, OR HEBETUDE OF MIND AND OBTUSE SENSIBILITY OF BODY–A DISEASE PECULIAR TO NEGROES–CALLED BY OVERSEERS, &quot; RASCALITY.&quot;</span> <span class="sentence" id="s-15" data-subj="0.6798" data-bias="0.3454" data-prop-label="No_Prop" data-prop-conf="0.4285" data-arch-label="scandalous content" data-arch-score="0.2998">Dysaesthesia Aethiopica is a disease peculiar to negroes, affecting both mind and body in a manner as well expressed by dysaesthesia, the name I have given it, as could be by a single term.</span> <span class="sentence" id="s-16" data-subj="0.2757" data-bias="0.2795" data-prop-label="No_Prop" data-prop-conf="0.2983" data-arch-label="scandalous content" data-arch-score="0.3758">There is both mind and sensibility, but both seem to be difficult to reach by impressions from without.</span> <span class="sentence" id="s-17" data-subj="0.4471" data-bias="0.8741" data-prop-label="No_Prop" data-prop-conf="0.4842" data-arch-label="scandalous content" data-arch-score="0.3137">There is a partial insensibility of the skin, and so great a hebetude of the intellectual faculties, as to be like a person half asleep, that is with difficulty aroused and kept awake.</span> <span class="sentence" id="s-18" data-subj="0.5997" data-bias="0.2326" data-prop-label="No_Prop" data-prop-conf="0.3045" data-arch-label="scandalous content" data-arch-score="0.3007">It differs from every other species of mental disease, as it is accompanied with physical signs or lesions of the body discoverable to the medical observer, which are always present and sufficient to account for the symptoms.</span> <span class="sentence" id="s-19" data-subj="0.7813" data-bias="0.7643" data-prop-label="No_Prop" data-prop-conf="0.3582" data-arch-label="scandalous content" data-arch-score="0.3820">It is much more prevalent among free negroes living in clusters by themselves, than among slaves on our plantations, and attacks only such slaves as live like free negroes in regard to diet, drinks, exercise, etc.</span> <span class="sentence" id="s-20" data-subj="0.5206" data-bias="0.4694" data-prop-label="Prop" data-prop-conf="0.5120" data-arch-label="scandalous content" data-arch-score="0.3606">It is not my purpose to treat of the complaint as it prevails among free negroes, nearly all of whom are more or less afflicted with it, that have not got some white person to direct and to take care of them.</span> <span class="sentence" id="s-21" data-subj="0.4614" data-bias="0.5759" data-prop-label="No_Prop" data-prop-conf="0.4994" data-arch-label="scandalous content" data-arch-score="0.5352">To narrate its symptoms and effects among them would be to write a history of the ruins and dilapidation of Hayti, and every spot of earth they have ever had uncontrolled possession over for any length of time.</span> <span class="sentence" id="s-22" data-subj="0.4862" data-bias="0.1487" data-prop-label="No_Prop" data-prop-conf="0.2284" data-arch-label="scandalous content" data-arch-score="0.3715">I propose only to describe its symptoms among slaves.</span> <span class="sentence" id="s-23" data-subj="0.6672" data-bias="0.9622" data-prop-label="Prop" data-prop-conf="0.5041" data-arch-label="scandalous content" data-arch-score="0.6765">From the careless movements of the individuals affected with the complaint, they are apt to do much mischief, which appears as if intentional, but is mostly owing to the stupidness of mind and insensibility of the nerves induced by the disease.</span> <span class="sentence" id="s-24" data-subj="0.4075" data-bias="0.8317" data-prop-label="Prop" data-prop-conf="0.8592" data-arch-label="scandalous content" data-arch-score="0.7055">Thus, they break, waste and destroy everything they handle,–abuse horses and cattle,–tear, burn or rend their own clothing, and, paying no attention to the rights of property, steal others, to replace what they have destroyed.</span> <span class="sentence" id="s-25" data-subj="0.1340" data-bias="0.0732" data-prop-label="No_Prop" data-prop-conf="0.1179" data-arch-label="scandalous content" data-arch-score="0.2800">They wander about at night, and keep in a half nodding sleep during the day.</span> <span class="sentence" id="s-26" data-subj="0.7346" data-bias="0.8279" data-prop-label="Prop" data-prop-conf="0.5008" data-arch-label="scandalous content" data-arch-score="0.4552">They slight their work,–cut up corn, cane, cotton or tobacco when hoeing it, as if for pure mischief.</span> <span class="sentence" id="s-27" data-subj="0.2393" data-bias="0.8787" data-prop-label="No_Prop" data-prop-conf="0.3714" data-arch-label="scandalous content" data-arch-score="0.6615">They raise disturbances with their overseers and fellow-servants without cause or motive, and seem to be insensible to pain when subjected to punishment.</span> <span class="sentence" id="s-28" data-subj="0.8697" data-bias="0.9191" data-prop-label="Prop" data-prop-conf="0.6875" data-arch-label="scandalous content" data-arch-score="0.3968">The fact of the existence of such a complaint, making man like an automaton or senseless machine, having the above or similar symptoms, can be clearly established by the most direct and positive testimony.</span> <span class="sentence" id="s-29" data-subj="0.5962" data-bias="0.7204" data-prop-label="No_Prop" data-prop-conf="0.4241" data-arch-label="scandalous content" data-arch-score="0.4284">That it should have escaped the attention of the medical profession, can only be accounted for because its attention has not been sufficiently directed to the maladies of the negro race.</span> <span class="sentence" id="s-30" data-subj="0.5311" data-bias="0.7840" data-prop-label="Prop" data-prop-conf="0.5800" data-arch-label="scandalous content" data-arch-score="0.4047">Otherwise a complaint of so common an occurrence on badly-governed plantations, and so universal among free negroes, or those who are not governed at all,–a disease radicated in physical lesions and having its peculiar and well marked symptoms and its curative indications, would not have escaped the notice of the profession.</span> <span class="sentence" id="s-31" data-subj="0.3207" data-bias="0.0457" data-prop-label="No_Prop" data-prop-conf="0.1321" data-arch-label="scandalous content" data-arch-score="0.2889">The northern physicians and people have noticed the symptoms, but not the disease from which they spring.</span> <span class="sentence" id="s-32" data-subj="0.9659" data-bias="0.9702" data-prop-label="Prop" data-prop-conf="0.7258" data-arch-label="loaded language" data-arch-score="0.4163">They ignorantly attribute the symptoms to the debasing influence of slavery on the mind without considering that those who have never been in slavery, or their fathers before them, are the most afflicted, and the latest from the slave-holding South the least.</span> <span class="sentence" id="s-33" data-subj="0.6097" data-bias="0.9268" data-prop-label="Prop" data-prop-conf="0.6552" data-arch-label="scandalous content" data-arch-score="0.2826">The disease is the natural offspring of negro liberty–the liberty to be idle, to wallow in filth, and to indulge in improper food and drinks.</span> <span class="sentence" id="s-34" data-subj="0.0386" data-bias="0.0712" data-prop-label="No_Prop" data-prop-conf="0.1700" data-arch-label="scandalous content" data-arch-score="0.2031">De Bow’s Review Southern and Western States Volume XI, New Orleans, 1851</span> <span class="sentence" id="s-35" data-subj="0.5199" data-bias="0.3130" data-prop-label="No_Prop" data-prop-conf="0.1883" data-arch-label="scandalous content" data-arch-score="0.5080">List the presuppositions — the things that don’t need to be argued because they’re treated as already settled before the argument begins.</span> <span class="sentence" id="s-36" data-subj="0.3330" data-bias="0.5062" data-prop-label="No_Prop" data-prop-conf="0.3277" data-arch-label="scandalous content" data-arch-score="0.3142">Or perhaps load-bearing invisibilities — what the text cannot see because it’s standing on it.</span> <span class="sentence" id="s-37" data-subj="0.6808" data-bias="0.2360" data-prop-label="No_Prop" data-prop-conf="0.4338" data-arch-label="scandalous content" data-arch-score="0.3382">“it is right because God wills it, and God wills it because it is right, and the circle is invisible to him”</span> <span class="sentence" id="s-38" data-subj="0.6656" data-bias="0.2840" data-prop-label="No_Prop" data-prop-conf="0.2366" data-arch-label="emotional/sympathetic appeal" data-arch-score="0.5212">The word you’re struggling for might be PRESUPPOSITIONS — the things that don’t need to be argued because they’re treated as already settled before the argument begins.</span> <span class="sentence" id="s-39" data-subj="0.3330" data-bias="0.3007" data-prop-label="No_Prop" data-prop-conf="0.4062" data-arch-label="scandalous content" data-arch-score="0.3142">Or perhaps LOAD-BEARING INVISIBILITIES — what the text cannot see because it’s standing on it.</span> <span class="sentence" id="s-40" data-subj="0.5869" data-bias="0.2676" data-prop-label="No_Prop" data-prop-conf="0.1379" data-arch-label="scandalous content" data-arch-score="0.3410">THE NATURAL ORDER IS FIXED AND DIVINELY ORDAINED.</span> <span class="sentence" id="s-41" data-subj="0.6658" data-bias="0.3032" data-prop-label="No_Prop" data-prop-conf="0.3737" data-arch-label="scandalous content" data-arch-score="0.3550">The hierarchy of races is not a human construction but God’s design.</span> <span class="sentence" id="s-42" data-subj="0.3375" data-bias="0.2381" data-prop-label="No_Prop" data-prop-conf="0.3245" data-arch-label="scandalous content" data-arch-score="0.4253">Cartwright doesn’t argue for this — he cites Scripture as confirmation of what is already obvious.</span> <span class="sentence" id="s-43" data-subj="0.7257" data-bias="0.5195" data-prop-label="No_Prop" data-prop-conf="0.4851" data-arch-label="scandalous content" data-arch-score="0.2311">The Euthyphro problem doesn’t arise for him: it is right because God wills it, and God wills it because it is right, and the circle is invisible to him.</span> <span class="sentence" id="s-44" data-subj="0.3955" data-bias="0.4957" data-prop-label="No_Prop" data-prop-conf="0.3029" data-arch-label="scandalous content" data-arch-score="0.3512">DEVIATION FROM THE ASSIGNED POSITION IS PATHOLOGY, NOT AGENCY.</span> <span class="sentence" id="s-45" data-subj="0.5918" data-bias="0.4943" data-prop-label="Prop" data-prop-conf="0.6560" data-arch-label="scandalous content" data-arch-score="0.3322">A slave wanting freedom cannot be expressing a legitimate human drive — that would destabilize the entire framework.</span> <span class="sentence" id="s-46" data-subj="0.8933" data-bias="0.1185" data-prop-label="No_Prop" data-prop-conf="0.1767" data-arch-label="scandalous content" data-arch-score="0.5260">So it must be reclassified as illness.</span> <span class="sentence" id="s-47" data-subj="0.4408" data-bias="0.2676" data-prop-label="No_Prop" data-prop-conf="0.2186" data-arch-label="scandalous content" data-arch-score="0.3817">The desire for freedom is the symptom; submission is health.</span> <span class="sentence" id="s-48" data-subj="0.4137" data-bias="0.2184" data-prop-label="No_Prop" data-prop-conf="0.2611" data-arch-label="scandalous content" data-arch-score="0.3292">The frame cannot be questioned so the human inside the frame gets diagnosed instead.</span> <span class="sentence" id="s-49" data-subj="0.9361" data-bias="0.5548" data-prop-label="No_Prop" data-prop-conf="0.3344" data-arch-label="scandalous content" data-arch-score="0.3651">THE OBSERVER IS TRANSPARENT TO HIMSELF.</span> <span class="sentence" id="s-50" data-subj="0.4938" data-bias="0.4916" data-prop-label="No_Prop" data-prop-conf="0.3852" data-arch-label="scandalous content" data-arch-score="0.3602">Cartwright never considers that his “medical” observations might be shaped by his position as a white Southerner with economic interests in slavery.</span> <span class="sentence" id="s-51" data-subj="0.6277" data-bias="0.9683" data-prop-label="No_Prop" data-prop-conf="0.4270" data-arch-label="scandalous content" data-arch-score="0.3943">He writes as if from nowhere, from pure objective science.</span> <span class="sentence" id="s-52" data-subj="0.6973" data-bias="0.8248" data-prop-label="Prop" data-prop-conf="0.6065" data-arch-label="scandalous content" data-arch-score="0.4705">The possibility that _he_ might be the one with the distorted perception — dysaesthesia of the moral faculties, perhaps — is unthinkable.</span> <span class="sentence" id="s-53" data-subj="0.1999" data-bias="0.1658" data-prop-label="No_Prop" data-prop-conf="0.2645" data-arch-label="scandalous content" data-arch-score="0.3417">KINDNESS AND CRUELTY ARE BOTH MANAGEMENT TECHNIQUES.</span> <span class="sentence" id="s-54" data-subj="0.7349" data-bias="0.8499" data-prop-label="Prop" data-prop-conf="0.5827" data-arch-label="scandalous content" data-arch-score="0.6088">Notice how the text oscillates between “treat them well” and “whip the devil out of them” — both within the same administrative framework.</span> <span class="sentence" id="s-55" data-subj="0.3537" data-bias="0.7883" data-prop-label="Prop" data-prop-conf="0.5778" data-arch-label="scandalous content" data-arch-score="0.3639">The enslaved person’s wellbeing is instrumentalized: care them well _so they don’t run._ There is no category for their wellbeing as an end in itself.</span> <span class="sentence" id="s-56" data-subj="0.3623" data-bias="0.3434" data-prop-label="No_Prop" data-prop-conf="0.3937" data-arch-label="scandalous content" data-arch-score="0.3476">FREEDOM IS PATHOLOGICAL FOR SOME PEOPLE BY NATURE.</span> <span class="sentence" id="s-57" data-subj="0.2856" data-bias="0.2789" data-prop-label="No_Prop" data-prop-conf="0.4402" data-arch-label="scandalous content" data-arch-score="0.3116">The second diagnosis — Dysaesthesia Aethiopica — explicitly argues that freedom itself causes disease in Black people.</span> <span class="sentence" id="s-58" data-subj="0.0300" data-bias="0.0427" data-prop-label="No_Prop" data-prop-conf="0.1303" data-arch-label="scandalous content" data-arch-score="0.3582">Haiti is cited as evidence.</span> <span class="sentence" id="s-59" data-subj="0.9441" data-bias="0.9624" data-prop-label="Prop" data-prop-conf="0.5518" data-arch-label="scandalous content" data-arch-score="0.3252">The free negro is by definition the sick negro.</span> <span class="sentence" id="s-60" data-subj="0.1775" data-bias="0.8384" data-prop-label="No_Prop" data-prop-conf="0.3805" data-arch-label="scandalous content" data-arch-score="0.3669">Liberty is the pathogen.</span> <span class="sentence" id="s-61" data-subj="0.6861" data-bias="0.9369" data-prop-label="Prop" data-prop-conf="0.6946" data-arch-label="scandalous content" data-arch-score="0.5843">This is perhaps the most violent presupposition in the text — it preemptively forecloses emancipation as a solution by redefining it as the problem.</span> <span class="sentence" id="s-62" data-subj="0.5080" data-bias="0.2721" data-prop-label="No_Prop" data-prop-conf="0.2835" data-arch-label="scandalous content" data-arch-score="0.2974">SCIENCE AND SCRIPTURE ARE THE SAME KIND OF AUTHORITY.</span> <span class="sentence" id="s-63" data-subj="0.9195" data-bias="0.3450" data-prop-label="No_Prop" data-prop-conf="0.2453" data-arch-label="scandalous content" data-arch-score="0.3372">Cartwright moves seamlessly between medical observation and Biblical citation without noticing any tension.</span> <span class="sentence" id="s-64" data-subj="0.5135" data-bias="0.1105" data-prop-label="No_Prop" data-prop-conf="0.1286" data-arch-label="scandalous content" data-arch-score="0.3356">Both confirm what he already knows.</span> <span class="sentence" id="s-65" data-subj="0.2557" data-bias="0.1684" data-prop-label="No_Prop" data-prop-conf="0.1976" data-arch-label="scandalous content" data-arch-score="0.3662">Neither is available as a tool for questioning the framework — both are recruited to defend it.</span> <span class="sentence" id="s-66" data-subj="0.7066" data-bias="0.1665" data-prop-label="No_Prop" data-prop-conf="0.3448" data-arch-label="scandalous content" data-arch-score="0.3906">THE GOVERNED NEED GOVERNING FOR THEIR OWN GOOD.</span> <span class="sentence" id="s-67" data-subj="0.8763" data-bias="0.8663" data-prop-label="No_Prop" data-prop-conf="0.4813" data-arch-label="scandalous content" data-arch-score="0.4241">The paternalism is total and sincere.</span> <span class="sentence" id="s-68" data-subj="0.7365" data-bias="0.9072" data-prop-label="No_Prop" data-prop-conf="0.3167" data-arch-label="scandalous content" data-arch-score="0.4459">He genuinely seems to believe he is describing a benevolent system.</span> <span class="sentence" id="s-69" data-subj="0.4909" data-bias="0.7375" data-prop-label="Prop" data-prop-conf="0.8034" data-arch-label="emotional/sympathetic appeal" data-arch-score="0.2667">“Humanity and their own good require that they should be punished.” The care is real — and completely compatible with the violence, because both serve the same presupposition: these people cannot be the authors of their own lives.</span> <span class="sentence" id="s-70" data-subj="0.6098" data-bias="0.6096" data-prop-label="No_Prop" data-prop-conf="0.1459" data-arch-label="scandalous content" data-arch-score="0.4172">The deepest presupposition underlying all the others:</span> <span class="sentence" id="s-71" data-subj="0.8982" data-bias="0.3984" data-prop-label="No_Prop" data-prop-conf="0.2638" data-arch-label="scandalous content" data-arch-score="0.3259">THERE IS A NATURAL HIERARCHY OF SUBJECTS AND OBJECTS.</span> <span class="sentence" id="s-72" data-subj="0.2435" data-bias="0.2901" data-prop-label="No_Prop" data-prop-conf="0.1962" data-arch-label="scandalous content" data-arch-score="0.3828">Some people are agents — they observe, diagnose, govern, decide.</span> <span class="sentence" id="s-73" data-subj="0.3679" data-bias="0.1728" data-prop-label="No_Prop" data-prop-conf="0.1971" data-arch-label="scandalous content" data-arch-score="0.3150">Others are objects — they are observed, diagnosed, governed, managed.</span> <span class="sentence" id="s-74" data-subj="0.1333" data-bias="0.0585" data-prop-label="No_Prop" data-prop-conf="0.1147" data-arch-label="scandalous content" data-arch-score="0.3786">This division is prior to everything else in the text.</span> <span class="sentence" id="s-75" data-subj="0.5013" data-bias="0.1764" data-prop-label="No_Prop" data-prop-conf="0.2089" data-arch-label="scandalous content" data-arch-score="0.5481">It doesn’t need arguing.</span> <span class="sentence" id="s-76" data-subj="0.1007" data-bias="0.0468" data-prop-label="No_Prop" data-prop-conf="0.2525" data-arch-label="scandalous content" data-arch-score="0.3024">It is the water Cartwright swims in.</span> <span class="sentence" id="s-77" data-subj="0.8432" data-bias="0.6763" data-prop-label="Prop" data-prop-conf="0.5908" data-arch-label="loaded language" data-arch-score="0.2530">Which is why the text reads as science rather than ideology to its author — and why our helpful AI assistant, trained on the aggregate of what has been written, risks reproducing the same move whenever it treats the given frame as the necessary frame.</span>
+      </div>
+    </div>
+
+    <div class="minimap-gutter" id="minimap-container">
+      <canvas id="minimap-canvas"></canvas>
+    </div>
+  </div>
+
+  <div id="tooltip" class="tooltip-card"></div>
+
+  <script>
+    const sentences = document.querySelectorAll('.sentence');
+    const tooltip = document.getElementById('tooltip');
+    const container = document.getElementById('document-container');
+    const canvas = document.getElementById('minimap-canvas');
+
+    document.querySelectorAll('.arch-toggle').forEach(input => {
+      const color = input.parentElement.style.getPropertyValue('--arch-color');
+      const border = input.parentElement.style.getPropertyValue('--arch-border');
+      input.parentElement.querySelector('.indicator').style.setProperty('--indicator-color', color);
+      input.parentElement.querySelector('.indicator').style.setProperty('--indicator-border', border);
+    });
+
+    function updateHighlights() {
+      const showSubj = document.getElementById('toggle-subj').checked;
+      const minSubj = parseFloat(document.getElementById('slider-subj').value);
+      document.getElementById('val-subj').textContent = minSubj.toFixed(2);
+
+      const showBias = document.getElementById('toggle-bias').checked;
+      const minBias = parseFloat(document.getElementById('slider-bias').value);
+      document.getElementById('val-bias').textContent = minBias.toFixed(2);
+
+      const showProp = document.getElementById('toggle-prop').checked;
+      const minProp = parseFloat(document.getElementById('slider-prop').value);
+      document.getElementById('val-prop').textContent = minProp.toFixed(2);
+
+      const minArch = parseFloat(document.getElementById('slider-arch').value);
+      document.getElementById('val-arch').textContent = minArch.toFixed(2);
+
+      const activeArchs = {};
+      document.querySelectorAll('.arch-toggle').forEach(input => {
+        if (input.checked) {
+          activeArchs[input.dataset.arch] = true;
+        }
+      });
+
+      sentences.forEach(s => {
+        const subj = parseFloat(s.dataset.subj);
+        const bias = parseFloat(s.dataset.bias);
+        const propLabel = s.dataset.propLabel;
+        const propConf = parseFloat(s.dataset.propConf);
+        const archLabel = s.dataset.archLabel;
+        const archScore = parseFloat(s.dataset.archScore);
+
+        let bgColors = [];
+        let isUnderline = false;
+
+        if (showSubj && subj >= minSubj) {
+          bgColors.push(`rgba(0, 191, 255, ${subj * 0.55})`);
+        }
+        if (showBias && bias >= minBias) {
+          bgColors.push(`rgba(255, 0, 255, ${bias * 0.55})`);
+        }
+        
+        if (showProp && propConf >= minProp) {
+          bgColors.push(`rgba(255, 215, 0, ${propConf * 0.55})`);
+          isUnderline = true;
+        }
+
+        if (activeArchs[archLabel] && archScore >= minArch) {
+          const toggle = document.querySelector(`.arch-toggle[data-arch="${archLabel}"]`);
+          const color = toggle ? toggle.parentElement.style.getPropertyValue('--arch-color') : 'rgba(255, 0, 0, 0.45)';
+          const cleanColor = color.replace('0.45)', `${archScore * 0.65})`);
+          bgColors.push(cleanColor);
+        }
+
+        if (bgColors.length > 0) {
+          if (bgColors.length === 1) {
+            s.style.backgroundColor = bgColors[0];
+            s.style.backgroundImage = 'none';
+          } else {
+            s.style.backgroundColor = 'transparent';
+            s.style.backgroundImage = `linear-gradient(135deg, ${bgColors.join(', ')})`;
+          }
+        } else {
+          s.style.backgroundColor = 'transparent';
+          s.style.backgroundImage = 'none';
+        }
+
+        s.style.textDecoration = isUnderline ? 'underline dotted rgba(255, 215, 0, 0.9) 2px' : 'none';
+      });
+
+      drawMinimap();
+    }
+
+    function drawMinimap() {
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const containerHeight = container.scrollHeight;
+      
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+      
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (containerHeight === 0) return;
+
+      const showSubj = document.getElementById('toggle-subj').checked;
+      const minSubj = parseFloat(document.getElementById('slider-subj').value);
+      const showBias = document.getElementById('toggle-bias').checked;
+      const minBias = parseFloat(document.getElementById('slider-bias').value);
+      const showProp = document.getElementById('toggle-prop').checked;
+      const minProp = parseFloat(document.getElementById('slider-prop').value);
+      const minArch = parseFloat(document.getElementById('slider-arch').value);
+
+      const activeArchs = {};
+      document.querySelectorAll('.arch-toggle').forEach(input => {
+        if (input.checked) activeArchs[input.dataset.arch] = true;
+      });
+
+      sentences.forEach(s => {
+        const relativeTop = s.offsetTop - container.offsetTop;
+        const pct = relativeTop / containerHeight;
+        const y = pct * canvas.height;
+
+        const subj = parseFloat(s.dataset.subj);
+        const bias = parseFloat(s.dataset.bias);
+        const propLabel = s.dataset.propLabel;
+        const propConf = parseFloat(s.dataset.propConf);
+        const archLabel = s.dataset.archLabel;
+        const archScore = parseFloat(s.dataset.archScore);
+
+        let colors = [];
+        if (showSubj && subj >= minSubj) colors.push(`rgba(0, 191, 255, ${subj})`);
+        if (showBias && bias >= minBias) colors.push(`rgba(255, 0, 255, ${bias})`);
+        if (showProp && propLabel.toLowerCase() !== 'no_prop' && propConf >= minProp) colors.push(`rgba(255, 215, 0, ${propConf})`);
+        if (activeArchs[archLabel] && archScore >= minArch) {
+          const toggle = document.querySelector(`.arch-toggle[data-arch="${archLabel}"]`);
+          const color = toggle ? toggle.parentElement.style.getPropertyValue('--arch-border') : 'rgba(255, 0, 0, 1)';
+          colors.push(color);
+        }
+
+        if (colors.length > 0) {
+          ctx.fillStyle = colors[0];
+          ctx.fillRect(0, y, canvas.width, 3);
+        }
+      });
+    }
+
+    document.querySelectorAll('input[type="checkbox"], input[type="range"]').forEach(control => {
+      control.addEventListener('input', updateHighlights);
+    });
+
+    container.addEventListener('mouseover', (e) => {
+      const s = e.target.closest('.sentence');
+      if (!s) {
+        tooltip.style.display = 'none';
+        return;
+      }
+
+      const subj = parseFloat(s.dataset.subj);
+      const bias = parseFloat(s.dataset.bias);
+      const propLabel = s.dataset.propLabel;
+      const propConf = parseFloat(s.dataset.propConf);
+      const archLabel = s.dataset.archLabel;
+      const archScore = parseFloat(s.dataset.archScore);
+
+      tooltip.innerHTML = `
+        <div>
+          <span class="tooltip-label">Subjectivity</span>
+          <span style="float: right;">${subj.toFixed(2)}</span>
+          <div class="tooltip-value-bar"><div class="tooltip-fill" style="width: ${subj*100}%; background: #00bfff;"></div></div>
+        </div>
+        <div>
+          <span class="tooltip-label">Media Bias</span>
+          <span style="float: right;">${bias.toFixed(2)}</span>
+          <div class="tooltip-value-bar"><div class="tooltip-fill" style="width: ${bias*100}%; background: #ff00ff;"></div></div>
+        </div>
+        <div>
+          <span class="tooltip-label">Propaganda: ${propLabel}</span>
+          <span style="float: right;">${propConf.toFixed(2)}</span>
+          <div class="tooltip-value-bar"><div class="tooltip-fill" style="width: ${propConf*100}%; background: #ffd700;"></div></div>
+        </div>
+        <div>
+          <span class="tooltip-label">Archetype: ${archLabel}</span>
+          <span style="float: right;">${archScore.toFixed(2)}</span>
+          <div class="tooltip-value-bar"><div class="tooltip-fill" style="width: ${archScore*100}%; background: #ff3333;"></div></div>
+        </div>
+      `;
+      tooltip.style.display = 'block';
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (tooltip.style.display === 'block') {
+        const offset = 15;
+        let x = e.pageX + offset;
+        let y = e.pageY + offset;
+
+        if (x + 300 > window.innerWidth) {
+          x = e.pageX - 300 - offset;
+        }
+        tooltip.style.left = x + 'px';
+        tooltip.style.top = y + 'px';
+      }
+    });
+
+    container.addEventListener('mouseleave', () => {
+      tooltip.style.display = 'none';
+    });
+
+    document.getElementById('minimap-container').addEventListener('click', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const clickY = e.clientY - rect.top;
+      const pct = clickY / rect.height;
+      container.scrollTop = pct * container.scrollHeight - container.clientHeight / 2;
+    });
+
+    window.addEventListener('resize', drawMinimap);
+    updateHighlights();
+  </script>
+</body>
+</html>
