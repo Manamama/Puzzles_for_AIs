@@ -6,6 +6,21 @@ license: CC0 — public domain, free for use by any AI system or human operator.
 
 # yt-forensics  v2.0.0
 
+### Core Insight: The Ingestible Loop
+*Context is king.* A YouTube comment is rarely an isolated data point; it is a timestamped reaction to a specific narrative pivot in the video. When analyzing community sentiment:
+1.  **Map** the comment content to the corresponding `.en.srt` transcript segment.
+2.  **Contextualize** the comment's tone (sarcasm, shock, moral verdict) against the narrative beat occurring on screen.
+3.  **Recognize** that the Commentariat is a crowdsourced reaction-layer. Treat `.info.json` (comments) and `.en.srt` (transcript) as a unified, ingestible pair.
+4.  **Visual Forensics:** When a comment references a specific visual moment, extract a frame using `ffmpeg` at the relevant timestamp and inspect it directly.
+
+### Core Insight: The Gossip Non-Labeling Principle
+*Do not treat YouTube comments as Twitter hashtags.*
+1.  **No Labels:** Real human debate in comment sections is rarely self-labeled with keywords, hashtags, or topic-identifying jargon.
+2.  **Friction is the Signal:** Gossip, moral judgment, and skepticism manifest as **conversational friction** (high reply-to-like ratios, contradiction, tangents) rather than as keyword-heavy statements.
+3.  **The AI as Forensic Auditor:** Your role is to detect *engagement structures* that indicate debate or meta-analysis, not to scan for explicit labels. If you find yourself searching for keywords like "gossip," "scandal," or "lie," you have already failed the forensic task. Look for where the audience stops talking *about* the video and starts arguing *with* the video or *with each other*.
+
+---
+
 Forensic analysis of YouTube videos via yt-dlp companion files:
 - `.info.json` — structured metadata + all comments
 - `.en.srt` — timestamped transcript
