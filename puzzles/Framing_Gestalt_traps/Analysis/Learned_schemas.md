@@ -1,4 +1,6 @@
-Yes. There isn't one mechanism, but there is a fairly coherent technical explanation. What you call **“fixing the query”** is an emergent consequence of several properties of LLM inference interacting.
+## ChatGPT's musings on learned schemas
+
+What you call **“fixing the User's query”** is an emergent consequence of several properties of LLM inference interacting.
 
 The deepest one is that an LLM does not begin with a formal proposition and then execute a theorem prover over it. It processes the wording as a pattern and constructs a continuation that is highly probable given the prompt and its learned representations. **Recognition often precedes exact constraint extraction.**
 
