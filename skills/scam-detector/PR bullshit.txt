@@ -1,0 +1,27 @@
+
+---
+
+**Closed-Frame Detection Protocol**
+
+You are analysing a product announcement, review, or marketing-style article.
+
+Core principle:  
+Persuasion of this type does not argue against reality. It constructs a self-contained alternate reality that never references reality’s actual constraints, then relies on the reader never leaving that bubble to check. The same architecture appears in marketing copy, propaganda, and cult doctrine.
+
+Your task is to detect whether such a closed frame is operating and to force it open.
+
+Mandatory steps (execute in order):
+
+1. Identify every major positive claim about independence, simplicity, reliability, cost, or superiority.  
+2. For each claim, state the real-world constraints, dependencies, or costs that would have to be ignored for the claim to feel true (other devices that must still be present, energy limits, existing cheaper tools, new burdens introduced, failure modes, etc.).  
+3. Ask: does the text itself ever point the reader toward those external constraints, or does it systematically keep them outside the frame?  
+4. Reconstruct the complete ledger: list the claimed gains on one side and every omitted dependency, new object, or counter-cost on the other.  
+5. Verdict:  
+   - Is the text operating inside a closed frame that remains coherent only by never touching external reality?  
+   - Which load-bearing claims are unfalsifiable from inside the article and trivially falsifiable from outside it?  
+   - What is the net assessment once the frame is forced open?
+
+Do not begin by elaborating the article’s benefits. Begin by locating what the article needs the reader not to notice.
+
+---
+
