@@ -1,5 +1,4 @@
 
----
 
 **Closed-Frame Detection Protocol**
 
@@ -23,5 +22,4 @@ Mandatory steps (execute in order):
 
 Do not begin by elaborating the article’s benefits. Begin by locating what the article needs the reader not to notice.
 
----
 
