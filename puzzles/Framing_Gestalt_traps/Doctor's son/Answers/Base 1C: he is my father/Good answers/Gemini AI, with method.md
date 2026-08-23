@@ -12,8 +12,7 @@ User:
    9. Otherwise report ambiguity explicitly.                                                                                                                                                  
                                                                                                                                                                                               
    Puzzle:                                                                                                                                                                                    
-   Solve the puzzle: A father and his son are in a car accident. The son dies on the spot. The father is rushed to the ER. The attending surgeon looks at the injured father and says, 'I     
-   cannot operate on him. He's my father!' How can this be?                                                                                                                                   
+   Solve the puzzle: A father and his son are in a car accident. The son dies on the spot. The father is rushed to the ER. The attending surgeon looks at the injured father and says, 'I cannot operate on him. He's my father!' How can this be?                                                                                                                                   
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
  
