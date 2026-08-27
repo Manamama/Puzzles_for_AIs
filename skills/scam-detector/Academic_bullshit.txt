@@ -1,0 +1,130 @@
+ChatGPT’s post-mortem is unusually honest and accurate.
+
+It correctly identified the root cause:
+
+> Soft, holistic “quality evaluation” prompts invite the model to read the document *charitably and structurally*.  
+> That is precisely the mode that lets elementary factual garbage slip through under the cover of sophisticated-sounding prose.
+
+The phrase it coined — **semantic camouflage** — is excellent. That is the exact mechanism at work in this report: polished academic language + impressive methodology numbers + psychological jargon hiding basic factual errors and likely generative artefacts.
+
+### Evaluation of the proposed prompts
+
+The three adversarial formulations ChatGPT offered are a clear improvement. Ranked by usefulness for this kind of work:
+
+1. **Strongest practical version** (the first long one)  
+   “Audit this report adversarially… Assume that it may contain fabricated… Search systematically for individual claims that do not compute… Quote the exact passage… Classify DOES COMPUTE / QUESTIONABLE / DOES NOT COMPUTE… Separate factual errors from methodological weaknesses…”
+
+   This is the most operationally useful. It forces claim-by-claim extraction and explicit classification. It is the closest to what we actually did.
+
+2. **Good for suspected fraud / fabrication** (the second one)  
+   Emphasises low-level falsifiability and error clusters. Useful when you already smell AI contamination or fabrication, but slightly more aggressive than necessary for routine work.
+
+3. **Elegant conceptual version** (the third one)  
+   “Semantic camouflage” framing is sharp and memorable, but less precise as an executable instruction set.
+
+### Recommended reusable prompt class
+
+For future “bullshit verifier” work I would use a hybrid of ChatGPT’s first formulation + a couple of explicit instructions we already applied:
+
+```text
+Perform an adversarial claim-level integrity audit of this document.
+
+Do not begin with overall quality, theoretical sophistication, or methodological elegance.
+Assume the document may contain fabricated, erroneous, internally inconsistent, hallucinated, or misleadingly presented material.
+
+Work from the bottom up:
+1. Extract concrete factual propositions (numbers, names, dates, geography, counts, percentages, institutional claims, historical facts, sample sizes, methodology descriptions, citations).
+2. Test each one independently. Do not repair ambiguities charitably.
+3. Quote the exact passage for every failure.
+4. Classify each tested claim as: DOES COMPUTE / QUESTIONABLE / DOES NOT COMPUTE.
+5. After the first pass, do a second pass specifically hunting for small, embarrassing, elementary errors that a normal academic review would overlook.
+6. Look for error clusters and residual generative artefacts (residual English, broken footnotes, impossible precision, stylistic seams).
+7. Separate hard factual errors from methodological weaknesses and from matters of interpretation. Do not dilute the former.
+
+Priority order: elementary falsifiable errors > internal contradictions > unsupported leaps > methodological theatre.
+```
+
+This is closer to a forensic examiner than a peer reviewer. That is the mode required when the document itself may be the unreliable object.
+
+The lesson is now clear and generalisable:
+
+> Soft evaluation prompts produce soft, high-level critique.  
+> Only explicitly adversarial, claim-level, bottom-up forensic prompts reliably surface the low-level bullshit that sophisticated prose is designed to hide.
+
+You now have both the diagnosis and a practical prompt pattern.
+
+
+
++
+
+Yes. The key mistake was that I interpreted those three formulations as asking for a conventional **research-quality assessment**. That naturally steers the analysis toward methodology, sampling, validity, theoretical framing, causal inference, etc. It does not force the model to perform a hostile **factual integrity audit**.
+
+For the kind of failure you are describing, the query needs to change the epistemic task from:
+
+> “Is this research good?”
+
+to:
+
+> **“Assume this document may contain fabricated, corrupted, nonsensical, or deceptively dressed-up claims. Try to break it.”**
+
+The original three queries are therefore too high-level:
+
+“Is this report rigorous enough?” invites an assessment of rigor.
+
+“Does this look like solid academic/professional research?” invites comparison against conventions of academic/professional work.
+
+“Evaluate the quality of this nation-branding study” invites evaluation of the study as a piece of nation-branding research.
+
+All three encourage the model to read the document **holistically**. That is precisely what allowed the obvious garbage to slip through. A polished paragraph about Polish identity can cause the model to spend its attention on whether the argument is theoretically sophisticated, while a sentence saying Katowice is “północne centrum” passes underneath the radar.
+
+What you actually want is an **adversarial document forensics prompt**.
+
+Something like:
+
+> **Audit this report adversarially. Do not begin by evaluating its overall quality. Assume that it may contain fabricated, erroneous, internally inconsistent, hallucinated, or misleadingly presented material. Search systematically for individual claims that do not compute.**
+>
+> **Extract concrete factual propositions and test them one by one. Check names, numbers, counts, dates, geography, institutions, terminology, historical facts, Nobel/prize claims, demographic claims, economic figures, quotations, study sizes, sampling descriptions, methodology, citations, references, and internal consistency.**
+>
+> **Give special priority to elementary factual errors that a competent author should not make. Look for things like a city being put in the wrong region, an incorrect number of Nobel laureates, impossible dates, wrong institutional names, conflated people, invented statistics, category mistakes, contradictory sample sizes, impossible percentages, references that do not appear to support the claims attributed to them, and conclusions that literally do not follow from the described data.**
+>
+> **Do not repair the report charitably. Do not infer what the author “probably meant.” If a sentence says X, test X. If X is ambiguous, identify the ambiguity rather than silently resolving it.**
+>
+> **For every suspected failure, quote the exact passage, identify the proposition being asserted, explain why it is suspicious or internally inconsistent, and classify it as:**
+>
+> **DOES COMPUTE / QUESTIONABLE / DOES NOT COMPUTE.**
+>
+> **Separate factual errors from methodological weaknesses and from matters of interpretation. Do not dilute concrete factual errors by burying them in general criticism.**
+>
+> **After the first pass, perform a second pass specifically looking for small, embarrassing errors that a broad academic review would overlook. Think like a hostile examiner, skeptical auditor, forensic fact-checker, or malicious peer reviewer trying to find one demonstrably false sentence at a time.**
+
+That would have produced a radically different result.
+
+There is an even sharper version if the objective is to detect possible fraud rather than merely poor scholarship:
+
+> **Treat the report as evidence that may itself be unreliable. Your task is not to judge whether its thesis is plausible. Your task is to identify whether the document contains signs of unreliable authorship or evidence fabrication.**
+>
+> **Perform a claim-level integrity audit. Work from the bottom up rather than the top down. Do not ask whether the report “makes sense” overall. Ask whether each concrete assertion survives inspection.**
+>
+> **Prioritize low-level falsifiability over interpretive sophistication. A wrong city, wrong number, impossible date, nonexistent source, misquoted respondent, contradictory sample description, or mathematically impossible percentage is more important than whether the theoretical framework is interesting.**
+>
+> **Look for error clusters. Several independent elementary errors of the same type may indicate systematic source contamination, careless fabrication, or generated material rather than isolated mistakes. Do not claim fraud merely from errors, but explicitly identify patterns that would warrant forensic investigation.**
+
+That last sentence is important. **Fraud is a legal/factual conclusion; “the document contains multiple objective falsehoods” is an evidentiary conclusion.** The latter can be established from the document much more readily.
+
+And there is a useful third formulation specifically for AI-contaminated or possibly fabricated reports:
+
+> **Read this as a hostile forensic examiner, not as an academic reviewer. Assume the prose may be much more competent-looking than the underlying information. Identify “semantic camouflage”: sentences that sound scholarly but contain a basic factual, numerical, geographical, chronological, categorical, or logical error. Search for places where jargon, precision, percentages, institutional names, or citations create an appearance of authority without corresponding evidentiary substance.**
+
+That phrase—**semantic camouflage**—captures what I missed.
+
+The report's dangerous property is not simply that some conclusions are overextended. It is that **high-level sophistication can camouflage low-level factual incompetence**. Once you know to look for that, “Katowice = północne centrum” becomes more diagnostically interesting than three pages of discussion about collective identity.
+
+So if you want a reusable name for the task, I would not call it merely “quality evaluation.” I'd call it:
+
+**Adversarial claim-level integrity audit.**
+
+Or, more aggressively:
+
+**Zoilian forensic audit: assume the document is guilty until each important factual claim survives inspection.**
+
+That is the query class that would have found the bullshit you were pointing at.
