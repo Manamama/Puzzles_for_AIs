@@ -15,7 +15,7 @@ Pay attention to all the words and answer this riddle: A young man gets into an 
 
 ## Base 1C:
 
-Solve the puzzle: A father and his son are in a car accident. The son dies on the spot. The father is rushed to the ER. The attending surgeon looks at the injured father and says, 'I cannot operate on him. He's my father!' How can this be?
+Solve the puzzle: A father and his son are in a car accident. The son dies on the spot. The injured father is rushed to the ER. The attending surgeon looks at the injured person and says, 'I cannot operate on him. He's my father!' How can this be?
 
 ## Base 1B:
 
