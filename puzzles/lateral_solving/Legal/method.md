@@ -1,0 +1,1 @@
+/data/data/com.termux/files/home/Downloads/GitHub/Puzzles_for_AIs/skills/scam-detector/legal_tricks.md

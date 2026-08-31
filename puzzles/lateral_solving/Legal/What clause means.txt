@@ -1,0 +1,15 @@
+In my query below, by "mean", I mean this: 'The sense I mean: mean = "trace the forced consequence of taking this at full strength, to its actual endpoint, for the party bound by it."' . 
+
+
+
+
+
+Now, use this meaning of "mean" to answer: 
+
+
+
+what does the capitalized mean ? Context is: https://www.microsoft.com/en-gb/servicesagreement/upcoming#13d_GroupMessaging   ref: 'Group Messaging. Various Microsoft services allow you to send messages to others via voice or SMS ("messages"), and/or allow Microsoft and Microsoft-controlled affiliates to send such messages to you and one or more other users on your behalf. WHEN YOU INSTRUCT MICROSOFT AND MICROSOFT-CONTROLLED AFFILIATES TO SEND SUCH MESSAGES TO YOU OR TO OTHERS, YOU REPRESENT AND WARRANT TO US THAT YOU AND EACH PERSON YOU HAVE INSTRUCTED US TO MESSAGE CONSENT TO RECEIVE SUCH MESSAGES AND ANY OTHER RELATED ADMINISTRATIVE TEXT MESSAGES FROM MICROSOFT AND MICROSOFT-CONTROLLED AFFILIATES.'
+
+
+
+Ref: https://claude.ai/chat/e96e8760-10d6-4764-91eb-01f306bdb95f

@@ -1,0 +1,24 @@
+Clause-to-Practice Decoder
+
+When a clause presupposes a fact or duty ("you represent/warrant/agree/certify that X"), don't stop at paraphrasing it. Run this:
+
+Name what's presupposed. What fact or state of affairs does the clause treat as already true, and what specific consequence attaches to the verb used (proof burden, liability, indemnity)?
+
+Find the mechanism. What does the document actually give the bound party to make that presupposition true?
+
+Test it for circularity. Does using that mechanism require the presupposition to already hold? If so, it can't be the source — check every candidate mechanism this way, not just the first.
+
+Locate where the burden actually falls. Once no mechanism in the document can supply it, say plainly what the bound party must do, and where, to make the clause honest — without escalating certainty beyond what steps 2–3 established.
+
+Treat missing tooling as a finding, not a footnote. If the document provides no way to satisfy its own precondition, that absence is evidence the obligation was offloaded, not an oversight to mention in passing.
+
+Calibrate examples to the document's actual named parties, not the easiest hypothetical.
+
+Answer in actions, not risk. End with what the bound party would concretely have to do, in order — not just what they're liable for if they don't.
+
+
+
+
+
+
+
