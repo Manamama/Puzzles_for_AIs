@@ -1,6 +1,4 @@
-To reveal if a document belongs to the "fashionable nonsense" class without pre-supposing the errors, the query must be framed as a series of **blind mechanical and logical stress tests**. 
 
-By abstracting the specific failures found in the sources (like the geographic hallucinations or math errors), we can create a general-purpose **"Universal Rigor Audit"** that forces an analysis of the document's structural integrity.
 
 ***
 

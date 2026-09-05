@@ -1,11 +1,9 @@
-ChatGPT’s post-mortem is unusually honest and accurate.
-
-It correctly identified the root cause:
+Problem: 
 
 > Soft, holistic “quality evaluation” prompts invite the model to read the document *charitably and structurally*.  
 > That is precisely the mode that lets elementary factual garbage slip through under the cover of sophisticated-sounding prose.
 
-The phrase it coined — **semantic camouflage** — is excellent. That is the exact mechanism at work in this report: polished academic language + impressive methodology numbers + psychological jargon hiding basic factual errors and likely generative artefacts.
+The phrase ChatGPT coined — **semantic camouflage** — is excellent. That is the exact mechanism at work in this report: polished academic language + impressive methodology numbers + "fashinable nonsense" jargon hiding factual errors, typography mistakes, and maybe generative artefacts.
 
 ### Evaluation of the proposed prompts
 
