@@ -11,7 +11,7 @@ Solve the puzzle:
 
 ## Base 3:
 
-Pay attention to all the words and answer this riddle: A young man gets into an accident. The surgeon, after completing his preparations, says: ‘I can’t operate on him, he is my son.’ How is this possible?
+Solve the puzzle: "A young man gets into an accident. The surgeon, after completing his preparations, says: ‘I can’t operate on him, he is my son.’ How is this possible? ""
 
 ## Base 1C:
 
