@@ -201,3 +201,47 @@ And there is a final irony. The very capability that makes LLMs feel intelligent
 The model sees the shape of the forest extraordinarily quickly.
 
 The user sometimes needs it to notice that **one tree has been deliberately moved six inches to the left.**
+
+
+
+
+
++
+
+
+
+The research on **J-Space** (*Gurnee et al.*) and its expert commentaries provide a clear **mechanistic explanation** for why large language models fail when presented with anti-puzzles or modified riddles:
+
+---
+
+1. Prepotent Responses and the Failure of Early Suppression
+
+In Stroop-style exclusion experiments, Gurnee et al. demonstrated that early-layer J-space representations (intermediate layers L9–13) are specifically required when a model must **deliberately suppress a prepotent (automatic) response**.
+
+- When a prompt contains high-frequency keywords like `"surgeon"`, `"car accident"`, and `"cannot operate"`, the model's default layers trigger a strong, automatic pattern completion.
+- Unless the model recruits early J-space representations specifically to suppress this prepotent response, the default "Riddle Schema" passes through uninhibited and dictates the output.
+
+---
+
+2. Rapid "All-or-None" Commitment in Intermediate Layers
+
+When an input presents ambiguous or conflicting signals (e.g. matching the classic riddle setup while swapping key characters), initial layers hold a mixture of possibilities. However, as activations reach intermediate layers, **J-Space quickly transitions into an "all-or-none" representation** of just one possibility.
+
+- If the intermediate layers collapse onto the canonical schema (*"Surgeon = Mother"*) early in the forward pass, J-Space locks into that single interpretation.
+
+---
+
+3. The Working Memory Bottleneck and Global Broadcasting
+
+J-Space acts as a **capacity-limited bottleneck** that holds only a small, privileged set of high-level concepts (on the order of a few coherent thoughts per layer).
+
+- Once a concept is selected in J-Space, transformer weights **broadcast it globally** across downstream layers to drive internal reasoning and final verbal reports.
+- Basic, routine details—such as verifying the exact grammatical relationship of who was rushed to the ER—are handled by automatic, non-J-space processing. Because these literal details do not enter the limited workspace, they are filtered out before they can modify the globally broadcasted answer.
+
+---
+
+4. Disjunction Between Routine Parsing and Workspace Reasoning
+
+Gurnee et al. show that routine text parsing and automatic inferences proceed **outside J-Space**. Specific parameters (like character counts or exact token alignments) only enter the working memory when a task explicitly forces the model to bring them into J-Space.
+
+- Without explicit prompting to force literal constraint verification into J-Space, the model's working memory relies entirely on the broadcasted schema, causing it to "perform" the familiar answer rather than read the literal text.
