@@ -1,13 +1,13 @@
 ---
 name: google-colab-cli-tradecraft
-description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix.
+description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix. Also load it when a session needs Google Drive (the `colab drivemount` consent flow, which is human-in-the-loop), or when the CLI is driven from a non-interactive agent shell where `colab console` would block forever.
 ---
 
 # Google Colab CLI Tradecraft
 
 Use `colab skill | glow`  or `colab readme`  to learn the official basics first — this skill assumes that base knowledge and covers what it doesn't.
 
-version 2.3.1
+version 2.4.0
 
 ## Authentication
 
@@ -64,6 +64,45 @@ EOF
 - Use `<<'EOF'` (single quotes) to avoid quoting problems.
 - Put shell commands with `!`
 - Put Python code directly.
+
+## For an Agent: Use `colab exec`, Never `colab console`
+
+- **`colab console`** is a raw interactive TTY. In a non-interactive agent shell it does not
+  "fail" — it **blocks forever** waiting on a human. It is a human tool, not an automation
+  entry point.
+- **`colab exec`** with piped stdin is the agent entry point (see "Best Way to Run
+  Multi-Line Commands" above). `colab new` is already synchronous, so
+  `colab new … && printf '…' | colab exec -s NAME` is the whole recipe — no readiness poll.
+
+Minimal GPU recipe, start to finish:
+
+```bash
+colab sessions                         # quota check: stop stale sessions first (see the 412 section)
+colab new --gpu T4 -s session_1_gpu    # synchronous; prints "[colab] Session READY." or exits non-zero
+printf '!nvidia-smi\n' | colab exec -s session_1_gpu
+```
+
+### The `colab_me` wrapper alias — and its trap for agents
+
+A convenience alias may exist in `Ubuntu_Scripts_1/utils/aliases3.sh`:
+
+```bash
+alias colab_me="bash ~/Downloads/GitHub/Ubuntu_Scripts_1/utils/colab_exec_wrapper.sh"
+```
+
+`colab_me gpu` creates/reuses a session named **`session_1_gpu`**
+(`colab new -s session_1_gpu --gpu T4`), mounts Drive, and finally opens **`colab console`**.
+
+Traps:
+
+- Because it ends in `colab console`, the wrapper **hangs an agent indefinitely**.
+- It also blocks twice on the interactive Drive-consent prompt (next section).
+- If you must run it anyway, feed `stdin` from `/dev/null` and bound it with `timeout`;
+  expect the Drive step to still require the human. For automation, do **not** call the
+  wrapper — replicate just the `colab new … --gpu T4` + `colab exec` parts.
+- Shell aliases are **not** loaded in non-interactive shells, so `colab_me` may not even
+  exist in an agent's shell. Invoke the script path directly if needed; never assume the
+  alias is present.
 
 ## Timing Note
 
@@ -199,6 +238,32 @@ colab drivemount -s "$SESSION_NAME"
 `|| true` is preferable here to toggling `set +e`/`set -e` around the line: it's
 scoped to exactly the one command that's allowed to fail, so a script running under
 `set -e` still aborts loudly on any *other*, unexpected failure.
+
+## Two Auths, Not One — and the Drive-consent Gate Is Human-in-the-Loop
+
+`colab` involves two independent kinds of authorization, and an AI agent can complete only the first:
+
+1. **CLI login** — `colab whoami`, via the OAuth/ADC flows in the Authentication section above.
+   Machine-doable.
+2. **Google Drive consent** — triggered the first time `colab drivemount` (or anything needing
+   `/content/drive`) runs against a session. The CLI prints an
+   `https://accounts.google.com/o/oauth2/v2/auth?…` URL and then blocks on:
+   `Press Enter after you have granted access…`
+
+The second is a **human-in-the-loop consent**: it needs a browser plus the account owner's
+approval, so an agent **cannot** satisfy it alone. The correct agent behaviour is to
+**surface the URL and stop**, let the human grant access and press Enter, then continue —
+*not* to wrap `drivemount` in a retry loop. This is the "Golden Rule" failure shape again: the
+blocker is a missing human action, not a transient error, so retrying manufactures nothing but
+latency and misleading log noise ("failed 40 times" around a prompt waiting for a person).
+
+Two consequences worth remembering:
+
+- The consent URL is **ephemeral** (note `redirect_uri=…/authorize-for-drive-credentials-ephem`)
+  — per-session and time-limited, so a stale URL is useless; regenerate before handing it over.
+- **Stopping a session drops the Drive mount**, and the next session needs Drive re-consented.
+  So don't stop sessions casually "to be tidy" while the workflow still needs Drive — `colab
+  stop` frees the concurrent-session slot but costs you the Drive authorization.
 
 ## `503 Service Unavailable` on `colab new --gpu ...` Is Often NOT Transient — It Can Mean "No GPU Capacity, Full Stop"
 
