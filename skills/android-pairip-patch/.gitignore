@@ -1,0 +1,7 @@
+# never commit key material or app binaries from this skill
+*.jks
+*.keystore
+*.pass
+keystore.pass
+*.apk
+*.apks

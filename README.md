@@ -132,6 +132,9 @@ Available Agent Skills (Global/Built-in):
 
 Available Agent Skills (Local Puzzles_for_AIs):
 
+  - android-pairip-patch
+      Removing Google Play (PairIP) startup gates from an APK: manifest surgery, repack,
+      re-sign, reinstall over adb.
   - android-saf
       Sequential JSON-based workflow for accessing non-Termux files on Android using termux-saf-*.
   - logical-bug-finder
@@ -151,6 +154,7 @@ Available Agent Skills (Local Puzzles_for_AIs):
 Among the repository's contents, the following are highlighted as **highly specific** or **unusual** tools that solve complex edge cases:
 
 ### 🧩 Featured Skills
+* **[android-pairip-patch](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/android-pairip-patch/SKILL.md)**: Kills **Google Play's PairIP licensing gate** in an APK — detects which of the three shapes it takes (Application class, manifest ContentProvider, native VM), patches the binary `AndroidManifest.xml` without apktool, repacks with correct alignment, re-signs and reinstalls over adb. Tested on unrooted Android 10 and Magisk-rooted Android 11.
 * **[android-saf](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/android-saf/SKILL.md)**: A specialized JSON-based workflow for navigating Android's **Storage Access Framework**. Essential for agents operating in Termux to access the broader Android filesystem.
 * **[stt-interpreter](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/stt-interpreter/SKILL.md)**: A cognitive playbook for **interpreting and fixing Speech-to-Text errors**. It uses linguistic heuristics to correct logic and punctuation in raw transcripts (specialized for English-39/74 dialects).
 
