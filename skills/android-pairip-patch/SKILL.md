@@ -33,6 +33,18 @@ PairIP also fires on a **rooted** phone with a custom ROM or Magisk, even when t
 Store is installed: the licence answer depends on Play's own integrity verdict, not on the
 APK. Root does not fix it; re-signing does.
 
+Check what the app can actually reach before blaming root:
+
+```bash
+adb shell pm list packages -d | grep vending      # Play disabled ⇒ no ILicensingService
+adb shell dumpsys package com.android.vending | grep enabled=
+```
+
+`enabled=3` (disabled) on a de-Googled or debloated phone is the whole story: the bind to
+`com.android.vending.licensing.ILicensingService` fails with `not found`, so the gate fires
+on *every* install, Play-bought or not. Root/Magisk is irrelevant to that; the manifest
+patch is the fix.
+
 ## 2. Triage all installed apps
 
 ```bash
@@ -106,7 +118,8 @@ for f in "$S"/orig/split_*.apk; do
     --ks-pass "file:$KP" "$S/signed/$(basename "$f")"; done
 
 # same signing key on every split, or install fails / app crashes on missing split
-adb uninstall "$P"                                        # signature changed ⇒ data loss
+adb shell "pm uninstall --user all $P"                     # signature changed ⇒ data loss
+                                                           # --user all: clears stale records
 adb install-multiple "$S/work/base-patched.apk" "$S"/signed/split_*.apk
 ```
 
@@ -135,6 +148,25 @@ adb shell dumpsys activity activities | grep -m1 ResumedActivity
   AndroidManifest.xml` (v1) for inspection.
 - **Uninstall deletes app data.** After reinstalling, the app must be set up again
   (pairing, logins, game progress). Say so before doing it.
+- **`pm uninstall -k` (keep data) makes the next install impossible**: the retained data
+  means PMS keeps the package identity, and `install-multiple` fails with
+  `INSTALL_FAILED_UPDATE_INCOMPATIBLE … signatures do not match`. Plain `pm uninstall`
+  can also leave a half-dead record (`dumpsys package` shows `pkg=null`, `pm path`
+  returns nothing, `pm list packages -u` still lists it). **Use
+  `pm uninstall --user all <pkg>`** — it cleared that record instantly, no reboot needed.
+  Devices with a second user (realme's "App cloner" creates `User 11`) carry per-user
+  records, which is how the `pkg=null` state happens in the first place.
+- **Prove the patch is surgical** before blaming the tool for a crash: dump both manifests
+  and diff them. `aapt dump xmltree base.apk AndroidManifest.xml` vs the patched APK; the
+  only difference must be the patched attribute or the removed element (4–5 lines).
+- **Cleared the gate ≠ working app.** Some apps die right after it, in their own code:
+  `com.harmonynetwork.singsharp` 16.0.0 throws `AssertionError: couldn't initialize
+  LocaleData for locale en` in Firebase Perf plus `FORTIFY: pthread_mutex_lock called on
+  a destroyed mutex` → SIGABRT, with a 4-line manifest diff. Likely its own
+  signature-derived key/anti-tamper. Report it as app-side; do not iterate on the manifest.
+- **One app can declare two PairIP providers.** `com.chordai` 2.7.73 had
+  `LicenseContentProvider` *and* `LicenseContentProvider1`; removing only the first is a
+  silent no-op. `axml_scan.py` prints both — loop until `providers=-`.
 - **The app is frozen at that version**: Play/Aurora updates will be rejected because the
   signature no longer matches. Re-patch each new version.
 - Do not touch a `native=yes` app. Its PairIP is in the dex cipher, not the manifest.
@@ -182,6 +214,16 @@ keytool -genkeypair -keystore patch.jks -alias patch -keyalg RSA -keysize 4096 \
 | `pl.zenbytestudio.gomokuzen` | 0.0.2 | Provider | element removed |
 | `com.basa.largetext` | 1.2.5 | Application | → `android.app.Application` (Flutter) |
 | `flar2.devcheck` | — | native VM | left as Play build; its check never fires |
+
+realme RMX3085 (Android 11, Magisk 27, Play Store **disabled**), 2026-10-28:
+
+| App | Version | Shape | Patch |
+|---|---|---|---|
+| `com.logicedge.opencodemobile` | 1.2.4 | Application | → `android.app.Application` |
+| `dev.opencode.mobile` | 1.3.0 | Application | → `dev.opencode.mobile.OpenCodeMobileApplication` |
+| `com.dolby.dolby234` | 1.10.1 | Application | → `com.dolby.sessions.DolbySessionsApplication` |
+| `com.chordai` | 2.7.73 | Provider ×2 | both providers removed |
+| `com.harmonynetwork.singsharp` | 16.0.0 | Provider | element removed; app then crashes in its own code |
 
 Pattern worth remembering: a Play **update** is what reintroduces the gate, and the same
 app can change shape between versions — always rescan before patching, never reuse last
