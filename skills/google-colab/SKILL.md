@@ -1,13 +1,13 @@
 ---
 name: google-colab-cli-tradecraft
-description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix. Also load it when a session needs Google Drive (the `colab drivemount` consent flow, which is human-in-the-loop), or when the CLI is driven from a non-interactive agent shell where `colab console` would block forever.
+description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Also load it when *every* session shows `[?]`, or when `colab ssh -s NAME` / `colab exec -s NAME` behaves oddly because `sessions.json` was truncated by two concurrent invocations — in that state `colab ssh` silently rents a new VM instead of reattaching. Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix. Also load it when a session needs Google Drive (the `colab drivemount` consent flow, which is human-in-the-loop), or when the CLI is driven from a non-interactive agent shell where `colab console` would block forever.
 ---
 
 # Google Colab CLI Tradecraft
 
 Use `colab skill | glow`  or `colab readme`  to learn the official basics first — this skill assumes that base knowledge and covers what it doesn't.
 
-version 2.4.0
+version 2.5.0
 
 ## Authentication
 
@@ -44,6 +44,8 @@ colab --auth=adc whoami
 - `colab run script.py`: One-shot fresh VM
 - `colab stop -s alias`: Release session
 - `colab console`: Raw bash shell
+- `colab ssh -s name`: Shell over SSH; `--proxy-mode` makes it an OpenSSH ProxyCommand
+- `colab log -s name [-t TYPE] [-o file]`: Structured history, incl. `drive_auth_needed`
 
 ## Best Way to Run Multi-Line Commands
 
@@ -73,6 +75,8 @@ EOF
 - **`colab exec`** with piped stdin is the agent entry point (see "Best Way to Run
   Multi-Line Commands" above). `colab new` is already synchronous, so
   `colab new … && printf '…' | colab exec -s NAME` is the whole recipe — no readiness poll.
+- **`colab ssh` with a command** is the other agent-safe door: one command, then it
+  returns, no tty needed (see "The Two Doors" below).
 
 Minimal GPU recipe, start to finish:
 
@@ -96,13 +100,44 @@ alias colab_me="bash ~/Downloads/GitHub/Ubuntu_Scripts_1/utils/colab_exec_wrappe
 Traps:
 
 - Because it ends in `colab console`, the wrapper **hangs an agent indefinitely**.
-- It also blocks twice on the interactive Drive-consent prompt (next section).
-- If you must run it anyway, feed `stdin` from `/dev/null` and bound it with `timeout`;
-  expect the Drive step to still require the human. For automation, do **not** call the
-  wrapper — replicate just the `colab new … --gpu T4` + `colab exec` parts.
+- It hits the interactive Drive-consent prompt **once**, not twice (as of v2.4.3): the
+  first `colab drivemount` triggers consent, the second is the deliberate warm-up repeat
+  (see the drivemount section below). Notes claiming "blocks twice" predate that.
+- It calls `colab drivemount … 2>/dev/null` twice, so the consent URL survives only
+  because the CLI prints it to **stdout**, never stderr. Don't "tidy" that redirection.
+- Feeding `stdin` from `/dev/null` does **not** skip the consent requirement; it only
+  answers "Press Enter" with EOF, so the mount fails immediately. The wrapper then
+  `exit`s on the second failed `drivemount` and never reaches `colab console` — which is
+  why an agent can run the wrapper headlessly to surface the URL, yet still cannot
+  complete a mount alone.
 - Shell aliases are **not** loaded in non-interactive shells, so `colab_me` may not even
   exist in an agent's shell. Invoke the script path directly if needed; never assume the
   alias is present.
+
+## The Two Doors: `exec` (kernel) and `ssh` (shell)
+
+Both are non-interactive, both land on the same VM with the same `/content`.
+
+```bash
+# kernel door — python, with `!shell` lines allowed
+printf 'import sys\nprint(sys.version)\n!ls /content\n' | colab exec -s NAME
+
+# shell door — one command, then the bridge closes
+ssh -o ProxyCommand="colab ssh --proxy-mode -s NAME" root@localhost \
+  'hostname; uname -sr; ls -a /content'
+```
+
+- `colab ssh --proxy-mode` is an OpenSSH `ProxyCommand` bridge (WebSocket-stdio), not a
+  replacement for `ssh`: you still run the real `ssh` client and hand it a command.
+- `--identity` is optional — it defaults to the first of `~/.ssh/id_ed25519`,
+  `~/.ssh/id_ecdsa`, and only selects which public key is sent in the
+  `X-Colab-Ssh-Pubkey` header.
+- A file written over ssh is immediately visible to the kernel through `colab exec`, and
+  vice versa (verified both directions with a probe file). One filesystem, two doors.
+- `df -h /content/drive` reports the **Drive quota** (e.g. 15 GB with most of it used),
+  not the VM's local disk. Don't read it as free space on the runtime.
+- `echo 'cmd' | colab console -s NAME` is the third, slower shell door: bash inside tmux,
+  so piped output carries terminal-control bytes — filter with `grep -a`.
 
 ## Timing Note
 
@@ -221,6 +256,55 @@ local state the commands need simply isn't there anymore.
 from the same backend `colab sessions` does, independent of the CLI's local cache,
 and terminating it there frees the concurrent-session quota immediately.
 
+## When *Every* Session Shows `[?]` — Truncated `sessions.json` and the Silent Re-Create Trap
+
+The single-ghost case above has a sibling that looks similar and is considerably worse.
+If `colab sessions` lists **all** your runtimes as `[?]`, the local cache has not lost one
+entry — it has lost everything:
+
+```bash
+ls -l ~/.config/colab-cli/sessions.json     # 0 bytes == empty, not "no sessions"
+```
+
+Cause: two `colab` processes writing that file at the same time. The write is not atomic,
+so a `colab sessions` / `colab stop` / `colab log` issued while another `colab`
+invocation is still alive (a long `colab exec` inside a wrapper, another terminal,
+another agent) can leave the file truncated to zero. Nothing is recoverable from the CLI,
+and Google has no idea about your names: a name is only a local nickname for
+`endpoint + url + token`.
+
+The dangerous part is what `-s NAME` means in that state:
+
+| command | with a live local record | with `sessions.json` empty |
+| --- | --- | --- |
+| `colab exec -s NAME` | attaches to the existing kernel | `Session 'NAME' not found`, exits non-zero |
+| `colab console -s NAME` | attaches | not found |
+| `colab stop -s NAME` | stops that runtime | not found |
+| `colab ssh -s NAME` | attaches to the existing runtime | **silently creates a NEW runtime** under that name (its own help: "`-s NAME` creates the session if missing") |
+
+So `colab ssh` can look like a successful reattach while you are in fact sitting on a
+brand-new VM with no Drive. Tell them apart in one command:
+
+```bash
+ssh -o ProxyCommand="colab ssh --proxy-mode -s NAME" root@localhost \
+  'hostname; ls -a /content'
+```
+
+A bare `/content` (only `sample_data`, no `drive`, none of your files) means you were
+rented a fresh machine, not reconnected; `hostname` differing between runs is the same
+signal. The old runtime is now another `[?]` orphan, still holding quota and still
+holding whatever Drive consent it had — consent belongs to the runtime, not the name, so
+it does not transfer.
+
+**Prevention:** never run two `colab` commands concurrently from different terminals or
+agents — not even the harmless-looking `colab sessions` next to a long `colab exec`.
+Serialise them, or give each run its own state file with the global `--config <path>`
+flag. Check `ls -l sessions.json` whenever names behave strangely.
+
+**Recovery:** none from the CLI, same as the single-ghost case. Terminate the orphans at
+`https://colab.research.google.com` → Runtime → Manage sessions; any surviving local
+record stays usable, all orphaned ones are lost.
+
 ## `colab drivemount` Failing Once Right After (Re)Connecting Is Expected
 
 The very first `colab drivemount` (or any `colab exec`-based automation) call
@@ -234,6 +318,17 @@ not a bug to retry-loop around — one deliberate second attempt is the fix, not
 colab drivemount -s "$SESSION_NAME" || true   # expected first-call 404 while gateway wakes; second call is the real one
 colab drivemount -s "$SESSION_NAME"
 ```
+
+Two structurally different reasons make that first call not finish, and they need
+different responses — tell them apart with `colab log -s NAME -t drive_auth_needed`:
+
+| what you see | meaning | response |
+| --- | --- | --- |
+| `404` on `…/api/kernels` | kernel gateway still waking | one more identical call |
+| a `drive_auth_needed` event plus `Press Enter after you have granted access…` | this runtime has no Drive consent yet | hand the URL over, wait for the click, then call again |
+
+Both can occur in the same run, in either order (consent first, then a 404 on the retry),
+and neither is helped by a `while` loop.
 
 `|| true` is preferable here to toggling `set +e`/`set -e` around the line: it's
 scoped to exactly the one command that's allowed to fail, so a script running under
@@ -257,13 +352,35 @@ approval, so an agent **cannot** satisfy it alone. The correct agent behaviour i
 blocker is a missing human action, not a transient error, so retrying manufactures nothing but
 latency and misleading log noise ("failed 40 times" around a prompt waiting for a person).
 
-Two consequences worth remembering:
+**What the "Press Enter" actually reads: nothing that matters.** `automation.py` opens
+`/dev/tty`, calls `readline()`, and discards the result (falling back to
+`sys.stdin.readline()`, then `input()`, when there is no tty). Pasting the `4/0AUn6Hd-…`
+code that Google sometimes displays and pressing Enter on an empty line are therefore
+indistinguishable to the CLI. The browser approval is what grants Drive; the prompt is
+only an acknowledgement that you are finished.
+
+**Whether Google shows that copy-a-code page depends on the browser, not the CLI.** The
+request is `response_type=none+gsession`: a browser that already holds a
+`colab.research.google.com` session completes the round-trip silently, while a cold or
+incognito browser falls back to showing a code. Both end in the same server-side grant —
+don't read the difference as nondeterminism.
+
+**No tty at all skips the gate rather than blocking.** In an agent shell, `open("/dev/tty")`
+raises `OSError` (`No such device or address`), the fallback read gets EOF, and execution
+continues immediately. The mount then fails — but a wrapper that exits on that failure
+never reaches its `colab console`, so an agent can safely trigger the flow just to harvest
+the URL. It still cannot complete a mount on its own.
+
+Consequences worth remembering:
 
 - The consent URL is **ephemeral** (note `redirect_uri=…/authorize-for-drive-credentials-ephem`)
   — per-session and time-limited, so a stale URL is useless; regenerate before handing it over.
 - **Stopping a session drops the Drive mount**, and the next session needs Drive re-consented.
   So don't stop sessions casually "to be tidy" while the workflow still needs Drive — `colab
   stop` frees the concurrent-session slot but costs you the Drive authorization.
+- **Consent belongs to the runtime, not the name.** A runtime the CLI has lost keeps its
+  grant on Google's side but is unreachable by name; a fresh runtime created under the old
+  name starts unconsented, so Drive must be approved again minutes after the first approval.
 
 ## `503 Service Unavailable` on `colab new --gpu ...` Is Often NOT Transient — It Can Mean "No GPU Capacity, Full Stop"
 
