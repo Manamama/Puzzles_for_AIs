@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Argument map</title>
+<style>
+:root{--bg:#fff;--fg:#1f1f1d;--mut:#6b6a65;--line:#d3d1c7;--card:#f5f4ef;--atk:#b3261e;--amber:#ba7517;--amberbg:#faeeda;
+--p0:#0f6e56;--p0bg:#e1f5ee;--p1:#185fa5;--p1bg:#e6f1fb;--p2:#534ab7;--p2bg:#eeedfe;--p3:#5f5e5a;--p3bg:#f1efe8;--p4:#993556;--p4bg:#fbeaf0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1c1a;--fg:#ecebe5;--mut:#a3a29a;--line:#4a4944;--card:#262624;--atk:#f2b8b5;--amber:#ef9f27;--amberbg:#412402;
+--p0:#5dcaa5;--p0bg:#04342c;--p1:#85b7eb;--p1bg:#042c53;--p2:#afa9ec;--p2bg:#26215c;--p3:#b4b2a9;--p3bg:#2c2c2a;--p4:#ed93b1;--p4bg:#4b1528}}
+:root[data-theme="dark"]{--bg:#1c1c1a;--fg:#ecebe5;--mut:#a3a29a;--line:#4a4944;--card:#262624;--atk:#f2b8b5;--amber:#ef9f27;--amberbg:#412402;
+--p0:#5dcaa5;--p0bg:#04342c;--p1:#85b7eb;--p1bg:#042c53;--p2:#afa9ec;--p2bg:#26215c;--p3:#b4b2a9;--p3bg:#2c2c2a;--p4:#ed93b1;--p4bg:#4b1528}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;padding:16px;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+h3{font-size:14px;font-weight:600;margin:18px 0 6px}
+p{margin:0 0 8px}
+.mut{color:var(--mut)}.small{font-size:12px}
+.tabs{display:flex;gap:6px;margin:12px 0}
+button,select{font:inherit;font-size:13px;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:5px 12px;cursor:pointer}
+.tabs button.on{border-color:var(--fg);font-weight:600}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;padding:4px}
+svg{display:block;max-width:100%;height:auto}
+svg text{fill:var(--fg);font:12px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+svg .nl{font-size:11px;font-weight:600}
+svg .rl{font-size:11px;fill:var(--mut)}
+svg .el{font-size:10px;fill:var(--atk);paint-order:stroke;stroke:var(--bg);stroke-width:4px}
+.nd,.dot{cursor:pointer}.nd:focus,.dot:focus{outline:none}.nd:focus rect,.nd:hover rect{stroke-width:2.6}.dot:focus circle,.dot:hover circle{stroke-width:4}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0;font-size:12px;color:var(--mut);align-items:center}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-2px;border:1.5px solid}
+.legend b{display:inline-block;width:22px;border-top:2px solid var(--atk);margin-right:5px;vertical-align:3px}
+#detail{margin-top:12px;padding:12px 14px;background:var(--card);border-radius:10px;min-height:48px;font-size:14px}
+#detail .dh{font-size:12px;color:var(--mut);margin-bottom:2px}
+#detail .q{font-style:italic;color:var(--mut);margin:4px 0}
+#detail .wk{color:var(--amber);margin:6px 0}
+#detail div{margin-bottom:3px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 id="ttl"></h1>
+<p id="ctx" class="mut"></p>
+<div class="tabs">
+<button data-t="map" class="on">Argument map</button>
+<button data-t="time" id="tt">Move timeline</button>
+<button data-t="sum">Summary</button>
+</div>
+<div id="map" class="pane">
+<div style="margin-bottom:8px"><button id="wkb">Mark weak points</button></div>
+<div class="scroll"><svg id="svg" role="img" aria-label="Argument map"></svg></div>
+<div class="legend" id="lg"></div>
+</div>
+<div id="time" class="pane" hidden>
+<div class="scroll"><svg id="tsvg" role="img" aria-label="Move timeline"></svg></div>
+<p class="small mut" style="margin-top:8px">Vertical axis is Graham's hierarchy of disagreement. The shaded band marks moves at or below "responding to tone". "!" marks a heated tone. Hollow dots are low-confidence labels. Click a dot to see the quote and to override its level.</p>
+</div>
+<div id="sum" class="pane" hidden></div>
+<div id="detail"><span class="mut">Click a claim or a dot for the quote, the confidence and where it can be attacked.</span></div>
+<p class="small mut" style="margin-top:12px">Labels are one model's reading of the text, not a verdict. Dashed borders mark claims that were reconstructed rather than stated; faint arrows and hollow dots mark low confidence.</p>
+<script>
+(function(){
+var D={"title": "Should Swarajya stay on the spam blacklist? — the doxxing fight", "context": "Full section kept: 15 comments, 6 voices, three roots plus a late procedural note, 3–5 Nov 2026. The thread slides from ‘should we re-evaluate?’ into a doxxing-attribution fight that ends in an explicit concession. Levels span 0–7; the tu quoque at move 8 is the underhanded pivot.", "participants": ["Reconrabbit", "Changeworld1984", "Newslinger", "Simonm223", "Alaexis", "ActivelyDisinterested"], "groups": {"Changeworld1984": "Remove from blacklist", "Newslinger": "Keep blacklisted", "Reconrabbit": "Keep blacklisted", "Simonm223": "Keep blacklisted", "Alaexis": "Process", "ActivelyDisinterested": "Process"}, "claims": [{"id": "c1", "text": "The blacklisting discussion was well-attended and rested on more than editors’ partisanship.", "who": "Reconrabbit", "kind": "claim", "source": "stated", "span": "There was more that this decision was predicated on than the partisanship of its editors", "conf": 0.9}, {"id": "c2", "text": "The absence of reports about a source’s misinformation does not mean it does not publish misinformation.", "who": "Reconrabbit", "kind": "warrant", "source": "stated", "span": "The absence of reports about its misinformation do not mean that it does not publish misinformation", "conf": 0.9}, {"id": "c3", "text": "Changed facts justify reevaluating the blacklist entry.", "who": "Changeworld1984", "kind": "conclusion", "source": "stated", "span": "Thus a need for reevaluation", "conf": 0.8}, {"id": "c4", "text": "Little new damning evidence against Swarajya has emerged in the last 3–4 years.", "who": "Changeworld1984", "kind": "premise", "source": "stated", "span": "in last 3-4 years, there hasn't been much damning evidence against it", "conf": 0.9}, {"id": "c5", "text": "Swarajya was blacklisted for doxing a Wikipedia editor who diverged from its politics; the editor was harassed off-wiki and stopped editing.", "who": "Newslinger", "kind": "premise", "source": "stated", "span": "Swarajya was placed on the spam blacklist because it doxed a Wikipedia editor who diverged from the publication's political perspective", "conf": 0.9}, {"id": "c7", "text": "Swarajya should remain on the spam blacklist.", "who": "Newslinger", "kind": "conclusion", "source": "stated", "span": "and should remain on the spam blacklist", "conf": 0.9}, {"id": "c8", "text": "The Heritage Foundation precedent: deprecated and blacklisted for planned doxing; actual doxing is strictly worse.", "who": "Newslinger", "kind": "warrant", "source": "stated", "span": "Swarajya , having actually doxed an editor, is strictly worse than the Heritage Foundation in this regard", "mode": "analogy", "conf": 0.9}, {"id": "c9", "text": "Half of the few editors who argued against deprecation were later blocked for sockpuppetry.", "who": "Simonm223", "kind": "premise", "source": "stated", "span": "Of the very small minority of editors who argued against deprecation in that discussion, half were subsequently blocked for WP:SOCKPUPPETRY", "conf": 0.9}, {"id": "c10", "text": "The editor the publication reported on was himself caught sockpuppeting and banned for NPOV violations.", "who": "Changeworld1984", "kind": "claim", "source": "stated", "span": "The guy they reported on was also caught sockpuppeting. And was banned for violating NPOV. Funnily enough.", "conf": 0.5}, {"id": "c11", "text": "It was OpIndia, not Swarajya, that doxed; the outlets are separate.", "who": "Changeworld1984", "kind": "counter", "source": "stated", "span": "It was not Swarajya that doxxed an editor. It was OpIndia which has been seperated from Swarajya.", "conf": 0.8}, {"id": "c12", "text": "Swarajya doxed under its own byline and broadcast it to 840k+ followers; mentioning OpIndia clears nothing.", "who": "Newslinger", "kind": "counter", "source": "stated", "span": "Swarajya doxed the Wikipedia editor in its own article on its own website under its own byline", "conf": 0.9}, {"id": "c13", "text": "Swarajya referenced the OpIndia article but never published the editor’s name itself.", "who": "Changeworld1984", "kind": "concession", "source": "stated", "span": "And while they never published the name, Swarajya did reference OpIndia article", "conf": 0.7}, {"id": "c14", "text": "An archived copy confirms Swarajya did publish the editor’s name and personal details.", "who": "Newslinger", "kind": "premise", "source": "stated", "span": "I just double-checked an archived version of the article, and Swarajya did in fact publish the editor's name and personal details", "conf": 0.9}, {"id": "c15", "text": "Swarajya did not link the OpIndia article, only referenced it.", "who": "Changeworld1984", "kind": "claim", "source": "stated", "span": "Though they didn't link the article. Just referenced it.", "conf": 0.6, "withdrawn": true}, {"id": "c16", "text": "Doxing by a source should technically not bear on reliability assessments, but editors will weigh it anyway.", "who": "Alaexis", "kind": "warrant", "source": "stated", "span": "Technically, doxing Wikipedia editors should not have bearing on the reliability discussion", "conf": 0.8}, {"id": "c17", "text": "WP:NPOV governs article content, not source reliability; deprecating a source is not an NPOV violation.", "who": "ActivelyDisinterested", "kind": "claim", "source": "stated", "span": "WP:NPOV relates to content in Wikipedia articles, not source reliability", "conf": 0.9}], "relations": [{"from": "c4", "to": "c3", "type": "supports", "conf": 0.9}, {"from": "c2", "to": "c3", "type": "undercuts", "note": "absence of new reports ≠ the old grounds are gone — conceded by Changeworld himself", "conf": 0.9}, {"from": "c1", "to": "c3", "type": "undermines", "note": "the decision’s grounds were broader than partisanship — Changeworld explicitly disclaims the partisanship reading", "conf": 0.7}, {"from": "c9", "to": "c1", "type": "supports", "note": "the anti-deprecation minority’s sockpuppetry makes the process-insinuation untenable", "conf": 0.8}, {"from": "c5", "to": "c7", "type": "supports", "conf": 0.9}, {"from": "c8", "to": "c7", "type": "supports", "note": "jointly with c5; the harm (harassment, editor driven off-wiki) is why both bite", "conf": 0.9}, {"from": "c10", "to": "c5", "type": "undermines", "note": "insinuates the victim’s own bans mitigate the doxing — a motive jab with no bearing shown", "conf": 0.6}, {"from": "c11", "to": "c5", "type": "undermines", "conf": 0.8}, {"from": "c12", "to": "c11", "type": "rebuts", "conf": 0.9}, {"from": "c13", "to": "c5", "type": "undermines", "note": "retreat: referencing OpIndia’s article is not publishing the identity", "conf": 0.7}, {"from": "c14", "to": "c13", "type": "rebuts", "conf": 0.9}, {"from": "c15", "to": "c13", "type": "supports", "note": "doubling down on the referencing distinction — retracted one minute later", "conf": 0.6}, {"from": "c16", "to": "c7", "type": "undercuts", "note": "technically the grounds are extra-reliability — admitted to weigh anyway", "conf": 0.8}], "moves": [{"who": "Reconrabbit", "level": 0, "role": "position", "text": "opens: the grounds were broader than partisanship", "span": "The discussion that led to Swarajya being blacklisted was well-attended", "target": "c1", "when": "2026-11-03", "conf": 0.9}, {"who": "Reconrabbit", "level": 0, "role": "question", "text": "asks for evidence of the misinformation claims", "span": "Links to these articles or papers would be appreciated because right now I can't find evidence of several of these items.", "when": "2026-11-03", "conf": 0.9}, {"who": "Changeworld1984", "level": 0, "role": "position", "text": "makes the reevaluation case", "span": "What I am pointing at is that many facts have changed in last few years. Thus a need for reevaluation.", "target": "c3", "when": "2026-11-03", "conf": 0.8}, {"who": "Changeworld1984", "level": 0, "role": "concession", "text": "concedes the counter-warrant while keeping the conclusion", "span": "I know that absence of evidence doesn't mean no evidence but in last 3-4 years, there hasn't been much damning evidence against it.", "target": "c2", "when": "2026-11-03", "conf": 0.8}, {"who": "Newslinger", "level": 0, "role": "position", "text": "opening position: the doxxing grounds and the HF precedent", "span": "Absolutely not. Swarajya was placed on the spam blacklist because it doxed a Wikipedia editor", "target": "c7", "when": "2026-11-03", "conf": 0.9}, {"who": "Simonm223", "level": 0, "role": "evidence", "text": "evidence: half the anti-deprecation minority were socks", "span": "Of the very small minority of editors who argued against deprecation in that discussion, half were subsequently blocked for WP:SOCKPUPPETRY", "target": "c9", "when": "2026-11-03", "conf": 0.9}, {"who": "Simonm223", "level": 0, "role": "evidence", "text": "supplies the SPI link", "span": "Wikipedia:Sockpuppet_investigations/Moksha88/Archive", "when": "2026-11-03", "conf": 0.9}, {"who": "Changeworld1984", "level": 2, "tone": "heated", "text": "tu quoque on the sockpuppet taint; no bearing shown on the doxxing itself", "span": "The guy they reported on was also caught sockpuppeting. And was banned for violating NPOV. Funnily enough.", "target": "c9", "when": "2026-11-03", "conf": 0.7}, {"who": "Changeworld1984", "level": 5, "text": "denies the doxxing attribution: OpIndia is separate", "span": "It was not Swarajya that doxxed an editor. It was OpIndia which has been seperated from Swarajya.", "target": "c5", "when": "2026-11-03", "conf": 0.8}, {"who": "Newslinger", "level": 6, "text": "refutes the separation: own byline, own site, 840k+ reach", "span": "Swarajya doxed the Wikipedia editor in its own article on its own website under its own byline", "target": "c11", "when": "2026-11-03", "conf": 0.9}, {"who": "Changeworld1984", "level": 0, "role": "concession", "text": "partially concedes after checking: referenced, not published", "span": "I looked into it. And while they never published the name, Swarajya did reference OpIndia article.", "target": "c12", "when": "2026-11-03", "conf": 0.8}, {"who": "Changeworld1984", "level": 5, "text": "residual case: still argues for some freedom", "span": "Though I would still argue for at least some freedom", "target": "c7", "when": "2026-11-03", "conf": 0.5}, {"who": "Newslinger", "level": 7, "text": "checks the archive: the name was published — refutes the central factual defense", "span": "I just double-checked an archived version of the article, and Swarajya did in fact publish the editor's name and personal details", "target": "c13", "when": "2026-11-03", "conf": 0.9}, {"who": "Newslinger", "level": 0, "role": "procedural", "text": "points to the whitelisting process", "span": "The whitelisting procedure is the designated process for requesting exceptions to any spam blacklist entry", "when": "2026-11-03", "conf": 0.9}, {"who": "Changeworld1984", "level": 4, "text": "retreats to the link-vs-reference distinction", "span": "Though they didn't link the article. Just referenced it.", "target": "c14", "when": "2026-11-03", "conf": 0.7}, {"who": "Changeworld1984", "level": 0, "role": "concession", "text": "concedes outright and retracts the previous reply", "span": "I concede. Ignore the above reply.", "target": "c15", "when": "2026-11-03", "conf": 0.9}, {"who": "Alaexis", "level": 0, "role": "procedural", "text": "offers the RfC route", "span": "if there is lot of WP:USEBYOTHERS by RS you could open a new RfC", "when": "2026-11-05", "conf": 0.9}, {"who": "Alaexis", "level": 0, "role": "position", "text": "notes doxxing is technically extra-reliability but weighs anyway", "span": "Technically, doxing Wikipedia editors should not have bearing on the reliability discussion but understandably many will not be disposed charitably to an outlet that has done it.", "target": "c16", "when": "2026-11-05", "conf": 0.8}, {"who": "Changeworld1984", "level": 0, "role": "question", "text": "reads the bar as a formal apology", "span": "As I am understanding, wikipedia would like a formal apology for doxing.", "when": "2026-11-05", "conf": 0.6}, {"who": "ActivelyDisinterested", "level": 0, "role": "procedural", "text": "corrects the NPOV category error", "span": "WP:NPOV relates to content in Wikipedia articles, not source reliability", "target": "c17", "when": "2026-11-03", "conf": 0.9}], "weak_points": [{"claim": "c3", "note": "The case for reevaluation never names what changed — ‘many facts have changed’ carries no content, so the conclusion rests entirely on the absence-of-new-evidence premise its own author concedes proves little."}, {"claim": "c4", "note": "An argument from absence. Reconrabbit’s matching request for evidence of misinformation is never answered by anyone — the misinformation half of the case is asserted on both sides without exhibits."}, {"claim": "c10", "note": "The tu quoque is never connected to any premise and never answered: it insinuates the victim’s own bans mitigate the doxing, which no one states or contests. The referent of ‘they’ is itself ambiguous."}, {"claim": "c16", "note": "The ‘technically not reliability’ distinction is never cashed out — which reliability criterion does doxxing fail? The practice-over-principle gap stays undefined."}, {"claim": "c13", "note": "The retreat is never made precise: referenced via what — name, family name, identifiable details? The archive check answers it, but the concession arrives before the distinction is stated."}, {"claim": "c2", "note": "Asserted without a mechanism — who would report misinformation, to whom? It is conceded by the other side, which may be why it is never examined."}], "unanswered": ["c10", "c17"]};
+if(!D){document.body.textContent='No data embedded. Build with scripts/build.py.';return}
+var NS='http://www.w3.org/2000/svg';
+function $(s){return document.querySelector(s)}
+function S(tag,at,par,txt){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);if(txt!==undefined)e.textContent=txt;if(par)par.appendChild(e);return e}
+function H(tag,at,par,txt){var e=document.createElement(tag);for(var k in at){if(k==='class')e.className=at[k];else e.setAttribute(k,at[k])}if(txt!==undefined)e.textContent=txt;if(par)par.appendChild(e);return e}
+var claims=D.claims||[],rels=D.relations||[],moves=D.moves||[],weak=D.weak_points||[],un=D.unanswered||[];
+var byId={};claims.forEach(function(c){byId[c.id]=c});
+var who=[];(D.participants||[]).concat(claims.map(function(c){return c.who}),moves.map(function(m){return m.who})).forEach(function(w){if(w&&who.indexOf(w)<0)who.push(w)});
+var cnt={};moves.concat(claims).forEach(function(o){cnt[o.who]=(cnt[o.who]||0)+1});
+function G0(w){return (D.groups&&D.groups[w])||w}
+var GL=[];who.forEach(function(w){var g=G0(w);if(GL.indexOf(g)<0)GL.push(g)});
+if(!D.groups&&GL.length>5){GL.sort(function(a,b){return (cnt[b]||0)-(cnt[a]||0)});GL=GL.slice(0,4).concat(['others'])}
+function pi(w){var i=GL.indexOf(G0(w));if(i<0)i=GL.length-1;return Math.max(0,i)%5}
+function cf(o){return o.conf==null?0.7:o.conf}
+var LV=['not an attack','name-calling','ad hominem','responding to tone','contradiction','counterargument','refutation','refuting the central point'];
+var ATK=['undermines','undercuts','rebuts'];
+$('#ttl').textContent=D.title||'Argument map';$('#ctx').textContent=D.context||'';
+var det=$('#detail');
+document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){
+ document.querySelectorAll('.tabs button').forEach(function(x){x.classList.toggle('on',x===b)});
+ document.querySelectorAll('.pane').forEach(function(p){p.hidden=p.id!==b.getAttribute('data-t')})}});
+if(!moves.length){$('#tt').hidden=true}
+function wrap(t,n){var w=t.split(/\s+/),L=[],c='';w.forEach(function(x){if((c+' '+x).trim().length>n&&c){L.push(c);c=x}else c=(c+' '+x).trim()});if(c)L.push(c);
+ if(L.length>4){L.length=4;L[3]=L[3].slice(0,n-1)+'\u2026'}return L}
+function ask(txt){if(typeof sendPrompt==='function'){var b=H('button',{},det,'Stress-test this \u2197');b.style.marginTop='6px';b.onclick=function(){sendPrompt(txt)}}}
+
+function claimDetail(c){det.innerHTML='';
+ H('div',{class:'dh'},det,(c.who||'?')+' \u00b7 '+(c.kind||'claim')+' \u00b7 '+(c.source==='reconstructed'?'reconstructed (implied)':'stated')+(c.mode?' \u00b7 '+c.mode:''));
+ H('div',{},det,c.text);
+ if(c.span)H('div',{class:'q'},det,'\u201c'+c.span+'\u201d');
+ H('div',{class:'mut'},det,'confidence '+Math.round(cf(c)*100)+'%'+(un.indexOf(c.id)>=0?' \u00b7 left unanswered':'')+(c.withdrawn?' \u00b7 withdrawn or conceded by its author':''));
+ weak.filter(function(w){return w.claim===c.id}).forEach(function(w){H('div',{class:'wk'},det,'Where to poke: '+w.note)});
+ rels.filter(function(r){return r.to===c.id}).forEach(function(r){H('div',{class:'mut'},det,'\u2190 '+r.type+' from: '+((byId[r.from]||{}).text||r.from)+(r.note?' ('+r.note+')':''))});
+ rels.filter(function(r){return r.from===c.id}).forEach(function(r){H('div',{class:'mut'},det,'\u2192 '+r.type+': '+((byId[r.to]||{}).text||r.to)+(r.note?' ('+r.note+')':''))});
+ ask('Defend or attack this claim from the argument map: '+c.text)}
+
+/* ---------- argument map ---------- */
+var NW=210,GX=26,GY=64,LH=15,wkG=null;
+function drawMap(){
+ var svg=$('#svg');svg.innerHTML='';
+ if(!claims.length)return;
+ var lay={};claims.forEach(function(c){lay[c.id]=0});
+ for(var i=0;i<claims.length;i++){var ch=false;rels.forEach(function(r){
+  var atk=ATK.indexOf(r.type)>=0;
+  if(atk){if(lay[r.from]<claims.length&&lay[r.from]<lay[r.to]+1){lay[r.from]=lay[r.to]+1;ch=true}}
+  else{if(lay[r.to]<claims.length&&lay[r.to]<lay[r.from]+1){lay[r.to]=lay[r.from]+1;ch=true}}});if(!ch)break}
+ var us=[];claims.forEach(function(c){if(us.indexOf(lay[c.id])<0)us.push(lay[c.id])});us.sort(function(a,b){return a-b});claims.forEach(function(c){lay[c.id]=us.indexOf(lay[c.id])});
+ var L=[];claims.forEach(function(c){var k=lay[c.id];(L[k]=L[k]||[]).push(c)});
+ for(var k=0;k<L.length;k++)L[k]=L[k]||[];
+ claims.forEach(function(c){c._l=wrap(c.text,30);c._h=34+c._l.length*LH+(un.indexOf(c.id)>=0||c.withdrawn?16:0)});
+ var fr={};L[0].forEach(function(c,i){fr[c.id]=(i+.5)/L[0].length});
+ for(k=1;k<L.length;k++){
+  L[k].forEach(function(c,i){var s=rels.filter(function(r){return r.to===c.id&&fr[r.from]!==undefined}).map(function(r){return fr[r.from]});
+   if(!s.length)s=rels.filter(function(r){return r.from===c.id&&fr[r.to]!==undefined}).map(function(r){return fr[r.to]});
+   c._b=s.length?s.reduce(function(a,b){return a+b},0)/s.length:(i+.5)/L[k].length});
+  L[k].sort(function(a,b){return a._b-b._b});
+  L[k].forEach(function(c,i){fr[c.id]=(i+.5)/L[k].length})}
+ var maxN=Math.max.apply(null,L.map(function(l){return l.length}));
+ var W=Math.max(maxN,1)*(NW+GX)-GX+160,y=20;
+ L.forEach(function(l){var lh=Math.max.apply(null,[0].concat(l.map(function(c){return c._h})));var tot=l.length*(NW+GX)-GX;
+  l.forEach(function(c,i){c._x=(W-tot)/2+i*(NW+GX)+NW/2;c._y=y});y+=lh+GY});
+ var Hh=y-GY+30;
+ svg.setAttribute('width',W);svg.setAttribute('height',Hh);svg.setAttribute('viewBox','0 0 '+W+' '+Hh);svg.style.minWidth=Math.round(W*.65)+'px';
+ var defs=S('defs',{},svg);
+ [['ar-s','var(--mut)'],['ar-a','var(--atk)']].forEach(function(m){var mk=S('marker',{id:m[0],viewBox:'0 0 10 10',refX:8,refY:5,markerWidth:7,markerHeight:7,orient:'auto'},defs);
+  S('path',{d:'M2 1L8 5L2 9',fill:'none',style:'stroke:'+m[1]+';stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round'},mk)});
+ var gE=S('g',{},svg),gN=S('g',{},svg);
+ var inC={},outC={},inI={},outI={};
+ rels.forEach(function(r){inC[r.to]=(inC[r.to]||0)+1;outC[r.from]=(outC[r.from]||0)+1});
+ rels.forEach(function(r){var a=byId[r.from],b=byId[r.to];if(!a||!b)return;
+  var atk=ATK.indexOf(r.type)>=0;
+  var oi=outI[r.from]=(outI[r.from]||0)+1,ii=inI[r.to]=(inI[r.to]||0)+1;
+  var ox=a._x+((oi/(outC[r.from]+1))-.5)*NW*.8,ex=b._x+((ii/(inC[r.to]+1))-.5)*NW*.8,d,mx,my;
+  if(atk&&lay[r.from]>lay[r.to]){var x1=ox,y1=a._y-2,x2=ex,y2=b._y+b._h+2,kk=(y1-y2)/2;
+   d='M'+x1+' '+y1+'C'+x1+' '+(y1-kk)+','+x2+' '+(y2+kk)+','+x2+' '+y2;mx=(x1+x2)/2;my=(y1+y2)/2}
+  else if(lay[r.to]>lay[r.from]){var x1=ox,y1=a._y+a._h,x2=ex,y2=b._y-2,kk=(y2-y1)/2;
+   d='M'+x1+' '+y1+'C'+x1+' '+(y1+kk)+','+x2+' '+(y2-kk)+','+x2+' '+y2;mx=(x1+x2)/2;my=(y1+y2)/2}
+  else{var X1=a._x+NW/2,Y1=a._y+a._h/2,X2=b._x+NW/2+2,Y2=b._y+b._h/2,o=50+Math.abs(lay[r.to]-lay[r.from])*10;
+   d='M'+X1+' '+Y1+'C'+(X1+o)+' '+Y1+','+(X2+o)+' '+Y2+','+X2+' '+Y2;mx=(X1+X2)/2+o*.75;my=(Y1+Y2)/2}
+  var st=atk?'stroke:var(--atk);stroke-width:'+(r.type==='rebuts'?2.2:1.6)+';'+(r.type==='undermines'?'stroke-dasharray:2 3;':r.type==='undercuts'?'stroke-dasharray:7 4;':''):'stroke:var(--mut);stroke-width:1.4;';
+  var p=S('path',{d:d,fill:'none',style:st+(cf(r)<.6?'opacity:.5;':''),'marker-end':'url(#'+(atk?'ar-a':'ar-s')+')'},gE);
+  if(r.note)S('title',{},p,r.note);
+  if(atk)S('text',{x:mx,y:my,'text-anchor':'middle',class:'el'},gE,r.type+(cf(r)<.6?'?':''))});
+ claims.forEach(function(c){var p=pi(c.who),x=c._x-NW/2;
+  var g=S('g',{class:'nd',tabindex:0,role:'button','aria-label':c.text},gN);
+  S('rect',{x:x,y:c._y,width:NW,height:c._h,rx:8,style:'fill:var(--p'+p+'bg);stroke:var(--p'+p+');stroke-width:1.2;'+(c.source==='reconstructed'?'stroke-dasharray:5 3;':'')+(cf(c)<.6||c.withdrawn?'opacity:.55;':'')},g);
+  S('text',{x:x+10,y:c._y+16,class:'nl',style:'fill:var(--p'+p+')'},g,(c.who||'')+' \u00b7 '+(c.kind||'claim'));
+  c._l.forEach(function(t,i){S('text',{x:x+10,y:c._y+34+i*LH},g,t)});
+  if(un.indexOf(c.id)>=0)S('text',{x:x+10,y:c._y+c._h-8,class:'nl',style:'fill:var(--atk)'},g,'\u25cf left unanswered');
+  else if(c.withdrawn)S('text',{x:x+10,y:c._y+c._h-8,class:'nl'},g,'\u25cb withdrawn / conceded');
+  g.onclick=function(){claimDetail(c)};g.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();claimDetail(c)}}});
+ wkG=S('g',{style:'display:none;pointer-events:none',fill:'none',stroke:'var(--amber)','stroke-width':2,'stroke-dasharray':'4 3'},svg);
+ weak.forEach(function(w){var c=byId[w.claim];if(c)S('rect',{x:c._x-NW/2-4,y:c._y-4,width:NW+8,height:c._h+8,rx:11},wkG)});
+ var lg=$('#lg');lg.innerHTML='';
+ GL.forEach(function(w){var s=H('span',{},lg);var i=H('i',{},s);i.style.background='var(--p'+pi(w)+'bg)';i.style.borderColor='var(--p'+pi(w)+')';s.appendChild(document.createTextNode(w))});
+ [['supports','border-top:2px solid var(--mut)'],['undermines (premise)','border-top:2px dotted var(--atk)'],['undercuts (inference)','border-top:2px dashed var(--atk)'],['rebuts (conclusion)','border-top:3px solid var(--atk)']].forEach(function(t){
+  var s=H('span',{},lg);var b=H('b',{},s);b.setAttribute('style',t[1]+';display:inline-block;width:22px;margin-right:5px;vertical-align:3px');s.appendChild(document.createTextNode(t[0]))});
+ H('span',{},lg,'objections hang beneath their target');
+ H('span',{},lg,'dashed box = reconstructed, not stated')}
+$('#wkb').onclick=function(){if(!wkG)return;var on=wkG.style.display==='none';wkG.style.display=on?'block':'none';this.textContent=on?'Hide weak points':'Mark weak points'};
+
+/* ---------- move timeline ---------- */
+function moveDetail(m,i){det.innerHTML='';
+ H('div',{class:'dh'},det,'move '+(i+1)+' \u00b7 '+m.who+(m.when?' \u00b7 '+m.when:'')+(m.role?' \u00b7 '+m.role:'')+(m.tone==='heated'?' \u00b7 heated tone':''));
+ H('div',{},det,m.text||'');
+ H('div',{class:'q'},det,'\u201c'+m.span+'\u201d');
+ H('div',{class:'mut'},det,'level '+m.level+': '+LV[m.level]+' \u00b7 confidence '+Math.round(cf(m)*100)+'%'+(m.overridden?' \u00b7 your override':''));
+ if(m.target&&byId[m.target])H('div',{class:'mut'},det,'addresses: '+byId[m.target].text);
+ var row=H('div',{},det);H('span',{class:'small mut'},row,'Override level: ');
+ var sel=H('select',{},row);LV.forEach(function(n,k){var o=H('option',{value:k},sel,k+' '+n);if(k===m.level)o.selected=true});
+ sel.onchange=function(){m.level=+sel.value;m.overridden=true;drawTime();drawSum();moveDetail(m,i)};
+ ask('Is this move correctly graded at level '+m.level+' ('+LV[m.level]+')? Quote: '+m.span)}
+function drawTime(){
+ var svg=$('#tsvg');svg.innerHTML='';if(!moves.length)return;
+ var n=moves.length,RH=30,LM=205,CW=Math.max(34,Math.min(64,700/n)),W=LM+n*CW+30,Hh=8*RH+72;
+ svg.setAttribute('width',W);svg.setAttribute('height',Hh);svg.setAttribute('viewBox','0 0 '+W+' '+Hh);svg.style.minWidth=Math.round(W*.65)+'px';
+ function yy(l){return l>0?12+(7-l)*RH+RH/2:12+7*RH+RH/2+24}
+ S('rect',{x:LM-8,y:yy(3)-RH/2,width:W-LM+8,height:RH*3,style:'fill:var(--amberbg);opacity:.55'},svg);
+ for(var l=0;l<=7;l++){S('line',{x1:LM-8,x2:W-10,y1:yy(l),y2:yy(l),style:'stroke:var(--line);stroke-width:.5'},svg);
+  S('text',{x:LM-14,y:yy(l)+4,'text-anchor':'end',class:'rl'},svg,l+' '+LV[l])}
+ who.forEach(function(w){var pts=[];moves.forEach(function(m,i){if(m.who===w&&m.level>0)pts.push((LM+i*CW+CW/2)+','+yy(m.level))});
+  if(pts.length>1)S('polyline',{points:pts.join(' '),fill:'none',style:'stroke:var(--p'+pi(w)+');stroke-width:1;opacity:.45'},svg)});
+ moves.forEach(function(m,i){var x=LM+i*CW+CW/2,y=yy(m.level),p=pi(m.who);
+  var g=S('g',{class:'dot',tabindex:0,role:'button','aria-label':'move '+(i+1)+' '+m.who+' level '+m.level},svg);
+  S('circle',{cx:x,cy:y,r:7,style:'fill:'+(cf(m)<.6?'var(--bg)':'var(--p'+p+')')+';stroke:var(--p'+p+');stroke-width:2'},g);
+  if(m.tone==='heated')S('text',{x:x,y:y-11,'text-anchor':'middle',style:'fill:var(--atk);font-weight:700'},g,'!');
+  S('text',{x:x,y:Hh-10,'text-anchor':'middle',class:'rl'},svg,String(i+1));
+  g.onclick=function(){moveDetail(m,i)};g.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();moveDetail(m,i)}}});
+ var lx=LM;GL.forEach(function(w){S('circle',{cx:lx,cy:Hh-28,r:5,style:'fill:var(--p'+pi(w)+')'},svg);S('text',{x:lx+9,y:Hh-24,class:'rl'},svg,w);lx+=w.length*7+36})}
+
+/* ---------- summary ---------- */
+function drawSum(){var s=$('#sum');s.innerHTML='';
+ if(moves.length){H('h3',{},s,'Move quality, participants with 3+ graded moves');H('p',{class:'small mut'},s,'Counts describe moves, not people; fewer than three graded moves is too little to say anything.');
+  who.forEach(function(w){var ms=[];moves.forEach(function(m,i){if(m.who===w&&m.level>0)ms.push({m:m,i:i})});if(ms.length<3)return;
+   var hi=ms.filter(function(o){return o.m.level>=6}).length,lo=ms.filter(function(o){return o.m.level<=3});
+   H('p',{},s,w+': '+ms.length+' graded move'+(ms.length===1?'':'s')+', '+hi+' at refutation or above, '+lo.length+' at or below responding-to-tone'+(lo.length?'; lowest-level moves: '+lo.slice(0,3).map(function(o){return o.i+1}).join(', '):'')+'.')})}
+ function list(title,items,empty){H('h3',{},s,title);if(!items.length){H('p',{class:'mut'},s,empty);return}
+  var u=H('ul',{},s);items.forEach(function(t){H('li',{},u,t)})}
+ list('Weak points flagged',weak.map(function(w){return ((byId[w.claim]||{}).text||w.claim)+' \u2014 '+w.note}),'None flagged.');
+ list('Left unanswered',un.map(function(id){return (byId[id]||{}).text||id}),'Nothing marked as unanswered.');
+ list('Reconstructed claims (audit these)',claims.filter(function(c){return c.source==='reconstructed'}).map(function(c){return c.who+': '+c.text}),'None: every claim was stated.')}
+
+drawMap();drawTime();drawSum();
+})();
+</script>
+</body>
+</html>

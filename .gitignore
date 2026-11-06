@@ -35,3 +35,6 @@ gha-creds-*.json
 .taskmaster
 .vespera_scriptorium
 .vespera_v2
+
+# Python bytecode caches
+__pycache__/

@@ -1,0 +1,274 @@
+{
+  "title": "Tabloid format, tabloid journalism, or the subject as source? — the Daily Mirror in Thomas Markle\u2019s biography",
+  "context": "Full section kept: 11 comments, 8 voices, 28 Oct \u2013 4 Nov 2026. Mostly agreement and definition-polishing around two real disputes: what \u2018tabloid\u2019 picks out (paper format vs journalism genre), and whether the interviewee-as-source exception fits WP:BLPSOURCES as written. Heat is low \u2014 the timeline sits mostly on the floor, which is the correct result for this thread.",
+  "participants": ["ARoseThorn", "Cortador", "Cdjp1", "Ar1201u1", "BobFromBrockley", "Peter Gulutzan", "Keivan.f", "Kind Tennis Fan"],
+  "groups": {
+    "Cdjp1": "Ban tabloids",
+    "ARoseThorn": "Attribution",
+    "Ar1201u1": "Attribution",
+    "Keivan.f": "Attribution",
+    "Peter Gulutzan": "Attribution",
+    "BobFromBrockley": "Evidence first",
+    "Cortador": "Evidence first",
+    "Kind Tennis Fan": "Process"
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "text": "The Mirror has no reputation for fabricating quotes or interviews, unlike the Daily Mail.",
+      "who": "ARoseThorn",
+      "kind": "premise",
+      "source": "stated",
+      "span": "the Daily Mirror has existed for a while without getting a reputation for faking quotes or interviews like the Daily Mail",
+      "conf": 0.8
+    },
+    {
+      "id": "c2",
+      "text": "An attributed quote from the Mirror is fine for the Loveless allegations sentence.",
+      "who": "ARoseThorn",
+      "kind": "conclusion",
+      "source": "stated",
+      "span": "so an attributed quote seems fine",
+      "conf": 0.8
+    },
+    {
+      "id": "c3",
+      "text": "The Mirror is classed as neither generally reliable nor generally unreliable.",
+      "who": "Cortador",
+      "kind": "premise",
+      "source": "stated",
+      "span": "while The Mirrior is not classed as generally reliable, it is also not classed as generally unreliable",
+      "conf": 0.9
+    },
+    {
+      "id": "c4",
+      "text": "Tabloids should not be used for BLPs \u2014 or really for anything.",
+      "who": "Cdjp1",
+      "kind": "claim",
+      "source": "stated",
+      "span": "We shouldn't be using tabloids for BLPs (or really for anything)",
+      "conf": 0.8
+    },
+    {
+      "id": "c5",
+      "text": "Some coverage is only done by tabloids.",
+      "who": "Ar1201u1",
+      "kind": "premise",
+      "source": "stated",
+      "span": "some coverage is only done by tabloids (unfortunately)",
+      "conf": 0.9
+    },
+    {
+      "id": "c6",
+      "text": "Used with attribution \u2014 naming it a tabloid \u2014 tabloid coverage is acceptable.",
+      "who": "Ar1201u1",
+      "kind": "conclusion",
+      "source": "stated",
+      "span": "I don't see much of a problem if it is used with attribution",
+      "conf": 0.8
+    },
+    {
+      "id": "c7",
+      "text": "The size of paper a newspaper is printed on does not affect its reliability.",
+      "who": "BobFromBrockley",
+      "kind": "claim",
+      "source": "stated",
+      "span": "the size of paper a newspaper is printed on affects its reliability",
+      "conf": 0.9
+    },
+    {
+      "id": "c8",
+      "text": "The Mirror has a far better reputation than most other UK tabloids.",
+      "who": "BobFromBrockley",
+      "kind": "premise",
+      "source": "stated",
+      "span": "The Mirror has a far better reputation than most other UK tabloids",
+      "conf": 0.9
+    },
+    {
+      "id": "c9",
+      "text": "The ban is about tabloid journalism, not tabloid format.",
+      "who": "Cdjp1",
+      "kind": "counter",
+      "source": "stated",
+      "span": "its tabloid journalism, not tabloid format that is the tabloid in discussion",
+      "conf": 0.7
+    },
+    {
+      "id": "c10",
+      "text": "\u2018Tabloid journalism\u2019 is not a meaningful category, or does not apply to the Mirror.",
+      "who": "BobFromBrockley",
+      "kind": "counter",
+      "source": "stated",
+      "span": "I don't think \"tabloid journalism\" is a meaningful category then, or if it is it doesn't really apply to the Mirror",
+      "conf": 0.8
+    },
+    {
+      "id": "c11",
+      "text": "The subject was the source of the allegations, so what matters is only that she put them out there.",
+      "who": "Keivan.f",
+      "kind": "warrant",
+      "source": "stated",
+      "span": "the allegations were raised by his first wife in an interview with the Mirror",
+      "conf": 0.8
+    },
+    {
+      "id": "c12",
+      "text": "There is no indication the Mirror fabricated her quotes; the allegations prompted a response from the ex-husband.",
+      "who": "Keivan.f",
+      "kind": "premise",
+      "source": "stated",
+      "span": "There is no indication so far that the Mirror has fabricated any of her quotes",
+      "conf": 0.8
+    },
+    {
+      "id": "c13",
+      "text": "Including the earlier allegations matters biographically: they show a pattern of relaying negative stories about Markle.",
+      "who": "Keivan.f",
+      "kind": "premise",
+      "source": "stated",
+      "span": "it shows a pattern whereby she was constantly relaying negative stories about him",
+      "mode": "abduction",
+      "conf": 0.6
+    },
+    {
+      "id": "c14",
+      "text": "WP:BLPSOURCES as written bans material sourced solely to tabloid journalism, whoever the speaker is.",
+      "who": "Kind Tennis Fan",
+      "kind": "warrant",
+      "source": "reconstructed",
+      "conf": 0.7
+    },
+    {
+      "id": "c15",
+      "text": "Amending the guideline to allow tabloid interviews is unworkable: the class of tabloids is not enumerated.",
+      "who": "Cortador",
+      "kind": "counter",
+      "source": "stated",
+      "span": "we don't have a list of news outlets we class as tabloids",
+      "conf": 0.8
+    }
+  ],
+  "relations": [
+    { "from": "c1", "to": "c2", "type": "supports", "conf": 0.8 },
+    { "from": "c3", "to": "c2", "type": "supports", "note": "not classed either way, so local judgment plus attribution decides", "conf": 0.8 },
+    { "from": "c5", "to": "c6", "type": "supports", "conf": 0.9 },
+    { "from": "c6", "to": "c4", "type": "rebuts", "note": "attribution is the practice the ban forbids", "conf": 0.8 },
+    { "from": "c7", "to": "c4", "type": "undermines", "note": "on the format reading of \u2018tabloid\u2019, the ban has no ground", "conf": 0.9 },
+    { "from": "c8", "to": "c4", "type": "undermines", "note": "even on the format reading, the Mirror is the wrong member of the class", "conf": 0.8 },
+    { "from": "c9", "to": "c7", "type": "undercuts", "note": "accepts that format does not matter, denies that this touches the ban \u2014 it was about journalism all along", "conf": 0.7 },
+    { "from": "c10", "to": "c9", "type": "rebuts", "conf": 0.8 },
+    { "from": "c11", "to": "c2", "type": "supports", "note": "subject-as-source: the strongest form of the attribution exception", "conf": 0.8 },
+    { "from": "c12", "to": "c2", "type": "supports", "conf": 0.8 },
+    { "from": "c13", "to": "c2", "type": "supports", "note": "biographical relevance: the allegations are not gossip but pattern evidence", "conf": 0.6 },
+    { "from": "c14", "to": "c11", "type": "undercuts", "note": "accepts that the subject was the source, denies the exception holds under the guideline as written", "conf": 0.7 },
+    { "from": "c15", "to": "c10", "type": "supports", "note": "the same definitional point from the guideline side: no enumerated class to write into policy", "conf": 0.8 }
+  ],
+  "moves": [
+    {
+      "who": "ARoseThorn", "level": 0, "role": "position",
+      "text": "opens: attributed quote acceptable, no fabrication reputation",
+      "span": "so an attributed quote seems fine",
+      "target": "c2", "when": "2026-10-28", "conf": 0.8
+    },
+    {
+      "who": "Cortador", "level": 0, "role": "evidence",
+      "text": "supplies the classification: neither GREL nor GUNREL",
+      "span": "while The Mirrior is not classed as generally reliable, it is also not classed as generally unreliable",
+      "target": "c3", "when": "2026-10-29", "conf": 0.9
+    },
+    {
+      "who": "Cdjp1", "level": 0, "role": "position",
+      "text": "opens the second thread: flat ban on tabloids",
+      "span": "We shouldn't be using tabloids for BLPs (or really for anything)",
+      "target": "c4", "when": "2026-10-29", "conf": 0.8
+    },
+    {
+      "who": "Ar1201u1", "level": 0, "role": "concession",
+      "text": "concedes the general reluctance; notes the coverage reality",
+      "span": "I tend to agree; however, some coverage is only done by tabloids",
+      "target": "c5", "when": "2026-10-29", "conf": 0.9
+    },
+    {
+      "who": "Ar1201u1", "level": 5,
+      "text": "attribution plus naming the tabloid solves it",
+      "span": "I don't see much of a problem if it is used with attribution",
+      "target": "c6", "when": "2026-10-29", "conf": 0.8
+    },
+    {
+      "who": "BobFromBrockley", "level": 6,
+      "text": "refutes the format reading: paper size does not affect reliability",
+      "span": "I disagree with the idea that the size of paper a newspaper is printed on affects its reliability",
+      "target": "c4", "when": "2026-10-30", "conf": 0.7
+    },
+    {
+      "who": "Cdjp1", "level": 5,
+      "text": "definitional retreat: journalism, not format",
+      "span": "its tabloid journalism, not tabloid format that is the tabloid in discussion",
+      "target": "c7", "when": "2026-10-30", "conf": 0.8
+    },
+    {
+      "who": "BobFromBrockley", "level": 6,
+      "text": "refutes the genre category or its application to the Mirror",
+      "span": "I don't think \"tabloid journalism\" is a meaningful category then, or if it is it doesn't really apply to the Mirror",
+      "target": "c9", "when": "2026-10-30", "conf": 0.8
+    },
+    {
+      "who": "BobFromBrockley", "level": 0, "role": "question",
+      "text": "asks for evidence of unreliability",
+      "span": "What is the evidence it is unreliable?",
+      "when": "2026-10-30", "conf": 0.9
+    },
+    {
+      "who": "Peter Gulutzan", "level": 0, "role": "evidence",
+      "text": "reports the edit war and Keivan.f\u2019s restore rationale",
+      "span": "the interview was with the Mirror and she was the source of it",
+      "target": "c11", "when": "2026-11-02", "conf": 0.9
+    },
+    {
+      "who": "Keivan.f", "level": 0, "role": "position",
+      "text": "defends inclusion: subject was the source, no fabrication, biographical pattern",
+      "span": "the allegations were raised by his first wife in an interview with the Mirror",
+      "target": "c11", "when": "2026-11-03", "conf": 0.8
+    },
+    {
+      "who": "Kind Tennis Fan", "level": 5,
+      "text": "asks whether the guideline should encode the interview exception \u2014 insinuating the practice deviates from it",
+      "span": "Such material should not be added to an article when the only available sources are tabloid journalism",
+      "target": "c14", "when": "2026-11-04", "conf": 0.6
+    },
+    {
+      "who": "Cortador", "level": 5,
+      "text": "rebuts the amendment: no enumerated list of tabloids",
+      "span": "Unhelpful since we don't have a list of news outlets we class as tabloids.",
+      "target": "c15", "when": "2026-11-04", "conf": 0.8
+    }
+  ],
+  "weak_points": [
+    {
+      "claim": "c4",
+      "note": "The ban is stated without a single case: \u2018or really for anything\u2019 universalizes from no exhibit \u2014 and when challenged, the category does the work instead of evidence."
+    },
+    {
+      "claim": "c9",
+      "note": "The retreat from tabloid (format) to tabloid journalism (genre) is never operationalized \u2014 no criterion decides which outlets count, which is exactly what Cortador later says blocks any guideline amendment."
+    },
+    {
+      "claim": "c10",
+      "note": "The evidence question is never answered \u2014 nobody supplies a reliability record for the Mirror either way; the thread ends on the definitional point."
+    },
+    {
+      "claim": "c14",
+      "note": "Reconstructed from the quoted guideline: the reading that \u2018only available sources\u2019 covers an interviewee-sourced allegation is a judgment call, and the amendment question turns on it."
+    },
+    {
+      "claim": "c13",
+      "note": "The \u2018pattern of negative stories\u2019 inference is an abductive step stated in one breath \u2014 it would not survive BLP-weight scrutiny, but nobody presses it here."
+    },
+    {
+      "claim": "c2",
+      "note": "Own-reading doubt: \u2018attributed quote seems fine\u2019 may be a judgment about this sentence rather than a general rule; the thread never separates the two."
+    }
+  ],
+  "unanswered": ["c10", "c13"]
+}

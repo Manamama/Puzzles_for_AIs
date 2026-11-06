@@ -1,0 +1,301 @@
+{
+  "title": "Is \u2018identity revealing\u2019 doxxing? \u2014 the \u2018Crazy, I know\u2019 branch",
+  "context": "Fragment of the Wikipedia Reliable-sources Noticeboard discussion (29 Oct \u2013 2 Nov 2026) on the ADL\u2019s X post implying it tracks Wikipedia editors. Kept: the 10-comment tree around Levivich\u2019s sarcastic reply to ScottishFinnishRadish plus the Masem reminder it provoked (9 voices). Left out: the parallel defamation-law subthread (CNC, NightHeron, ~2026-53221-51), the AI-detection and deprecation-mechanics branches, and the section\u2019s other 187 comments; the tangent on POV bans (Bluethricecreamman, Slatersteven) is kept as level-0 moves without claims.",
+  "participants": [
+    "ScottishFinnishRadish",
+    "Masem",
+    "Levivich",
+    "PARAKANYAA",
+    "Metallurgist",
+    "Ahecht",
+    "Mangroves",
+    "Bluethricecreamman",
+    "Slatersteven"
+  ],
+  "groups": {
+    "ScottishFinnishRadish": "No doxxing case",
+    "Masem": "No doxxing case",
+    "Ahecht": "No doxxing case",
+    "PARAKANYAA": "No doxxing case",
+    "Mangroves": "No doxxing case",
+    "Levivich": "It is doxxing",
+    "Metallurgist": "Bystander",
+    "Bluethricecreamman": "Bystander",
+    "Slatersteven": "Bystander"
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "text": "What the ADL\u2019s tracking software actually does is unknown.",
+      "who": "ScottishFinnishRadish",
+      "kind": "premise",
+      "source": "stated",
+      "span": "We don't know what the software they're talking about is or does",
+      "conf": 0.9
+    },
+    {
+      "id": "c2",
+      "text": "Tracking editors\u2019 public edits via contributions and history pages is unproblematic.",
+      "who": "ScottishFinnishRadish",
+      "kind": "premise",
+      "source": "stated",
+      "span": "There's no problem tracking the public edits of editors using publicly available contributions and history pages",
+      "conf": 0.9
+    },
+    {
+      "id": "c3",
+      "text": "Given years of documented off-wiki coordination, interested parties will inevitably keep analyzing editors\u2019 public activity.",
+      "who": "ScottishFinnishRadish",
+      "kind": "warrant",
+      "source": "stated",
+      "span": "does anyone actually believe there is less effort to sway Wikipedia content on contentious issues?",
+      "mode": "induction",
+      "conf": 0.8
+    },
+    {
+      "id": "c4",
+      "text": "The ADL post is not worth getting up in arms about.",
+      "who": "ScottishFinnishRadish",
+      "kind": "conclusion",
+      "source": "stated",
+      "span": "so there's no reason to get up in arms right now",
+      "conf": 0.9
+    },
+    {
+      "id": "c5",
+      "text": "Editors are entitled to edit without being doxxed, and the ADL post threatens that.",
+      "who": "Levivich",
+      "kind": "counter",
+      "source": "stated",
+      "span": "Yes, actually, I expect to be able to edit without being doxxed. Crazy, I know.",
+      "conf": 0.8
+    },
+    {
+      "id": "c5w",
+      "text": "A campaign by an advocacy group to reveal which pseudonymous editor wrote what is doxxing.",
+      "who": "Levivich",
+      "kind": "warrant",
+      "source": "reconstructed",
+      "conf": 0.7
+    },
+    {
+      "id": "c5b",
+      "text": "SFR is personally responsible for the ADL\u2019s campaign, because of his ArbCom votes.",
+      "who": "Levivich",
+      "kind": "claim",
+      "source": "stated",
+      "span": "This take is really rich considering how personally responsible you are for causing this.",
+      "conf": 0.5
+    },
+    {
+      "id": "c6",
+      "text": "On that definition, advocacy coverage of pseudonymous right-wingers such as Bronze Age Pervert would also be doxxing.",
+      "who": "PARAKANYAA",
+      "kind": "counter",
+      "source": "stated",
+      "span": "If \"identity revealing\" is doxxing then basically any coverage of pseudonymous right-wing people id doxxing",
+      "mode": "analogy",
+      "conf": 0.8
+    },
+    {
+      "id": "c7",
+      "text": "Linking a username to edits is a basic MediaWiki function, not doxxing, and nobody has been doxxed.",
+      "who": "Ahecht",
+      "kind": "counter",
+      "source": "stated",
+      "span": "Tying a username to edits is not doxing, it's a basic function of the MediaWiki software.",
+      "conf": 0.8
+    },
+    {
+      "id": "c8",
+      "text": "The ADL has not doxed anybody.",
+      "who": "Mangroves",
+      "kind": "counter",
+      "source": "stated",
+      "span": "The ADL hasn't doxed anybody",
+      "conf": 0.8
+    },
+    {
+      "id": "c9",
+      "text": "ArbCom votes do not make SFR responsible for the ADL\u2019s tracking.",
+      "who": "Mangroves",
+      "kind": "counter",
+      "source": "stated",
+      "span": "voting as an arb to tban you for POV-pushing does not make one responsible for the ADL keeping tabs on Wikipedia editors",
+      "conf": 0.8
+    },
+    {
+      "id": "c10",
+      "text": "After a previous ADL complaint, members of Congress called for editor identities to be exposed.",
+      "who": "Masem",
+      "kind": "premise",
+      "source": "stated",
+      "span": "a reminder from the last time the ADL complained about these edits you had Congressppl calling for editor identies to be exposed",
+      "conf": 0.9
+    },
+    {
+      "id": "c11",
+      "text": "The answer to identity-exposure demands is not attacking advocacy organizations.",
+      "who": "ScottishFinnishRadish",
+      "kind": "counter",
+      "source": "stated",
+      "span": "I don't think that the answer to that is \"actively attack any advocacy organization that expresses opinions about bias on Wikipedia.\"",
+      "conf": 0.7
+    }
+  ],
+  "relations": [
+    { "from": "c1", "to": "c4", "type": "supports", "note": "jointly with c2 and c3", "conf": 0.9 },
+    { "from": "c2", "to": "c4", "type": "supports", "conf": 0.9 },
+    { "from": "c3", "to": "c4", "type": "supports", "note": "warrant: coordination history makes scrutiny inevitable", "conf": 0.8 },
+    { "from": "c10", "to": "c5w", "type": "supports", "note": "precedent that exposure campaigns against editors are real", "conf": 0.8 },
+    { "from": "c5w", "to": "c2", "type": "undermines", "note": "grants that edits are public, denies that this is \u2018no problem\u2019", "conf": 0.7 },
+    { "from": "c5", "to": "c4", "type": "rebuts", "conf": 0.8 },
+    { "from": "c6", "to": "c5w", "type": "rebuts", "note": "reductio: the definition proves too much", "conf": 0.8 },
+    { "from": "c7", "to": "c5w", "type": "rebuts", "note": "definition: the mechanism is ordinary MediaWiki", "conf": 0.8 },
+    { "from": "c8", "to": "c5", "type": "rebuts", "conf": 0.8 },
+    { "from": "c9", "to": "c5b", "type": "rebuts", "conf": 0.8 },
+    { "from": "c11", "to": "c10", "type": "undercuts", "note": "grants the reminder, denies it licenses attacking the ADL", "conf": 0.7 }
+  ],
+  "moves": [
+    {
+      "who": "ScottishFinnishRadish",
+      "level": 0,
+      "role": "position",
+      "text": "opens the branch: nothing to see here yet",
+      "span": "We don't know what the software they're talking about is or does so there's no reason to get up in arms right now.",
+      "target": "c4",
+      "when": "2026-10-29",
+      "conf": 0.9
+    },
+    {
+      "who": "Masem",
+      "level": 0,
+      "role": "evidence",
+      "text": "reminds of the congressional exposure demands",
+      "span": "a reminder from the last time the ADL complained about these edits you had Congressppl calling for editor identies to be exposed",
+      "target": "c10",
+      "when": "2026-10-29",
+      "conf": 0.9
+    },
+    {
+      "who": "ScottishFinnishRadish",
+      "level": 5,
+      "tone": "heated",
+      "text": "flips the reminder: the ADL itself polices criticism",
+      "span": "I don't think that the answer to that is \"actively attack any advocacy organization that expresses opinions about bias on Wikipedia.\"",
+      "target": "c10",
+      "when": "2026-10-29",
+      "conf": 0.6
+    },
+    {
+      "who": "Levivich",
+      "level": 5,
+      "tone": "heated",
+      "text": "sarcastic rebuttal: editing without doxxing is the baseline",
+      "span": "Yes, actually, I expect to be able to edit without being doxxed. Crazy, I know.",
+      "target": "c2",
+      "when": "2026-10-29",
+      "conf": 0.7
+    },
+    {
+      "who": "Levivich",
+      "level": 2,
+      "tone": "heated",
+      "text": "jab: blames SFR for provoking the ADL",
+      "span": "This take is really rich considering how personally responsible you are for causing this.",
+      "when": "2026-10-29",
+      "conf": 0.8
+    },
+    {
+      "who": "PARAKANYAA",
+      "level": 6,
+      "text": "reductio on the definition of doxxing",
+      "span": "If \"identity revealing\" is doxxing then basically any coverage of pseudonymous right-wing people id doxxing",
+      "target": "c5w",
+      "when": "2026-10-30",
+      "conf": 0.8
+    },
+    {
+      "who": "Metallurgist",
+      "level": 0,
+      "role": "other",
+      "text": "flags the jab as a personal attack",
+      "span": "this sounds like a personal attack against you unless I am overreading it.",
+      "target": "c5b",
+      "when": "2026-11-02",
+      "conf": 0.7
+    },
+    {
+      "who": "Ahecht",
+      "level": 6,
+      "text": "definition: username\u2013edit links are vanilla MediaWiki",
+      "span": "Tying a username to edits is not doxing, it's a basic function of the MediaWiki software.",
+      "target": "c5w",
+      "when": "2026-11-02",
+      "conf": 0.8
+    },
+    {
+      "who": "Mangroves",
+      "level": 5,
+      "text": "no doxxing has actually happened",
+      "span": "The ADL hasn't doxed anybody",
+      "target": "c5",
+      "when": "2026-11-02",
+      "conf": 0.8
+    },
+    {
+      "who": "Mangroves",
+      "level": 6,
+      "text": "refutes the responsibility claim; notes the topic ban",
+      "span": "voting as an arb to tban you for POV-pushing does not make one responsible for the ADL keeping tabs on Wikipedia editors",
+      "target": "c5b",
+      "when": "2026-11-02",
+      "conf": 0.8
+    },
+    {
+      "who": "Bluethricecreamman",
+      "level": 0,
+      "role": "question",
+      "text": "asks whether the whole fight is tribalism",
+      "span": "This feels like a political rorsach test\u2026 either that or im totally havent paid enough attention to wiki happenings\u2026",
+      "when": "2026-11-02",
+      "conf": 0.7
+    },
+    {
+      "who": "Slatersteven",
+      "level": 0,
+      "role": "evidence",
+      "text": "answers: bans went both ways, media whined both ways",
+      "span": "Some users were banned for pushing an Israle POV, and the Israeli media whined, then whined about some users pushing a Palestinian POV, who got banned",
+      "when": "2026-11-02",
+      "conf": 0.8
+    }
+  ],
+  "weak_points": [
+    {
+      "claim": "c5w",
+      "note": "The pivotal word \u2018doxxing\u2019 is never defined; the argument slides between \u2018the links are public\u2019 and \u2018identity exposed as an organized campaign\u2019 \u2014 two different things."
+    },
+    {
+      "claim": "c4",
+      "note": "Rests on \u2018nobody has been doxxed yet\u2019: an argument from present absence of harm that time can flip \u2014 exactly what Masem\u2019s reminder points at."
+    },
+    {
+      "claim": "c6",
+      "note": "The counterexample works only if ADL-style campaign coverage does not differ from journalistic coverage of Bronze Age Pervert; the relevant difference (purpose, targeting, scale) is never examined."
+    },
+    {
+      "claim": "c3",
+      "note": "\u2018Interested parties will analyze us anyway\u2019 explains that analysis happens; it does not by itself make this announcement unremarkable \u2014 the bridging step is never stated."
+    },
+    {
+      "claim": "c5b",
+      "note": "The causal chain \u2018ArbCom bans \u2192 ADL campaign \u2192 SFR responsible\u2019 is asserted as a jab, never argued; it is the one place the branch gets personal."
+    },
+    {
+      "claim": "c5",
+      "note": "Reading Levivich\u2019s sarcasm as a substantive rebuttal is a judgment call (conf 0.7); the \u2018personally responsible\u2019 reading depends on inferring from Mangroves\u2019 reply that SFR sat on ArbCom."
+    }
+  ],
+  "unanswered": ["c6", "c7", "c9", "c11"]
+}

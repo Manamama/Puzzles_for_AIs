@@ -1,0 +1,325 @@
+{
+  "title": "Should Swarajya stay on the spam blacklist? — the doxxing fight",
+  "context": "Full section kept: 15 comments, 6 voices, three roots plus a late procedural note, 3\u20135 Nov 2026. The thread slides from \u2018should we re-evaluate?\u2019 into a doxxing-attribution fight that ends in an explicit concession. Levels span 0\u20137; the tu quoque at move 8 is the underhanded pivot.",
+  "participants": ["Reconrabbit", "Changeworld1984", "Newslinger", "Simonm223", "Alaexis", "ActivelyDisinterested"],
+  "groups": {
+    "Changeworld1984": "Remove from blacklist",
+    "Newslinger": "Keep blacklisted",
+    "Reconrabbit": "Keep blacklisted",
+    "Simonm223": "Keep blacklisted",
+    "Alaexis": "Process",
+    "ActivelyDisinterested": "Process"
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "text": "The blacklisting discussion was well-attended and rested on more than editors\u2019 partisanship.",
+      "who": "Reconrabbit",
+      "kind": "claim",
+      "source": "stated",
+      "span": "There was more that this decision was predicated on than the partisanship of its editors",
+      "conf": 0.9
+    },
+    {
+      "id": "c2",
+      "text": "The absence of reports about a source\u2019s misinformation does not mean it does not publish misinformation.",
+      "who": "Reconrabbit",
+      "kind": "warrant",
+      "source": "stated",
+      "span": "The absence of reports about its misinformation do not mean that it does not publish misinformation",
+      "conf": 0.9
+    },
+    {
+      "id": "c3",
+      "text": "Changed facts justify reevaluating the blacklist entry.",
+      "who": "Changeworld1984",
+      "kind": "conclusion",
+      "source": "stated",
+      "span": "Thus a need for reevaluation",
+      "conf": 0.8
+    },
+    {
+      "id": "c4",
+      "text": "Little new damning evidence against Swarajya has emerged in the last 3\u20134 years.",
+      "who": "Changeworld1984",
+      "kind": "premise",
+      "source": "stated",
+      "span": "in last 3-4 years, there hasn't been much damning evidence against it",
+      "conf": 0.9
+    },
+    {
+      "id": "c5",
+      "text": "Swarajya was blacklisted for doxing a Wikipedia editor who diverged from its politics; the editor was harassed off-wiki and stopped editing.",
+      "who": "Newslinger",
+      "kind": "premise",
+      "source": "stated",
+      "span": "Swarajya was placed on the spam blacklist because it doxed a Wikipedia editor who diverged from the publication's political perspective",
+      "conf": 0.9
+    },
+    {
+      "id": "c7",
+      "text": "Swarajya should remain on the spam blacklist.",
+      "who": "Newslinger",
+      "kind": "conclusion",
+      "source": "stated",
+      "span": "and should remain on the spam blacklist",
+      "conf": 0.9
+    },
+    {
+      "id": "c8",
+      "text": "The Heritage Foundation precedent: deprecated and blacklisted for planned doxing; actual doxing is strictly worse.",
+      "who": "Newslinger",
+      "kind": "warrant",
+      "source": "stated",
+      "span": "Swarajya , having actually doxed an editor, is strictly worse than the Heritage Foundation in this regard",
+      "mode": "analogy",
+      "conf": 0.9
+    },
+    {
+      "id": "c9",
+      "text": "Half of the few editors who argued against deprecation were later blocked for sockpuppetry.",
+      "who": "Simonm223",
+      "kind": "premise",
+      "source": "stated",
+      "span": "Of the very small minority of editors who argued against deprecation in that discussion, half were subsequently blocked for WP:SOCKPUPPETRY",
+      "conf": 0.9
+    },
+    {
+      "id": "c10",
+      "text": "The editor the publication reported on was himself caught sockpuppeting and banned for NPOV violations.",
+      "who": "Changeworld1984",
+      "kind": "claim",
+      "source": "stated",
+      "span": "The guy they reported on was also caught sockpuppeting. And was banned for violating NPOV. Funnily enough.",
+      "conf": 0.5
+    },
+    {
+      "id": "c11",
+      "text": "It was OpIndia, not Swarajya, that doxed; the outlets are separate.",
+      "who": "Changeworld1984",
+      "kind": "counter",
+      "source": "stated",
+      "span": "It was not Swarajya that doxxed an editor. It was OpIndia which has been seperated from Swarajya.",
+      "conf": 0.8
+    },
+    {
+      "id": "c12",
+      "text": "Swarajya doxed under its own byline and broadcast it to 840k+ followers; mentioning OpIndia clears nothing.",
+      "who": "Newslinger",
+      "kind": "counter",
+      "source": "stated",
+      "span": "Swarajya doxed the Wikipedia editor in its own article on its own website under its own byline",
+      "conf": 0.9
+    },
+    {
+      "id": "c13",
+      "text": "Swarajya referenced the OpIndia article but never published the editor\u2019s name itself.",
+      "who": "Changeworld1984",
+      "kind": "concession",
+      "source": "stated",
+      "span": "And while they never published the name, Swarajya did reference OpIndia article",
+      "conf": 0.7
+    },
+    {
+      "id": "c14",
+      "text": "An archived copy confirms Swarajya did publish the editor\u2019s name and personal details.",
+      "who": "Newslinger",
+      "kind": "premise",
+      "source": "stated",
+      "span": "I just double-checked an archived version of the article, and Swarajya did in fact publish the editor's name and personal details",
+      "conf": 0.9
+    },
+    {
+      "id": "c15",
+      "text": "Swarajya did not link the OpIndia article, only referenced it.",
+      "who": "Changeworld1984",
+      "kind": "claim",
+      "source": "stated",
+      "span": "Though they didn't link the article. Just referenced it.",
+      "conf": 0.6,
+      "withdrawn": true
+    },
+    {
+      "id": "c16",
+      "text": "Doxing by a source should technically not bear on reliability assessments, but editors will weigh it anyway.",
+      "who": "Alaexis",
+      "kind": "warrant",
+      "source": "stated",
+      "span": "Technically, doxing Wikipedia editors should not have bearing on the reliability discussion",
+      "conf": 0.8
+    },
+    {
+      "id": "c17",
+      "text": "WP:NPOV governs article content, not source reliability; deprecating a source is not an NPOV violation.",
+      "who": "ActivelyDisinterested",
+      "kind": "claim",
+      "source": "stated",
+      "span": "WP:NPOV relates to content in Wikipedia articles, not source reliability",
+      "conf": 0.9
+    }
+  ],
+  "relations": [
+    { "from": "c4", "to": "c3", "type": "supports", "conf": 0.9 },
+    { "from": "c2", "to": "c3", "type": "undercuts", "note": "absence of new reports \u2260 the old grounds are gone \u2014 conceded by Changeworld himself", "conf": 0.9 },
+    { "from": "c1", "to": "c3", "type": "undermines", "note": "the decision\u2019s grounds were broader than partisanship \u2014 Changeworld explicitly disclaims the partisanship reading", "conf": 0.7 },
+    { "from": "c9", "to": "c1", "type": "supports", "note": "the anti-deprecation minority\u2019s sockpuppetry makes the process-insinuation untenable", "conf": 0.8 },
+    { "from": "c5", "to": "c7", "type": "supports", "conf": 0.9 },
+    { "from": "c8", "to": "c7", "type": "supports", "note": "jointly with c5; the harm (harassment, editor driven off-wiki) is why both bite", "conf": 0.9 },
+    { "from": "c10", "to": "c5", "type": "undermines", "note": "insinuates the victim\u2019s own bans mitigate the doxing \u2014 a motive jab with no bearing shown", "conf": 0.6 },
+    { "from": "c11", "to": "c5", "type": "undermines", "conf": 0.8 },
+    { "from": "c12", "to": "c11", "type": "rebuts", "conf": 0.9 },
+    { "from": "c13", "to": "c5", "type": "undermines", "note": "retreat: referencing OpIndia\u2019s article is not publishing the identity", "conf": 0.7 },
+    { "from": "c14", "to": "c13", "type": "rebuts", "conf": 0.9 },
+    { "from": "c15", "to": "c13", "type": "supports", "note": "doubling down on the referencing distinction \u2014 retracted one minute later", "conf": 0.6 },
+    { "from": "c16", "to": "c7", "type": "undercuts", "note": "technically the grounds are extra-reliability \u2014 admitted to weigh anyway", "conf": 0.8 }
+  ],
+  "moves": [
+    {
+      "who": "Reconrabbit", "level": 0, "role": "position",
+      "text": "opens: the grounds were broader than partisanship",
+      "span": "The discussion that led to Swarajya being blacklisted was well-attended",
+      "target": "c1", "when": "2026-11-03", "conf": 0.9
+    },
+    {
+      "who": "Reconrabbit", "level": 0, "role": "question",
+      "text": "asks for evidence of the misinformation claims",
+      "span": "Links to these articles or papers would be appreciated because right now I can't find evidence of several of these items.",
+      "when": "2026-11-03", "conf": 0.9
+    },
+    {
+      "who": "Changeworld1984", "level": 0, "role": "position",
+      "text": "makes the reevaluation case",
+      "span": "What I am pointing at is that many facts have changed in last few years. Thus a need for reevaluation.",
+      "target": "c3", "when": "2026-11-03", "conf": 0.8
+    },
+    {
+      "who": "Changeworld1984", "level": 0, "role": "concession",
+      "text": "concedes the counter-warrant while keeping the conclusion",
+      "span": "I know that absence of evidence doesn't mean no evidence but in last 3-4 years, there hasn't been much damning evidence against it.",
+      "target": "c2", "when": "2026-11-03", "conf": 0.8
+    },
+    {
+      "who": "Newslinger", "level": 0, "role": "position",
+      "text": "opening position: the doxxing grounds and the HF precedent",
+      "span": "Absolutely not. Swarajya was placed on the spam blacklist because it doxed a Wikipedia editor",
+      "target": "c7", "when": "2026-11-03", "conf": 0.9
+    },
+    {
+      "who": "Simonm223", "level": 0, "role": "evidence",
+      "text": "evidence: half the anti-deprecation minority were socks",
+      "span": "Of the very small minority of editors who argued against deprecation in that discussion, half were subsequently blocked for WP:SOCKPUPPETRY",
+      "target": "c9", "when": "2026-11-03", "conf": 0.9
+    },
+    {
+      "who": "Simonm223", "level": 0, "role": "evidence",
+      "text": "supplies the SPI link",
+      "span": "Wikipedia:Sockpuppet_investigations/Moksha88/Archive",
+      "when": "2026-11-03", "conf": 0.9
+    },
+    {
+      "who": "Changeworld1984", "level": 2, "tone": "heated",
+      "text": "tu quoque on the sockpuppet taint; no bearing shown on the doxxing itself",
+      "span": "The guy they reported on was also caught sockpuppeting. And was banned for violating NPOV. Funnily enough.",
+      "target": "c9", "when": "2026-11-03", "conf": 0.7
+    },
+    {
+      "who": "Changeworld1984", "level": 5,
+      "text": "denies the doxxing attribution: OpIndia is separate",
+      "span": "It was not Swarajya that doxxed an editor. It was OpIndia which has been seperated from Swarajya.",
+      "target": "c5", "when": "2026-11-03", "conf": 0.8
+    },
+    {
+      "who": "Newslinger", "level": 6,
+      "text": "refutes the separation: own byline, own site, 840k+ reach",
+      "span": "Swarajya doxed the Wikipedia editor in its own article on its own website under its own byline",
+      "target": "c11", "when": "2026-11-03", "conf": 0.9
+    },
+    {
+      "who": "Changeworld1984", "level": 0, "role": "concession",
+      "text": "partially concedes after checking: referenced, not published",
+      "span": "I looked into it. And while they never published the name, Swarajya did reference OpIndia article.",
+      "target": "c12", "when": "2026-11-03", "conf": 0.8
+    },
+    {
+      "who": "Changeworld1984", "level": 5,
+      "text": "residual case: still argues for some freedom",
+      "span": "Though I would still argue for at least some freedom",
+      "target": "c7", "when": "2026-11-03", "conf": 0.5
+    },
+    {
+      "who": "Newslinger", "level": 7,
+      "text": "checks the archive: the name was published \u2014 refutes the central factual defense",
+      "span": "I just double-checked an archived version of the article, and Swarajya did in fact publish the editor's name and personal details",
+      "target": "c13", "when": "2026-11-03", "conf": 0.9
+    },
+    {
+      "who": "Newslinger", "level": 0, "role": "procedural",
+      "text": "points to the whitelisting process",
+      "span": "The whitelisting procedure is the designated process for requesting exceptions to any spam blacklist entry",
+      "when": "2026-11-03", "conf": 0.9
+    },
+    {
+      "who": "Changeworld1984", "level": 4,
+      "text": "retreats to the link-vs-reference distinction",
+      "span": "Though they didn't link the article. Just referenced it.",
+      "target": "c14", "when": "2026-11-03", "conf": 0.7
+    },
+    {
+      "who": "Changeworld1984", "level": 0, "role": "concession",
+      "text": "concedes outright and retracts the previous reply",
+      "span": "I concede. Ignore the above reply.",
+      "target": "c15", "when": "2026-11-03", "conf": 0.9
+    },
+    {
+      "who": "Alaexis", "level": 0, "role": "procedural",
+      "text": "offers the RfC route",
+      "span": "if there is lot of WP:USEBYOTHERS by RS you could open a new RfC",
+      "when": "2026-11-05", "conf": 0.9
+    },
+    {
+      "who": "Alaexis", "level": 0, "role": "position",
+      "text": "notes doxxing is technically extra-reliability but weighs anyway",
+      "span": "Technically, doxing Wikipedia editors should not have bearing on the reliability discussion but understandably many will not be disposed charitably to an outlet that has done it.",
+      "target": "c16", "when": "2026-11-05", "conf": 0.8
+    },
+    {
+      "who": "Changeworld1984", "level": 0, "role": "question",
+      "text": "reads the bar as a formal apology",
+      "span": "As I am understanding, wikipedia would like a formal apology for doxing.",
+      "when": "2026-11-05", "conf": 0.6
+    },
+    {
+      "who": "ActivelyDisinterested", "level": 0, "role": "procedural",
+      "text": "corrects the NPOV category error",
+      "span": "WP:NPOV relates to content in Wikipedia articles, not source reliability",
+      "target": "c17", "when": "2026-11-03", "conf": 0.9
+    }
+  ],
+  "weak_points": [
+    {
+      "claim": "c3",
+      "note": "The case for reevaluation never names what changed \u2014 \u2018many facts have changed\u2019 carries no content, so the conclusion rests entirely on the absence-of-new-evidence premise its own author concedes proves little."
+    },
+    {
+      "claim": "c4",
+      "note": "An argument from absence. Reconrabbit\u2019s matching request for evidence of misinformation is never answered by anyone \u2014 the misinformation half of the case is asserted on both sides without exhibits."
+    },
+    {
+      "claim": "c10",
+      "note": "The tu quoque is never connected to any premise and never answered: it insinuates the victim\u2019s own bans mitigate the doxing, which no one states or contests. The referent of \u2018they\u2019 is itself ambiguous."
+    },
+    {
+      "claim": "c16",
+      "note": "The \u2018technically not reliability\u2019 distinction is never cashed out \u2014 which reliability criterion does doxxing fail? The practice-over-principle gap stays undefined."
+    },
+    {
+      "claim": "c13",
+      "note": "The retreat is never made precise: referenced via what \u2014 name, family name, identifiable details? The archive check answers it, but the concession arrives before the distinction is stated."
+    },
+    {
+      "claim": "c2",
+      "note": "Asserted without a mechanism \u2014 who would report misinformation, to whom? It is conceded by the other side, which may be why it is never examined."
+    }
+  ],
+  "unanswered": ["c10", "c17"]
+}
