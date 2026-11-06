@@ -105,7 +105,9 @@ function drawMap(){
  if(!claims.length)return;
  var lay={};claims.forEach(function(c){lay[c.id]=0});
  for(var i=0;i<claims.length;i++){var ch=false;rels.forEach(function(r){
-  if(lay[r.from]!==undefined&&lay[r.to]!==undefined&&lay[r.from]<claims.length&&lay[r.to]<lay[r.from]+1){lay[r.to]=lay[r.from]+1;ch=true}});if(!ch)break}
+  var atk=ATK.indexOf(r.type)>=0;
+  if(atk){if(lay[r.from]<claims.length&&lay[r.from]<lay[r.to]+1){lay[r.from]=lay[r.to]+1;ch=true}}
+  else{if(lay[r.to]<claims.length&&lay[r.to]<lay[r.from]+1){lay[r.to]=lay[r.from]+1;ch=true}}});if(!ch)break}
  var us=[];claims.forEach(function(c){if(us.indexOf(lay[c.id])<0)us.push(lay[c.id])});us.sort(function(a,b){return a-b});claims.forEach(function(c){lay[c.id]=us.indexOf(lay[c.id])});
  var L=[];claims.forEach(function(c){var k=lay[c.id];(L[k]=L[k]||[]).push(c)});
  for(var k=0;k<L.length;k++)L[k]=L[k]||[];
@@ -113,6 +115,7 @@ function drawMap(){
  var fr={};L[0].forEach(function(c,i){fr[c.id]=(i+.5)/L[0].length});
  for(k=1;k<L.length;k++){
   L[k].forEach(function(c,i){var s=rels.filter(function(r){return r.to===c.id&&fr[r.from]!==undefined}).map(function(r){return fr[r.from]});
+   if(!s.length)s=rels.filter(function(r){return r.from===c.id&&fr[r.to]!==undefined}).map(function(r){return fr[r.to]});
    c._b=s.length?s.reduce(function(a,b){return a+b},0)/s.length:(i+.5)/L[k].length});
   L[k].sort(function(a,b){return a._b-b._b});
   L[k].forEach(function(c,i){fr[c.id]=(i+.5)/L[k].length})}
@@ -132,7 +135,9 @@ function drawMap(){
   var atk=ATK.indexOf(r.type)>=0;
   var oi=outI[r.from]=(outI[r.from]||0)+1,ii=inI[r.to]=(inI[r.to]||0)+1;
   var ox=a._x+((oi/(outC[r.from]+1))-.5)*NW*.8,ex=b._x+((ii/(inC[r.to]+1))-.5)*NW*.8,d,mx,my;
-  if(lay[r.to]>lay[r.from]){var x1=ox,y1=a._y+a._h,x2=ex,y2=b._y-2,kk=(y2-y1)/2;
+  if(atk&&lay[r.from]>lay[r.to]){var x1=ox,y1=a._y-2,x2=ex,y2=b._y+b._h+2,kk=(y1-y2)/2;
+   d='M'+x1+' '+y1+'C'+x1+' '+(y1-kk)+','+x2+' '+(y2+kk)+','+x2+' '+y2;mx=(x1+x2)/2;my=(y1+y2)/2}
+  else if(lay[r.to]>lay[r.from]){var x1=ox,y1=a._y+a._h,x2=ex,y2=b._y-2,kk=(y2-y1)/2;
    d='M'+x1+' '+y1+'C'+x1+' '+(y1+kk)+','+x2+' '+(y2-kk)+','+x2+' '+y2;mx=(x1+x2)/2;my=(y1+y2)/2}
   else{var X1=a._x+NW/2,Y1=a._y+a._h/2,X2=b._x+NW/2+2,Y2=b._y+b._h/2,o=50+Math.abs(lay[r.to]-lay[r.from])*10;
    d='M'+X1+' '+Y1+'C'+(X1+o)+' '+Y1+','+(X2+o)+' '+Y2+','+X2+' '+Y2;mx=(X1+X2)/2+o*.75;my=(Y1+Y2)/2}
@@ -154,6 +159,7 @@ function drawMap(){
  GL.forEach(function(w){var s=H('span',{},lg);var i=H('i',{},s);i.style.background='var(--p'+pi(w)+'bg)';i.style.borderColor='var(--p'+pi(w)+')';s.appendChild(document.createTextNode(w))});
  [['supports','border-top:2px solid var(--mut)'],['undermines (premise)','border-top:2px dotted var(--atk)'],['undercuts (inference)','border-top:2px dashed var(--atk)'],['rebuts (conclusion)','border-top:3px solid var(--atk)']].forEach(function(t){
   var s=H('span',{},lg);var b=H('b',{},s);b.setAttribute('style',t[1]+';display:inline-block;width:22px;margin-right:5px;vertical-align:3px');s.appendChild(document.createTextNode(t[0]))});
+ H('span',{},lg,'objections hang beneath their target');
  H('span',{},lg,'dashed box = reconstructed, not stated')}
 $('#wkb').onclick=function(){if(!wkG)return;var on=wkG.style.display==='none';wkG.style.display=on?'block':'none';this.textContent=on?'Hide weak points':'Mark weak points'};
 

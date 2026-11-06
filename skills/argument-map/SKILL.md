@@ -71,7 +71,7 @@ Python 3, standard library only (`json`, `re`, `sys`, `os`, `collections`). No p
 
 ## Known limits (say so when relevant)
 
-- Layout is automatic and layered; edges that skip layers can pass behind boxes, and dense cyclic maps get cluttered above about 16 claims. The detail panel lists every relation as text.
+- Layout is automatic and layered: supports point down from premises towards conclusions, objections hang beneath the claim they address and point up. Edges that skip layers can pass behind boxes, and dense cyclic maps get cluttered above about 16 claims. The detail panel lists every relation as text.
 - Linked premises (jointly required) are not drawn differently; a concession or retraction is shown only by `withdrawn`, not as an edge.
 - Labels are judgment calls and the level scale is ordinal, not a measurement. `build.py` checks that quotes exist (and whose they are), not that the reading is right.
 - AfD dumps are flattened: reply nesting is lost, so reply targets are inferred from content. Speaker names from `prep.py` are heuristics.
