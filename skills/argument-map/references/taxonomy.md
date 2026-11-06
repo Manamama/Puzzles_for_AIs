@@ -95,3 +95,30 @@ Central-point test: *if this claim were removed, would the argument collapse?* I
 **Critics' forums and in-group threads.** Most posts are commentary about absent third parties and agree with each other. Do not grade that as a series of attacks: it is level 0 (`position`, `agreement`) unless someone answers someone. Map only the real exchanges inside (an inference such as "interest in a topic shows sympathy", answered by a counter-analogy, then conceded). Claims about named people are allegations by posters, never findings; evidence is often offsite (diffs, screenshots), so say "unverified" in a weak point. Expect sarcasm and in-group slang: give those moves low confidence instead of guessing.
 
 **Level 0 roles** (`role` field): `question`, `position` (a stance or bare !vote), `evidence` (supplies support without attacking), `concession`, `agreement`, `procedural` (points out a rule, form or process issue, such as a missing rationale). If one clause both agrees and attacks, split it into two moves.
+
+## 7. Naming the move (`moves[].text`)
+
+The level grades how hard a move engages; `text` names what the move is. A few words,
+checkable against the verbatim `span`, carrying no grade of its own — the level does that.
+Name the device where a device has a name (`reductio on the definition`); describe the
+function plainly where it has not. Real moves are often compounds and the text may say so
+("concedes the fact, flips the warrant"). The vocabulary serves the reading, not a
+checklist: when nothing fits, a plain description beats a forced label.
+
+Working vocabulary, each with its test:
+
+- **reductio** — derives an absurd or self-undermining consequence from the target's own premise.
+- **counterexample** — one clear instance that breaks a general claim or definition.
+- **definitional move** — attacks or fixes the meaning of a pivotal word ("that is not doxxing").
+- **tu quoque** — "you do it too"; relevant only where consistency bears on the claim.
+- **whataboutism** — redirects to a different offender; name it when the reply changes the subject.
+- **non-answer** — replies, but to a question nobody asked, or to a strawman.
+- **pivot** — accepts the premise, changes what it is taken to support.
+- **loaded question** — any direct answer concedes the embedded premise; name the premise instead.
+- **sealioning** — persistent "just asking questions" as pressure (see 5); grade the insinuated claim.
+- **gish gallop** — more weak points than can be answered; map the strongest two and say so.
+
+Lower `conf` when the device is arguable: the same words can be a genuine question or a
+sealioning move, and the difference is in the pattern, not the sentence. The elastic
+`text` field exists because the rigid axes refuse to stretch — level, role and tone are
+counts and enums, so all nuance belongs in this one prose field, checked against the span.

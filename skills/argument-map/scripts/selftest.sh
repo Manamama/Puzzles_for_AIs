@@ -50,4 +50,19 @@ if [ -e "$out/bad.html" ]; then
   echo "FAIL: build.py wrote output for an invalid map" >&2; exit 1
 fi
 
+# 4. wikitalk.py must recover the reply tree from the MediaWiki-DOM fixture.
+#    Skipped (not failed) when beautifulsoup4 is absent: the core pipeline is stdlib-only.
+if python3 -c 'import bs4' 2>/dev/null; then
+  python3 scripts/wikitalk.py assets/example-wikitalk.html --section Test \
+    --tree c-U-20260101120000 --outdir "$out/wt" > "$out/wt.log" 2>&1 || {
+    echo "FAIL: wikitalk.py errored on the fixture (see $out/wt.log)" >&2; exit 1; }
+  grep -q '^\[U\] First post says the opposite' "$out/wt/source.txt" &&
+  grep -q '^\[V\] Reply: a reductio' "$out/wt/source.txt" &&
+  [ "$(wc -l < "$out/wt/source.txt")" -eq 3 ] || {
+    echo "FAIL: wikitalk.py lost the tree or the names (see $out/wt.log)" >&2; exit 1; }
+  echo "PASS  wikitalk fixture: 3 comments, reply tree, names from User: links"
+else
+  echo "SKIP  wikitalk fixture (beautifulsoup4 not installed; core pipeline unaffected)"
+fi
+
 echo "PASS  2 examples built, 3 tabs present, fabricated quote rejected"

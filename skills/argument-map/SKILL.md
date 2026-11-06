@@ -1,6 +1,6 @@
 ---
 name: Argument map
-description: Turn a messy dispute (op-ed with replies, Wikipedia AfD or talk discussion, forum exchange, email chain, debate transcript, or part of the current conversation) into an interactive argument map plus move timeline, so a human can grasp who argued what and where it holds or breaks. The agent first decides what is worth analyzing, preprocesses the raw dump into clean speaker-labelled text, extracts claims and unstated warrants, labels attacks as undermining, undercutting or rebutting (Toulmin, Pollock), grades moves on Graham's hierarchy of disagreement, and flags weak and unanswered points. Needs only Python 3 and its standard library, runs offline, and produces one self-contained HTML file. Use for "map this argument", "break down this debate", "analyze this AfD / discussion", "where does this reasoning fail", "is this a good rebuttal", uploaded messy threads, Toulmin, defeaters or ad hominem levels. Not for plain summaries, formal proofs, or fact-checking.
+description: Turn a messy dispute (op-ed with replies, Wikipedia AfD or talk discussion, forum exchange, email chain, debate transcript, or part of the current conversation) into an interactive argument map plus move timeline, so a human can grasp who argued what and where it holds or breaks. The agent first decides what is worth analyzing, preprocesses the raw dump into clean speaker-labelled text, extracts claims and unstated warrants, labels attacks as undermining, undercutting or rebutting (Toulmin, Pollock), grades moves on Graham's hierarchy of disagreement, and flags weak and unanswered points. The core pipeline is Python 3 standard library, runs offline, and produces one self-contained HTML file; one optional HTML-export reader adds beautifulsoup4+lxml. Use for "map this argument", "break down this debate", "analyze this AfD / discussion", "where does this reasoning fail", "is this a good rebuttal", uploaded messy threads, Toulmin, defeaters or ad hominem levels. Not for plain summaries, formal proofs, or fact-checking.
 ---
 
 # Argument map
@@ -20,6 +20,7 @@ Sweet spot: one issue, 2 to 5 voices (or two stances with many voices), 6 to 16 
 0. **Triage: what is worth analyzing?** Skim the input. Pick the *issues* where people actually answer each other and give reasons; skip bare votes, pleasantries, side-chat, pure Q&A, and anything not an argument. Decide the issue(s) (at most three maps) and say in one line what you kept and what you left out. If the whole input is a poor fit, say that instead of forcing it. Ask a question only if you cannot tell which text is meant.
 1. **Preprocess. Mandatory; never analyze a raw dump.** Raw pages carry navigation, profile blocks, signatures, nested quote chains and timestamps that corrupt attribution and quote checks.
    - Wikipedia AfD pages, phpBB-style forum dumps and `[Speaker] text` files: `python scripts/prep.py INPUT work/ [--format afd|forum|plain]`. It writes `work/source.txt` (one `[Speaker] text` line per post, quote chains and signatures removed, IP addresses anonymised) and `work/posts.json`, and prints a report. **Read the report**: speaker names are heuristics (check odd ones), flags mark unmatched quotes or merged lines, and the !vote tally counts last explicit vote per editor by leading keyword only. For small threads count by hand and say it is approximate.
+   - A browser-saved page (Ctrl+S on the rendered thread): `python scripts/wikitalk.py PAGE.html --section TEXT --tree <comment-id> --outdir work/frag` recovers the *real reply tree* from MediaWiki's DiscussionTools markers and writes the same `[Speaker] text` + `posts.json`. Use `--grep TEXT` to find the comment id the user points at. See `references/ingest.md` for the three input routes and what to adapt by hand: the markers are locale-independent, the visible UI strings are not. Needs `beautifulsoup4` and `lxml` — the skill's only non-stdlib dependency.
    - Anything else: build the same `[Speaker] text` file yourself (one line per post or paragraph), verbatim, without chrome. For a single-speaker text use `[Author]`.
    - Leave out of the source anything not part of the argument: real names from profile blocks, and personal details (health, politics, identity) from user pages. Keep the post text itself verbatim.
    - `build.py --source` must point at this cleaned file.
@@ -28,7 +29,7 @@ Sweet spot: one issue, 2 to 5 voices (or two stances with many voices), 6 to 16 
 4. **Extract claims.** One short neutral sentence each; verbatim `span` (about 25 words max). `stated` if the author asserted it; `reconstructed` for missing premises and warrants (be charitable, never invent a position). Merge restatements. Set `withdrawn: true` on a claim its author later conceded or retracted.
 5. **Relate claims** with exactly four types (see `references/taxonomy.md`): `supports`, `undermines` (attacks a premise), `undercuts` (accepts premises, denies they support the conclusion), `rebuts` (argues the conclusion false). Look for undercutting first. For jointly required premises, say so in the relation `note`.
 6. **Name the inference mode** on inferential claims and use the matching critical questions from the taxonomy to locate where it can be attacked.
-7. **Grade moves** (threads only). Level 1 to 7 only for a move that answers or attacks something. **Level 0 is not a grade**: use it for positions, questions, evidence, concessions, agreement and procedural remarks, and always give a `role`. Never force a level on an opening move or a bare !vote. Tone is a separate axis (`tone: "heated"`). Add `when` (a date) where it helps.
+7. **Grade moves** (threads only). Level 1 to 7 only for a move that answers or attacks something. **Level 0 is not a grade**: use it for positions, questions, evidence, concessions, agreement and procedural remarks, and always give a `role`. Never force a level on an opening move or a bare !vote. Tone is a separate axis (`tone: "heated"`). Add `when` (a date) where it helps. In `text`, name the move's rhetorical function in a few words — the device where one has a name (`reductio on the definition`), a plain functional description otherwise; keep it checkable against the `span`, and let it grade nothing (the level does that). Working vocabulary and tests: `references/taxonomy.md` §7.
 8. **Flag weak points** (at most six): where the *strongest* argument is softest, whichever side it is on, plus anything central never answered (`unanswered`). Include doubts about your own reading. If both sides rest on forecasts, say so.
 9. **Write JSON, build, read every warning.** Schema: `references/schema.md`.
    ```bash
@@ -56,17 +57,22 @@ Group the dispute into issues. Build the **timeline over all graded moves** and 
 
 Python 3, standard library only (`json`, `re`, `sys`, `os`, `collections`). No pip install, no network, no API key, no browser needed to *build*. `python3` is enough. Every path in this file is relative to the directory containing this `SKILL.md`; run the scripts from there (`cd <skill dir> && python scripts/...`) or pass absolute paths. The built page is one self-contained HTML file — no CDN, no webfonts, no external script — so it opens offline and can be emailed, committed or hosted as-is.
 
+One deliberate exception: `scripts/wikitalk.py` (the browser-saved-HTML reader) needs `beautifulsoup4` and `lxml` (`pip install beautifulsoup4 lxml`). The core prep/build pipeline never imports it.
+
 `bash scripts/selftest.sh` rebuilds both bundled examples into a throwaway directory and fails loudly if either stops validating. Run it after editing any script or the renderer.
 
 ## Files
 
 - `scripts/prep.py`: raw dump to clean `[Speaker] text` source plus report (AfD, forum, plain).
+- `scripts/wikitalk.py`: browser-saved MediaWiki page → real reply tree (`[Speaker] text` + `posts.json`); the marker contract and its limits are in `references/ingest.md`.
 - `scripts/build.py`: validator and builder (Python 3 only).
 - `scripts/selftest.sh`: fixture check; run after edits.
 - `assets/renderer.html`: the fixed template. Edit it only to change visuals for everyone.
-- `references/taxonomy.md`: levels with tests, Toulmin parts, defeaters, inference modes, borderline calls, domain notes (Wikipedia AfD, forums). Read before step 5.
+- `references/taxonomy.md`: levels with tests, Toulmin parts, defeaters, inference modes, borderline calls, move-naming vocabulary, domain notes (Wikipedia AfD, forums). Read before step 5.
+- `references/ingest.md`: the three input routes (API, browser save, flattened text), the DiscussionTools marker contract, and the lessons about what to adapt by hand.
 - `references/schema.md`: exact JSON fields. Read before step 9.
 - `assets/example*.json` + sources: a worked single argument and a short synthetic thread, as format models.
+- `assets/example-wikitalk.html`: minimal MediaWiki-DOM fixture for `wikitalk.py`, exercised by `selftest.sh`.
 - `assets/example-thread-source.txt` + `example-thread.json` double as the test fixtures used by `selftest.sh`: if you change the schema, change them together.
 
 ## Known limits (say so when relevant)
