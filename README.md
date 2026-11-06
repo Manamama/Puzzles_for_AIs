@@ -137,6 +137,9 @@ Available Agent Skills (Local Puzzles_for_AIs):
       re-sign, reinstall over adb.
   - android-saf
       Sequential JSON-based workflow for accessing non-Termux files on Android using termux-saf-*.
+  - argument-map
+      Turn a messy dispute into a self-contained interactive HTML argument map plus move timeline:
+      claims, Toulmin warrants, undermines/undercuts/rebuts, Graham levels, weak and unanswered points.
   - logical-bug-finder
       Generalized template for diagnosing complex logical patterns and bugs in unstructured codebases or texts.
   - neo4j-expert
@@ -157,6 +160,7 @@ Among the repository's contents, the following are highlighted as **highly speci
 * **[android-pairip-patch](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/android-pairip-patch/SKILL.md)**: Kills **Google Play's PairIP licensing gate** in an APK — detects which of the three shapes it takes (Application class, manifest ContentProvider, native VM), patches the binary `AndroidManifest.xml` without apktool, repacks with correct alignment, re-signs and reinstalls over adb. Tested on unrooted Android 10 and Magisk-rooted Android 11.
 * **[android-saf](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/android-saf/SKILL.md)**: A specialized JSON-based workflow for navigating Android's **Storage Access Framework**. Essential for agents operating in Termux to access the broader Android filesystem.
 * **[stt-interpreter](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/stt-interpreter/SKILL.md)**: A cognitive playbook for **interpreting and fixing Speech-to-Text errors**. It uses linguistic heuristics to correct logic and punctuation in raw transcripts (specialized for English-39/74 dialects).
+* **[argument-map](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/argument-map/SKILL.md)**: Turns a **messy dispute** (AfD or talk page, forum thread, email chain, debate transcript, or the current conversation) into one self-contained HTML page with an argument map, a move timeline and a summary. Splits the work: the model judges claims, warrants and defeater types; fixed Python scripts clean the dump and draw the map, and **reject any quote that is not verbatim in the source, or not in the named speaker's post**. Adapted 2026-11-06 from the Claude.ai GUI export for any agent — Python 3 standard library only, no network, `scripts/selftest.sh` as the regression check.
 
 ### 📖 Key Traditional Guides
 * **[AI Heuristic Distrust Protocol](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/docs/guides/01_AI_Psychology_and_Cognitive_Frameworks/AI_Heuristic_Distrust_Protocol.md)**: A behavioral alignment guide that teaches the AI to **proactively verify assumptions** and avoid "Bulldog Mode" (looping on failing solutions).
