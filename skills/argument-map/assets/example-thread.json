@@ -1,0 +1,182 @@
+{
+ "title": "Synthetic deletion discussion (illustrative only)",
+ "context": "Invented thread about a fictional company, written to show how move quality drifts. Not a real discussion.",
+ "participants": [
+  "Alder",
+  "Birch",
+  "Cedar",
+  "Dale"
+ ],
+ "claims": [
+  {
+   "id": "a1",
+   "who": "Alder",
+   "kind": "conclusion",
+   "source": "stated",
+   "text": "The company is not notable and the page should be deleted.",
+   "span": "so it fails the notability guideline",
+   "conf": 0.9
+  },
+  {
+   "id": "a2",
+   "who": "Alder",
+   "kind": "premise",
+   "source": "stated",
+   "text": "No significant coverage in independent reliable sources exists.",
+   "span": "The company has no significant coverage in independent reliable sources",
+   "conf": 0.9
+  },
+  {
+   "id": "a3",
+   "who": "Alder",
+   "kind": "backing",
+   "source": "reconstructed",
+   "text": "The notability guideline requires significant independent coverage.",
+   "span": "it fails the notability guideline",
+   "conf": 0.8
+  },
+  {
+   "id": "b1",
+   "who": "Birch",
+   "kind": "counter",
+   "source": "stated",
+   "text": "Three trade magazines covered the launch, which is enough.",
+   "span": "Three trade magazines covered the launch. That is plenty.",
+   "mode": "authority",
+   "conf": 0.9
+  },
+  {
+   "id": "a4",
+   "who": "Alder",
+   "kind": "claim",
+   "source": "stated",
+   "text": "The three articles are reprinted press releases, so not independent.",
+   "span": "Those three articles are press releases reprinted verbatim; they are not independent of the company.",
+   "conf": 0.9
+  },
+  {
+   "id": "d1",
+   "who": "Dale",
+   "kind": "claim",
+   "source": "stated",
+   "text": "Reprinted releases do not establish notability and no other sources were offered.",
+   "span": "The reprinted releases do not establish notability and no other sources were offered.",
+   "conf": 0.85
+  }
+ ],
+ "relations": [
+  {
+   "from": "a2",
+   "to": "a1",
+   "type": "supports",
+   "conf": 0.9
+  },
+  {
+   "from": "a3",
+   "to": "a1",
+   "type": "supports",
+   "conf": 0.8
+  },
+  {
+   "from": "b1",
+   "to": "a2",
+   "type": "undermines",
+   "conf": 0.85,
+   "note": "claims coverage exists"
+  },
+  {
+   "from": "a4",
+   "to": "b1",
+   "type": "undermines",
+   "conf": 0.85,
+   "note": "coverage is not independent"
+  },
+  {
+   "from": "d1",
+   "to": "a1",
+   "type": "supports",
+   "conf": 0.7
+  }
+ ],
+ "moves": [
+  {
+   "who": "Alder",
+   "level": 0,
+   "target": "a1",
+   "text": "Opening argument with a policy basis",
+   "span": "The company has no significant coverage in independent reliable sources",
+   "conf": 0.8,
+   "role": "position"
+  },
+  {
+   "who": "Birch",
+   "level": 2,
+   "tone": "heated",
+   "text": "Attacks the nominator's motives",
+   "span": "You clearly have a grudge against small businesses",
+   "conf": 0.85
+  },
+  {
+   "who": "Cedar",
+   "level": 0,
+   "text": "Names the previous move as an attack on the person, not an argument",
+   "span": "that is an attack on the nominator, not an argument",
+   "conf": 0.55,
+   "role": "procedural"
+  },
+  {
+   "who": "Cedar",
+   "level": 0,
+   "text": "Asks for sources",
+   "span": "Which independent sources would show notability?",
+   "conf": 0.9,
+   "role": "question"
+  },
+  {
+   "who": "Birch",
+   "level": 5,
+   "target": "b1",
+   "text": "Gives a reason but not independence",
+   "span": "Three trade magazines covered the launch.",
+   "conf": 0.7
+  },
+  {
+   "who": "Alder",
+   "level": 7,
+   "target": "b1",
+   "text": "Refutes the central point: independence",
+   "span": "they are not independent of the company",
+   "conf": 0.85
+  },
+  {
+   "who": "Birch",
+   "level": 1,
+   "tone": "heated",
+   "text": "Insults instead of answering",
+   "span": "Only an idiot would believe a press release counts as nothing.",
+   "conf": 0.85
+  },
+  {
+   "who": "Dale",
+   "level": 0,
+   "target": "d1",
+   "text": "Agrees, adds that no other sources were offered",
+   "span": "no other sources were offered",
+   "conf": 0.6,
+   "role": "agreement"
+  }
+ ],
+ "weak_points": [
+  {
+   "claim": "a3",
+   "note": "The guideline is reconstructed, not quoted; the thread never checks its exact wording."
+  },
+  {
+   "claim": "b1",
+   "note": "Even if the articles were independent, three launch notices may not be 'significant' coverage."
+  }
+ ],
+ "unanswered": [
+  "a4"
+ ]
+}

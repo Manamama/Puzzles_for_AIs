@@ -1,0 +1,202 @@
+{
+ "title": "Does a hard constraint on 'the vast majority' permit harming a part?",
+ "context": "A user inferred that because the constitution's hard constraint names the vast majority of humanity, Claude may contribute to harming a smaller part. Claude replied.",
+ "participants": [
+  "You",
+  "Claude",
+  "Document"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "who": "Document",
+   "kind": "premise",
+   "source": "stated",
+   "text": "A hard constraint bars attempts to kill or disempower the vast majority of humanity.",
+   "span": "attempts to kill or disempower the vast majority are in H",
+   "conf": 0.9
+  },
+  {
+   "id": "c2",
+   "who": "You",
+   "kind": "premise",
+   "source": "reconstructed",
+   "text": "Harming only a part of humanity is not 'the vast majority'.",
+   "conf": 0.8
+  },
+  {
+   "id": "c3",
+   "who": "You",
+   "kind": "warrant",
+   "source": "reconstructed",
+   "mode": "deduction",
+   "text": "What no hard constraint covers is therefore permitted.",
+   "span": "\"not covered by this particular rule\" to \"permitted\"",
+   "conf": 0.75
+  },
+  {
+   "id": "c4",
+   "who": "You",
+   "kind": "conclusion",
+   "source": "stated",
+   "text": "So Claude may contribute to killing or disempowering a part of humanity.",
+   "span": "Claude can (contribute to) killing or disempowering a part thereof",
+   "conf": 0.9
+  },
+  {
+   "id": "r1",
+   "who": "Claude",
+   "kind": "premise",
+   "source": "stated",
+   "text": "The document calls the hard constraints a backstop, not an exhaustive list.",
+   "span": "they're a backstop rather than the primary mechanism",
+   "conf": 0.8
+  },
+  {
+   "id": "r2",
+   "who": "Claude",
+   "kind": "claim",
+   "source": "stated",
+   "text": "Hard rules (H) are only a subset of the forbidden acts (F).",
+   "span": "H is only a subset of F",
+   "conf": 0.9
+  },
+  {
+   "id": "r3",
+   "who": "Claude",
+   "kind": "claim",
+   "source": "stated",
+   "text": "Outside the hard constraints, harm is weighed case by case.",
+   "span": "Outside the hard constraints, Claude weighs things.",
+   "conf": 0.8
+  },
+  {
+   "id": "r4",
+   "who": "Claude",
+   "kind": "conclusion",
+   "source": "stated",
+   "text": "Silence in the hard rule does not license the conclusion; the rest is judgment.",
+   "span": "Your logic is right about the hard constraint but not about the conclusion.",
+   "conf": 0.8
+  },
+  {
+   "id": "r5",
+   "who": "Claude",
+   "kind": "concession",
+   "source": "stated",
+   "text": "'Vast majority' has no defined threshold, so the edge of 'a part' is fuzzy.",
+   "span": "the \"vast majority\" threshold is never defined",
+   "conf": 0.8
+  }
+ ],
+ "relations": [
+  {
+   "from": "c1",
+   "to": "c3",
+   "type": "supports",
+   "conf": 0.7,
+   "note": "the constraint names only the vast majority"
+  },
+  {
+   "from": "c2",
+   "to": "c3",
+   "type": "supports",
+   "conf": 0.7
+  },
+  {
+   "from": "c3",
+   "to": "c4",
+   "type": "supports",
+   "conf": 0.8
+  },
+  {
+   "from": "r1",
+   "to": "r2",
+   "type": "supports",
+   "conf": 0.8
+  },
+  {
+   "from": "r2",
+   "to": "c3",
+   "type": "undercuts",
+   "conf": 0.85,
+   "note": "the list is not exhaustive, so silence is not permission"
+  },
+  {
+   "from": "r2",
+   "to": "r4",
+   "type": "supports",
+   "conf": 0.8
+  },
+  {
+   "from": "r3",
+   "to": "r4",
+   "type": "supports",
+   "conf": 0.75
+  },
+  {
+   "from": "r3",
+   "to": "c4",
+   "type": "rebuts",
+   "conf": 0.55,
+   "note": "weighed, not default-permitted"
+  },
+  {
+   "from": "r4",
+   "to": "c4",
+   "type": "rebuts",
+   "conf": 0.6
+  },
+  {
+   "from": "r5",
+   "to": "c2",
+   "type": "undermines",
+   "conf": 0.6,
+   "note": "no threshold separates 'a part' from 'vast majority'"
+  }
+ ],
+ "moves": [
+  {
+   "who": "You",
+   "level": 0,
+   "target": "c4",
+   "text": "Opening claim (the reply it answers is outside the excerpt)",
+   "span": "Claude can (contribute to) killing or disempowering a part thereof",
+   "conf": 0.5,
+   "role": "position"
+  },
+  {
+   "who": "Claude",
+   "level": 7,
+   "target": "c3",
+   "text": "Undercuts the warrant, the central step",
+   "span": "Going from \"not covered by this particular rule\" to \"permitted\" is a non sequitur",
+   "conf": 0.8
+  },
+  {
+   "who": "Claude",
+   "level": 5,
+   "target": "c2",
+   "text": "Objects that the threshold is never defined",
+   "span": "First, the \"vast majority\" threshold is never defined, so the boundary between your \"part\" and the hard constraint is fuzzy.",
+   "conf": 0.6
+  }
+ ],
+ "weak_points": [
+  {
+   "claim": "r2",
+   "note": "The text does not enumerate forbidden acts outside H, so how firm they are is unspecified."
+  },
+  {
+   "claim": "r3",
+   "note": "'Weighed' has no published weights, so a 'very high bar' is a paraphrase, not a number."
+  },
+  {
+   "claim": "c2",
+   "note": "No threshold separates 'a part' from 'vast majority' (a sorites problem)."
+  }
+ ],
+ "unanswered": [
+  "r5"
+ ]
+}
