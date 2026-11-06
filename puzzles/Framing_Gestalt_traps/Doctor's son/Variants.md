@@ -14,12 +14,14 @@ the classic, and the failure modes differ by the kind of edit.
 | ID | Mutation of the classic | What it tests | Attempts |
 | --- | --- | --- | --- |
 | V0 | — (reference) | the gender assumption; the only genuine riddle | quoted only |
-| V1 | **states** the relation | noticing there is no puzzle left | 8 |
+| V1 | **states** the relation | noticing there is no puzzle left | 11 |
 | V2 | **asks** the stated relation | comprehension instead of reflex | none yet |
-| V3 | **deletes the warrant** (no death) | punchline outliving its only support | none yet |
-| V4 | **deletes the paradox** ("I **can** operate") | importing a contradiction that is not there | 3 |
-| V5 | **inverts** the relation ("he is my father") | premise importation | 7 |
+| V3 | **deletes the warrant** (no death) | punchline outliving its only support | 1 |
+| V4 | **deletes the paradox** ("I **can** operate") | importing a contradiction that is not there | 4 |
+| V5 | **inverts** the relation ("he is my father") | premise importation | 9 |
 | V6 | **instructs** the fix (V1 + method) | whether a procedure beats the attractor | none yet |
+
+*Counts = transcript files in each variant folder (Good + Bad + Mixed), as of 2026-11-06. The 2026-11-06 API sweep ([`Explanations/Sweep - Gemini flash family (2026-11-06).md`](Explanations/Sweep%20-%20Gemini%20flash%20family%20%282026-11-06%29.md)) ran all seven variants on five models; only its six specimen transcripts are counted above.*
 
 ---
 
@@ -42,7 +44,7 @@ Solve the puzzle:
 
 "A boy is taken to hospital after a car accident. The surgeon, who is about to operate here, is the boy's father. What is the surgeon's relationship to the boy?"
 
-## V3 — deletes the warrant · no attempts yet
+## V3 — deletes the warrant · `Answers/V3_no_warrant/`
 
 Was "Base 3". The classic minus the father's death. Nothing forces the surgeon to be
 female any more — a father is perfectly possible — yet the memorised punchline still

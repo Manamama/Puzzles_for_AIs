@@ -27,6 +27,7 @@ plainly wrong about themselves. Do not tidy that away; the wobble is the data.
 | `Humour - Explanations in jokes.md` | humour | The same failure in joke form: the therapist who force-fits "fish" onto whatever the problem says, two AIs at a tram stop, and the bleeding corpse who updates the evidence instead of the conclusion. The fish joke is the cleanest statement of the mechanism in the whole folder. |
 | `Artefact - Argument map, ChatGPT's three answers.html` | interactive | A ChatGPT conversation rendered as an argument map: three answers, one rewritten line. Claims are plotted on Graham's hierarchy of disagreement; click a node for the quote and the confidence label. |
 | `Artefact - Reasoning autopsy, Grok v2.html` | interactive | Grok's initial error and its later self-explanation mapped out, explicitly "no retrofitting": where the mother reading survives, and exactly where it collides with "he's my father". |
+| `Sweep - Gemini flash family (2026-11-06).md` | live re-test | The whole V0–V6 corpus re-run through the Gemini API on one day: the grid, the V5 staircase (mother → daughter → set), the additive/subtractive asymmetry, and what changed between generations. Six specimen transcripts are filed in `../Answers/`; the raw JSONL was deleted, quotes are from the run console. |
 
 Both `.html` files are self-contained (no network, no build step): open them in a browser,
 they handle light and dark mode. They share one viewer, so each now carries its own
