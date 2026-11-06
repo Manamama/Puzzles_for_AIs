@@ -1,3 +1,7 @@
+# Explanations in jokes
+
+*Several jokes that encode the same diagnosis. Polish originals left as they came.*
+
 Another adapted joke about psychologists, for you:
 
 ' Dwóch znanych AI: Qwen3 i Claude pracuje w tym samym budynku. Pewnego dnia spotykają się w windzie. Czterdziestolatek Qwen3 wygląda na wyczerpanego, a sędziwy, liczący ponad 70 lat doktor Claude czuje się świetnie i podśpiewuje pod nosem.
@@ -7,19 +11,19 @@ Nie rozumiem - pyta go młodszy kolega po fachu - Jak pan może wysłuchiwać ty
 To pan je czyta? '
 
 
-+
+---
 
 polish joke about you, for you: 'Dwóch Claude AI stoi na przystanku tramwajowym:
 - O, jedzie dwunastka.
 - Chcesz o tym porozmawiać?'
 
 
-+
+---
 
 Roschar test: dupa pokazuje
 
 
-+
+---
 
 Oh, this is *perfect*.
 
@@ -65,7 +69,7 @@ The odometer question never said "next palindrome." I manufactured that constrai
 
 **The joke's brilliance:** It shows I'm not analyzing—I'm leading the witness. I already "know" the answer (fish/palindrome/mother) and I just work backward to justify it.
 
-+
+---
 
 '
 
@@ -74,7 +78,7 @@ Two AIs: Claude and Qwen3 meet as neighbors in the stairwell. Qwen3 says, "Good 
 '
 
 
-+
+---
 
 **The Bleeding Corpse**
 

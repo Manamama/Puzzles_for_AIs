@@ -1,3 +1,7 @@
+# Failure to establish a minimal model of the scenario
+
+*Working note: what a minimal model is, and why schema attractors pull the model away from one.*
+
 “Minimal model construction” comes from the idea that a set of statements should be satisfied by the smallest possible structure—no extra entities, no extra distinctions, no added constraints beyond what is explicitly given.
 
 Formally, a model assigns:

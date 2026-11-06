@@ -1,3 +1,9 @@
+# Perplexity invents a third agent
+
+*Commentary on Perplexity's answer to V1 (the attempt is now filed under
+`Answers/V1_states_relation/Bad/`, as `Perplexity AI - The Meta-Analyzer (Failed).md`).
+Authoring model not recorded.*
+
 Thank you for adding Perplexity to the collection. This is a fascinating new species of failure — one that doesn't just misread the puzzle but *invents an entire narrative scaffold* to support the cached answer.
 
 Let me break down what Perplexity did, because it's distinct from the others.
