@@ -7,7 +7,7 @@ description: Field-tested tricks, pitfalls, and error-handling logic for operati
 
 Use `colab skill | glow`  or `colab readme`  to learn the official basics first — this skill assumes that base knowledge and covers what it doesn't.
 
-version 2.5.0
+version 2.7.0
 
 ## Authentication
 
@@ -66,6 +66,11 @@ EOF
 - Use `<<'EOF'` (single quotes) to avoid quoting problems.
 - Put shell commands with `!`
 - Put Python code directly.
+- **`!` lines do not share shell variables.** Each `!` command runs in its own
+  subshell, so `P=/some/path` on one line is *empty* on the next (and exported
+  `PATH`/`HOME` vanish too). `rm -rf "$P"/lib/node_modules/x` then silently
+  targets `/lib/node_modules/x` and reports success. Set the variable on **every**
+  `!` line that uses it, or do the whole job in one `!bash -c '…'`.
 
 ## For an Agent: Use `colab exec`, Never `colab console`
 
@@ -441,3 +446,151 @@ same-second CPU request on the same account succeeds, stop — report the GPU
 capacity wall plainly and ask the user how they'd like to proceed (different chip,
 wait, upgrade, or fall back to CPU) rather than retry-looping a request that a
 CPU-only workload doesn't even need in the first place.
+
+---
+
+## The Drive-Backed `$HOME`: Why an Install There Costs ~5× — and the Knob That Fixes It
+
+`setup/colab_paths_add.sh` (the file `colab_me` sources at the end) exports
+`HOME=/content/drive/MyDrive/Shared` and `USER_BASE=…/.local`. Consequences:
+
+- npm's **global prefix** and pip's **user base** both live on the FUSE mount, so
+  a "temporary" Colab install persists into Google Drive and is billed against the
+  Drive quota weeks later.
+- **The mount cannot hardlink.** `@opencode/cli`'s `postinstall.mjs` calls
+  `fs.linkSync(source, bin/opencode.exe)` and falls back to `copyFileSync`. On
+  Drive that fallback always fires, so one install materialises as
+  `bin/opencode.exe` **plus** the four `node_modules/@opencode/cli-linux-x64*`
+  binaries: 5 real files, 3 of them byte-identical, 1238 MiB instead of 247 MiB.
+- **npm cannot prune that for you, and no config key can.** The package ships 12
+  platform packages; `os`/`cpu` filtering cuts them to 4 on linux-x64, and the
+  survivors are indistinguishable to npm because the variant packages declare
+  **no `libc` field** (their package.json holds only `cpu, license, name, os,
+  repository, version`). npm's `libc` knob exists (`libc = null` in npm 11) but
+  filters on a declared field, so it has nothing to match. Same for AVX2: only
+  `-baseline` vs plain differs, and that is not expressible.
+
+### Measured behaviour (npm 11.19.1 on Colab; 11.9.0 on a laptop — same results)
+
+| Invocation | Platform packages installed | Files on disk |
+|---|---|---|
+| `npm i -g @opencode/cli` | 4 | 5 |
+| `npm i -g --omit=optional @opencode/cli` | **4 — flag silently ignored** | 5 |
+| `npm_config_omit=optional npm i -g …` | 4 — still ignored | 5 |
+| `npm i --omit=optional --prefix DIR @opencode/cli` | **0** | **1** |
+
+`omit=optional` is honoured only for **non-global** installs; the control case
+(`esbuild`, whose platform package is the same kind of direct optional dependency)
+behaves identically, so this is npm's global tree, not opencode's packaging.
+
+The single file is not a degraded install. With the optional packages absent,
+`postinstall.mjs` falls into `installPackage()`, which `npm install`s only the one
+matching package into `os.tmpdir()`, copies the binary to `bin/opencode.exe`, and
+deletes the temp tree — with `verifyBinary()` gating it, so a failed download
+errors out instead of leaving a stub.
+
+### Recipe A — the `--prefix` trick (recommended: one package, no prune, no risk)
+
+A **non-global** install pointed at the prefix you want, plus one symlink:
+
+```bash
+DIR=/content/drive/MyDrive/Shared/.local     # or /root/.oc for an ephemeral copy
+npm i --omit=optional --no-save --no-package-lock --prefix "$DIR" @opencode/cli
+mkdir -p "$DIR/bin"
+ln -sfn ../node_modules/@opencode/cli/bin/opencode.exe "$DIR/bin/opencode"
+"$DIR/bin/opencode" --version                # must print v2.2.x
+```
+
+Verified end to end: exactly one 247 MiB file, and `$DIR` ends up holding **only**
+`node_modules` — `--no-save --no-package-lock` stops npm writing `package.json`
+and `package-lock.json` into the prefix (without them you get both, which is
+harmless but untidy in `.local`). npm also creates
+`$DIR/node_modules/.bin/{opencode,opencode2}`, so putting that directory on `PATH`
+works even without the manual symlink.
+
+Caveats: the payload lives in `$DIR/node_modules`, so `npm ls -g` does not list it
+and `npm update -g` will not touch it — upgrade by re-running the same command.
+
+### Recipe B — standard global layout, then prune (and prove it survived)
+
+Use this when something depends on `npm root -g` / `npm ls -g`:
+
+```bash
+npm i -g @opencode/cli && \
+  P="$(npm root -g)/@opencode/cli" && \
+  "$P/bin/opencode.exe" --version && \
+  rm -rf "$P"/node_modules/@opencode/cli-linux-* && \
+  "$P/bin/opencode.exe" --version
+```
+
+The ordering is the whole point. A prune that runs after a failed install, or that
+also removes `bin/opencode.exe`, leaves a dangling `…/bin/opencode` symlink — and
+bash reports a dangling PATH entry as `command not found`, which sends you hunting
+through `PATH` for a filesystem fault that is not there. Cost: 1238 MiB downloaded,
+247 MiB kept.
+
+### What does not work, and why
+
+| Idea | Outcome |
+|---|---|
+| `npm config set omit optional` (global) | breaks `esbuild`, `rollup`, `sharp`, `@swc/*` — same publishing trick, and `rollup` has no fallback |
+| `npm i -g @opencode/cli-linux-x64` | nothing to run: the variant package declares **no `bin`** |
+| `--libc=glibc` | no-op: no variant declares `libc` |
+| global install into an ephemeral `$HOME` | works, but still 5 files — ~1.2 GB of scratch **downloaded** per session |
+
+Best of both worlds for a Colab wrapper: Recipe A with `DIR=/root/.oc` — 247 MiB
+in the ephemeral overlay, **zero** bytes on Drive, nothing to prune, and only the
+version string needs persisting.
+
+On a normal ext4 machine the same package wastes less (the launcher is hardlinked,
+so 4 files / ~915 MiB rather than 5), but the platform packages are still
+installed; Recipe A avoids them there too, and Recipe B's prune frees nothing when
+the surviving variant *is* the launcher's inode — `links` drops to 1 and the byte
+count stays identical.
+
+### Deleting over the mount is trash, not destruction — but `df` is not the receipt
+
+- `rm` of a **file** on `/content/drive` leaves it with `explicitlyTrashed=true`
+  (verified through the Drive API) — recoverable from Trash for 30 days.
+- **Trash is per account, and not necessarily yours.** After `rm -rf` of four
+  variant folders the package genuinely shrank (1238 → 247 MiB), yet a search as
+  the collaborator credential returned nothing (`trashed = true and name contains
+  'cli-linux'` → 0 items). The objects went to the trash of whichever account the
+  **mount** runs as, which need not be the account behind your API credential.
+  Sweep the web UI as that account.
+- `df -h /content/drive` reports **Drive quota** and does not move until Trash is
+  emptied; a 1 GB delete can show the same percentage twice. Never read `df` as a
+  receipt for a delete — check `stat`/`ls` on the mount, or the API's `trashed`
+  flag.
+- Only the **owner** can trash. A collaborator holding the `writer` role gets
+  `403 insufficientFilePermissions`, and "Remove from my Drive" reclaims zero
+  bytes. Consequence: to clean a tree you must act as the account that owns it —
+  in the CLI that means the account behind `colab whoami`, and for the browser
+  flow the account that granted Drive consent.
+
+### Never `du -sh` a multi-GB tree over the mount from the kernel
+
+`colab exec` has **one** execution slot per session. A `du` walking 12 GB across
+FUSE leaves `colab status -s NAME` reporting `Status: BUSY (exec(stdin))` for
+minutes; every later `colab exec` returns nothing, and if the `colab_me` port
+forward is still alive the ssh door answers:
+
+```
+[colab] Already-active SSH session (HTTP 429): another `colab ssh` is connected
+```
+
+Use bounded probes (`ls -l`, `stat -c '%s'`, `find -maxdepth 2`) instead. To
+reclaim a wedged slot: `colab restart-kernel -s NAME` — it keeps the VM and the
+mount, but **loses the env `colab_me` sourced**, so `HOME` reverts to `/root` and
+`colab_paths_add.sh` must be re-sourced before any further install work. A bare
+`exec` shell therefore has no Drive `.local/bin` on `PATH` and a `command not
+found` there is the environment rather than a broken install — though since you
+always re-enter through `colab_me`, that is a lab curiosity, not a daily hazard.
+
+### `~` may resolve into a shortcut target
+
+`realpath ~/Downloads` can return
+`/content/drive/.shortcut-targets-by-id/<folder-id>/Shared/Downloads` — the same
+bytes as `/content/drive/MyDrive/Shared/Downloads`, reached through a Drive
+shortcut. Resolve with `realpath` before deriving paths from `$HOME`, and never
+assume the `MyDrive/...` form is the only name for a file.
