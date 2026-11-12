@@ -144,6 +144,10 @@ Available Agent Skills (Local Puzzles_for_AIs):
       Generalized template for diagnosing complex logical patterns and bugs in unstructured codebases or texts.
   - neo4j-expert
       Conceptual and operational master guide for interacting with Neo4j using MCP tools.
+  - pdf-reading
+      Converts PDFs to page-anchored markdown (.md + .index.md + .outline.md) for grep/read
+      consumption; documents read()'s 20 MiB media cap and the object-graph route for
+      annotation forensics. Scripts bundled under skills/pdf-reading/scripts/.
   - remote-codespaces
       Procedural instructions on tunneling and exposing GH Codespaces over SSH/SFTP directly to Termux.
   - stt-interpreter
@@ -159,6 +163,7 @@ Among the repository's contents, the following are highlighted as **highly speci
 ### 🧩 Featured Skills
 * **[android-pairip-patch](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/android-pairip-patch/SKILL.md)**: Kills **Google Play's PairIP licensing gate** in an APK — detects which of the three shapes it takes (Application class, manifest ContentProvider, native VM), patches the binary `AndroidManifest.xml` without apktool, repacks with correct alignment, re-signs and reinstalls over adb. Tested on unrooted Android 10 and Magisk-rooted Android 11.
 * **[android-saf](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/android-saf/SKILL.md)**: A specialized JSON-based workflow for navigating Android's **Storage Access Framework**. Essential for agents operating in Termux to access the broader Android filesystem.
+* **[pdf-reading](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/pdf-reading/SKILL.md)**: The agent-tested method for **reading PDFs in OpenCode** — built-in `read()` hands a PDF to the model as media (≤20 MiB, PDF-input model required), so content questions go through a one-time conversion to page-anchored markdown (`BOOK.md` + `BOOK.index.md` + `BOOK.outline.md`) consumed with `grep` + `read(offset)`. Includes the two-script pipeline (outline → pdftotext → build) and the `pypdf` object-graph route for annotation forensics. Proven on the 181-page BOOX NoteAir manual (21 MB → 70 KB text).
 * **[stt-interpreter](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/stt-interpreter/SKILL.md)**: A cognitive playbook for **interpreting and fixing Speech-to-Text errors**. It uses linguistic heuristics to correct logic and punctuation in raw transcripts (specialized for English-39/74 dialects).
 * **[argument-map](file:///home/zezen/Downloads/GitHub/Puzzles_for_AIs/skills/argument-map/SKILL.md)**: Turns a **messy dispute** (AfD or talk page, forum thread, email chain, debate transcript, or the current conversation) into one self-contained HTML page with an argument map, a move timeline and a summary. Splits the work: the model judges claims, warrants and defeater types; fixed Python scripts clean the dump and draw the map, and **reject any quote that is not verbatim in the source, or not in the named speaker's post**. Adapted 2026-11-06 from the Claude.ai GUI export for any agent — Python 3 standard library only, no network, `scripts/selftest.sh` as the regression check.
 
