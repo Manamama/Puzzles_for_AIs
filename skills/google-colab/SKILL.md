@@ -1,13 +1,13 @@
 ---
 name: google-colab-cli-tradecraft
-description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Also load it when *every* session shows `[?]`, or when `colab ssh -s NAME` / `colab exec -s NAME` behaves oddly because `sessions.json` was truncated by two concurrent invocations — in that state `colab ssh` silently rents a new VM instead of reattaching. Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix. Also load it when a session needs Google Drive (the `colab drivemount` consent flow, which is human-in-the-loop), or when the CLI is driven from a non-interactive agent shell where `colab console` would block forever.
+description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Also load it when *every* session shows `[?]`, or when `colab ssh -s NAME` / `colab exec -s NAME` behaves oddly because `sessions.json` was truncated by two concurrent invocations — in that state `colab ssh` silently rents a new VM instead of reattaching. Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix. Also load it when a session needs Google Drive (the `colab drivemount` consent flow, which is human-in-the-loop), or when the CLI is driven from a non-interactive agent shell where `colab console` would block forever. Also load it before planning a GPU / ML experiment on Colab (model install, `pip wheel` vs git+URL, OOM-by-arithmetic pre-flight, dtype vs GPU kernel support, driver-vs-CLI choice, smoke test, no-polling fire-and-forget with `/usr/bin/time -v`).
 ---
 
 # Google Colab CLI Tradecraft
 
 Use `colab skill | glow`  or `colab readme`  to learn the official basics first — this skill assumes that base knowledge and covers what it doesn't.
 
-version 2.7.0
+version 2.9.0
 
 ## Authentication
 
@@ -594,3 +594,140 @@ always re-enter through `colab_me`, that is a lab curiosity, not a daily hazard.
 bytes as `/content/drive/MyDrive/Shared/Downloads`, reached through a Drive
 shortcut. Resolve with `realpath` before deriving paths from `$HOME`, and never
 assume the `MyDrive/...` form is the only name for a file.
+
+## GPU Experiments: Decide the Accelerator *Before* `colab new`
+
+The session type is the first decision, not the first command. Read the
+workload's code before creating anything: an install path that force-upcasts
+to fp32 on CPU (`if device.type == "cpu": dtype = torch.float32`) plus a
+multi-GB checkpoint announces "GPU" from the source. Creating a CPU session
+first, discovering the mismatch mid-install, stopping it, and creating a GPU
+session costs the session quota (**only one session at a time**) plus ~6
+minutes of setup. Do the paper work first:
+
+```bash
+# before any session exists: read the code that decides the device
+grep -rn "device.type == \"cpu\"" /path/to/package/          # dtype forcing
+grep -rn "attn_implementation\|sdpa\|flash" /path/to/package # attention kernel
+```
+
+## Ship Code as a Wheel, Not a git URL or a Tarball
+
+Three ways to get a repo-only package onto a VM, in order of cost:
+
+- **`pip install git+https://…@<sha>`** — fails on a fresh clone with
+  `fatal: reference is not a tree` when pip's shallow fetch cannot see a raw
+  SHA not on the default branch. Also: the local clone's HEAD may not be on the
+  public remote at all (verified — checkout failed there too).
+- **`git archive` tarball** — works, but it is a two-step dance: ship the
+  tarball, extract, `pip install /path`.
+- **`pip wheel /local/clone -w dist/`** — once, on a machine that has the repo.
+  Then `pip install dist/<name>-<ver>-py3-none-any.whl` on the VM: one file,
+  exact code, no git on the target, exact-version provenance for free. The
+  wheel *is* the tarball with its installation logic pre-resolved. Costs ~1
+  minute to build and sidesteps every failure above.
+
+## Pre-flight Memory Arithmetic on Paper
+
+Before launching anything expensive on unfamiliar hardware, one paragraph on
+paper: what gets allocated, where, in which dtype, and what the hardware
+supports. Two of three failures in a real session were measurable-on-paper
+errors:
+
+- **Eager attention materialises N_heads × L² score tensors.** 16 heads ×
+  11.6k tokens² × 2 B ≈ 8.6 GiB — bigger than a T4's free VRAM. This is
+  arithmetic, not experiment; the OOM traceback was confirming a calculation.
+- **The GPU's kernel support decides dtype choices.** T4 is sm_75: no native
+  bf16, no FlashAttention. bf16 + SDPA falls back to the *math* backend, which
+  materialises the same 8 GiB score tensor in fp32. fp16 gets the
+  memory-efficient cutlass kernel and fits with room to spare.
+- **Check where the dispatch happens.** `attention_interface =
+  ALL_ATTENTION_FUNCTIONS.get_interface(self.config._attn_implementation, …)`
+  reads the attribute *at forward time*, so setting it on the loaded model is
+  the lever — no package edit needed. If the dispatch happened at import time,
+  the same flag would be a no-op.
+
+Empiricism is for the two things that remain uncertain *after* that paragraph —
+not for the first two guesses.
+
+## Read the CLI Defaults Before Trusting Them
+
+The stock CLI had three traps: no attention-implementation flag (hard OOM),
+`--max-new-tokens` default 2048 that silently truncates a 6562-token transcript
+(confounding the very thing being measured), and no progress output until
+completion. When the stock CLI is missing a knob, a ~10-line driver that
+reuses the library's own functions (`generate_transcription`, the exporters)
+keeps the experiment honest — only the kernel or the length cap changes, not
+the science. Also check the output naming: `--out-dir` versioned from the
+start beats renaming files afterwards.
+
+## Smoke Test Before the Real Run
+
+A 60-second clip exercises load → prefill → decode → export in minutes. Two of
+the three failures in the session died during the *full* run instead of a cheap
+probe. A smoke test is also the cheapest possible way to confirm the
+`--model`/`--out-dir`/`--dtype` flags actually reach the code path you think.
+
+## Fire and Forget — No Polling
+
+Launch with a detached wrapper, then read the log on demand — there is no
+condition on the remote that a sleep-loop on the local shell helps:
+
+```bash
+ssh -o UserKnownHostsFile=$K -o ProxyCommand="colab ssh --proxy-mode -s NAME" \
+  root@localhost 'apt-get install -y time >/dev/null 2>&1; \
+  setsid nohup /usr/bin/time -v python driver.py > /content/run.log 2>&1 < /dev/null & echo started'
+```
+
+- **`/usr/bin/time` is NOT installed on Colab images** — the launch dies with
+  `nohup: failed to run command '/usr/bin/time': No such file or directory`
+  and GPU idle for minutes. `apt-get install -y time` first (or check with
+  `command -v time`).
+- **Let the driver write its own summary JSON** (`peak_gpu_alloc_gb`,
+  `prompt_len`, `generated_tokens`, `elapsed_sec`) — that plus the `time -v`
+  block is the whole record, and neither needs a watcher.
+- **Polling is pure theatre.** A background job does not get faster because
+  it is stared at; every `sleep N; ssh … tail` is a turn spent on nothing.
+  Check the log when you actually need the answer, not on a timer.
+
+## One Experiment at a Time — Propose, Don't Bolt On
+
+A second experiment bolted on mid-session (a CPU probe to answer a different
+question) was never asked about, cost the user's message quota and trust, and
+produced the polling-loop theatre above. If an experiment is worth running,
+it is worth a one-line proposal: "want me to also run X, to answer Y?". Scope
+additions the user did not request are the user's call, not the agent's.
+
+## Moving Data: `colab upload` Beats the Script Payload ~20× (measured)
+
+`colab run` ships *only the script text*: `sys.argv` is faked by embedding
+`repr()`-quoted strings into one kernel code message. Data does not travel
+with it. Two doors exist for bytes, and they differ by an order of magnitude
+(measured on a home uplink, 2026-11-13):
+
+| channel | payload | result |
+| --- | --- | --- |
+| script body / script args (kernel code message) | 47 MB | **never landed in 15 min** — upload-bound, first script line prints only after the whole payload arrives |
+| `colab upload -s NAME file /content/file` | 34 MB | **45.7 s** |
+
+Consequences:
+
+- **`colab run` is for compute-only scripts.** A one-file script with data
+  embedded (base64) only works while payload ≲ a few MB. Session+kernel
+  overhead for a trivial script: **13.5 s** end-to-end (`--keep` probe).
+- **For data, upload first, then exec**: `colab upload` needs an existing
+  session (`-s`), so the sequence is `colab run --keep -s NAME setup.py` →
+  `colab upload -s NAME …` → `colab exec -s NAME --timeout 7200 -f driver.py`
+  → `colab stop -s NAME`. Four observable commands, no sleeps, no ssh.
+- **`exec -f` streams progress and maps `sys.exit(N)` to the CLI exit code**,
+  but its `--timeout` defaults to **30 s** — pass hours for real jobs. (`exec`
+  appends the IPython "To exit: use…" warning and CLI log lines to stdout;
+  `run`'s payload suppresses that warning — don't mistake the noise for
+  script output when diffing transcripts.)
+- A working end-to-end template (clone repo → `pip install .` → HF weights →
+  fp16+SDPA transcription → summary JSON + transcript on stdout) lives in
+  `templates/mtd_colab_driver.py` next to this file. Its setup measured
+  8.7 s on Colab (torch/transformers preinstalled), model download 33 s.
+- Don't `grep` a long *streaming* command — trimming `time -v` noise that way
+  also blinds you to the progress that would have diagnosed the hang. Capture
+  to a file (`> run.log 2>&1`), then inspect the file.
