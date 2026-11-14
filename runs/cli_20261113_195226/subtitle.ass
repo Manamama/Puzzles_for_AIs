@@ -1,0 +1,158 @@
+﻿[Script Info]
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Noto Sans CJK SC,49,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,3,1,2,48,48,56,1
+Style: Speaker_S01,Noto Sans CJK SC,49,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,3,1,2,48,48,56,1
+Style: Speaker_S02,Noto Sans CJK SC,49,&H005BE7FF,&H000000FF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,3,1,2,48,48,56,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.08,0:00:01.12,Speaker_S01,,0,0,0,,S01: Jacek Bańka, dzień dobry.
+Dialogue: 0,0:00:01.15,0:00:05.52,Speaker_S01,,0,0,0,,S01: A gościem Radiy Kraków jest dzisiaj Minister Sprawiedliwości, prokurator generalny Waldemar Żurek.
+Dialogue: 0,0:00:05.55,0:00:06.74,Speaker_S01,,0,0,0,,S01: Dzień dobry, Panie Ministrze.
+Dialogue: 0,0:00:06.80,0:00:08.50,Speaker_S02,,0,0,0,,S02: Dzień dobry, witam Pana, witam Państwa.
+Dialogue: 0,0:00:08.53,0:00:12.64,Speaker_S01,,0,0,0,,S01: Panie Ministrze, zanim o pracy śledczych w sprawie zamachów w Krakowie, pytanie o to, jak Pan spoglądał
+Dialogue: 0,0:00:12.67,0:00:17.84,Speaker_S01,,0,0,0,,S01: na te wczorajsze tłumy na marszu ciszy, w swoim przecież Krakowie, byli tam i prezydent, i premier.
+Dialogue: 0,0:00:19.16,0:00:23.44,Speaker_S02,,0,0,0,,S02: No rzeczywiście, to było bardzo wzruszające, ściskało, zagardło.
+Dialogue: 0,0:00:24.24,0:00:29.52,Speaker_S02,,0,0,0,,S02: Ale jednocześnie pokazało, że w takich trudnych momentach potrafimy się zjednoczyć.
+Dialogue: 0,0:00:30.44,0:00:35.15,Speaker_S02,,0,0,0,,S02: Oczywiście każdy z nas chciałby, żeby tych dramatycznych zdarzeń nie było.
+Dialogue: 0,0:00:35.79,0:00:40.15,Speaker_S02,,0,0,0,,S02: Ale musimy patrzeć w przyszłość i wyciągać też wnioski z tego,
+Dialogue: 0,0:00:41.28,0:00:45.36,Speaker_S02,,0,0,0,,S02: jak należy zabezpieczać się przed tego typu przypadkami.
+Dialogue: 0,0:00:45.39,0:00:51.72,Speaker_S02,,0,0,0,,S02: Tutaj akurat mieliśmy sytuację, kiedy wszystkie służby zadziałały w sposób perfekcyjny.
+Dialogue: 0,0:00:52.08,0:00:55.64,Speaker_S02,,0,0,0,,S02: Myślę, że ta akcja policji będzie pokazywana na świecie,
+Dialogue: 0,0:00:56.04,0:01:01.22,Speaker_S02,,0,0,0,,S02: jak w tego typu przypadkach terrorystycznych zamachów należy działać,
+Dialogue: 0,0:01:01.25,0:01:05.88,Speaker_S02,,0,0,0,,S02: ale nikt już nie odda życia tych, którzy je stracili.
+Dialogue: 0,0:01:05.91,0:01:12.92,Speaker_S02,,0,0,0,,S02: Natomiast jestem zbudowany postawą ludzi, którzy byli obok policja, ratownicy, ale przechodnie, Polacy,
+Dialogue: 0,0:01:13.76,0:01:17.44,Speaker_S02,,0,0,0,,S02: także turyści, którzy w tym momencie byli w Krakowie.
+Dialogue: 0,0:01:17.47,0:01:23.48,Speaker_S02,,0,0,0,,S02: Więc to jest coś, z czego powinniśmy wyciągać jakieś pozytywne przesłanie.
+Dialogue: 0,0:01:23.64,0:01:25.38,Speaker_S02,,0,0,0,,S02: Potrafimy być solidarni.
+Dialogue: 0,0:01:25.41,0:01:29.84,Speaker_S01,,0,0,0,,S01: A czy, Panie Ministrze, wiadomo już coś więcej na temat motywów, które kierowały sprawcom zamachu?
+Dialogue: 0,0:01:30.96,0:01:39.88,Speaker_S02,,0,0,0,,S02: Te motywy rzeczywiście są badane, badane są pod kątem, to jest bardzo silny wątek tego prawicowego ekstremizmu.
+Dialogue: 0,0:01:40.56,0:01:48.40,Speaker_S02,,0,0,0,,S02: Mogę już potwierdzić pewne informacje, dlatego że służby mają dostęp do komputera sprawcy.
+Dialogue: 0,0:01:49.04,0:01:55.66,Speaker_S02,,0,0,0,,S02: Rzeczywiście widać odwiedzanie stron, które dotyczyły Andrésa Braywika,
+Dialogue: 0,0:01:55.69,0:02:01.72,Speaker_S02,,0,0,0,,S02: czyli tego prawicowego ekstremisty, który dopuścił się takiej masakry dramatycznej na Wyspiełtoja.
+Dialogue: 0,0:02:02.56,0:02:11.96,Speaker_S02,,0,0,0,,S02: Ta flaga z tym grzechotnikiem, rzut etło i grzechotnik, to też daje służbom i prokuraturze jakiś sygnał.
+Dialogue: 0,0:02:12.52,0:02:23.24,Speaker_S02,,0,0,0,,S02: Wiemy dobrze, że w sytuacji ataku na kapitol tych flag wśród tych skrajnie prawicowych uprawań w Stanach Zjednoczonych było dosyć sporo.
+Dialogue: 0,0:02:23.96,0:02:29.24,Speaker_S02,,0,0,0,,S02: Tam są też zwolennicy takiego nieograniczonego dostępu do broni palnej.
+Dialogue: 0,0:02:30.47,0:02:37.52,Speaker_S02,,0,0,0,,S02: Też zabezpieczono miejsce pracy sprawcy, tam też jest symbolika, która może wskazywać na ten wątek.
+Dialogue: 0,0:02:38.40,0:02:41.56,Speaker_S02,,0,0,0,,S02: Więc ten prawicowy ekstremizm, to jest jedno.
+Dialogue: 0,0:02:42.44,0:02:49.48,Speaker_S02,,0,0,0,,S02: Badamy też otoczenie tego człowieka, tego sprawcy, bo wtedy trzeba się przyglądać,
+Dialogue: 0,0:02:49.96,0:02:58.84,Speaker_S02,,0,0,0,,S02: także czy to otoczenie było w jakiś sposób powiązane z jakimiś nurtami politycznymi, które mogły wpłynąć na taką decyzję.
+Dialogue: 0,0:02:59.16,0:03:04.64,Speaker_S02,,0,0,0,,S02: Oczywiście bardzo ważnym motywem jest też kwestia zaburzeń psychicznych.
+Dialogue: 0,0:03:04.67,0:03:13.08,Speaker_S02,,0,0,0,,S02: Ale jeżeli nałożymy na siebie różnego rodzaju przesłanki, to czasem dochodzi do takiej eksplosji,
+Dialogue: 0,0:03:13.11,0:03:21.84,Speaker_S02,,0,0,0,,S02: gdy coś dzieje się czasem w tym najbliższym otoczeniu, co jest takim zapalnikiem do tak dramatycznych rzeczy.
+Dialogue: 0,0:03:22.36,0:03:27.56,Speaker_S02,,0,0,0,,S02: Rzeczywiście zadziwia, że widać było jakieś przygotowanie do tego czynu,
+Dialogue: 0,0:03:27.59,0:03:31.52,Speaker_S02,,0,0,0,,S02: bo jednak jeżeli ktoś ma kilkanaście magazynków do broni poautomatycznej,
+Dialogue: 0,0:03:32.12,0:03:36.68,Speaker_S02,,0,0,0,,S02: no to jeżeli ktoś, kto chce się uczyć strzelać, to mu wystarczą dwa-trzy magazynki,
+Dialogue: 0,0:03:37.72,0:03:41.72,Speaker_S02,,0,0,0,,S02: kiedy chodzi na szczelnicy bądź też nawet w taktycznym strzelaniu bierze udział.
+Dialogue: 0,0:03:41.75,0:03:47.88,Speaker_S02,,0,0,0,,S02: Jeżeli ktoś ma ich kilkanaście, jeżeli zabezpieczono prawie 500 sztuk amunicji,
+Dialogue: 0,0:03:48.24,0:03:53.96,Speaker_S02,,0,0,0,,S02: to widać, że ten człowiek czynił jakieś przygotowania do tego działania.
+Dialogue: 0,0:03:54.44,0:04:00.56,Speaker_S02,,0,0,0,,S02: Więc to wszystko musi być analizowane, mamy też sekcję zwłok, bo to też jest istotne, że sekcja zwłok ofiar.
+Dialogue: 0,0:04:01.36,0:04:07.88,Speaker_S02,,0,0,0,,S02: I te wstępne oględziny wskazują, że te obrażenia wewnętrzne organów są bardzo poważne,
+Dialogue: 0,0:04:07.91,0:04:16.24,Speaker_S02,,0,0,0,,S02: więc musimy przebadać także amunicję, czy była to amunicja taka wojskowa, która ma nie zabijać, a eliminować,
+Dialogue: 0,0:04:16.27,0:04:24.92,Speaker_S02,,0,0,0,,S02: czy też była to specjalna amunicja półpłaszczowa, która powoduje większe obrażenia i szybciej zabija ofiary.
+Dialogue: 0,0:04:25.24,0:04:28.02,Speaker_S02,,0,0,0,,S02: Więc to wszystko jest dzisiaj analizowane.
+Dialogue: 0,0:04:28.04,0:04:36.27,Speaker_S01,,0,0,0,,S01: Panie Ministrze, czyli śledczy dotarli do materiałów, które jednoznacznie potwierdzają radykalizację ideologią skrajnie prawicową?
+Dialogue: 0,0:04:36.30,0:04:41.12,Speaker_S01,,0,0,0,,S01: Mówił o tym Minister Kierwiński, który był potem krytykowany za te wczesne stawianie tez.
+Dialogue: 0,0:04:41.88,0:04:50.64,Speaker_S02,,0,0,0,,S02: Oczywiście ja jestem o tyle ostrożny, że prokuratura musi prowadzić postępowanie, stawiając różne tezy.
+Dialogue: 0,0:04:50.66,0:05:01.20,Speaker_S02,,0,0,0,,S02: Natomiast jeżeli, jak to mówimy potocznie, łączymy kropki i mamy tę flagę, przez część osób jest kojarzona prawda z jakąś płytą zespołu rokowego,
+Dialogue: 0,0:05:01.22,0:05:05.88,Speaker_S02,,0,0,0,,S02: ale nie każdy z nas ma taką flagę w domu i ma tyle sztuk broni
+Dialogue: 0,0:05:06.36,0:05:13.04,Speaker_S02,,0,0,0,,S02: i jednocześnie ogląda na swoim komputerze, czy rozczytuje się w dokonaniach Braywika.
+Dialogue: 0,0:05:13.56,0:05:17.39,Speaker_S02,,0,0,0,,S02: Więc to są przesłanki bardzo silne w tym postępowaniu.
+Dialogue: 0,0:05:17.42,0:05:23.04,Speaker_S02,,0,0,0,,S02: Ja nie mówię, że jedyne, bo w tego typu przypadkach śledczy muszą sprawdzić każdą tezę.
+Dialogue: 0,0:05:23.07,0:05:30.88,Speaker_S02,,0,0,0,,S02: Natomiast wydaje się, że to, co w tych pierwszych godzinach komunikował Minister Kierwiński,
+Dialogue: 0,0:05:31.20,0:05:33.96,Speaker_S02,,0,0,0,,S02: jednak znajduje potwierdzenie w materiale dowodowym.
+Dialogue: 0,0:05:34.36,0:05:41.84,Speaker_S02,,0,0,0,,S02: A ponieważ sprawca nie zostawił żadnego listu, żadnego przesłania, zmarł w szpitalu,
+Dialogue: 0,0:05:42.40,0:05:49.64,Speaker_S02,,0,0,0,,S02: to te tezy musimy formułować na podstawie tych dowodów, które zgromadziliśmy.
+Dialogue: 0,0:05:49.67,0:05:54.16,Speaker_S02,,0,0,0,,S02: Więc to będzie utrudniało na pewno postępowanie.
+Dialogue: 0,0:05:54.19,0:06:00.96,Speaker_S02,,0,0,0,,S02: Natomiast już te dowody, które mogą stawiać też taką tezę, o której była mowa w tych pierwszych chwilach,
+Dialogue: 0,0:06:00.98,0:06:05.06,Speaker_S02,,0,0,0,,S02: i ona jest bardzo, bardzo taka realistyczna.
+Dialogue: 0,0:06:05.20,0:06:10.16,Speaker_S01,,0,0,0,,S01: A czy śledczy badają również powiązania rodziny zamachowca i czy coś z tych badań już wynika?
+Dialogue: 0,0:06:10.88,0:06:14.64,Speaker_S02,,0,0,0,,S02: Ja nie chcę o tym mówić, są też ofiary tego sprawcy,
+Dialogue: 0,0:06:15.24,0:06:20.36,Speaker_S02,,0,0,0,,S02: ale też oczywiście jest to bardzo intensywnie badane, także ich udział w życiu społeczno-politycznym,
+Dialogue: 0,0:06:20.39,0:06:30.80,Speaker_S02,,0,0,0,,S02: bo to czasem pokazuje, czy i jak poglądy osób bliskich mogły wpływać na sprawcę, w jakim kierunku,
+Dialogue: 0,0:06:31.36,0:06:40.88,Speaker_S02,,0,0,0,,S02: kto tam był właśnie tym, który nadawał ton spojrzeniu na świat i na różne okoliczności.
+Dialogue: 0,0:06:40.91,0:06:46.96,Speaker_S02,,0,0,0,,S02: Więc to jest oczywiście badane, natomiast nie chcę jeszcze ujawniać tych danych.
+Dialogue: 0,0:06:46.98,0:06:56.58,Speaker_S02,,0,0,0,,S02: Część z nich jest w internecie, ale my musimy też weryfikować to wszystko i odsiewać te rzeczy, które są fejkowe, a te, które są prawdziwe.
+Dialogue: 0,0:06:56.61,0:07:01.72,Speaker_S01,,0,0,0,,S01: A w tle są powiązania polityczne lub powiązania z formalnymi lub mniej formalnymi grupami?
+Dialogue: 0,0:07:02.48,0:07:12.44,Speaker_S02,,0,0,0,,S02: Nie mogę o tym mówić, to jest sprawdzane, analizowane, więc tylko te dowody, co do których mam pewność, ujawniam.
+Dialogue: 0,0:07:12.96,0:07:21.80,Speaker_S02,,0,0,0,,S02: Część mediów pokazywała pewne zaangażowanie członków rodziny, w komisje wyborcze,
+Dialogue: 0,0:07:21.83,0:07:32.04,Speaker_S02,,0,0,0,,S02: ale to jest zbyt mało, żeby tutaj wskazywać jednoznaczną tezę, jakie poglądy miały osoby bliskie
+Dialogue: 0,0:07:32.07,0:07:34.94,Speaker_S02,,0,0,0,,S02: i czy te poglądy wpływały na sprawcę.
+Dialogue: 0,0:07:34.97,0:07:44.26,Speaker_S02,,0,0,0,,S02: Więc tutaj bym nie stawiał tak daleko tezy, bo głównym powodem całej tej zbrodni był ten sprawca i jego działania.
+Dialogue: 0,0:07:44.48,0:07:51.46,Speaker_S01,,0,0,0,,S01: Panie Ministrze, ze strony MONU oraz MSW A płyną głosy o potrzebie zweryfikowania przepisów regulujących dostęp do broni palnej.
+Dialogue: 0,0:07:51.48,0:07:56.40,Speaker_S01,,0,0,0,,S01: Czy wymagają one zmian lub korekty, czy to takie będzie działanie ad hoc przedwczesne?
+Dialogue: 0,0:07:57.12,0:07:59.72,Speaker_S02,,0,0,0,,S02: Ja uważam, że powinniśmy rozpocząć tą dyskusję.
+Dialogue: 0,0:07:59.75,0:08:04.28,Speaker_S02,,0,0,0,,S02: Ja jestem sam posiadaczem broni długiej i krótkiej, więc mam świadomość tego,
+Dialogue: 0,0:08:05.04,0:08:10.24,Speaker_S02,,0,0,0,,S02: że trzeba zachowywać bardzo precyzyjnie i bardzo ściśle zasady ostrożności.
+Dialogue: 0,0:08:10.27,0:08:17.12,Speaker_S02,,0,0,0,,S02: Zwłaszcza młodzi ludzie powinni być poddawani specjalistycznym badaniom wtedy, kiedy chcą mieć broń.
+Dialogue: 0,0:08:17.44,0:08:23.08,Speaker_S02,,0,0,0,,S02: Poza tym mamy jednak, moim zdaniem, te przepisy niedoskonałe.
+Dialogue: 0,0:08:23.68,0:08:28.52,Speaker_S02,,0,0,0,,S02: Jest wiele klubów strzeleckich i wiele osób, które posiada jednostki broni we własnym domu.
+Dialogue: 0,0:08:28.54,0:08:36.40,Speaker_S02,,0,0,0,,S02: Ale jeżeli tych jednostek jest bardzo dużo, no to budzi to moje zdziwienie, że ktoś ma takiej ilości broń.
+Dialogue: 0,0:08:36.42,0:08:39.88,Speaker_S02,,0,0,0,,S02: Mamy broń kolekcjonerską, która jest pełnisprawna do użycia.
+Dialogue: 0,0:08:39.91,0:08:43.64,Speaker_S02,,0,0,0,,S02: To jest broń, z której można strzelać i z której można zabijać.
+Dialogue: 0,0:08:44.12,0:08:51.96,Speaker_S02,,0,0,0,,S02: Ale mamy też badania, co pięć lat ja przechodzę, badania specjalistyczne, psychologiczne, psychiatryczne, okulistyczne, ogólnomedyczne.
+Dialogue: 0,0:08:52.88,0:08:57.48,Speaker_S02,,0,0,0,,S02: I uważam, że każdy posiadaż broni powinien takie badania przechodzić.
+Dialogue: 0,0:08:58.55,0:09:05.32,Speaker_S02,,0,0,0,,S02: Ja jestem zwolennikiem tego, że należy edukować, jeżeli ktoś chce mieć taką pasję,
+Dialogue: 0,0:09:05.35,0:09:11.24,Speaker_S02,,0,0,0,,S02: to powinien mieć prawo do tego, żeby te pasje były realizowane.
+Dialogue: 0,0:09:11.55,0:09:14.96,Speaker_S02,,0,0,0,,S02: Natomiast można je robić w taki sposób, żeby było bezpieczne.
+Dialogue: 0,0:09:14.99,0:09:19.76,Speaker_S02,,0,0,0,,S02: Jeżeli to nasycenie broni w naszym społeczeństwie będzie bardzo duże,
+Dialogue: 0,0:09:19.96,0:09:28.40,Speaker_S02,,0,0,0,,S02: a jednocześnie na to oglądamy badania jednak pogarszającego się stanu psychicznego społeczeństwa,
+Dialogue: 0,0:09:28.72,0:09:35.44,Speaker_S02,,0,0,0,,S02: no to musimy mieć świadomość, że w pewnych momentach, jak jeszcze będzie tam jakieś nasycenie ideologiczne,
+Dialogue: 0,0:09:35.72,0:09:38.72,Speaker_S02,,0,0,0,,S02: no może dochodzić do tak dramatycznych sytuacji.
+Dialogue: 0,0:09:39.36,0:09:45.28,Speaker_S02,,0,0,0,,S02: Więc ja jestem zwolennikiem tego, żeby bardzo precyzyjnie i ściśle przestrzegać prawa.
+Dialogue: 0,0:09:45.30,0:09:47.79,Speaker_S02,,0,0,0,,S02: Czyli te badania muszą być bardzo rzetelne.
+Dialogue: 0,0:09:48.08,0:09:52.48,Speaker_S02,,0,0,0,,S02: Tu jest duża odpowiedzialność na lekarza, którzy mają uprawnienia do wydawania takich zaświadczeń.
+Dialogue: 0,0:09:52.91,0:10:00.44,Speaker_S02,,0,0,0,,S02: Ale też mówię, mamy dużą grupę, która jest poza tymi badaniami albo robi je tylko raz, na samym początku, wtedy kiedy uzyskuje broń,
+Dialogue: 0,0:10:00.64,0:10:04.48,Speaker_S02,,0,0,0,,S02: a w momencie, gdy ich stan się pogarszy albo są jakieś niepokojące symptomy,
+Dialogue: 0,0:10:04.96,0:10:10.20,Speaker_S02,,0,0,0,,S02: to rzeczywiście nie są one poddawane takiej regularnej kontroli.
+Dialogue: 0,0:10:10.79,0:10:17.60,Speaker_S02,,0,0,0,,S02: Tam jeszcze mam ostatnie informacje od śledczych, znaleźiono tłumik w samochodzie sprawcy,
+Dialogue: 0,0:10:17.63,0:10:26.12,Speaker_S02,,0,0,0,,S02: więc to też świadczy o tym, że jednak jakieś przygotowania mogły być czynione w tym kierunku,
+Dialogue: 0,0:10:26.60,0:10:31.36,Speaker_S02,,0,0,0,,S02: bo wiemy, że ta rodzina zginęła w swoim mieszkaniu, są się dzi nic nie słyszeli.
+Dialogue: 0,0:10:32.12,0:10:41.67,Speaker_S02,,0,0,0,,S02: Więc to powinno dać nam jakąś lekcję, że jeżeli mamy taką osobę, która ma takiej ilości broni.
+Dialogue: 0,0:10:42.64,0:10:50.44,Speaker_S02,,0,0,0,,S02: I jeszcze tylko pytanie jest, jak daleko ma sięgać ingerencja Państwa w takie prawa i wolności obywatelskie?
+Dialogue: 0,0:10:51.24,0:10:56.88,Speaker_S02,,0,0,0,,S02: Służby oczywiście monitorują internet i ja jestem w kontakcie służbami.
+Dialogue: 0,0:10:56.91,0:11:00.52,Speaker_S02,,0,0,0,,S02: Nawet ostatnio mieliśmy takie spotkanie o radykalizacji młodych ludzi.
+Dialogue: 0,0:11:01.16,0:11:05.96,Speaker_S02,,0,0,0,,S02: I takie osoby są wyłapywane w sieci, które poszukują właśnie takich stron
+Dialogue: 0,0:11:06.28,0:11:13.88,Speaker_S02,,0,0,0,,S02: i jednocześnie szukają kontaktów z innymi osobami, które mogą mieć podobnie radykalne poglądy.
+Dialogue: 0,0:11:13.91,0:11:20.44,Speaker_S02,,0,0,0,,S02: Tutaj jeszcze mamy wiele niewiadomych, dlatego że bardzo wiele dowodów jest zgromadzonych,
+Dialogue: 0,0:11:20.47,0:11:26.56,Speaker_S02,,0,0,0,,S02: ale poddajemy je cały czas w analizie, więc Państwo będziecie na bieżąco informowani.
+Dialogue: 0,0:11:26.58,0:11:31.76,Speaker_S02,,0,0,0,,S02: Pomimo tego, że sprawca nie żyje i normalnie takie postępowanie, obez niego powinno się umorzyć,
+Dialogue: 0,0:11:31.79,0:11:34.96,Speaker_S02,,0,0,0,,S02: my je tak prowadzimy to postępowanie pod kątem szerszym.
+Dialogue: 0,0:11:35.92,0:11:44.24,Speaker_S02,,0,0,0,,S02: To znaczy, jakie miał kontakty, czy działał sam, czy coś go inspirowało bardziej czy mniej.
+Dialogue: 0,0:11:44.60,0:11:47.58,Speaker_S02,,0,0,0,,S02: No musimy to poznać bardzo głęboko.
+Dialogue: 0,0:11:47.61,0:11:51.52,Speaker_S01,,0,0,0,,S01: Panie Ministrze, na koniec, czy śledczy przyjrzą się także i czy jest w ogóle taka potrzeba,
+Dialogue: 0,0:11:51.55,0:11:56.92,Speaker_S01,,0,0,0,,S01: by przyjrzeć się uważnie klubom i związkom, które oferują szkolenie z zakresu strzelenia bojowego?
+Dialogue: 0,0:11:56.95,0:12:00.52,Speaker_S01,,0,0,0,,S01: No bo to też zachodzi prawdopodobieństwo, że sprawca przeszedł takie szkolenie.
+Dialogue: 0,0:12:01.36,0:12:04.82,Speaker_S02,,0,0,0,,S02: Oczywiście szkolenie bojowe samo w sobie nie jest niczym złym.
+Dialogue: 0,0:12:04.85,0:12:08.00,Speaker_S02,,0,0,0,,S02: I wydaje mi się, że jeżeli robią to profesjonalniści, to bardzo dobrze.
+Dialogue: 0,0:12:08.40,0:12:15.68,Speaker_S02,,0,0,0,,S02: Mnie bardziej niepokoją takie ogłoszenie, jak widzimy błyskawicznie, załatwił Ci pozwolenie na broń.
+Dialogue: 0,0:12:16.28,0:12:26.00,Speaker_S02,,0,0,0,,S02: To zawsze budzi mój niepokój, bo wiem jednak, że żeby poznać człowieka, to trzeba to robić sukcesywnie
+Dialogue: 0,0:12:26.03,0:12:32.56,Speaker_S02,,0,0,0,,S02: i w pewnych odslepach czasowych, żeby zobaczyć, czy on jest rzeczywiście pasjonatem strzeleckstwa,
+Dialogue: 0,0:12:32.58,0:12:38.24,Speaker_S02,,0,0,0,,S02: czy gdzieś kryje się fascynacja zbrodnią, bo takie osoby też są.
+Dialogue: 0,0:12:38.88,0:12:44.68,Speaker_S02,,0,0,0,,S02: Więc tutaj bardziej bym się skupił na tym błyskawicznym załatwianiu pozwoleń na broń ostrą,
+Dialogue: 0,0:12:45.24,0:12:50.40,Speaker_S02,,0,0,0,,S02: niż na tych, którzy oferują takie strzelania taktyczne.
+Dialogue: 0,0:12:51.24,0:12:57.24,Speaker_S02,,0,0,0,,S02: Wiemy, że właściwie jesteśmy zachęcani dzisiaj, ja też nie jestem tutaj przeciwnikiem tego,
+Dialogue: 0,0:12:57.88,0:13:03.56,Speaker_S02,,0,0,0,,S02: żeby ludzie uczyli się obsługi broni, bo ta sytuacja geopolityczna jest bardzo trudna.
+Dialogue: 0,0:13:04.52,0:13:12.48,Speaker_S02,,0,0,0,,S02: I ta nasza odporność, wewnętrzna odporność społeczeństwa, czy też nawet takie zasoby dla armii rezerwowej,
+Dialogue: 0,0:13:13.24,0:13:15.04,Speaker_S02,,0,0,0,,S02: są sygnałem dla naszych wroku.
+Dialogue: 0,0:13:15.07,0:13:21.52,Speaker_S02,,0,0,0,,S02: Jeżeli społeczeństwo jest na to przygotowane, to mamy większe gwarancje, że nikt nas nie zaatakuje,
+Dialogue: 0,0:13:21.55,0:13:26.80,Speaker_S02,,0,0,0,,S02: mając świadomość, że jednak mamy takie społeczeństwo, które te umiejętności posiada.
+Dialogue: 0,0:13:26.83,0:13:32.24,Speaker_S02,,0,0,0,,S02: Więc ja bym nie szedł w tym kierunku, żeby ograniczać, ale zwiększać na pewno kontrolę.
+Dialogue: 0,0:13:32.27,0:13:41.36,Speaker_S02,,0,0,0,,S02: Natomiast ta liczba broni, która jest ponad milion sztuk broni, która jest dostępna, to jest naprawdę duża liczba.
+Dialogue: 0,0:13:41.39,0:13:50.52,Speaker_S02,,0,0,0,,S02: I tutaj powinny być takie ścisłe przestrzeganie reguł, przechowywania, badań kontrolnych, to jest moim zdaniem bardzo istotne.
+Dialogue: 0,0:13:51.16,0:13:57.96,Speaker_S02,,0,0,0,,S02: Natomiast musimy się zastanowić, bo oczywiście są takie głosy, żeby zwiększyć dostęp obywateli do broni.
+Dialogue: 0,0:13:58.84,0:14:06.76,Speaker_S02,,0,0,0,,S02: Ja osobiście uważam, że te przepisy są niezły, należy je nawet poprawić w tym kierunku, żeby jednak przechodzić te regularne badania.
+Dialogue: 0,0:14:07.36,0:14:15.52,Speaker_S02,,0,0,0,,S02: Ale taki powszechny dostęp, jaki widzimy w Stanach, ktoś przychodzi na prawo jazdy, kupuje sobie karabinku automatyczny i kilka rewolwerów,
+Dialogue: 0,0:14:15.84,0:14:23.84,Speaker_S02,,0,0,0,,S02: no to moim zdaniem nie idźmy w tym kierunku, bo będziemy mieli po prostu masakry, które są powszechne w Stanach Zjednoczonych.
+Dialogue: 0,0:14:23.87,0:14:31.88,Speaker_S02,,0,0,0,,S02: Chciałbym, żeby Polska jednak nie miała takich zdarzeń, a to, co się stało w Krakowie, żeby było absolutnym incydentem,
+Dialogue: 0,0:14:32.52,0:14:34.32,Speaker_S02,,0,0,0,,S02: z którego wyciągniemy pewne wnioski.
+Dialogue: 0,0:14:34.64,0:14:38.48,Speaker_S01,,0,0,0,,S01: W Radiu Kraków dzisiaj. Minister Sprawiedliwości, prokurator generalny Waldemar Żurek.
+Dialogue: 0,0:14:38.51,0:14:40.04,Speaker_S01,,0,0,0,,S01: Panie Ministrze, bardzo dziękuję.
+Dialogue: 0,0:14:40.44,0:14:40.96,Speaker_S02,,0,0,0,,S02: Dziękuję.

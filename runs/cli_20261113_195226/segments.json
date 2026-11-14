@@ -1,0 +1,1003 @@
+[
+  {
+    "id": "seg_0001",
+    "start": 0.08,
+    "end": 1.12,
+    "speaker": "S01",
+    "text": "Jacek Bańka, dzień dobry."
+  },
+  {
+    "id": "seg_0002",
+    "start": 1.15,
+    "end": 5.52,
+    "speaker": "S01",
+    "text": "A gościem Radiy Kraków jest dzisiaj Minister Sprawiedliwości, prokurator generalny Waldemar Żurek."
+  },
+  {
+    "id": "seg_0003",
+    "start": 5.55,
+    "end": 6.74,
+    "speaker": "S01",
+    "text": "Dzień dobry, Panie Ministrze."
+  },
+  {
+    "id": "seg_0004",
+    "start": 6.8,
+    "end": 8.5,
+    "speaker": "S02",
+    "text": "Dzień dobry, witam Pana, witam Państwa."
+  },
+  {
+    "id": "seg_0005",
+    "start": 8.53,
+    "end": 12.64,
+    "speaker": "S01",
+    "text": "Panie Ministrze, zanim o pracy śledczych w sprawie zamachów w Krakowie, pytanie o to, jak Pan spoglądał"
+  },
+  {
+    "id": "seg_0006",
+    "start": 12.67,
+    "end": 17.84,
+    "speaker": "S01",
+    "text": "na te wczorajsze tłumy na marszu ciszy, w swoim przecież Krakowie, byli tam i prezydent, i premier."
+  },
+  {
+    "id": "seg_0007",
+    "start": 19.16,
+    "end": 23.44,
+    "speaker": "S02",
+    "text": "No rzeczywiście, to było bardzo wzruszające, ściskało, zagardło."
+  },
+  {
+    "id": "seg_0008",
+    "start": 24.24,
+    "end": 29.52,
+    "speaker": "S02",
+    "text": "Ale jednocześnie pokazało, że w takich trudnych momentach potrafimy się zjednoczyć."
+  },
+  {
+    "id": "seg_0009",
+    "start": 30.44,
+    "end": 35.15,
+    "speaker": "S02",
+    "text": "Oczywiście każdy z nas chciałby, żeby tych dramatycznych zdarzeń nie było."
+  },
+  {
+    "id": "seg_0010",
+    "start": 35.79,
+    "end": 40.15,
+    "speaker": "S02",
+    "text": "Ale musimy patrzeć w przyszłość i wyciągać też wnioski z tego,"
+  },
+  {
+    "id": "seg_0011",
+    "start": 41.28,
+    "end": 45.36,
+    "speaker": "S02",
+    "text": "jak należy zabezpieczać się przed tego typu przypadkami."
+  },
+  {
+    "id": "seg_0012",
+    "start": 45.39,
+    "end": 51.72,
+    "speaker": "S02",
+    "text": "Tutaj akurat mieliśmy sytuację, kiedy wszystkie służby zadziałały w sposób perfekcyjny."
+  },
+  {
+    "id": "seg_0013",
+    "start": 52.08,
+    "end": 55.64,
+    "speaker": "S02",
+    "text": "Myślę, że ta akcja policji będzie pokazywana na świecie,"
+  },
+  {
+    "id": "seg_0014",
+    "start": 56.04,
+    "end": 61.22,
+    "speaker": "S02",
+    "text": "jak w tego typu przypadkach terrorystycznych zamachów należy działać,"
+  },
+  {
+    "id": "seg_0015",
+    "start": 61.25,
+    "end": 65.88,
+    "speaker": "S02",
+    "text": "ale nikt już nie odda życia tych, którzy je stracili."
+  },
+  {
+    "id": "seg_0016",
+    "start": 65.91,
+    "end": 72.92,
+    "speaker": "S02",
+    "text": "Natomiast jestem zbudowany postawą ludzi, którzy byli obok policja, ratownicy, ale przechodnie, Polacy,"
+  },
+  {
+    "id": "seg_0017",
+    "start": 73.76,
+    "end": 77.44,
+    "speaker": "S02",
+    "text": "także turyści, którzy w tym momencie byli w Krakowie."
+  },
+  {
+    "id": "seg_0018",
+    "start": 77.47,
+    "end": 83.48,
+    "speaker": "S02",
+    "text": "Więc to jest coś, z czego powinniśmy wyciągać jakieś pozytywne przesłanie."
+  },
+  {
+    "id": "seg_0019",
+    "start": 83.64,
+    "end": 85.38,
+    "speaker": "S02",
+    "text": "Potrafimy być solidarni."
+  },
+  {
+    "id": "seg_0020",
+    "start": 85.41,
+    "end": 89.84,
+    "speaker": "S01",
+    "text": "A czy, Panie Ministrze, wiadomo już coś więcej na temat motywów, które kierowały sprawcom zamachu?"
+  },
+  {
+    "id": "seg_0021",
+    "start": 90.96,
+    "end": 99.88,
+    "speaker": "S02",
+    "text": "Te motywy rzeczywiście są badane, badane są pod kątem, to jest bardzo silny wątek tego prawicowego ekstremizmu."
+  },
+  {
+    "id": "seg_0022",
+    "start": 100.56,
+    "end": 108.4,
+    "speaker": "S02",
+    "text": "Mogę już potwierdzić pewne informacje, dlatego że służby mają dostęp do komputera sprawcy."
+  },
+  {
+    "id": "seg_0023",
+    "start": 109.04,
+    "end": 115.66,
+    "speaker": "S02",
+    "text": "Rzeczywiście widać odwiedzanie stron, które dotyczyły Andrésa Braywika,"
+  },
+  {
+    "id": "seg_0024",
+    "start": 115.69,
+    "end": 121.72,
+    "speaker": "S02",
+    "text": "czyli tego prawicowego ekstremisty, który dopuścił się takiej masakry dramatycznej na Wyspiełtoja."
+  },
+  {
+    "id": "seg_0025",
+    "start": 122.56,
+    "end": 131.96,
+    "speaker": "S02",
+    "text": "Ta flaga z tym grzechotnikiem, rzut etło i grzechotnik, to też daje służbom i prokuraturze jakiś sygnał."
+  },
+  {
+    "id": "seg_0026",
+    "start": 132.52,
+    "end": 143.24,
+    "speaker": "S02",
+    "text": "Wiemy dobrze, że w sytuacji ataku na kapitol tych flag wśród tych skrajnie prawicowych uprawań w Stanach Zjednoczonych było dosyć sporo."
+  },
+  {
+    "id": "seg_0027",
+    "start": 143.96,
+    "end": 149.24,
+    "speaker": "S02",
+    "text": "Tam są też zwolennicy takiego nieograniczonego dostępu do broni palnej."
+  },
+  {
+    "id": "seg_0028",
+    "start": 150.47,
+    "end": 157.52,
+    "speaker": "S02",
+    "text": "Też zabezpieczono miejsce pracy sprawcy, tam też jest symbolika, która może wskazywać na ten wątek."
+  },
+  {
+    "id": "seg_0029",
+    "start": 158.4,
+    "end": 161.56,
+    "speaker": "S02",
+    "text": "Więc ten prawicowy ekstremizm, to jest jedno."
+  },
+  {
+    "id": "seg_0030",
+    "start": 162.44,
+    "end": 169.48,
+    "speaker": "S02",
+    "text": "Badamy też otoczenie tego człowieka, tego sprawcy, bo wtedy trzeba się przyglądać,"
+  },
+  {
+    "id": "seg_0031",
+    "start": 169.96,
+    "end": 178.84,
+    "speaker": "S02",
+    "text": "także czy to otoczenie było w jakiś sposób powiązane z jakimiś nurtami politycznymi, które mogły wpłynąć na taką decyzję."
+  },
+  {
+    "id": "seg_0032",
+    "start": 179.16,
+    "end": 184.64,
+    "speaker": "S02",
+    "text": "Oczywiście bardzo ważnym motywem jest też kwestia zaburzeń psychicznych."
+  },
+  {
+    "id": "seg_0033",
+    "start": 184.67,
+    "end": 193.08,
+    "speaker": "S02",
+    "text": "Ale jeżeli nałożymy na siebie różnego rodzaju przesłanki, to czasem dochodzi do takiej eksplosji,"
+  },
+  {
+    "id": "seg_0034",
+    "start": 193.11,
+    "end": 201.84,
+    "speaker": "S02",
+    "text": "gdy coś dzieje się czasem w tym najbliższym otoczeniu, co jest takim zapalnikiem do tak dramatycznych rzeczy."
+  },
+  {
+    "id": "seg_0035",
+    "start": 202.36,
+    "end": 207.56,
+    "speaker": "S02",
+    "text": "Rzeczywiście zadziwia, że widać było jakieś przygotowanie do tego czynu,"
+  },
+  {
+    "id": "seg_0036",
+    "start": 207.59,
+    "end": 211.52,
+    "speaker": "S02",
+    "text": "bo jednak jeżeli ktoś ma kilkanaście magazynków do broni poautomatycznej,"
+  },
+  {
+    "id": "seg_0037",
+    "start": 212.12,
+    "end": 216.68,
+    "speaker": "S02",
+    "text": "no to jeżeli ktoś, kto chce się uczyć strzelać, to mu wystarczą dwa-trzy magazynki,"
+  },
+  {
+    "id": "seg_0038",
+    "start": 217.72,
+    "end": 221.72,
+    "speaker": "S02",
+    "text": "kiedy chodzi na szczelnicy bądź też nawet w taktycznym strzelaniu bierze udział."
+  },
+  {
+    "id": "seg_0039",
+    "start": 221.75,
+    "end": 227.88,
+    "speaker": "S02",
+    "text": "Jeżeli ktoś ma ich kilkanaście, jeżeli zabezpieczono prawie 500 sztuk amunicji,"
+  },
+  {
+    "id": "seg_0040",
+    "start": 228.24,
+    "end": 233.96,
+    "speaker": "S02",
+    "text": "to widać, że ten człowiek czynił jakieś przygotowania do tego działania."
+  },
+  {
+    "id": "seg_0041",
+    "start": 234.44,
+    "end": 240.56,
+    "speaker": "S02",
+    "text": "Więc to wszystko musi być analizowane, mamy też sekcję zwłok, bo to też jest istotne, że sekcja zwłok ofiar."
+  },
+  {
+    "id": "seg_0042",
+    "start": 241.36,
+    "end": 247.88,
+    "speaker": "S02",
+    "text": "I te wstępne oględziny wskazują, że te obrażenia wewnętrzne organów są bardzo poważne,"
+  },
+  {
+    "id": "seg_0043",
+    "start": 247.91,
+    "end": 256.24,
+    "speaker": "S02",
+    "text": "więc musimy przebadać także amunicję, czy była to amunicja taka wojskowa, która ma nie zabijać, a eliminować,"
+  },
+  {
+    "id": "seg_0044",
+    "start": 256.27,
+    "end": 264.92,
+    "speaker": "S02",
+    "text": "czy też była to specjalna amunicja półpłaszczowa, która powoduje większe obrażenia i szybciej zabija ofiary."
+  },
+  {
+    "id": "seg_0045",
+    "start": 265.24,
+    "end": 268.02,
+    "speaker": "S02",
+    "text": "Więc to wszystko jest dzisiaj analizowane."
+  },
+  {
+    "id": "seg_0046",
+    "start": 268.04,
+    "end": 276.27,
+    "speaker": "S01",
+    "text": "Panie Ministrze, czyli śledczy dotarli do materiałów, które jednoznacznie potwierdzają radykalizację ideologią skrajnie prawicową?"
+  },
+  {
+    "id": "seg_0047",
+    "start": 276.3,
+    "end": 281.12,
+    "speaker": "S01",
+    "text": "Mówił o tym Minister Kierwiński, który był potem krytykowany za te wczesne stawianie tez."
+  },
+  {
+    "id": "seg_0048",
+    "start": 281.88,
+    "end": 290.64,
+    "speaker": "S02",
+    "text": "Oczywiście ja jestem o tyle ostrożny, że prokuratura musi prowadzić postępowanie, stawiając różne tezy."
+  },
+  {
+    "id": "seg_0049",
+    "start": 290.66,
+    "end": 301.2,
+    "speaker": "S02",
+    "text": "Natomiast jeżeli, jak to mówimy potocznie, łączymy kropki i mamy tę flagę, przez część osób jest kojarzona prawda z jakąś płytą zespołu rokowego,"
+  },
+  {
+    "id": "seg_0050",
+    "start": 301.22,
+    "end": 305.88,
+    "speaker": "S02",
+    "text": "ale nie każdy z nas ma taką flagę w domu i ma tyle sztuk broni"
+  },
+  {
+    "id": "seg_0051",
+    "start": 306.36,
+    "end": 313.04,
+    "speaker": "S02",
+    "text": "i jednocześnie ogląda na swoim komputerze, czy rozczytuje się w dokonaniach Braywika."
+  },
+  {
+    "id": "seg_0052",
+    "start": 313.56,
+    "end": 317.39,
+    "speaker": "S02",
+    "text": "Więc to są przesłanki bardzo silne w tym postępowaniu."
+  },
+  {
+    "id": "seg_0053",
+    "start": 317.42,
+    "end": 323.04,
+    "speaker": "S02",
+    "text": "Ja nie mówię, że jedyne, bo w tego typu przypadkach śledczy muszą sprawdzić każdą tezę."
+  },
+  {
+    "id": "seg_0054",
+    "start": 323.07,
+    "end": 330.88,
+    "speaker": "S02",
+    "text": "Natomiast wydaje się, że to, co w tych pierwszych godzinach komunikował Minister Kierwiński,"
+  },
+  {
+    "id": "seg_0055",
+    "start": 331.2,
+    "end": 333.96,
+    "speaker": "S02",
+    "text": "jednak znajduje potwierdzenie w materiale dowodowym."
+  },
+  {
+    "id": "seg_0056",
+    "start": 334.36,
+    "end": 341.84,
+    "speaker": "S02",
+    "text": "A ponieważ sprawca nie zostawił żadnego listu, żadnego przesłania, zmarł w szpitalu,"
+  },
+  {
+    "id": "seg_0057",
+    "start": 342.4,
+    "end": 349.64,
+    "speaker": "S02",
+    "text": "to te tezy musimy formułować na podstawie tych dowodów, które zgromadziliśmy."
+  },
+  {
+    "id": "seg_0058",
+    "start": 349.67,
+    "end": 354.16,
+    "speaker": "S02",
+    "text": "Więc to będzie utrudniało na pewno postępowanie."
+  },
+  {
+    "id": "seg_0059",
+    "start": 354.19,
+    "end": 360.96,
+    "speaker": "S02",
+    "text": "Natomiast już te dowody, które mogą stawiać też taką tezę, o której była mowa w tych pierwszych chwilach,"
+  },
+  {
+    "id": "seg_0060",
+    "start": 360.98,
+    "end": 365.06,
+    "speaker": "S02",
+    "text": "i ona jest bardzo, bardzo taka realistyczna."
+  },
+  {
+    "id": "seg_0061",
+    "start": 365.2,
+    "end": 370.16,
+    "speaker": "S01",
+    "text": "A czy śledczy badają również powiązania rodziny zamachowca i czy coś z tych badań już wynika?"
+  },
+  {
+    "id": "seg_0062",
+    "start": 370.88,
+    "end": 374.64,
+    "speaker": "S02",
+    "text": "Ja nie chcę o tym mówić, są też ofiary tego sprawcy,"
+  },
+  {
+    "id": "seg_0063",
+    "start": 375.24,
+    "end": 380.36,
+    "speaker": "S02",
+    "text": "ale też oczywiście jest to bardzo intensywnie badane, także ich udział w życiu społeczno-politycznym,"
+  },
+  {
+    "id": "seg_0064",
+    "start": 380.39,
+    "end": 390.8,
+    "speaker": "S02",
+    "text": "bo to czasem pokazuje, czy i jak poglądy osób bliskich mogły wpływać na sprawcę, w jakim kierunku,"
+  },
+  {
+    "id": "seg_0065",
+    "start": 391.36,
+    "end": 400.88,
+    "speaker": "S02",
+    "text": "kto tam był właśnie tym, który nadawał ton spojrzeniu na świat i na różne okoliczności."
+  },
+  {
+    "id": "seg_0066",
+    "start": 400.91,
+    "end": 406.96,
+    "speaker": "S02",
+    "text": "Więc to jest oczywiście badane, natomiast nie chcę jeszcze ujawniać tych danych."
+  },
+  {
+    "id": "seg_0067",
+    "start": 406.98,
+    "end": 416.58,
+    "speaker": "S02",
+    "text": "Część z nich jest w internecie, ale my musimy też weryfikować to wszystko i odsiewać te rzeczy, które są fejkowe, a te, które są prawdziwe."
+  },
+  {
+    "id": "seg_0068",
+    "start": 416.61,
+    "end": 421.72,
+    "speaker": "S01",
+    "text": "A w tle są powiązania polityczne lub powiązania z formalnymi lub mniej formalnymi grupami?"
+  },
+  {
+    "id": "seg_0069",
+    "start": 422.48,
+    "end": 432.44,
+    "speaker": "S02",
+    "text": "Nie mogę o tym mówić, to jest sprawdzane, analizowane, więc tylko te dowody, co do których mam pewność, ujawniam."
+  },
+  {
+    "id": "seg_0070",
+    "start": 432.96,
+    "end": 441.8,
+    "speaker": "S02",
+    "text": "Część mediów pokazywała pewne zaangażowanie członków rodziny, w komisje wyborcze,"
+  },
+  {
+    "id": "seg_0071",
+    "start": 441.83,
+    "end": 452.04,
+    "speaker": "S02",
+    "text": "ale to jest zbyt mało, żeby tutaj wskazywać jednoznaczną tezę, jakie poglądy miały osoby bliskie"
+  },
+  {
+    "id": "seg_0072",
+    "start": 452.07,
+    "end": 454.94,
+    "speaker": "S02",
+    "text": "i czy te poglądy wpływały na sprawcę."
+  },
+  {
+    "id": "seg_0073",
+    "start": 454.97,
+    "end": 464.26,
+    "speaker": "S02",
+    "text": "Więc tutaj bym nie stawiał tak daleko tezy, bo głównym powodem całej tej zbrodni był ten sprawca i jego działania."
+  },
+  {
+    "id": "seg_0074",
+    "start": 464.48,
+    "end": 471.46,
+    "speaker": "S01",
+    "text": "Panie Ministrze, ze strony MONU oraz MSW A płyną głosy o potrzebie zweryfikowania przepisów regulujących dostęp do broni palnej."
+  },
+  {
+    "id": "seg_0075",
+    "start": 471.48,
+    "end": 476.4,
+    "speaker": "S01",
+    "text": "Czy wymagają one zmian lub korekty, czy to takie będzie działanie ad hoc przedwczesne?"
+  },
+  {
+    "id": "seg_0076",
+    "start": 477.12,
+    "end": 479.72,
+    "speaker": "S02",
+    "text": "Ja uważam, że powinniśmy rozpocząć tą dyskusję."
+  },
+  {
+    "id": "seg_0077",
+    "start": 479.75,
+    "end": 484.28,
+    "speaker": "S02",
+    "text": "Ja jestem sam posiadaczem broni długiej i krótkiej, więc mam świadomość tego,"
+  },
+  {
+    "id": "seg_0078",
+    "start": 485.04,
+    "end": 490.24,
+    "speaker": "S02",
+    "text": "że trzeba zachowywać bardzo precyzyjnie i bardzo ściśle zasady ostrożności."
+  },
+  {
+    "id": "seg_0079",
+    "start": 490.27,
+    "end": 497.12,
+    "speaker": "S02",
+    "text": "Zwłaszcza młodzi ludzie powinni być poddawani specjalistycznym badaniom wtedy, kiedy chcą mieć broń."
+  },
+  {
+    "id": "seg_0080",
+    "start": 497.44,
+    "end": 503.08,
+    "speaker": "S02",
+    "text": "Poza tym mamy jednak, moim zdaniem, te przepisy niedoskonałe."
+  },
+  {
+    "id": "seg_0081",
+    "start": 503.68,
+    "end": 508.52,
+    "speaker": "S02",
+    "text": "Jest wiele klubów strzeleckich i wiele osób, które posiada jednostki broni we własnym domu."
+  },
+  {
+    "id": "seg_0082",
+    "start": 508.54,
+    "end": 516.4,
+    "speaker": "S02",
+    "text": "Ale jeżeli tych jednostek jest bardzo dużo, no to budzi to moje zdziwienie, że ktoś ma takiej ilości broń."
+  },
+  {
+    "id": "seg_0083",
+    "start": 516.42,
+    "end": 519.88,
+    "speaker": "S02",
+    "text": "Mamy broń kolekcjonerską, która jest pełnisprawna do użycia."
+  },
+  {
+    "id": "seg_0084",
+    "start": 519.91,
+    "end": 523.64,
+    "speaker": "S02",
+    "text": "To jest broń, z której można strzelać i z której można zabijać."
+  },
+  {
+    "id": "seg_0085",
+    "start": 524.12,
+    "end": 531.96,
+    "speaker": "S02",
+    "text": "Ale mamy też badania, co pięć lat ja przechodzę, badania specjalistyczne, psychologiczne, psychiatryczne, okulistyczne, ogólnomedyczne."
+  },
+  {
+    "id": "seg_0086",
+    "start": 532.88,
+    "end": 537.48,
+    "speaker": "S02",
+    "text": "I uważam, że każdy posiadaż broni powinien takie badania przechodzić."
+  },
+  {
+    "id": "seg_0087",
+    "start": 538.55,
+    "end": 545.32,
+    "speaker": "S02",
+    "text": "Ja jestem zwolennikiem tego, że należy edukować, jeżeli ktoś chce mieć taką pasję,"
+  },
+  {
+    "id": "seg_0088",
+    "start": 545.35,
+    "end": 551.24,
+    "speaker": "S02",
+    "text": "to powinien mieć prawo do tego, żeby te pasje były realizowane."
+  },
+  {
+    "id": "seg_0089",
+    "start": 551.55,
+    "end": 554.96,
+    "speaker": "S02",
+    "text": "Natomiast można je robić w taki sposób, żeby było bezpieczne."
+  },
+  {
+    "id": "seg_0090",
+    "start": 554.99,
+    "end": 559.76,
+    "speaker": "S02",
+    "text": "Jeżeli to nasycenie broni w naszym społeczeństwie będzie bardzo duże,"
+  },
+  {
+    "id": "seg_0091",
+    "start": 559.96,
+    "end": 568.4,
+    "speaker": "S02",
+    "text": "a jednocześnie na to oglądamy badania jednak pogarszającego się stanu psychicznego społeczeństwa,"
+  },
+  {
+    "id": "seg_0092",
+    "start": 568.72,
+    "end": 575.44,
+    "speaker": "S02",
+    "text": "no to musimy mieć świadomość, że w pewnych momentach, jak jeszcze będzie tam jakieś nasycenie ideologiczne,"
+  },
+  {
+    "id": "seg_0093",
+    "start": 575.72,
+    "end": 578.72,
+    "speaker": "S02",
+    "text": "no może dochodzić do tak dramatycznych sytuacji."
+  },
+  {
+    "id": "seg_0094",
+    "start": 579.36,
+    "end": 585.28,
+    "speaker": "S02",
+    "text": "Więc ja jestem zwolennikiem tego, żeby bardzo precyzyjnie i ściśle przestrzegać prawa."
+  },
+  {
+    "id": "seg_0095",
+    "start": 585.3,
+    "end": 587.79,
+    "speaker": "S02",
+    "text": "Czyli te badania muszą być bardzo rzetelne."
+  },
+  {
+    "id": "seg_0096",
+    "start": 588.08,
+    "end": 592.48,
+    "speaker": "S02",
+    "text": "Tu jest duża odpowiedzialność na lekarza, którzy mają uprawnienia do wydawania takich zaświadczeń."
+  },
+  {
+    "id": "seg_0097",
+    "start": 592.91,
+    "end": 600.44,
+    "speaker": "S02",
+    "text": "Ale też mówię, mamy dużą grupę, która jest poza tymi badaniami albo robi je tylko raz, na samym początku, wtedy kiedy uzyskuje broń,"
+  },
+  {
+    "id": "seg_0098",
+    "start": 600.64,
+    "end": 604.48,
+    "speaker": "S02",
+    "text": "a w momencie, gdy ich stan się pogarszy albo są jakieś niepokojące symptomy,"
+  },
+  {
+    "id": "seg_0099",
+    "start": 604.96,
+    "end": 610.2,
+    "speaker": "S02",
+    "text": "to rzeczywiście nie są one poddawane takiej regularnej kontroli."
+  },
+  {
+    "id": "seg_0100",
+    "start": 610.79,
+    "end": 617.6,
+    "speaker": "S02",
+    "text": "Tam jeszcze mam ostatnie informacje od śledczych, znaleźiono tłumik w samochodzie sprawcy,"
+  },
+  {
+    "id": "seg_0101",
+    "start": 617.63,
+    "end": 626.12,
+    "speaker": "S02",
+    "text": "więc to też świadczy o tym, że jednak jakieś przygotowania mogły być czynione w tym kierunku,"
+  },
+  {
+    "id": "seg_0102",
+    "start": 626.6,
+    "end": 631.36,
+    "speaker": "S02",
+    "text": "bo wiemy, że ta rodzina zginęła w swoim mieszkaniu, są się dzi nic nie słyszeli."
+  },
+  {
+    "id": "seg_0103",
+    "start": 632.12,
+    "end": 641.67,
+    "speaker": "S02",
+    "text": "Więc to powinno dać nam jakąś lekcję, że jeżeli mamy taką osobę, która ma takiej ilości broni."
+  },
+  {
+    "id": "seg_0104",
+    "start": 642.64,
+    "end": 650.44,
+    "speaker": "S02",
+    "text": "I jeszcze tylko pytanie jest, jak daleko ma sięgać ingerencja Państwa w takie prawa i wolności obywatelskie?"
+  },
+  {
+    "id": "seg_0105",
+    "start": 651.24,
+    "end": 656.88,
+    "speaker": "S02",
+    "text": "Służby oczywiście monitorują internet i ja jestem w kontakcie służbami."
+  },
+  {
+    "id": "seg_0106",
+    "start": 656.91,
+    "end": 660.52,
+    "speaker": "S02",
+    "text": "Nawet ostatnio mieliśmy takie spotkanie o radykalizacji młodych ludzi."
+  },
+  {
+    "id": "seg_0107",
+    "start": 661.16,
+    "end": 665.96,
+    "speaker": "S02",
+    "text": "I takie osoby są wyłapywane w sieci, które poszukują właśnie takich stron"
+  },
+  {
+    "id": "seg_0108",
+    "start": 666.28,
+    "end": 673.88,
+    "speaker": "S02",
+    "text": "i jednocześnie szukają kontaktów z innymi osobami, które mogą mieć podobnie radykalne poglądy."
+  },
+  {
+    "id": "seg_0109",
+    "start": 673.91,
+    "end": 680.44,
+    "speaker": "S02",
+    "text": "Tutaj jeszcze mamy wiele niewiadomych, dlatego że bardzo wiele dowodów jest zgromadzonych,"
+  },
+  {
+    "id": "seg_0110",
+    "start": 680.47,
+    "end": 686.56,
+    "speaker": "S02",
+    "text": "ale poddajemy je cały czas w analizie, więc Państwo będziecie na bieżąco informowani."
+  },
+  {
+    "id": "seg_0111",
+    "start": 686.58,
+    "end": 691.76,
+    "speaker": "S02",
+    "text": "Pomimo tego, że sprawca nie żyje i normalnie takie postępowanie, obez niego powinno się umorzyć,"
+  },
+  {
+    "id": "seg_0112",
+    "start": 691.79,
+    "end": 694.96,
+    "speaker": "S02",
+    "text": "my je tak prowadzimy to postępowanie pod kątem szerszym."
+  },
+  {
+    "id": "seg_0113",
+    "start": 695.92,
+    "end": 704.24,
+    "speaker": "S02",
+    "text": "To znaczy, jakie miał kontakty, czy działał sam, czy coś go inspirowało bardziej czy mniej."
+  },
+  {
+    "id": "seg_0114",
+    "start": 704.6,
+    "end": 707.58,
+    "speaker": "S02",
+    "text": "No musimy to poznać bardzo głęboko."
+  },
+  {
+    "id": "seg_0115",
+    "start": 707.61,
+    "end": 711.52,
+    "speaker": "S01",
+    "text": "Panie Ministrze, na koniec, czy śledczy przyjrzą się także i czy jest w ogóle taka potrzeba,"
+  },
+  {
+    "id": "seg_0116",
+    "start": 711.55,
+    "end": 716.92,
+    "speaker": "S01",
+    "text": "by przyjrzeć się uważnie klubom i związkom, które oferują szkolenie z zakresu strzelenia bojowego?"
+  },
+  {
+    "id": "seg_0117",
+    "start": 716.95,
+    "end": 720.52,
+    "speaker": "S01",
+    "text": "No bo to też zachodzi prawdopodobieństwo, że sprawca przeszedł takie szkolenie."
+  },
+  {
+    "id": "seg_0118",
+    "start": 721.36,
+    "end": 724.82,
+    "speaker": "S02",
+    "text": "Oczywiście szkolenie bojowe samo w sobie nie jest niczym złym."
+  },
+  {
+    "id": "seg_0119",
+    "start": 724.85,
+    "end": 728.0,
+    "speaker": "S02",
+    "text": "I wydaje mi się, że jeżeli robią to profesjonalniści, to bardzo dobrze."
+  },
+  {
+    "id": "seg_0120",
+    "start": 728.4,
+    "end": 735.68,
+    "speaker": "S02",
+    "text": "Mnie bardziej niepokoją takie ogłoszenie, jak widzimy błyskawicznie, załatwił Ci pozwolenie na broń."
+  },
+  {
+    "id": "seg_0121",
+    "start": 736.28,
+    "end": 746.0,
+    "speaker": "S02",
+    "text": "To zawsze budzi mój niepokój, bo wiem jednak, że żeby poznać człowieka, to trzeba to robić sukcesywnie"
+  },
+  {
+    "id": "seg_0122",
+    "start": 746.03,
+    "end": 752.56,
+    "speaker": "S02",
+    "text": "i w pewnych odslepach czasowych, żeby zobaczyć, czy on jest rzeczywiście pasjonatem strzeleckstwa,"
+  },
+  {
+    "id": "seg_0123",
+    "start": 752.58,
+    "end": 758.24,
+    "speaker": "S02",
+    "text": "czy gdzieś kryje się fascynacja zbrodnią, bo takie osoby też są."
+  },
+  {
+    "id": "seg_0124",
+    "start": 758.88,
+    "end": 764.68,
+    "speaker": "S02",
+    "text": "Więc tutaj bardziej bym się skupił na tym błyskawicznym załatwianiu pozwoleń na broń ostrą,"
+  },
+  {
+    "id": "seg_0125",
+    "start": 765.24,
+    "end": 770.4,
+    "speaker": "S02",
+    "text": "niż na tych, którzy oferują takie strzelania taktyczne."
+  },
+  {
+    "id": "seg_0126",
+    "start": 771.24,
+    "end": 777.24,
+    "speaker": "S02",
+    "text": "Wiemy, że właściwie jesteśmy zachęcani dzisiaj, ja też nie jestem tutaj przeciwnikiem tego,"
+  },
+  {
+    "id": "seg_0127",
+    "start": 777.88,
+    "end": 783.56,
+    "speaker": "S02",
+    "text": "żeby ludzie uczyli się obsługi broni, bo ta sytuacja geopolityczna jest bardzo trudna."
+  },
+  {
+    "id": "seg_0128",
+    "start": 784.52,
+    "end": 792.48,
+    "speaker": "S02",
+    "text": "I ta nasza odporność, wewnętrzna odporność społeczeństwa, czy też nawet takie zasoby dla armii rezerwowej,"
+  },
+  {
+    "id": "seg_0129",
+    "start": 793.24,
+    "end": 795.04,
+    "speaker": "S02",
+    "text": "są sygnałem dla naszych wroku."
+  },
+  {
+    "id": "seg_0130",
+    "start": 795.07,
+    "end": 801.52,
+    "speaker": "S02",
+    "text": "Jeżeli społeczeństwo jest na to przygotowane, to mamy większe gwarancje, że nikt nas nie zaatakuje,"
+  },
+  {
+    "id": "seg_0131",
+    "start": 801.55,
+    "end": 806.8,
+    "speaker": "S02",
+    "text": "mając świadomość, że jednak mamy takie społeczeństwo, które te umiejętności posiada."
+  },
+  {
+    "id": "seg_0132",
+    "start": 806.83,
+    "end": 812.24,
+    "speaker": "S02",
+    "text": "Więc ja bym nie szedł w tym kierunku, żeby ograniczać, ale zwiększać na pewno kontrolę."
+  },
+  {
+    "id": "seg_0133",
+    "start": 812.27,
+    "end": 821.36,
+    "speaker": "S02",
+    "text": "Natomiast ta liczba broni, która jest ponad milion sztuk broni, która jest dostępna, to jest naprawdę duża liczba."
+  },
+  {
+    "id": "seg_0134",
+    "start": 821.39,
+    "end": 830.52,
+    "speaker": "S02",
+    "text": "I tutaj powinny być takie ścisłe przestrzeganie reguł, przechowywania, badań kontrolnych, to jest moim zdaniem bardzo istotne."
+  },
+  {
+    "id": "seg_0135",
+    "start": 831.16,
+    "end": 837.96,
+    "speaker": "S02",
+    "text": "Natomiast musimy się zastanowić, bo oczywiście są takie głosy, żeby zwiększyć dostęp obywateli do broni."
+  },
+  {
+    "id": "seg_0136",
+    "start": 838.84,
+    "end": 846.76,
+    "speaker": "S02",
+    "text": "Ja osobiście uważam, że te przepisy są niezły, należy je nawet poprawić w tym kierunku, żeby jednak przechodzić te regularne badania."
+  },
+  {
+    "id": "seg_0137",
+    "start": 847.36,
+    "end": 855.52,
+    "speaker": "S02",
+    "text": "Ale taki powszechny dostęp, jaki widzimy w Stanach, ktoś przychodzi na prawo jazdy, kupuje sobie karabinku automatyczny i kilka rewolwerów,"
+  },
+  {
+    "id": "seg_0138",
+    "start": 855.84,
+    "end": 863.84,
+    "speaker": "S02",
+    "text": "no to moim zdaniem nie idźmy w tym kierunku, bo będziemy mieli po prostu masakry, które są powszechne w Stanach Zjednoczonych."
+  },
+  {
+    "id": "seg_0139",
+    "start": 863.87,
+    "end": 871.88,
+    "speaker": "S02",
+    "text": "Chciałbym, żeby Polska jednak nie miała takich zdarzeń, a to, co się stało w Krakowie, żeby było absolutnym incydentem,"
+  },
+  {
+    "id": "seg_0140",
+    "start": 872.52,
+    "end": 874.32,
+    "speaker": "S02",
+    "text": "z którego wyciągniemy pewne wnioski."
+  },
+  {
+    "id": "seg_0141",
+    "start": 874.64,
+    "end": 878.48,
+    "speaker": "S01",
+    "text": "W Radiu Kraków dzisiaj. Minister Sprawiedliwości, prokurator generalny Waldemar Żurek."
+  },
+  {
+    "id": "seg_0142",
+    "start": 878.51,
+    "end": 880.04,
+    "speaker": "S01",
+    "text": "Panie Ministrze, bardzo dziękuję."
+  },
+  {
+    "id": "seg_0143",
+    "start": 880.44,
+    "end": 880.96,
+    "speaker": "S02",
+    "text": "Dziękuję."
+  }
+]

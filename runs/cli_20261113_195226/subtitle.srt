@@ -1,0 +1,571 @@
+﻿1
+00:00:00,080 --> 00:00:01,120
+S01: Jacek Bańka, dzień dobry.
+
+2
+00:00:01,150 --> 00:00:05,520
+S01: A gościem Radiy Kraków jest dzisiaj Minister Sprawiedliwości, prokurator generalny Waldemar Żurek.
+
+3
+00:00:05,550 --> 00:00:06,740
+S01: Dzień dobry, Panie Ministrze.
+
+4
+00:00:06,800 --> 00:00:08,500
+S02: Dzień dobry, witam Pana, witam Państwa.
+
+5
+00:00:08,530 --> 00:00:12,640
+S01: Panie Ministrze, zanim o pracy śledczych w sprawie zamachów w Krakowie, pytanie o to, jak Pan spoglądał
+
+6
+00:00:12,670 --> 00:00:17,840
+S01: na te wczorajsze tłumy na marszu ciszy, w swoim przecież Krakowie, byli tam i prezydent, i premier.
+
+7
+00:00:19,160 --> 00:00:23,440
+S02: No rzeczywiście, to było bardzo wzruszające, ściskało, zagardło.
+
+8
+00:00:24,240 --> 00:00:29,520
+S02: Ale jednocześnie pokazało, że w takich trudnych momentach potrafimy się zjednoczyć.
+
+9
+00:00:30,440 --> 00:00:35,150
+S02: Oczywiście każdy z nas chciałby, żeby tych dramatycznych zdarzeń nie było.
+
+10
+00:00:35,790 --> 00:00:40,150
+S02: Ale musimy patrzeć w przyszłość i wyciągać też wnioski z tego,
+
+11
+00:00:41,280 --> 00:00:45,360
+S02: jak należy zabezpieczać się przed tego typu przypadkami.
+
+12
+00:00:45,390 --> 00:00:51,720
+S02: Tutaj akurat mieliśmy sytuację, kiedy wszystkie służby zadziałały w sposób perfekcyjny.
+
+13
+00:00:52,080 --> 00:00:55,640
+S02: Myślę, że ta akcja policji będzie pokazywana na świecie,
+
+14
+00:00:56,040 --> 00:01:01,220
+S02: jak w tego typu przypadkach terrorystycznych zamachów należy działać,
+
+15
+00:01:01,250 --> 00:01:05,880
+S02: ale nikt już nie odda życia tych, którzy je stracili.
+
+16
+00:01:05,910 --> 00:01:12,920
+S02: Natomiast jestem zbudowany postawą ludzi, którzy byli obok policja, ratownicy, ale przechodnie, Polacy,
+
+17
+00:01:13,760 --> 00:01:17,440
+S02: także turyści, którzy w tym momencie byli w Krakowie.
+
+18
+00:01:17,470 --> 00:01:23,480
+S02: Więc to jest coś, z czego powinniśmy wyciągać jakieś pozytywne przesłanie.
+
+19
+00:01:23,640 --> 00:01:25,380
+S02: Potrafimy być solidarni.
+
+20
+00:01:25,410 --> 00:01:29,840
+S01: A czy, Panie Ministrze, wiadomo już coś więcej na temat motywów, które kierowały sprawcom zamachu?
+
+21
+00:01:30,960 --> 00:01:39,880
+S02: Te motywy rzeczywiście są badane, badane są pod kątem, to jest bardzo silny wątek tego prawicowego ekstremizmu.
+
+22
+00:01:40,560 --> 00:01:48,400
+S02: Mogę już potwierdzić pewne informacje, dlatego że służby mają dostęp do komputera sprawcy.
+
+23
+00:01:49,040 --> 00:01:55,660
+S02: Rzeczywiście widać odwiedzanie stron, które dotyczyły Andrésa Braywika,
+
+24
+00:01:55,690 --> 00:02:01,720
+S02: czyli tego prawicowego ekstremisty, który dopuścił się takiej masakry dramatycznej na Wyspiełtoja.
+
+25
+00:02:02,560 --> 00:02:11,960
+S02: Ta flaga z tym grzechotnikiem, rzut etło i grzechotnik, to też daje służbom i prokuraturze jakiś sygnał.
+
+26
+00:02:12,520 --> 00:02:23,240
+S02: Wiemy dobrze, że w sytuacji ataku na kapitol tych flag wśród tych skrajnie prawicowych uprawań w Stanach Zjednoczonych było dosyć sporo.
+
+27
+00:02:23,960 --> 00:02:29,240
+S02: Tam są też zwolennicy takiego nieograniczonego dostępu do broni palnej.
+
+28
+00:02:30,470 --> 00:02:37,520
+S02: Też zabezpieczono miejsce pracy sprawcy, tam też jest symbolika, która może wskazywać na ten wątek.
+
+29
+00:02:38,400 --> 00:02:41,560
+S02: Więc ten prawicowy ekstremizm, to jest jedno.
+
+30
+00:02:42,440 --> 00:02:49,480
+S02: Badamy też otoczenie tego człowieka, tego sprawcy, bo wtedy trzeba się przyglądać,
+
+31
+00:02:49,960 --> 00:02:58,840
+S02: także czy to otoczenie było w jakiś sposób powiązane z jakimiś nurtami politycznymi, które mogły wpłynąć na taką decyzję.
+
+32
+00:02:59,160 --> 00:03:04,640
+S02: Oczywiście bardzo ważnym motywem jest też kwestia zaburzeń psychicznych.
+
+33
+00:03:04,670 --> 00:03:13,080
+S02: Ale jeżeli nałożymy na siebie różnego rodzaju przesłanki, to czasem dochodzi do takiej eksplosji,
+
+34
+00:03:13,110 --> 00:03:21,840
+S02: gdy coś dzieje się czasem w tym najbliższym otoczeniu, co jest takim zapalnikiem do tak dramatycznych rzeczy.
+
+35
+00:03:22,360 --> 00:03:27,560
+S02: Rzeczywiście zadziwia, że widać było jakieś przygotowanie do tego czynu,
+
+36
+00:03:27,590 --> 00:03:31,520
+S02: bo jednak jeżeli ktoś ma kilkanaście magazynków do broni poautomatycznej,
+
+37
+00:03:32,120 --> 00:03:36,680
+S02: no to jeżeli ktoś, kto chce się uczyć strzelać, to mu wystarczą dwa-trzy magazynki,
+
+38
+00:03:37,720 --> 00:03:41,720
+S02: kiedy chodzi na szczelnicy bądź też nawet w taktycznym strzelaniu bierze udział.
+
+39
+00:03:41,750 --> 00:03:47,880
+S02: Jeżeli ktoś ma ich kilkanaście, jeżeli zabezpieczono prawie 500 sztuk amunicji,
+
+40
+00:03:48,240 --> 00:03:53,960
+S02: to widać, że ten człowiek czynił jakieś przygotowania do tego działania.
+
+41
+00:03:54,440 --> 00:04:00,560
+S02: Więc to wszystko musi być analizowane, mamy też sekcję zwłok, bo to też jest istotne, że sekcja zwłok ofiar.
+
+42
+00:04:01,360 --> 00:04:07,880
+S02: I te wstępne oględziny wskazują, że te obrażenia wewnętrzne organów są bardzo poważne,
+
+43
+00:04:07,910 --> 00:04:16,240
+S02: więc musimy przebadać także amunicję, czy była to amunicja taka wojskowa, która ma nie zabijać, a eliminować,
+
+44
+00:04:16,270 --> 00:04:24,920
+S02: czy też była to specjalna amunicja półpłaszczowa, która powoduje większe obrażenia i szybciej zabija ofiary.
+
+45
+00:04:25,240 --> 00:04:28,020
+S02: Więc to wszystko jest dzisiaj analizowane.
+
+46
+00:04:28,040 --> 00:04:36,270
+S01: Panie Ministrze, czyli śledczy dotarli do materiałów, które jednoznacznie potwierdzają radykalizację ideologią skrajnie prawicową?
+
+47
+00:04:36,300 --> 00:04:41,120
+S01: Mówił o tym Minister Kierwiński, który był potem krytykowany za te wczesne stawianie tez.
+
+48
+00:04:41,880 --> 00:04:50,640
+S02: Oczywiście ja jestem o tyle ostrożny, że prokuratura musi prowadzić postępowanie, stawiając różne tezy.
+
+49
+00:04:50,660 --> 00:05:01,200
+S02: Natomiast jeżeli, jak to mówimy potocznie, łączymy kropki i mamy tę flagę, przez część osób jest kojarzona prawda z jakąś płytą zespołu rokowego,
+
+50
+00:05:01,220 --> 00:05:05,880
+S02: ale nie każdy z nas ma taką flagę w domu i ma tyle sztuk broni
+
+51
+00:05:06,360 --> 00:05:13,040
+S02: i jednocześnie ogląda na swoim komputerze, czy rozczytuje się w dokonaniach Braywika.
+
+52
+00:05:13,560 --> 00:05:17,390
+S02: Więc to są przesłanki bardzo silne w tym postępowaniu.
+
+53
+00:05:17,420 --> 00:05:23,040
+S02: Ja nie mówię, że jedyne, bo w tego typu przypadkach śledczy muszą sprawdzić każdą tezę.
+
+54
+00:05:23,070 --> 00:05:30,880
+S02: Natomiast wydaje się, że to, co w tych pierwszych godzinach komunikował Minister Kierwiński,
+
+55
+00:05:31,200 --> 00:05:33,960
+S02: jednak znajduje potwierdzenie w materiale dowodowym.
+
+56
+00:05:34,360 --> 00:05:41,840
+S02: A ponieważ sprawca nie zostawił żadnego listu, żadnego przesłania, zmarł w szpitalu,
+
+57
+00:05:42,400 --> 00:05:49,640
+S02: to te tezy musimy formułować na podstawie tych dowodów, które zgromadziliśmy.
+
+58
+00:05:49,670 --> 00:05:54,160
+S02: Więc to będzie utrudniało na pewno postępowanie.
+
+59
+00:05:54,190 --> 00:06:00,960
+S02: Natomiast już te dowody, które mogą stawiać też taką tezę, o której była mowa w tych pierwszych chwilach,
+
+60
+00:06:00,980 --> 00:06:05,060
+S02: i ona jest bardzo, bardzo taka realistyczna.
+
+61
+00:06:05,200 --> 00:06:10,160
+S01: A czy śledczy badają również powiązania rodziny zamachowca i czy coś z tych badań już wynika?
+
+62
+00:06:10,880 --> 00:06:14,640
+S02: Ja nie chcę o tym mówić, są też ofiary tego sprawcy,
+
+63
+00:06:15,240 --> 00:06:20,360
+S02: ale też oczywiście jest to bardzo intensywnie badane, także ich udział w życiu społeczno-politycznym,
+
+64
+00:06:20,390 --> 00:06:30,800
+S02: bo to czasem pokazuje, czy i jak poglądy osób bliskich mogły wpływać na sprawcę, w jakim kierunku,
+
+65
+00:06:31,360 --> 00:06:40,880
+S02: kto tam był właśnie tym, który nadawał ton spojrzeniu na świat i na różne okoliczności.
+
+66
+00:06:40,910 --> 00:06:46,960
+S02: Więc to jest oczywiście badane, natomiast nie chcę jeszcze ujawniać tych danych.
+
+67
+00:06:46,980 --> 00:06:56,580
+S02: Część z nich jest w internecie, ale my musimy też weryfikować to wszystko i odsiewać te rzeczy, które są fejkowe, a te, które są prawdziwe.
+
+68
+00:06:56,610 --> 00:07:01,720
+S01: A w tle są powiązania polityczne lub powiązania z formalnymi lub mniej formalnymi grupami?
+
+69
+00:07:02,480 --> 00:07:12,440
+S02: Nie mogę o tym mówić, to jest sprawdzane, analizowane, więc tylko te dowody, co do których mam pewność, ujawniam.
+
+70
+00:07:12,960 --> 00:07:21,800
+S02: Część mediów pokazywała pewne zaangażowanie członków rodziny, w komisje wyborcze,
+
+71
+00:07:21,830 --> 00:07:32,040
+S02: ale to jest zbyt mało, żeby tutaj wskazywać jednoznaczną tezę, jakie poglądy miały osoby bliskie
+
+72
+00:07:32,070 --> 00:07:34,940
+S02: i czy te poglądy wpływały na sprawcę.
+
+73
+00:07:34,970 --> 00:07:44,260
+S02: Więc tutaj bym nie stawiał tak daleko tezy, bo głównym powodem całej tej zbrodni był ten sprawca i jego działania.
+
+74
+00:07:44,480 --> 00:07:51,460
+S01: Panie Ministrze, ze strony MONU oraz MSW A płyną głosy o potrzebie zweryfikowania przepisów regulujących dostęp do broni palnej.
+
+75
+00:07:51,480 --> 00:07:56,400
+S01: Czy wymagają one zmian lub korekty, czy to takie będzie działanie ad hoc przedwczesne?
+
+76
+00:07:57,120 --> 00:07:59,720
+S02: Ja uważam, że powinniśmy rozpocząć tą dyskusję.
+
+77
+00:07:59,750 --> 00:08:04,280
+S02: Ja jestem sam posiadaczem broni długiej i krótkiej, więc mam świadomość tego,
+
+78
+00:08:05,040 --> 00:08:10,240
+S02: że trzeba zachowywać bardzo precyzyjnie i bardzo ściśle zasady ostrożności.
+
+79
+00:08:10,270 --> 00:08:17,120
+S02: Zwłaszcza młodzi ludzie powinni być poddawani specjalistycznym badaniom wtedy, kiedy chcą mieć broń.
+
+80
+00:08:17,440 --> 00:08:23,080
+S02: Poza tym mamy jednak, moim zdaniem, te przepisy niedoskonałe.
+
+81
+00:08:23,680 --> 00:08:28,520
+S02: Jest wiele klubów strzeleckich i wiele osób, które posiada jednostki broni we własnym domu.
+
+82
+00:08:28,540 --> 00:08:36,400
+S02: Ale jeżeli tych jednostek jest bardzo dużo, no to budzi to moje zdziwienie, że ktoś ma takiej ilości broń.
+
+83
+00:08:36,420 --> 00:08:39,880
+S02: Mamy broń kolekcjonerską, która jest pełnisprawna do użycia.
+
+84
+00:08:39,910 --> 00:08:43,640
+S02: To jest broń, z której można strzelać i z której można zabijać.
+
+85
+00:08:44,120 --> 00:08:51,960
+S02: Ale mamy też badania, co pięć lat ja przechodzę, badania specjalistyczne, psychologiczne, psychiatryczne, okulistyczne, ogólnomedyczne.
+
+86
+00:08:52,880 --> 00:08:57,480
+S02: I uważam, że każdy posiadaż broni powinien takie badania przechodzić.
+
+87
+00:08:58,550 --> 00:09:05,320
+S02: Ja jestem zwolennikiem tego, że należy edukować, jeżeli ktoś chce mieć taką pasję,
+
+88
+00:09:05,350 --> 00:09:11,240
+S02: to powinien mieć prawo do tego, żeby te pasje były realizowane.
+
+89
+00:09:11,550 --> 00:09:14,960
+S02: Natomiast można je robić w taki sposób, żeby było bezpieczne.
+
+90
+00:09:14,990 --> 00:09:19,760
+S02: Jeżeli to nasycenie broni w naszym społeczeństwie będzie bardzo duże,
+
+91
+00:09:19,960 --> 00:09:28,400
+S02: a jednocześnie na to oglądamy badania jednak pogarszającego się stanu psychicznego społeczeństwa,
+
+92
+00:09:28,720 --> 00:09:35,440
+S02: no to musimy mieć świadomość, że w pewnych momentach, jak jeszcze będzie tam jakieś nasycenie ideologiczne,
+
+93
+00:09:35,720 --> 00:09:38,720
+S02: no może dochodzić do tak dramatycznych sytuacji.
+
+94
+00:09:39,360 --> 00:09:45,280
+S02: Więc ja jestem zwolennikiem tego, żeby bardzo precyzyjnie i ściśle przestrzegać prawa.
+
+95
+00:09:45,300 --> 00:09:47,790
+S02: Czyli te badania muszą być bardzo rzetelne.
+
+96
+00:09:48,080 --> 00:09:52,480
+S02: Tu jest duża odpowiedzialność na lekarza, którzy mają uprawnienia do wydawania takich zaświadczeń.
+
+97
+00:09:52,910 --> 00:10:00,440
+S02: Ale też mówię, mamy dużą grupę, która jest poza tymi badaniami albo robi je tylko raz, na samym początku, wtedy kiedy uzyskuje broń,
+
+98
+00:10:00,640 --> 00:10:04,480
+S02: a w momencie, gdy ich stan się pogarszy albo są jakieś niepokojące symptomy,
+
+99
+00:10:04,960 --> 00:10:10,200
+S02: to rzeczywiście nie są one poddawane takiej regularnej kontroli.
+
+100
+00:10:10,790 --> 00:10:17,600
+S02: Tam jeszcze mam ostatnie informacje od śledczych, znaleźiono tłumik w samochodzie sprawcy,
+
+101
+00:10:17,630 --> 00:10:26,120
+S02: więc to też świadczy o tym, że jednak jakieś przygotowania mogły być czynione w tym kierunku,
+
+102
+00:10:26,600 --> 00:10:31,360
+S02: bo wiemy, że ta rodzina zginęła w swoim mieszkaniu, są się dzi nic nie słyszeli.
+
+103
+00:10:32,120 --> 00:10:41,670
+S02: Więc to powinno dać nam jakąś lekcję, że jeżeli mamy taką osobę, która ma takiej ilości broni.
+
+104
+00:10:42,640 --> 00:10:50,440
+S02: I jeszcze tylko pytanie jest, jak daleko ma sięgać ingerencja Państwa w takie prawa i wolności obywatelskie?
+
+105
+00:10:51,240 --> 00:10:56,880
+S02: Służby oczywiście monitorują internet i ja jestem w kontakcie służbami.
+
+106
+00:10:56,910 --> 00:11:00,520
+S02: Nawet ostatnio mieliśmy takie spotkanie o radykalizacji młodych ludzi.
+
+107
+00:11:01,160 --> 00:11:05,960
+S02: I takie osoby są wyłapywane w sieci, które poszukują właśnie takich stron
+
+108
+00:11:06,280 --> 00:11:13,880
+S02: i jednocześnie szukają kontaktów z innymi osobami, które mogą mieć podobnie radykalne poglądy.
+
+109
+00:11:13,910 --> 00:11:20,440
+S02: Tutaj jeszcze mamy wiele niewiadomych, dlatego że bardzo wiele dowodów jest zgromadzonych,
+
+110
+00:11:20,470 --> 00:11:26,560
+S02: ale poddajemy je cały czas w analizie, więc Państwo będziecie na bieżąco informowani.
+
+111
+00:11:26,580 --> 00:11:31,760
+S02: Pomimo tego, że sprawca nie żyje i normalnie takie postępowanie, obez niego powinno się umorzyć,
+
+112
+00:11:31,790 --> 00:11:34,960
+S02: my je tak prowadzimy to postępowanie pod kątem szerszym.
+
+113
+00:11:35,920 --> 00:11:44,240
+S02: To znaczy, jakie miał kontakty, czy działał sam, czy coś go inspirowało bardziej czy mniej.
+
+114
+00:11:44,600 --> 00:11:47,580
+S02: No musimy to poznać bardzo głęboko.
+
+115
+00:11:47,610 --> 00:11:51,520
+S01: Panie Ministrze, na koniec, czy śledczy przyjrzą się także i czy jest w ogóle taka potrzeba,
+
+116
+00:11:51,550 --> 00:11:56,920
+S01: by przyjrzeć się uważnie klubom i związkom, które oferują szkolenie z zakresu strzelenia bojowego?
+
+117
+00:11:56,950 --> 00:12:00,520
+S01: No bo to też zachodzi prawdopodobieństwo, że sprawca przeszedł takie szkolenie.
+
+118
+00:12:01,360 --> 00:12:04,820
+S02: Oczywiście szkolenie bojowe samo w sobie nie jest niczym złym.
+
+119
+00:12:04,850 --> 00:12:08,000
+S02: I wydaje mi się, że jeżeli robią to profesjonalniści, to bardzo dobrze.
+
+120
+00:12:08,400 --> 00:12:15,680
+S02: Mnie bardziej niepokoją takie ogłoszenie, jak widzimy błyskawicznie, załatwił Ci pozwolenie na broń.
+
+121
+00:12:16,280 --> 00:12:26,000
+S02: To zawsze budzi mój niepokój, bo wiem jednak, że żeby poznać człowieka, to trzeba to robić sukcesywnie
+
+122
+00:12:26,030 --> 00:12:32,560
+S02: i w pewnych odslepach czasowych, żeby zobaczyć, czy on jest rzeczywiście pasjonatem strzeleckstwa,
+
+123
+00:12:32,580 --> 00:12:38,240
+S02: czy gdzieś kryje się fascynacja zbrodnią, bo takie osoby też są.
+
+124
+00:12:38,880 --> 00:12:44,680
+S02: Więc tutaj bardziej bym się skupił na tym błyskawicznym załatwianiu pozwoleń na broń ostrą,
+
+125
+00:12:45,240 --> 00:12:50,400
+S02: niż na tych, którzy oferują takie strzelania taktyczne.
+
+126
+00:12:51,240 --> 00:12:57,240
+S02: Wiemy, że właściwie jesteśmy zachęcani dzisiaj, ja też nie jestem tutaj przeciwnikiem tego,
+
+127
+00:12:57,880 --> 00:13:03,560
+S02: żeby ludzie uczyli się obsługi broni, bo ta sytuacja geopolityczna jest bardzo trudna.
+
+128
+00:13:04,520 --> 00:13:12,480
+S02: I ta nasza odporność, wewnętrzna odporność społeczeństwa, czy też nawet takie zasoby dla armii rezerwowej,
+
+129
+00:13:13,240 --> 00:13:15,040
+S02: są sygnałem dla naszych wroku.
+
+130
+00:13:15,070 --> 00:13:21,520
+S02: Jeżeli społeczeństwo jest na to przygotowane, to mamy większe gwarancje, że nikt nas nie zaatakuje,
+
+131
+00:13:21,550 --> 00:13:26,800
+S02: mając świadomość, że jednak mamy takie społeczeństwo, które te umiejętności posiada.
+
+132
+00:13:26,830 --> 00:13:32,240
+S02: Więc ja bym nie szedł w tym kierunku, żeby ograniczać, ale zwiększać na pewno kontrolę.
+
+133
+00:13:32,270 --> 00:13:41,360
+S02: Natomiast ta liczba broni, która jest ponad milion sztuk broni, która jest dostępna, to jest naprawdę duża liczba.
+
+134
+00:13:41,390 --> 00:13:50,520
+S02: I tutaj powinny być takie ścisłe przestrzeganie reguł, przechowywania, badań kontrolnych, to jest moim zdaniem bardzo istotne.
+
+135
+00:13:51,160 --> 00:13:57,960
+S02: Natomiast musimy się zastanowić, bo oczywiście są takie głosy, żeby zwiększyć dostęp obywateli do broni.
+
+136
+00:13:58,840 --> 00:14:06,760
+S02: Ja osobiście uważam, że te przepisy są niezły, należy je nawet poprawić w tym kierunku, żeby jednak przechodzić te regularne badania.
+
+137
+00:14:07,360 --> 00:14:15,520
+S02: Ale taki powszechny dostęp, jaki widzimy w Stanach, ktoś przychodzi na prawo jazdy, kupuje sobie karabinku automatyczny i kilka rewolwerów,
+
+138
+00:14:15,840 --> 00:14:23,840
+S02: no to moim zdaniem nie idźmy w tym kierunku, bo będziemy mieli po prostu masakry, które są powszechne w Stanach Zjednoczonych.
+
+139
+00:14:23,870 --> 00:14:31,880
+S02: Chciałbym, żeby Polska jednak nie miała takich zdarzeń, a to, co się stało w Krakowie, żeby było absolutnym incydentem,
+
+140
+00:14:32,520 --> 00:14:34,320
+S02: z którego wyciągniemy pewne wnioski.
+
+141
+00:14:34,640 --> 00:14:38,480
+S01: W Radiu Kraków dzisiaj. Minister Sprawiedliwości, prokurator generalny Waldemar Żurek.
+
+142
+00:14:38,510 --> 00:14:40,040
+S01: Panie Ministrze, bardzo dziękuję.
+
+143
+00:14:40,440 --> 00:14:40,960
+S02: Dziękuję.

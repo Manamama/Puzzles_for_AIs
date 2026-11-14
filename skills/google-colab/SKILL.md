@@ -646,6 +646,26 @@ errors:
   reads the attribute *at forward time*, so setting it on the loaded model is
   the lever — no package edit needed. If the dispatch happened at import time,
   the same flag would be a no-op.
+- **Watch for dtype forcing in the install path** (measured case,
+  2026-11-13): MOSS-Transcribe-Diarize's `model_runner.py` upcast the bf16
+  checkpoint to fp32 on CPU, unconditionally — silently overriding its own
+  `--dtype` flag, and holding both the 1.83 GB checkpoint and a 3.6 GB fp32
+  copy at load. On a full 881 s file that cost **6.03 GB peak RSS**; deleting
+  the branch gave **3.69 GB and +11 % wall time**, with a 99.4 %-identical
+  transcript. So: the flag being overridden is a bug, the memory saving is
+  arithmetic, and the speed is a *measurement*, not a prediction — on AVX2-only
+  CPUs BF16 has no native GEMM and PyTorch runs convert → fp32 SGEMM →
+  convert, which on skinny decode GEMMs costs ~10 % (it should win outright on
+  AVX-512_BF16 / AMX / ARM BF16). Do not assume "matmuls upcast anyway, so
+  bf16 storage is free": storage rounding is a different numeric run, and the
+  fallback path is slower, not equal. One grep at pre-flight finds it:
+  `grep -rn "float32" <package>/`. Same lesson in reverse on GPU: bf16
+  *storage* is native, but the *kernel* a given GPU picks (T4 has no bf16
+  flash path) decides the real allocation. **Filed upstream as
+  OpenMOSS/MOSS-Transcribe-Diarize#64**, with the measurements above and a
+  revertible `apply`/`revert`/`check` patch script
+  (`ai_ml/mtd_cpu_bf16.sh` in Ubuntu_Scripts_1) — copy the script from the
+  issue on a machine without that repo.
 
 Empiricism is for the two things that remain uncertain *after* that paragraph —
 not for the first two guesses.
