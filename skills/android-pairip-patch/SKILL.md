@@ -78,7 +78,19 @@ grep -rh -B4 '^\.super Landroid/app/Application;' x/smali*/ | grep '^\.class' | 
 
 One hit is the real class (`Ldev/opencode/mobile/OpenCodeMobileApplication;` → drop `L`/`;`).
 If the only hit is `Landroid/app/Application;` the app has no class of its own (typical
-Flutter, or a small Compose app) → use `android.app.Application`.
+Flutter, a small Compose app, or an SDL/C++ app) → use `android.app.Application`.
+
+No apktool? In Termux it is one `apt install apktool` (3.0.3, aarch64) and `-r` decode of
+a 5 MB APK takes ~7 s — worth it. If it is genuinely unavailable, read the dex string table
+instead: every superclass is a type descriptor there.
+
+```bash
+unzip -p base.apk classes.dex | strings -a | grep -oE 'L[A-Za-z0-9/$_]*Application;' | sort -u
+```
+
+Exactly `Lcom/pairip/application/Application;` plus `Landroid/app/Application;` means the
+same no-own-class case (`com.xojot.vrplayer` 2.6.3, SDL/C++ with a single
+`lib/arm64-v8a/libnative-lib.so` in the ABI split).
 
 **B. ContentProvider.** The provider is instantiated before any app code, and its
 `onCreate()` builds a `LicenseClient` and calls `initializeLicenseCheck()`. There is no
@@ -130,6 +142,68 @@ activity is resumed:
 adb shell dumpsys activity activities | grep -m1 ResumedActivity
 ```
 
+### 4a. No adb: when the target *is* this phone
+
+`adb devices` empty is not a blocker. adb only supplies a **shell-uid** context; on a phone
+that is also the analysis machine, reproduce it locally and skip `adbd`/`tcpip` entirely.
+
+| need | use |
+|---|---|
+| `pm`, `am`, `cmd package`, `dumpsys`, `logcat`, `screencap` | `rish -c '<cmd>'` — exactly `adb shell` |
+| read `/data/app/…`, chown, `restorecon`, staging | `sudo` (root) |
+
+- **rish is shell uid, so it cannot read Termux `$HOME`** (0700, `u0_a278`). Stage the
+  signed APKs in `/data/local/tmp/<dir>` — `sudo mkdir -p`, `chmod 755` dir, `chmod 644`
+  files, so both shell and `system_server` can traverse it. Same reason never to install
+  straight out of `$HOME`: `system_server` opens the file, and root-only access is not enough.
+- Pull with `sudo cp /data/app/~~…/<pkg>-~~…/*.apk "$S/orig/"`, then
+  `sudo chown -R $(id -u):$(id -g) "$S"` so the Termux-side tools can write results.
+- `pm`/`am`/`cmd` are always present in `/system/bin`; root can run them, but the shell-uid
+  route via `rish` matches the documented adb semantics most closely.
+- **`pm install-multiple` does not exist on every ROM.** This one (realme RMX3085,
+  Android 11) answers `Unknown command: install-multiple`; the package service is still
+  complete, so use the session API with the **split names from the manifests**, not filenames:
+
+  ```bash
+  SID=$(rish -c 'cmd package install-create -r -t' | grep -oE '[0-9]+')
+  rish -c "cmd package install-write $SID base.apk      /data/local/tmp/w/base-patched.apk"
+  rish -c "cmd package install-write $SID config.arm64_v8a /data/local/tmp/w/split_config.arm64_v8a.apk"
+  #   config.<name> = split='config.…' in aapt dump badging "$f"
+  rish -c "cmd package install-commit $SID"
+  ```
+
+### 4b. No privileged shell at all → merge the splits, install one APK
+
+A split-only app is uninstallable as a single file (`INSTALL_FAILED_MISSING_SPLIT`), and
+`pm install`/session installs need `INSTALL_PACKAGES` — which an **app-uid** shell does not
+have. When the target offers no adb, no working `rish`, and no `su` (AirNote: Magisk app
+installed, **no `su` binary anywhere**, Shizuku server down, Android 10 so no wireless-debug
+pairing), stop fighting for a privileged shell and build one self-contained APK.
+
+```bash
+# 1. stop the manifest demanding splits (start from the PairIP-patched manifest)
+python3 axml_patch.py m.xml base__abi,base__density "" m2.xml      # empty requiredSplitTypes
+python3 axml_remove_element.py m2.xml m3.xml meta-data com.android.vending.splits.required
+
+# 2. merge the lib split into the base, then repack (stores + 4096-aligns *.so)
+python3 apkmerge.py orig/base.apk work/merged.apk orig/split_config.arm64_v8a.apk
+python3 apkbuild.py work/merged.apk m3.xml work/single.apk
+apksigner sign --ks patch.jks --ks-key-alias patch \
+  --ks-pass file:patch.pass --key-pass file:keypass.pass work/single.apk
+```
+
+- **Which splits can be dropped.** The ABI split is mandatory (`lib/…/libnative-lib.so`, the
+  only native code in a C++/SDL app). Locale and density splits are resource tables only —
+  omit them and Android falls back to base strings and bitmaps.
+- Keep `extractNativeLibs="false"` **only if** the `.so` ends up stored and page-aligned;
+  `apkbuild.py` does that. Otherwise flip it to `true`.
+- Verify before shipping: `aapt dump xmltree single.apk AndroidManifest.xml | grep -i split`
+  must show no `splits.required`, and the `.so` `data_offset % 4096 == 0`.
+- Deploy from an app-uid shell with the GUI installer — that path is allowed without
+  `INSTALL_PACKAGES`:
+  `am start -a android.intent.action.VIEW -d file:///storage/emulated/0/Download/x.apk -t application/vnd.android.package-archive`
+  Someone has to tap *Install*; an app uid cannot `dumpsys` or `screencap` to check.
+
 ## 5. Pitfalls that cost real attempts
 
 - **The AXML string pool is UTF-16.** `grep -a pairip AndroidManifest.xml` finds nothing.
@@ -140,14 +214,29 @@ adb shell dumpsys activity activities | grep -m1 ResumedActivity
 - **`apktool b` is often useless on Debian/Ubuntu**: the packaged aapt rejects modern
   resources (`First type is not attr!`, exit 134) on targetSdk 30+ apps. That is why
   patching is byte-level manifest surgery + `apkbuild.py`, not a resource rebuild.
+  Termux 3.0.3 fails differently but just as early: `aapt2 compile --dir res` reports
+  `error: resource 'drawable/$avd_hide_password__0' has invalid entry name` for the vector
+  drawables apktool renames internally, and the build dies in ~17 s; `--use-aapt1e` no
+  longer exists in 3.x (`b --help` offers only `--aapt <file>`). So apktool is a **decode
+  tool only** — use it to find classes, never to rebuild.
 - **Rebuild only the base.** Splits only need `apksigner`; it keeps their `.so` entries
   page-aligned. Rebuilding a split re-compresses it and buys nothing.
 - **Alignment matters**: uncompressed `resources.arsc` 4-byte, stored `.so` 4 KiB.
   `apkbuild.py` carries padding in the `0xd935` extra field, same as `zipalign -p 4`.
 - **`aapt2 dump` in Debian has no `--file`.** Use `aapt dump xmltree app.apk
   AndroidManifest.xml` (v1) for inspection.
+- **`--ks-pass` and `--key-pass` must not name the same file.** apksigner reads each
+  `file:` source as a stream and takes one password per request, so pointing both at
+  `patch.pass` makes the second read return `end of file reached` and every sign fails
+  (`IOException: Failed to read Key … password`). Use two files with the same value
+  (`cp patch.pass keypass.pass`) or two lines in one file.
 - **Uninstall deletes app data.** After reinstalling, the app must be set up again
-  (pairing, logins, game progress). Say so before doing it.
+  (pairing, logins, game progress). Say so before doing it — with root you can avoid it:
+  `sudo tar -C /data/data -cf /data/local/tmp/p-data.tar <pkg>` before the uninstall, then
+  after the install `sudo tar -C /data/data -xpf …`, `sudo chown -R $(sudo stat -c %u
+  /data/data/<pkg>)` and `sudo restorecon -R /data/data/<pkg>`. The package name keys the
+  data dir, so this survives the new signature; chown to whatever uid the reinstall got
+  (identical here: `10637`), and skip it if the app migrated on first run.
 - **`pm uninstall -k` (keep data) makes the next install impossible**: the retained data
   means PMS keeps the package identity, and `install-multiple` fails with
   `INSTALL_FAILED_UPDATE_INCOMPATIBLE … signatures do not match`. Plain `pm uninstall`
@@ -176,7 +265,8 @@ adb shell dumpsys activity activities | grep -m1 ResumedActivity
 Root does not remove the gate, but it changes the options:
 
 - **Same pipeline.** adb is adb; a Magisk phone is patched identically (the RMX3085 /
-  Android 11 case).
+  Android 11 case). When the rooted phone is the one you are working on, root also replaces
+  adb's shell context — see §4a: `rish` for shell uid, `sudo` for `/data/app` and staging.
 - **Keep signatures (no data loss)**: with root you can bind-mount or replace the patched
   APK into `/data/app/...` while keeping the original certificate. Fragile across app
   updates and Play re-verification; document it if you rely on it.
@@ -195,6 +285,7 @@ Root does not remove the gate, but it changes the options:
 | `axml_patch.py` | replace one string in a binary `AndroidManifest.xml` (same pool size) |
 | `axml_remove_element.py` | delete one element (start+end chunk) and fix root chunk sizes |
 | `apkbuild.py` | repack APK with a new manifest, correct alignment, original entry order |
+| `apkmerge.py` | fold split APKs (lib/resources) into the base — one tappable APK for devices with no privileged shell |
 
 Requirements: `adb`, `python3`, `apksigner` (build-tools), `aapt` for inspection,
 `apktool` only for finding an Application class. No keystore ships here — create your own:
@@ -224,6 +315,7 @@ realme RMX3085 (Android 11, Magisk 27, Play Store **disabled**), 2026-10-28:
 | `com.dolby.dolby234` | 1.10.1 | Application | → `com.dolby.sessions.DolbySessionsApplication` |
 | `com.chordai` | 2.7.73 | Provider ×2 | both providers removed |
 | `com.harmonynetwork.singsharp` | 16.0.0 | Provider | element removed; app then crashes in its own code |
+| `com.xojot.vrplayer` | 2.6.3 | Application | → `android.app.Application` (SDL/C++, no own class); RMX3085: session install because its `pm` lacks `install-multiple`. AirNote (NoteAir, Android 10, no adb/root/rish): splits merged into one APK (§4b) — only a GUI tap can install there |
 
 Pattern worth remembering: a Play **update** is what reintroduces the gate, and the same
 app can change shape between versions — always rescan before patching, never reuse last
