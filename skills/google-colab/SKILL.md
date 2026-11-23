@@ -1,13 +1,18 @@
 ---
 name: google-colab-cli-tradecraft
-description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Also load it when *every* session shows `[?]`, or when `colab ssh -s NAME` / `colab exec -s NAME` behaves oddly because `sessions.json` was truncated by two concurrent invocations — in that state `colab ssh` silently rents a new VM instead of reattaching. Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix. Also load it when a session needs Google Drive (the `colab drivemount` consent flow, which is human-in-the-loop), or when the CLI is driven from a non-interactive agent shell where `colab console` would block forever. Also load it before planning a GPU / ML experiment on Colab (model install, `pip wheel` vs git+URL, OOM-by-arithmetic pre-flight, dtype vs GPU kernel support, driver-vs-CLI choice, smoke test, no-polling fire-and-forget with `/usr/bin/time -v`).
+description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, HTTP 429 on the SSH door, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Also load it when *every* session shows `[?]`, or when `colab ssh -s NAME` / `colab exec -s NAME` behaves oddly because `sessions.json` was truncated by two concurrent invocations — in that state `colab ssh` silently rents a new VM instead of reattaching. Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix. Also load it when a session needs Google Drive (the `colab drivemount` consent flow, which is human-in-the-loop), or when the CLI is driven from a non-interactive agent shell where an interactive door (`colab ssh`, `colab repl`) would block forever. Also load it when porting anything off `colab console`, which google-colab-cli 0.8.0 removed. Also load it before planning a GPU / ML experiment on Colab (model install, `pip wheel` vs git+URL, OOM-by-arithmetic pre-flight, dtype vs GPU kernel support, driver-vs-CLI choice, smoke test, no-polling fire-and-forget with `/usr/bin/time -v`).
 ---
 
 # Google Colab CLI Tradecraft
 
 Use `colab skill | glow`  or `colab readme`  to learn the official basics first — this skill assumes that base knowledge and covers what it doesn't.
 
-version 2.9.0
+version 3.0.0
+# 3.0.0  2026-11-23  google-colab-cli 0.8.0: `colab console` removed (history + migration table),
+#                    one-SSH-session-per-runtime / 429 / ControlMaster section, `colab_me` wrapper
+#                    updated (no port-forward, `colab ssh` + reattach loop), exec `--timeout` default,
+#                    `--identity` pubkey derivation, cosmetic BrokenPipeError at logout.
+# 2.9.0  (previous)
 
 ## Authentication
 
