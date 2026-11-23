@@ -48,9 +48,10 @@ colab --auth=adc whoami
 - `colab exec`: Run code (best with piped stdin)
 - `colab run script.py`: One-shot fresh VM
 - `colab stop -s alias`: Release session
-- `colab console`: Raw bash shell
-- `colab ssh -s name`: Shell over SSH; `--proxy-mode` makes it an OpenSSH ProxyCommand
+- `colab ssh -s name`: Interactive shell over SSH — the replacement for `colab console`; `-- CMD …` runs one command and returns its exit status; `--proxy-mode` makes it an OpenSSH ProxyCommand
+- `colab repl -s name`: Interactive Python REPL on the VM (kernel door — does not use the SSH slot)
 - `colab log -s name [-t TYPE] [-o file]`: Structured history, incl. `drive_auth_needed`
+- **`colab console` no longer exists** (removed in 0.8.0 → `No such command 'console'`); see "History: `colab console`" below
 
 ## Best Way to Run Multi-Line Commands
 
@@ -77,16 +78,20 @@ EOF
   targets `/lib/node_modules/x` and reports success. Set the variable on **every**
   `!` line that uses it, or do the whole job in one `!bash -c '…'`.
 
-## For an Agent: Use `colab exec`, Never `colab console`
+## For an Agent: `colab exec` or `colab ssh -- CMD`, Never an Interactive Door
 
-- **`colab console`** is a raw interactive TTY. In a non-interactive agent shell it does not
-  "fail" — it **blocks forever** waiting on a human. It is a human tool, not an automation
-  entry point.
-- **`colab exec`** with piped stdin is the agent entry point (see "Best Way to Run
+- **Interactive doors block forever in a non-interactive shell.** `colab ssh -s NAME` with
+  no command, `colab repl -s NAME`, and the removed `colab console` all wait on a human on
+  a tty. They do not "fail" — they hang. Use the two non-interactive doors below.
+- **`colab exec`** with piped stdin is the kernel-door entry point (see "Best Way to Run
   Multi-Line Commands" above). `colab new` is already synchronous, so
   `colab new … && printf '…' | colab exec -s NAME` is the whole recipe — no readiness poll.
-- **`colab ssh` with a command** is the other agent-safe door: one command, then it
-  returns, no tty needed (see "The Two Doors" below).
+  It runs Python, accepts `!shell` lines, and does **not** consume the runtime's SSH slot.
+- **`colab ssh -s NAME -- CMD`** is the shell-door entry point: one command, then it
+  returns, no tty needed. Output is byte-exact when piped and the exit status is the
+  command's own (`echo '!false' | colab exec` exits 0; `colab ssh -- false` exits 1). It
+  *does* take the SSH slot, which is single per runtime on the free tier — see the 429
+  section.
 
 Minimal GPU recipe, start to finish:
 
@@ -104,22 +109,35 @@ A convenience alias may exist in `Ubuntu_Scripts_1/utils/aliases3.sh`:
 alias colab_me="bash ~/Downloads/GitHub/Ubuntu_Scripts_1/utils/colab_exec_wrapper.sh"
 ```
 
-`colab_me gpu` creates/reuses a session named **`session_1_gpu`**
-(`colab new -s session_1_gpu --gpu T4`), mounts Drive, and finally opens **`colab console`**.
+`colab_me gpu` reuses a session named **`session_1_gpu`** if it is listed (a `colab sessions`
+grep decides this; `colab new` on a live session exits 1 with "Allocation refused
+(precondition failed)"), creates it with `colab new -s session_1_gpu --gpu T4` otherwise,
+mounts Drive, sources `setup/colab_paths_add.sh` through `colab exec`, and finally opens
+**`colab ssh -s session_1_gpu`**.
+
+Since wrapper 2.4.6 (2026-11-23) it **no longer opens the `ssh -N -L 8014:…` tunnel** it
+used to start and forget. That forward only ever served CrispASR (`ai_ml/crispasr_colab.sh`
+opens its own ControlMaster tunnel), and it spent the runtime's single SSH session before
+the shell could use it — i.e. it was the 429 described below, not a helper. Console's
+departure is what made the leftover visible: console rode the kernel door, so two doors
+could coexist; ssh cannot.
 
 Traps:
 
-- Because it ends in `colab console`, the wrapper **hangs an agent indefinitely**.
-- It hits the interactive Drive-consent prompt **once**, not twice (as of v2.4.3): the
-  first `colab drivemount` triggers consent, the second is the deliberate warm-up repeat
-  (see the drivemount section below). Notes claiming "blocks twice" predate that.
+- The last step is **interactive**: `COLAB_NO_SHELL=1 colab_me gpu` stops after the
+  session/Drive/setup steps, and the wrapper refuses to open a shell when stdin is not a
+  tty — so an agent no longer hangs on it.
+- After a dropped transport (`colab ssh` exits 255) it **re-attaches in a loop**;
+  `exit`/Ctrl-D (0) leaves it; anything else stops with a hint.
+- It hits the interactive Drive-consent prompt **once**, not twice (as of wrapper v2.4.3):
+  the first `colab drivemount` triggers consent, the second is the deliberate warm-up
+  repeat (see the drivemount section below). Notes claiming "blocks twice" predate that.
 - It calls `colab drivemount … 2>/dev/null` twice, so the consent URL survives only
   because the CLI prints it to **stdout**, never stderr. Don't "tidy" that redirection.
 - Feeding `stdin` from `/dev/null` does **not** skip the consent requirement; it only
   answers "Press Enter" with EOF, so the mount fails immediately. The wrapper then
-  `exit`s on the second failed `drivemount` and never reaches `colab console` — which is
-  why an agent can run the wrapper headlessly to surface the URL, yet still cannot
-  complete a mount alone.
+  `exit`s on the second failed `drivemount` — which is why an agent can run the wrapper
+  headlessly to surface the URL, yet still cannot complete a mount alone.
 - Shell aliases are **not** loaded in non-interactive shells, so `colab_me` may not even
   exist in an agent's shell. Invoke the script path directly if needed; never assume the
   alias is present.
@@ -139,15 +157,128 @@ ssh -o ProxyCommand="colab ssh --proxy-mode -s NAME" root@localhost \
 
 - `colab ssh --proxy-mode` is an OpenSSH `ProxyCommand` bridge (WebSocket-stdio), not a
   replacement for `ssh`: you still run the real `ssh` client and hand it a command.
-- `--identity` is optional — it defaults to the first of `~/.ssh/id_ed25519`,
-  `~/.ssh/id_ecdsa`, and only selects which public key is sent in the
-  `X-Colab-Ssh-Pubkey` header.
+- `--identity` is optional — it defaults to the first of `~/.ssh/id_ed25519.pub`, then
+  `~/.ssh/id_ecdsa.pub`, and only selects which public key is sent in the
+  `X-Colab-Ssh-Pubkey` header. It is resolved by **deriving** the public key with
+  `ssh-keygen -y -f <key>`, so the **private** key must exist at that path or the command
+  dies with `[colab] --identity …: file not found.` (older builds tolerated a `.pub`-only
+  reference). RSA keys are refused server-side; ed25519/ecdsa only. Create one with
+  `ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519`.
 - A file written over ssh is immediately visible to the kernel through `colab exec`, and
   vice versa (verified both directions with a probe file). One filesystem, two doors.
 - `df -h /content/drive` reports the **Drive quota** (e.g. 15 GB with most of it used),
   not the VM's local disk. Don't read it as free space on the runtime.
-- `echo 'cmd' | colab console -s NAME` is the third, slower shell door: bash inside tmux,
-  so piped output carries terminal-control bytes — filter with `grep -a`.
+- The third door, `echo 'cmd' | colab console -s NAME`, **no longer exists** (0.8.0). Its
+  jobs split up: `colab ssh -s NAME -- CMD` for a scripted shell command (byte-exact when
+  piped, real exit status), `colab repl -s NAME` for a scripted Python session, and
+  `printf '!cmd\n' | colab exec -s NAME` when ssh cannot work.
+
+## History: `colab console` Is Gone (0.8.0) — What It Was, and Why
+
+`colab console` was **removed in google-colab-cli 0.8.0**: PR #205, merged 2026-11-10,
+"refactor: remove `colab console` in favour of `colab ssh`"; 16 files, **+65 / −633**,
+deleting `src/colab_cli/console.py` (197 lines), `tests/test_console.py` (261) and
+`integration/repro_piped_console/test.sh` (96). Older notes — including earlier revisions
+of this skill — call it "raw bash shell"; on 0.8.0 it answers `No such command 'console'`.
+
+**What it actually was.** Not a terminal, a simulation of one: a WebSocket to the
+`/colab/tty` backend, which runs **bash wrapped in tmux**, sending raw frames the client
+wrote straight to stdout (`sys.stdout.buffer.write(data["data"])`, ANSI included). The
+rest was hand-rolled:
+
+- terminal size pushed by the client on resize (`send_terminal_size`);
+- **no exit status** — the socket simply closed;
+- piped-stdin EOF sent `exit\n` and then **slept 0.5 s** hoping tmux's teardown had flushed
+  (`PIPED_EOF_GRACE_SECONDS`; the comment admits "lowering it risks truncating tail output");
+- tmux swallowed Ctrl-D as a literal character, so bash could not be EOF'd normally.
+
+**Why the maintainers dropped it.**
+
+1. **It hung.** Issue #89, "console hangs": hangs and sudden closes, reported with programs
+   like GeminiCLI. Collaborator `sethtroisi`: *"Use `colab ssh` instead it's slightly better
+   and more reliant to network packet loss."*
+2. **It blocked a prerequisite.** `colab ssh -s NAME -- CMD` (#195) had to land first: it
+   replaces the shipped `colab-operator` skill's piping into console **and keeps the exit
+   status**, which the kernel door cannot — `echo '!false' | colab exec` still exits 0.
+3. **Portability debt.** Console is where the `termios`/pty imports lived; the whole Windows
+   crash family (#78, #100, #135, the "lazy console imports" PRs) orbited it. Deleting it
+   removed a disproportionate share of the cross-platform surface.
+4. **Duplication.** `colab ssh` (0.7.0) already gave a real pty, real signals, real exit
+   status, and network resilience. Two shell doors, one of them fake.
+5. **It was breaking**, so it shipped in a major version (0.8.0) — the occasion to pay the
+   debt in one go, docs and the shipped skill included.
+
+**Migration table.**
+
+| you used | use now |
+| --- | --- |
+| `colab console -s NAME` (interactive bash) | `colab ssh -s NAME` |
+| `colab console` + Ctrl+B (you were already inside tmux) | `colab ssh -s NAME -- tmux new -A -s main` |
+| `echo 'cmd' \| colab console -s NAME` | `colab ssh -s NAME -- CMD` (byte-exact when piped, real exit status) |
+| scripting where ssh cannot work (no key/client, ssh slot busy) | `printf '!cmd\n' \| colab exec -s NAME --timeout N` (kernel door; exit status lost) |
+
+**The tmux part is the real loss and the real fix.** Console's convenience was mostly that
+it *was already inside tmux*; `colab ssh` drops you into a plain login shell, so Ctrl+B is
+inert until you start tmux yourself. tmux **is** installed on the current runtime (Ubuntu
+24.04, tmux 3.4, verified 2026-11-23), and a tmux session on the VM outlives the
+connection — `colab ssh -s NAME -- tmux new -A -s main` is new-or-attach in one command,
+which is the durable form of "resume after a drop".
+
+## One SSH Session Per Runtime — the 429 Wall, and ControlMaster
+
+Colab limits **concurrent SSH sessions per runtime**, server-side, by plan (1 on the free
+tier; the CLI's own reporting caps at 5). Every SSH-door use counts, **including
+`colab ssh --proxy-mode`**, which is a ProxyCommand *bridge* and not a mere helper. So these
+collide:
+
+- a background `ssh -N -L PORT:127.0.0.1:PORT -o ProxyCommand="colab ssh --proxy-mode …"` tunnel,
+- `colab ssh -s NAME` for the shell,
+- a `crispasr_colab.sh`-style `ensure_master` tunnel.
+
+Whichever arrives second gets:
+
+```
+[colab] Already-active SSH session (HTTP 429): another `colab ssh` is connected to this runtime.
+```
+
+(or, when the body carries a limit, "SSH session limit reached (HTTP 429): N of N …").
+
+**The slot is released by killing the local process**, not by waiting. A bridge whose
+terminal died but whose process lives holds the runtime for as long as it lives — that is
+how a "stale" 429 outlasts the run that caused it. Find it with:
+
+```bash
+ps -eo pid,args | grep -F 'colab ssh --proxy-mode -s NAME' | grep -v grep
+```
+
+**One session, many channels.** Start the tunnel as an OpenSSH ControlMaster and open
+shells as channels over it (verified on Termux, OpenSSH 10.6):
+
+```bash
+SOCK="${TMPDIR:-/tmp}/colab-NAME.sock"
+ssh -M -S "$SOCK" -N -L 8014:127.0.0.1:8014 \
+  -o ProxyCommand="colab ssh --proxy-mode -s NAME" \
+  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ExitOnForwardFailure=yes \
+  root@localhost &
+ssh -S "$SOCK" root@localhost                # interactive bash — no new Colab session
+ssh -S "$SOCK" root@localhost 'nvidia-smi'   # one-shot
+ssh -S "$SOCK" -O exit root@localhost        # close the tunnel, free the slot
+```
+
+`ssh -S` channels cost nothing against the limit. Equally valid: put `-L` on the
+*interactive* ssh and drop `-N`, so one connection is both tunnel and shell.
+
+**`BrokenPipeError` at logout is cosmetic.** On exit you may see
+
+```
+Exception ignored while flushing sys.stdout:
+BrokenPipeError: [Errno 32] Broken pipe
+```
+
+It comes from the `--proxy-mode` helper, whose stdout is the pipe into `ssh`: after `ssh`
+exits, Python's shutdown flush of that dead pipe raises EPIPE. The `except OSError` in its
+write loop does not cover the interpreter's final flush. Harmless — the session had already
+ended cleanly; `colab ssh 2>/dev/null` hides it (along with the linker/keyring noise).
 
 ## Timing Note
 
@@ -159,6 +290,17 @@ ssh -o ProxyCommand="colab ssh --proxy-mode -s NAME" root@localhost \
 - `colab run` needs a `.py` file — use `colab exec` for piped code.
 - Sessions with `[?]` can be hard to re-attach.
 - Always stop unused sessions with `colab stop`.
+- **`colab exec --timeout` is a *silence* budget, not a runtime budget, and defaults to
+  30 s.** A step that prints nothing for 30 s aborts with `TimeoutError: Timeout waiting
+  for output: no message from the kernel for 30s`. This bites precisely the useful case:
+  a setup line that writes into the FUSE-mounted Drive `$HOME` (`pip config set`, npm, git)
+  can go quiet for a minute. Pass `--timeout 900` (or `0` for no limit).
+- **`colab ssh --identity` must point at an existing private key** — see "The Two Doors".
+- **A bare `colab exec` with no `-s`** picks the only active session and errors if there
+  are several; naming it explicitly is cheaper than debugging the guess.
+- **`colab ssh` returns 255 when the transport drops** and 0 on `exit`/Ctrl-D, so a
+  reattach loop can key on 255 — but only for an interactive tty; agents should use
+  `-- CMD` instead.
 
 ## `colab new` Is Already Synchronous — Don't Build a Readiness Poll
 
@@ -245,14 +387,14 @@ The sections below are two concrete instances of this.
 ## Ghost Sessions — `[?]` Entries the CLI Can't Manage Anymore
 
 A session can end up in a state where `colab sessions` still lists it (with a `[?]`
-in place of its name) but `colab stop`, `colab console`, etc. all say
+in place of its name) but `colab stop`, `colab ssh`, `colab exec`, etc. all say
 `No active sessions found`. This happens when the CLI's *local* session cache
 (`~/.config/colab-cli/sessions.json`) and Colab's *backend* assignment state
 diverge — typically after the CLI itself detects a broken connection
 (`Session 'X' appears to be lost (404/401). Cleaning up.`) and wipes its local
 record of the session, while the backend still has the VM assigned to your account.
 `colab sessions` queries the backend directly, so it keeps showing the orphan;
-`colab stop`/`colab console` resolve against the local cache, which is now empty —
+`colab stop`/`colab ssh` resolve against the local cache, which is now empty —
 hence the contradictory-looking output.
 
 **There is currently no CLI command to fix this** (no `colab adopt`/reattach
@@ -288,7 +430,7 @@ The dangerous part is what `-s NAME` means in that state:
 | command | with a live local record | with `sessions.json` empty |
 | --- | --- | --- |
 | `colab exec -s NAME` | attaches to the existing kernel | `Session 'NAME' not found`, exits non-zero |
-| `colab console -s NAME` | attaches | not found |
+| `colab console -s NAME` *(gone in 0.8.0)* | — | — |
 | `colab stop -s NAME` | stops that runtime | not found |
 | `colab ssh -s NAME` | attaches to the existing runtime | **silently creates a NEW runtime** under that name (its own help: "`-s NAME` creates the session if missing") |
 
@@ -378,8 +520,8 @@ don't read the difference as nondeterminism.
 **No tty at all skips the gate rather than blocking.** In an agent shell, `open("/dev/tty")`
 raises `OSError` (`No such device or address`), the fallback read gets EOF, and execution
 continues immediately. The mount then fails — but a wrapper that exits on that failure
-never reaches its `colab console`, so an agent can safely trigger the flow just to harvest
-the URL. It still cannot complete a mount on its own.
+never reaches its interactive shell (`colab ssh`), so an agent can safely trigger the flow
+just to harvest the URL. It still cannot complete a mount on its own.
 
 Consequences worth remembering:
 
@@ -577,8 +719,9 @@ count stays identical.
 
 `colab exec` has **one** execution slot per session. A `du` walking 12 GB across
 FUSE leaves `colab status -s NAME` reporting `Status: BUSY (exec(stdin))` for
-minutes; every later `colab exec` returns nothing, and if the `colab_me` port
-forward is still alive the ssh door answers:
+minutes; every later `colab exec` returns nothing, and any `--proxy-mode` bridge
+that is still alive (a `colab_me` tunnel from an older wrapper, a `crispasr_colab.sh`
+master, a detached `colab ssh`) makes the ssh door answer:
 
 ```
 [colab] Already-active SSH session (HTTP 429): another `colab ssh` is connected

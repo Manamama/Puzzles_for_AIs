@@ -4,10 +4,18 @@
 # OpenMOSS/MOSS-Transcribe-Diarize on a T4: 8.7 s setup, 33 s model download,
 # 354 s transcription, transcript reproducible to the byte).
 #
-# Staged flow (each step observable, no sleeps, no ssh):
+# Staged flow (each step observable, no sleeps, no interactive ssh):
 #   colab upload -s NAME  audio.mp3  /content/audio.mp3   # data door: 34 MB in 46 s
 #   colab exec  -s NAME --timeout 7200 -f mtd_colab_driver.py
 #   colab stop  -s NAME
+#
+# As of google-colab-cli 0.8.0 the same driver can also travel the shell door, which is
+# byte-exact when piped and returns this script's real exit status (exec's stdout is
+# IPython noise, hence the TRANSCRIPT-BELOW marker below):
+#   colab upload -s NAME mtd_colab_driver.py /content/mtd_colab_driver.py
+#   colab ssh -s NAME -- python /content/mtd_colab_driver.py
+# Note the ssh door holds the runtime's single SSH session (free tier), and 'colab console'
+# no longer exists -- see skills/google-colab/SKILL.md, "History: `colab console`".
 #
 # Why not `colab run` with the audio embedded: script args and the script body
 # travel through the kernel code channel, which is upload-bound — a 47 MB
