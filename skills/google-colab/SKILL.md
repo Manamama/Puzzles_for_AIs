@@ -1,13 +1,17 @@
 ---
 name: google-colab-cli-tradecraft
-description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, HTTP 429 on the SSH door, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Also load it when *every* session shows `[?]`, or when `colab ssh -s NAME` / `colab exec -s NAME` behaves oddly because `sessions.json` was truncated by two concurrent invocations — in that state `colab ssh` silently rents a new VM instead of reattaching. Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix. Also load it when a session needs Google Drive (the `colab drivemount` consent flow, which is human-in-the-loop), or when the CLI is driven from a non-interactive agent shell where an interactive door (`colab ssh`, `colab repl`) would block forever. Also load it when porting anything off `colab console`, which google-colab-cli 0.8.0 removed. Also load it before planning a GPU / ML experiment on Colab (model install, `pip wheel` vs git+URL, OOM-by-arithmetic pre-flight, dtype vs GPU kernel support, driver-vs-CLI choice, smoke test, no-polling fire-and-forget with `/usr/bin/time -v`).
+description: Field-tested tricks, pitfalls, and error-handling logic for operating Google's official `colab` CLI (google-colab-cli) from a script or shell — beyond the built-in `colab skill` basics. Use this whenever creating, reusing, or troubleshooting a `colab` session (colab new/sessions/status/stop/exec/drivemount), writing a bash wrapper around the CLI, or diagnosing a colab-cli error (503 Service Unavailable, 412/TooManyAssignmentsError, HTTP 429 on the SSH door, a `[?]` ghost session, a drivemount 404, or a `zmq.backend.cython` ImportError on `colab` itself). Also load it when *every* session shows `[?]`, or when `colab ssh -s NAME` / `colab exec -s NAME` behaves oddly because `sessions.json` was truncated by two concurrent invocations — in that state `colab ssh` silently rents a new VM instead of reattaching. Load this before adding any retry loop, poll, or wait logic around a `colab` command — several of its failure modes look retryable but are not, and this skill exists specifically to prevent looping around a wall that a loop cannot fix. Also load it when a session needs Google Drive (the `colab drivemount` consent flow, which is human-in-the-loop), or when the CLI is driven from a non-interactive agent shell where an interactive door (`colab ssh`, `colab repl`) would block forever. Also load it when porting anything off `colab console`, which google-colab-cli 0.8.0 removed. Also load it before planning a GPU / ML experiment on Colab (model install, `pip wheel` vs git+URL, OOM-by-arithmetic pre-flight, dtype vs GPU kernel support, driver-vs-CLI choice, smoke test, no-polling fire-and-forget with `/usr/bin/time -v`). Also load it when one machine must hold several Google accounts and you need to switch which one `colab` (and `colab_me`) acts as, or when a per-account profile suddenly cannot open `colab ssh`.
 ---
 
 # Google Colab CLI Tradecraft
 
 Use `colab skill | glow`  or `colab readme`  to learn the official basics first — this skill assumes that base knowledge and covers what it doesn't.
 
-version 3.0.0
+version 3.1.0
+# 3.1.0  2026-11-27  Multi-account profiles: `HOME=~/.config/colab-cli/G0N` selects the token *and*
+#                    the state; per-profile SSH-key trap (`colab ssh` exits 2 with no `~/.ssh`);
+#                    `--config` relocates only sessions.json, not the credential; the old
+#                    `cp token_G0*.json token.json` ritual is dead since the keyring move.
 # 3.0.0  2026-11-23  google-colab-cli 0.8.0: `colab console` removed (history + migration table),
 #                    one-SSH-session-per-runtime / 429 / ControlMaster section, `colab_me` wrapper
 #                    updated (no port-forward, `colab ssh` + reattach loop), exec `--timeout` default,
@@ -40,6 +44,99 @@ Or quick try:
 gcloud auth application-default login
 colab --auth=adc whoami
 ```
+
+## Several Google Accounts: One `$HOME` per Profile (verified 2026-11-27)
+
+`colab` keeps **both** its credential and its state under `~`, so `$HOME` *is* the account
+selector — no plugin, no env var of the CLI's own, no rewriting of secrets:
+
+| what | where | follows `$HOME`? |
+|---|---|---|
+| OAuth token | `~/.local/share/python_keyring/keyring_pass.cfg` (service `google-colab-cli`, key `oauth_token`) | yes |
+| sessions + local names | `~/.config/colab-cli/sessions.json` | yes |
+| history / log / settings | `~/.config/colab-cli/{history/,colab.log,settings.json}` | yes |
+
+So one directory per account, used as that account's `HOME`:
+
+```bash
+mkdir -p ~/.config/colab-cli/G03
+HOME=~/.config/colab-cli/G03 colab --auth=oauth2 whoami   # log that account in — once
+HOME=~/.config/colab-cli/G03 colab whoami                # verify: prints the account email
+HOME=~/.config/colab-cli/G03 colab sessions              # that account's sessions only
+```
+
+It composes with `colab_me`, which is only an alias that runs the wrapper:
+
+```bash
+HOME=~/.config/colab-cli/G03 colab_me gpu
+```
+
+Name **exactly one** profile. `HOME=~/.config/colab-cli/G0*` is not a selector: with
+several matches only the first word is taken as the assignment and the rest are parsed as
+the command name, so it fails instead of picking one.
+
+**Why the prefix form is safe.** `HOME=…` applies to that command's environment only, not
+to the current shell, so tilde expansion on the same line still uses your real `~`. That is
+what keeps `colab_me`'s `bash ~/Downloads/…/colab_exec_wrapper.sh` resolvable while the
+child runs under the profile. Everything *inside* that child — `colab` itself and whatever
+the wrapper shells out to — sees the profile as `$HOME`.
+
+The nesting looks odd but is correct: `HOME=~/.config/colab-cli/G03` makes that profile's
+own CLI state `<profile>/.config/colab-cli/`, i.e.
+`~/.config/colab-cli/G03/.config/colab-cli/sessions.json`.
+
+### The one thing a fresh profile lacks: the SSH key
+
+`colab ssh` (and `--proxy-mode`) resolves the key from `~/.ssh` — now the *profile's*
+`~/.ssh`. Missing there is fatal, not a fallback:
+
+```
+[colab] no SSH public key found in ~/.ssh/. Run `ssh-keygen -t ed25519` to generate one, or pass --identity.
+```
+
+(exit code 2, from `_resolve_pubkey`, which scans `id_ed25519.pub` then `id_ecdsa.pub`.)
+So a brand-new profile creates sessions and mounts Drive fine, then dies at the first
+`colab ssh` — which in `colab_me` is the *last* step, after `colab new` and both
+`drivemount` calls have already spent quota and Drive consent. Give each profile the key
+once, from the normal shell (absolute target — a relative one would chase the profile):
+
+```bash
+ln -s "$HOME/.ssh" ~/.config/colab-cli/G03/.ssh          # whole dir: key, config, known_hosts
+# or surgically:
+mkdir -p ~/.config/colab-cli/G03/.ssh
+ln -s "$HOME/.ssh/id_ed25519"     ~/.config/colab-cli/G03/.ssh/id_ed25519
+ln -s "$HOME/.ssh/id_ed25519.pub" ~/.config/colab-cli/G03/.ssh/id_ed25519.pub
+```
+
+`--identity` is `os.path.expanduser`-ed too, so `--identity ~/.ssh/id_ed25519` means
+`<profile>/.ssh/id_ed25519` — pass an absolute path if you use the flag.
+
+### What does *not* switch the account
+
+- **`--config PATH`** relocates only the session-state file (`sessions.json`), **not** the
+  token. Useful for parallel runs of one account; useless for switching accounts.
+- **`cp ~/.config/colab-cli/token_G0*.json ~/.config/colab-cli/token.json`** is dead. Since
+  the token moved into the keyring, `token.json` is the *legacy migration* path: read only
+  when the keyring has **no** token, saved into the keyring, then `rm`'d
+  (`_remove_legacy_token()`); on a normal run the keyring wins and the copied file is
+  deleted unread. A wrapper still printing that tip (the `colab_me` one does, as of 2.4.9)
+  is handing out a no-op.
+- **`--auth=adc`** is a different credential *source* (ADC / `gcloud auth
+  application-default login`), not a second profile.
+
+### Housekeeping
+
+- One profile = one account; ask the profile who it is with `HOME=… colab whoami`. Keep the
+  mapping in a local, uncommitted note — names like `G01` say nothing, and putting the
+  addresses in a shared file is how a convenience turns into a disclosure.
+- Each profile re-runs the update check (its own `settings.json`), so the first command per
+  profile per version is a second slower. Harmless.
+- Sessions are per profile, so the `[?]`-ghost and truncated-`sessions.json` traps described
+  later are per account: truncating one profile loses only that account's names.
+- The keyring file is **plaintext** (`keyrings.alt` file backend — Termux has no
+  SecretService), so each profile directory is a credential store: keep it `0700`, never
+  copy it into a repo, and remember that copying a `keyring_pass.cfg` between profiles
+  silently makes two profiles *the same account* rather than adding a new one.
 
 ## Core Commands
 
@@ -108,6 +205,10 @@ A convenience alias may exist in `Ubuntu_Scripts_1/utils/aliases3.sh`:
 ```bash
 alias colab_me="bash ~/Downloads/GitHub/Ubuntu_Scripts_1/utils/colab_exec_wrapper.sh"
 ```
+
+Prefix it to act as another Google account: `HOME=~/.config/colab-cli/G03 colab_me gpu` —
+the alias body's `~` still resolves to the real home, the wrapper's children see the
+profile (see "Several Google Accounts" above).
 
 `colab_me gpu` reuses a session named **`session_1_gpu`** if it is listed (a `colab sessions`
 grep decides this; `colab new` on a live session exits 1 with "Allocation refused
